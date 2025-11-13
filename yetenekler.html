@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yetenekler</title>
+  <style>
+    :root {
+      --primary: #222;
+      --accent: #4a6cf7;
+      --bg: #f4f4f4;
+      --text: #333;
+    }
+    body.dark {
+      --primary: #fff;
+      --accent: #6b8bff;
+      --bg: #0f0f0f;
+      --text: #eaeaea;
+    }
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: var(--bg);
+      color: var(--text);
+      transition: .3s;
+    }
+    nav {
+      background: #111;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+    }
+    nav a { color: #fff; text-decoration: none; font-weight: bold; }
+    nav a:hover { color: var(--accent); }
+
+    #darkToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: var(--bg);
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 2000;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h1 { text-align: center; }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .skill-box {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: .2s;
+    }
+    body.dark .skill-box {
+      background: #1a1a1a;
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+    }
+    .skill-box:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+
+<button id="darkToggle">🌙</button>
+
+<nav>
+  <a href="index.html">Ana Sayfa</a>
+  <a href="hakkimda.html">Hakkımda</a>
+  <a href="yetenekler.html" style="color: var(--accent);">Yetenekler</a>
+  <a href="projeler.html">Projeler</a>
+  <a href="iletisim.html">İletişim</a>
+</nav>
+
+<div class="page">
+  <h1>Yeteneklerim</h1>
+  <p>Aşağıda sahip olduğunuz tüm teknik ve kişisel becerileri listeleyebilirsiniz.</p>
+
+  <div class="skills">
+    <div class="skill-box">HTML</div>
+    <div class="skill-box">CSS</div>
+    <div class="skill-box">JavaScript</div>
+    <div class="skill-box">Python</div>
+    <div class="skill-box">React</div>
+    <div class="skill-box">Git & GitHub</div>
+    <div class="skill-box">SEO</div>
+    <div class="skill-box">UI / UX</div>
+  </div>
+</div>
+
+<script>
+  const t = document.getElementById("darkToggle");
+  t.onclick = () => document.body.classList.toggle("dark");
+</script>
+
+</body>
+</html>

@@ -3,86 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kişisel Web Sitesi</title>
+  <title>Site Başlığı</title>
+
   <style>
     :root {
-      --primary: #222;
+      --primary: #fff;
       --accent: #4a6cf7;
       --bg: #f4f4f4;
-      --text: #333;
+      --text: #111;
     }
+
     body.dark {
       --primary: #fff;
       --accent: #6b8bff;
       --bg: #0f0f0f;
       --text: #eaeaea;
     }
+
     body {
       margin: 0;
-      font-family: Arial;
       background: var(--bg);
       color: var(--text);
+      font-family: Arial;
       transition: .3s;
     }
 
-    nav {
-      background: #111;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a { color: #fff; text-decoration: none; font-weight: bold; }
-    nav a:hover { color: var(--accent); }
-
-    /* DARK MODE BUTTON */
+    /* Dark Mode Button */
     #darkToggle {
       position: fixed;
-      top: 20px;
+      top: 18px;
       right: 20px;
-      background: var(--primary);
-      color: var(--bg);
-      border: none;
-      padding: 10px 18px;
-      border-radius: 20px;
+      padding: 8px 14px;
       cursor: pointer;
-      z-index: 2000;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      z-index: 9999;
     }
 
-    .page {
-      max-width: 900px;
-      padding: 2rem;
-      margin: auto;
+    /* NAVBAR */
+    .header {
+      width: 100%;
+      background: #111;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
-    h1 { text-align: center; }
+    .logo {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 26px;
+      height: 3px;
+      background: #fff;
+      transition: .3s;
+    }
+
+    /* Mobil */
+    @media(max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        background: #111;
+        width: 220px;
+        padding: 20px;
+        gap: 15px;
+        transition: .3s;
+        border-radius: 0 0 0 15px;
+      }
+
+      .nav-links.show {
+        right: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
 <button id="darkToggle">🌙</button>
 
-<nav>
-  <a href="index.html">Ana Sayfa</a>
-  <a href="hakkimda.html">Hakkımda</a>
-  <a href="yetenekler.html">Yetenekler</a>
-  <a href="projeler.html">Projeler</a>
-  <a href="iletisim.html">İletişim</a>
-</nav>
+<header class="header">
+  <div class="logo">LOGO</div>
 
-<div class="page">
-  <h1>Ana Sayfa</h1>
-  <p>Buraya ana sayfa için istediğin tanıtım yazısı gelir.</p>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="nav-links" id="navMenu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimda.html">Hakkımda</a>
+    <a href="yetenekler.html">Yetenekler</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="experience.html">Deneyimler</a>
+    <a href="blog.html">Blog</a>
+    <a href="iletisim.html">İletişim</a>
+  </nav>
+</header>
+
+
+<!-- BURAYA SAYFA İÇERİĞİN GELECEK -->
+<div style="padding: 30px;">
+  <h1>Sayfa İçeriği Örneği</h1>
+  <p>Burası test içerik alanı.</p>
 </div>
 
+
+<!-- JS -->
 <script>
+  // Hamburger aç/kapa
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("show");
+  }
+
+  // Dark Mode
   const t = document.getElementById("darkToggle");
-  t.onclick = () => {
-    document.body.classList.toggle("dark");
-  };
+  t.onclick = () => document.body.classList.toggle("dark");
 </script>
 
 </body>

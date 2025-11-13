@@ -133,11 +133,12 @@
     </p>
     </div>
 
-    <form action="mailto:yusufavsarsgu@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" placeholder="Adınız" required>
-      <input type="email" placeholder="E‑postanız" required>
-      <textarea placeholder="Mesajınız" required></textarea>
-      <button class="submit">Gönder</button>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="ed8d5708-4a39-43f4-b067-b5e29433a46f">
+      <input type="text" name="name" placeholder="Adınız" required>
+      <input type="email" name="email" placeholder="E-postanız" required>
+      <textarea name="message" placeholder="Mesajınız" required></textarea>
+      <button class="submit" type="submit">Gönder</button>
     </form>
 
   </div>

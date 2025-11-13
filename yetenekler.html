@@ -1,110 +1,189 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yetenekler</title>
+
   <style>
     :root {
-      --primary: #222;
       --accent: #4a6cf7;
       --bg: #f4f4f4;
-      --text: #333;
+      --text: #222;
+      --card: #fff;
     }
+
     body.dark {
-      --primary: #fff;
-      --accent: #6b8bff;
       --bg: #0f0f0f;
       --text: #eaeaea;
+      --card: #1a1a1a;
     }
+
     body {
       margin: 0;
-      font-family: Arial;
+      padding: 0;
       background: var(--bg);
       color: var(--text);
+      font-family: Arial, sans-serif;
       transition: .3s;
     }
-    nav {
-      background: #111;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      position: sticky;
-      top: 0;
-    }
-    nav a { color: #fff; text-decoration: none; font-weight: bold; }
-    nav a:hover { color: var(--accent); }
 
     #darkToggle {
       position: fixed;
-      top: 20px;
+      top: 18px;
       right: 20px;
-      background: var(--primary);
-      color: var(--bg);
-      border: none;
-      padding: 10px 18px;
-      border-radius: 20px;
+      padding: 8px 14px;
       cursor: pointer;
-      z-index: 2000;
-    }
-
-    .page {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    h1 { text-align: center; }
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .skill-box {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: bold;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: .2s;
-    }
-    body.dark .skill-box {
-      background: #1a1a1a;
+      background: #111;
       color: #fff;
-      box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+      border: none;
+      border-radius: 20px;
+      z-index: 9999;
     }
-    .skill-box:hover { transform: scale(1.05); }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.6;
+    }
   </style>
 </head>
-<body>
 
+<body>
 <button id="darkToggle">🌙</button>
 
-<nav>
-  <a href="index.html">Ana Sayfa</a>
-  <a href="hakkimda.html">Hakkımda</a>
-  <a href="yetenekler.html" style="color: var(--accent);">Yetenekler</a>
-  <a href="projeler.html">Projeler</a>
-  <a href="iletisim.html">İletişim</a>
-</nav>
-
-<div class="page">
+<div class="container">
   <h1>Yeteneklerim</h1>
-  <p>Aşağıda sahip olduğunuz tüm teknik ve kişisel becerileri listeleyebilirsiniz.</p>
 
-  <div class="skills">
-    <div class="skill-box">HTML</div>
-    <div class="skill-box">CSS</div>
-    <div class="skill-box">JavaScript</div>
-    <div class="skill-box">Python</div>
-    <div class="skill-box">React</div>
-    <div class="skill-box">Git & GitHub</div>
-    <div class="skill-box">SEO</div>
-    <div class="skill-box">UI / UX</div>
+  <div class="grid">
+
+    <div class="card">
+      <h2>Programlama Dilleri</h2>
+      <ul>
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>C</li>
+        <li>C++</li>
+        <li>C#</li>
+        <li>Java</li>
+        <li>Go (Golang)</li>
+        <li>Rust</li>
+        <li>PHP</li>
+        <li>TypeScript</li>
+        <li>Bash Script</li>
+        <li>PowerShell</li>
+        <li>SQL</li>
+        <li>NoSQL</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Web & Yazılım Teknolojileri</h2>
+      <ul>
+        <li>HTML5, CSS3, SASS/SCSS</li>
+        <li>React, Next.js, Vue.js</li>
+        <li>Bootstrap, TailwindCSS</li>
+        <li>Node.js, Express.js</li>
+        <li>Django, Flask, Laravel, .NET Core</li>
+        <li>MySQL, PostgreSQL, MongoDB, Redis</li>
+        <li>Firebase, Firestore</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>DevOps & Sunucu Sistemleri</h2>
+      <ul>
+        <li>Linux (Ubuntu, Kali, Debian)</li>
+        <li>Windows Server</li>
+        <li>Docker, Kubernetes</li>
+        <li>CI/CD (GitHub Actions, Jenkins)</li>
+        <li>AWS, Google Cloud, Cloudflare</li>
+        <li>Nginx, Apache</li>
+        <li>Proxmox, VMware, VirtualBox</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Siber Güvenlik Araçları</h2>
+      <ul>
+        <li>Kali Linux, Parrot OS</li>
+        <li>Burp Suite, Metasploit</li>
+        <li>Nmap, Hydra, SQLMap</li>
+        <li>Aircrack-ng, John the Ripper, Hashcat</li>
+        <li>ZAP Proxy, Recon-ng</li>
+        <li>Wireshark, Tcpdump</li>
+        <li>Firewall & IDS/IPS yönetimi</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>OSINT & Web Güvenliği</h2>
+      <ul>
+        <li>Shodan, Maltego, TheHarvester</li>
+        <li>Google Dorks</li>
+        <li>XSS, SQL Injection, CSRF</li>
+        <li>RFI / LFI</li>
+        <li>API Security</li>
+        <li>OWASP Top 10</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Kişisel Yetkinlikler</h2>
+      <ul>
+        <li>Disiplinli ve düzenli çalışma</li>
+        <li>Kriz ve stres yönetimi</li>
+        <li>Soğukkanlılık</li>
+        <li>Analitik düşünme</li>
+        <li>Problem çözme odaklılık</li>
+        <li>Güvenlik bilinci yüksek</li>
+        <li>Adaptasyon & hızlı öğrenme</li>
+        <li>Çok yönlülük</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Ekstra Uzmanlıklar</h2>
+      <ul>
+        <li>Hibrit güvenlik + yazılım yaklaşımı</li>
+        <li>Sistem açıklarını analiz etme</li>
+        <li>Orta ölçekli şirketlerde siber güvenlik yönetimi</li>
+        <li>Açık kaynak proje katkıları</li>
+        <li>Startup kültürü ve global yazılım vizyonu</li>
+        <li>Saha tecrübesi + teknik uzmanlık birleşimi</li>
+      </ul>
+    </div>
+
   </div>
 </div>
 

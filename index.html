@@ -1,74 +1,89 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Site Yapım Aşamasında</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Poppins", sans-serif;
-            background: linear-gradient(135deg, #1b1b1b, #2d2d2d);
-            color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .card {
-            text-align: center;
-            padding: 40px 30px;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
-            max-width: 600px;
-            width: 90%;
-            animation: fadeIn 1.2s ease;
-        }
-        h1 {
-            font-size: 2.6rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-        p {
-            font-size: 1.2rem;
-            opacity: 0.85;
-            margin-bottom: 25px;
-        }
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 6px solid rgba(255,255,255,0.2);
-            border-top-color: #ffffff;
-            border-radius: 50%;
-            margin: 20px auto;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        footer {
-            margin-top: 25px;
-            font-size: 0.9rem;
-            opacity: 0.6;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kişisel Web Sitesi</title>
+  <style>
+    :root {
+      --primary: #222;
+      --accent: #4a6cf7;
+      --bg: #f4f4f4;
+      --text: #333;
+    }
+    body.dark {
+      --primary: #fff;
+      --accent: #6b8bff;
+      --bg: #0f0f0f;
+      --text: #eaeaea;
+    }
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: var(--bg);
+      color: var(--text);
+      transition: .3s;
+    }
+
+    nav {
+      background: #111;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a { color: #fff; text-decoration: none; font-weight: bold; }
+    nav a:hover { color: var(--accent); }
+
+    /* DARK MODE BUTTON */
+    #darkToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: var(--bg);
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 2000;
+    }
+
+    .page {
+      max-width: 900px;
+      padding: 2rem;
+      margin: auto;
+    }
+
+    h1 { text-align: center; }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <div class="loader"></div>
-        <h1>Yapım Aşamasında</h1>
-        <p>Bu site şu anda geliştiriliyor. Çok yakında yayında olacak!</p>
-        <footer style="margin-top:35px; font-size:0.95rem; opacity:0.85; letter-spacing:0.8px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.15);">
-    © 2018 – 2025 • <span style="font-weight:600;">yusufavsar</span> — Tüm Hakları Saklıdır.
-</footer>
-    </div>
+
+<button id="darkToggle">🌙</button>
+
+<nav>
+  <a href="index.html">Ana Sayfa</a>
+  <a href="hakkimda.html">Hakkımda</a>
+  <a href="yetenekler.html">Yetenekler</a>
+  <a href="projeler.html">Projeler</a>
+  <a href="iletisim.html">İletişim</a>
+</nav>
+
+<div class="page">
+  <h1>Ana Sayfa</h1>
+  <p>Buraya ana sayfa için istediğin tanıtım yazısı gelir.</p>
+</div>
+
+<script>
+  const t = document.getElementById("darkToggle");
+  t.onclick = () => {
+    document.body.classList.toggle("dark");
+  };
+</script>
+
 </body>
 </html>

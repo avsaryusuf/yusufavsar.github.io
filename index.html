@@ -89,6 +89,89 @@
 .space {
     margin-bottom: 70px;
 }
+
+/* ===========================
+   YUSUF AI PANEL TASARIM
+   =========================== */
+.ai-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--neon-purple);
+    color: #fff;
+    font-size: 26px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(176,111,255,0.7);
+    transition: 0.3s;
+    z-index: 999;
+}
+.ai-button:hover {
+    transform: scale(1.1);
+}
+
+/* PANEL */
+.ai-panel {
+    position: fixed;
+    bottom: 100px;
+    right: -360px;
+    width: 350px;
+    height: 480px;
+    background: #11001c;
+    border: 1px solid var(--neon-purple);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.35s;
+    z-index: 9999;
+}
+
+.ai-panel.show {
+    right: 25px;
+}
+
+.ai-header {
+    padding: 15px;
+    text-align: center;
+    background: var(--neon-purple);
+    color: white;
+    font-weight: bold;
+    border-radius: 12px 12px 0 0;
+}
+
+.ai-messages {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.ai-input-box {
+    display: flex;
+    border-top: 1px solid #290049;
+}
+
+.ai-input-box input {
+    flex: 1;
+    padding: 12px;
+    background: #1a0128;
+    color: white;
+    border: none;
+}
+
+.ai-input-box button {
+    padding: 12px 18px;
+    background: var(--neon-purple);
+    border: none;
+    color: white;
+    cursor: pointer;
+}
 </style>
 
 </head>
@@ -132,12 +215,10 @@
 <!-- HERO -->
 <section class="hero">
     <h1 class="hero-title">
-        SİTE YAPIM AŞAMASINDADIR. 
+        SİTE YAPIM AŞAMASINDADIR
     </h1>
-    <p class="hero-sub">
 </section>
 
-<!-- HERO -->
 <section class="hero">
     <h1 class="hero-title">
         Yüksek teknolojiyi bireysel seviyede üreten, global ölçekte çalışan bir geliştirici.
@@ -182,17 +263,17 @@
 
         <div class="card">
             <div class="card-title">Kurumsal ERP Sistemi</div>
-            <div class="card-text">Tam entegre stok, personel, muhasebe ve raporlama fonksiyonlarına sahip gelişmiş ERP yazılımı.</div>
+            <div class="card-text">Tam entegre stok, personel, muhasebe ve raporlama modülleri.</div>
         </div>
 
         <div class="card">
             <div class="card-title">Siber Güvenlik Otomasyonu</div>
-            <div class="card-text">Ağ tarama, raporlama ve tehdit tespiti için geliştirilen özel güvenlik sistemi.</div>
+            <div class="card-text">Ağ tarama, raporlama ve tehdit tespiti için geliştirilen güvenlik sistemi.</div>
         </div>
 
         <div class="card">
-            <div class="card-title">AI Tabanlı Analiz Sistemi</div>
-            <div class="card-text">Veri analizi, trend tahmini ve otomatik karar sistemi sunan yapay zekâ projesi.</div>
+            <div class="card-title">AI Analiz Sistemi</div>
+            <div class="card-text">Veri analizi, tahmin ve otomatik karar motoru sağlayan yapay zekâ projesi.</div>
         </div>
 
     </div>
@@ -206,17 +287,17 @@
 
         <div class="card">
             <div class="card-title">Yapay Zekâ ve Modern Yazılım</div>
-            <div class="card-text">Yazılım geliştirme süreçlerinin yapay zekâ ile yeniden şekillenmesi...</div>
+            <div class="card-text">Geliştirme süreçlerinin yapay zekâ ile yeniden şekillenmesi...</div>
         </div>
 
         <div class="card">
             <div class="card-title">Siber Güvenlikte 2025 Trendleri</div>
-            <div class="card-text">Yeni tehdit türleri, koruma teknikleri ve ileri seviye güvenlik metodları...</div>
+            <div class="card-text">Yeni tehdit türleri ve önleme yöntemleri...</div>
         </div>
 
         <div class="card">
             <div class="card-title">Kurumsal Sistem Mimarisi</div>
-            <div class="card-text">Büyük ölçekli yazılım mimarilerinin modern yaklaşımı...</div>
+            <div class="card-text">Büyük ölçekli yazılım yapılarının modern yaklaşımı...</div>
         </div>
 
     </div>
@@ -236,9 +317,27 @@
 function toggleMenu() {
     document.getElementById("mobileMenu").classList.toggle("show");
 }
+
+/* AI PANEL */
+document.getElementById("yusufAiBtn").addEventListener("click", () => {
+    document.getElementById("yusufAiPanel").classList.toggle("show");
+});
+
+function sendToYusufAI() {
+    let input = document.getElementById("aiInput").value.trim();
+    if(!input) return;
+
+    let box = document.getElementById("aiMessages");
+    box.innerHTML += `<div><b>Sen:</b> ${input}</div>`;
+
+    // Bu kısmı sonra sana API anahtarınla bağlayacağım
+    box.innerHTML += `<div><b>Yusuf AI:</b> Bu özellik yapım aşamasındadır.</div>`;
+
+    document.getElementById("aiInput").value = "";
+}
 </script>
 
-<!-- YUSUF AI CHAT WIDGET -->
+<!-- YUSUF AI WIDGET -->
 <div id="yusufAiBtn" class="ai-button">🤖</div>
 
 <div id="yusufAiPanel" class="ai-panel">
@@ -246,11 +345,10 @@ function toggleMenu() {
     <div class="ai-messages" id="aiMessages"></div>
 
     <div class="ai-input-box">
-        <input type="text" id="aiInput" placeholder="Sorunu yaz..." />
+        <input type="text" id="aiInput" placeholder="Sorunu yaz...">
         <button onclick="sendToYusufAI()">Gönder</button>
     </div>
 </div>
 
-   
 </body>
 </html>

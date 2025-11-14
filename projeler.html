@@ -5,84 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projeler | Yusuf Avşar</title>
 
+<!-- Tema Dosyası -->
 <link rel="stylesheet" href="theme.css">
 
 <style>
-
-.page {
-    width: 90%;
-    max-width: 1200px;
-    margin: 150px auto 60px auto;
+/* Proje Kart Alanı */
+.projects-container {
+    max-width: 1350px;
+    margin: 160px auto 80px auto;
+    padding: 20px;
 }
 
-.title {
+.projects-title {
     font-size: 42px;
-    font-weight: 700;
-    color: var(--neon-purple2);
     text-align: center;
-    margin-bottom: 15px;
+    color: #be7aff;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
 }
 
-.sub-title {
-    text-align: center;
-    font-size: 19px;
-    color: var(--text-muted);
-    margin-bottom: 55px;
-}
-
-.projects {
+.project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 .project-card {
-    background: var(--bg-dark2);
-    border: 1px solid #2b004f;
-    padding: 28px;
-    border-radius: 16px;
-    box-shadow: 0 0 20px rgba(150, 70, 255, 0.15);
-    transition: .3s;
+    background: #11001f;
+    border: 1px solid #3a0066;
+    border-radius: 14px;
+    padding: 25px;
+    transition: 0.35s;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(150, 70, 255, 0.25);
+    transform: translateY(-6px);
+    border-color: #be7aff;
+    box-shadow: 0 0 18px #4f0075;
 }
 
 .project-card h3 {
-    margin-top: 0;
+    margin: 0 0 12px 0;
     font-size: 24px;
-    color: var(--neon-purple);
+    color: #d79cff;
 }
 
 .project-card p {
-    color: #cebfff;
-    line-height: 1.7;
     font-size: 16px;
+    line-height: 1.6;
+    color: #c9c9c9;
 }
 
-.tag-box {
-    margin-top: 15px;
+/* Mobil */
+@media(max-width: 950px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
-
-.tag {
-    display: inline-block;
-    background: rgba(190, 122, 255, 0.15);
-    padding: 6px 12px;
-    font-size: 13px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    border-radius: 40px;
-    border: 1px solid var(--neon-purple2);
-}
-
-@media(max-width: 600px){
-    .project-card { padding: 20px; }
-}
-
 </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -92,7 +74,7 @@
     <nav>
         <a href="index.html">Ana Sayfa</a>
         <a href="hakkimda.html">Hakkımda</a>
-        <a href="projeler.html">Projeler</a>
+        <a href="projeler.html" class="active">Projeler</a>
         <a href="uzmanlik.html">Uzmanlık</a>
         <a href="kitaplar.html">Kitaplar</a>
         <a href="makaleler.html">Makaleler</a>
@@ -103,16 +85,19 @@
         <a href="iletisim.html">İletişim</a>
     </nav>
 
+    <!-- Hamburger -->
     <div class="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </header>
 
-<!-- MOBILE MENU -->
+<!-- Mobil Menü -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
-    <a href="projeler.html">Projeler</a>
+    <a href="projeler.html" class="active">Projeler</a>
     <a href="uzmanlik.html">Uzmanlık</a>
     <a href="kitaplar.html">Kitaplar</a>
     <a href="makaleler.html">Makaleler</a>
@@ -123,106 +108,115 @@
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<!-- ===== PAGE CONTENT ===== -->
-<div class="page">
+<script>
+function toggleMenu(){
+    const m = document.getElementById("mobileMenu");
+    m.style.left = (m.style.left === "0px") ? "-260px" : "0px";
+}
+</script>
 
-    <div class="title">Projelerim</div>
-    <div class="sub-title">Sunduğumuz tüm projeler ve çözümler, yalnızca Kurumdan Kuruma (B2B) kullanım senaryoları için tasarlanmış ve optimize edilmiştir.</div>
+<!-- PROJELER -->
+<div class="projects-container">
 
-    <div class="projects">
+    <h2 class="projects-title">Profesyonel B2B Projeler</h2>
 
-        <!-- PROJE 1 -->
+    <div class="project-grid">
+
+        <!-- 1 -->
         <div class="project-card">
-            <h3>Siber Güvenlik Tehdit Analiz Platformu</h3>
+            <h3>COP-X • Kurumsal Operasyon Yönetim Platformu</h3>
             <p>
-                Kurumsal şirketlerin ağ trafiğini analiz ederek sıfırıncı gün açıklarını,
-                kimlik avı girişimlerini ve zararlı trafik davranışlarını gerçek zamanlı tespit eden 
-                yapay zekâ destekli güvenlik platformu.
+            Orta ve büyük ölçekli firmaların güvenlik, operasyon, saha yönetimi ve 
+            lojistik süreçlerini tek panele taşıyan modüler işletme platformu.  
+            Gerçek zamanlı vardiya takibi, KPI analizleri ve kurumsal iş akışı otomasyonları içerir.
             </p>
-
-            <div class="tag-box">
-                <span class="tag">Python</span>
-                <span class="tag">Machine Learning</span>
-                <span class="tag">Siber Güvenlik</span>
-                <span class="tag">Network Analysis</span>
-            </div>
         </div>
 
-        <!-- PROJE 2 -->
+        <!-- 2 -->
         <div class="project-card">
-            <h3>Yapay Zekâ Destekli Kod Denetleme Sistemi</h3>
+            <h3>RISK360 • Kurumsal Risk Analizi & Denetim</h3>
             <p>
-                Yazılımcıların geliştirdiği kodları analiz ederek güvenlik açıklarını bulan,
-                mimari hataları raporlayan ve performans önerileri sunan yapay zekâ tabanlı
-                otomatik kod analiz sistemi.
+            Saha denetimi gerektiren sektörler için oluşturulmuş akıllı risk analiz sistemi.  
+            Firmalara tehlike tespiti, dijital rapor oluşturma ve yöneticilere otomatik bildirim  
+            sunar. Çok lokasyonlu şirketler için optimize edilmiştir.
             </p>
-
-            <div class="tag-box">
-                <span class="tag">AI</span>
-                <span class="tag">Deep Learning</span>
-                <span class="tag">SAST</span>
-                <span class="tag">Backend</span>
-            </div>
         </div>
 
-        <!-- PROJE 3 -->
+        <!-- 3 -->
         <div class="project-card">
-            <h3>Kurumsal Çok Katmanlı Güvenlik Duvarı</h3>
+            <h3>SafeAI • Yapay Zekâ Destekli Güvenlik Gözlem Sistemi</h3>
             <p>
-                Büyük ölçekli şirketlerde kullanılan, davranışsal trafik analizi yapan ve
-                otomatik saldırı önleme modülleri içeren yeni nesil güvenlik duvarı mimarisi.
+            CCTV görüntülerini makine öğrenimiyle analiz ederek yetkisiz giriş, şüpheli davranış  
+            ve riskli hareketleri gerçek zamanlı tespit eden güvenlik çözümü. Fabrika ve AVM gibi  
+            yüksek hacimli alanlarda kullanılır.
             </p>
-
-            <div class="tag-box">
-                <span class="tag">Firewall</span>
-                <span class="tag">Security Engineering</span>
-                <span class="tag">Network Security</span>
-            </div>
         </div>
 
-        <!-- PROJE 4 -->
+        <!-- 4 -->
         <div class="project-card">
-            <h3>Veri Görselleştirme & Karar Destek Sistemi</h3>
+            <h3>ContractFlow • Proje ve Sözleşme Yönetim Sistemi</h3>
             <p>
-                Orta ve büyük ölçekli işletmeler için finansal, operasyonel ve güvenlik verilerini
-                tek panelde toplayıp anlamlı grafiklere dönüştüren karar destek yapısı.
+            B2B iş süreçleri için teklif–kontrat–ödeme planı üçlüsünü tek panelde toplayan  
+            kurumsal yönetim altyapısı. Otomatik hatırlatıcılar, PDF entegrasyonu ve şablon  
+            oluşturucuya sahiptir.
             </p>
-
-            <div class="tag-box">
-                <span class="tag">JavaScript</span>
-                <span class="tag">Dashboards</span>
-                <span class="tag">Data Engineering</span>
-            </div>
         </div>
 
-        <!-- PROJE 5 -->
+        <!-- 5 -->
         <div class="project-card">
-            <h3>Kişisel Yapay Zekâ Asistanım</h3>
+            <h3>SentinelLite • Kurumsal Mini-SIEM Güvenlik Platformu</h3>
             <p>
-                Günlük iş yükünü optimize eden, planlama yapan, araştırma desteği sağlayan
-                ve kişisel çalışma düzenimi takip eden kendi özel AI asistanım.
+            KOBİ ve orta ölçekli şirketler için geliştirilmiş hafif SIEM çözümü. Log toplama,  
+            zararlı trafik tespiti, anlık alarm mekanizması ve yöneticiler için özet rapor  
+            oluşturucu içerir.
             </p>
+        </div>
 
-            <div class="tag-box">
-                <span class="tag">AI Assistant</span>
-                <span class="tag">NLP</span>
-                <span class="tag">Automation</span>
-            </div>
+        <!-- 6 -->
+        <div class="project-card">
+            <h3>HQ-Manager • Çoklu Lokasyon Yönetim Paneli</h3>
+            <p>
+            Birden fazla lokasyona sahip şirketlerin insan kaynakları, operasyon ve süreç  
+            kontrollerini merkezi yönetim paneli üzerinden yürütmesini sağlar. Yönetici atama,  
+            lokasyon bazlı analiz ve performans ölçüm modülleri içerir.
+            </p>
+        </div>
+
+        <!-- 7 -->
+        <div class="project-card">
+            <h3>TrainIQ • Kurumsal Eğitim & Sertifika Platformu</h3>
+            <p>
+            Video dersler, sınavlar, otomatik sertifika oluşturucu ve detaylı eğitim raporları  
+            sunan kurumsal eğitim sistemi. Güvenlik firmaları, lojistik şirketleri ve üretim  
+            tesisleri tarafından kullanılır.
+            </p>
+        </div>
+
+        <!-- 8 -->
+        <div class="project-card">
+            <h3>Envanter360 • Kurumsal Donanım & Demirbaş Takip Sistemi</h3>
+            <p>
+            Bilgisayar, telsiz, kamera, cihaz ve tüm demirbaşların QR kodlu zimmet yönetimi.  
+            Arıza kayıt, bakım takip ve cihaz geçmişi gibi modüller içerir.
+            </p>
+        </div>
+
+        <!-- 9 -->
+        <div class="project-card">
+            <h3>CrisisCore • Acil Durum & Kriz Yönetimi</h3>
+            <p>
+            Acil durumda bir şirketin kimlerin hangi rolü alacağını belirleyen akıllı karar  
+            destek sistemi. SMS/mail bildirim, görev dağılımı ve olay sonrası analiz sağlar.
+            </p>
         </div>
 
     </div>
-
 </div>
 
+<!-- FOOTER -->
 <footer>
-    © 2025 <span>Yusuf Avşar</span> — Tüm Hakları Saklıdır.
+    <p>© 2025 Yusuf Avşar — Tüm Hakları Saklıdır.</p>
 </footer>
-
-<script>
-function toggleMenu(){
-    document.getElementById("mobileMenu").classList.toggle("show");
-}
-</script>
 
 </body>
 </html>

@@ -3,38 +3,44 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yusuf Avşar | Official Website</title>
+    <title>Yusuf Avşar | Ana Sayfa</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: #0d0d0d;
+            background: #0a0a0f;
             color: #fff;
         }
         header {
             width: 100%;
-            padding: 20px;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #111;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 999;
-            border-bottom: 1px solid #222;
+            z-index: 1000;
+            border-bottom: 1px solid #2a0066;
         }
         header h1 {
             margin: 0;
             font-size: 22px;
             letter-spacing: 1px;
+            color: #b875ff;
         }
         nav a {
             color: #fff;
-            margin-left: 20px;
+            margin-left: 25px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 17px;
+            transition: .3s;
+        }
+        nav a:hover {
+            color: #b875ff;
         }
         .hero {
             height: 100vh;
@@ -44,51 +50,39 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
+            background: radial-gradient(circle at top, #4d00ff22, #000);
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #7f27ff;
+            background-size: cover;
+            background-position: center;
         }
         .hero h2 {
-            font-size: 42px;
+            font-size: 38px;
             margin-bottom: 10px;
         }
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             max-width: 600px;
-            opacity: 0.8;
+            opacity: 0.85;
         }
         .btn {
             margin-top: 25px;
-            padding: 12px 30px;
-            background: #5b12f7;
+            padding: 12px 32px;
+            background: linear-gradient(90deg, #5b12f7, #9d4bff);
             border: none;
             color: #fff;
             font-size: 18px;
             cursor: pointer;
             border-radius: 8px;
+            transition: .3s;
         }
-        section {
-            padding: 80px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-        h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            border-left: 5px solid #5b12f7;
-            padding-left: 10px;
-        }
-        .projects, .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: #111;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #222;
-        }
-        .card h4 {
-            margin-top: 0;
-            font-size: 20px;
+        .btn:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -97,15 +91,25 @@
 <header>
     <h1>Yusuf Avşar</h1>
     <nav>
-        <a href="about.html">Hakkımda</a>
-        <a href="projects.html">Projeler</a>
-        <a href="skills.html">Uzmanlık</a>
-        <a href="contact.html">İletişim</a>
-    </nav>m</a>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="projeler.html">Projeler</a>
+        <a href="uzmanlik.html">Uzmanlık</a>
+        <a href="kitaplar.html">Kitaplar</a>
+        <a href="makaleler.html">Makaleler</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="sertifikalar.html">Sertifikalar</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="yolharitam.html">Yol Haritam</a>
+        <a href="iletisim.html">İletişim</a>
     </nav>
 </header>
 
 <div class="hero">
+    <div class="profile-img" style="background-image: url('profile.jpg');"></div>
     <h2>Teknolojiyi Üreten Bir Zihin</h2>
-    <p>Yazılım geliştirme, ERP sistemleri, siber güvenlik, IT altyapıları ve teknoloji araştırmaları üzerine çalışan çok disiplinli bir teknoloji üreticisiyim.</p>
-    <button class="btn">Keşfet</v 
+    <p>Yazılım geliştirme, siber güvenlik, ERP sistemleri, veri analizi ve IT altyapıları üzerine çalışan çok disiplinli bir teknoloji üreticisiyim.</p>
+    <button class="btn">Hakkımda</button>
+</div>
+
+</body>
+</html>

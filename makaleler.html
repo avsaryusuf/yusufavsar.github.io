@@ -5,128 +5,83 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Makaleler | Yusuf Avşar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
 
 <style>
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #0a0a0f;
-    color: white;
+.makale-container {
+    max-width: 1300px;
+    margin: 160px auto 80px auto;
+    padding: 20px;
 }
 
-header {
-    width: 100%;
-    padding: 20px 40px;
-    background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #5d00c9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-}
-
-.logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 32px;
+.makale-title {
+    text-align: center;
+    font-size: 42px;
     color: #be7aff;
+    margin-bottom: 40px;
 }
 
-nav {
-    display: flex;
-    gap: 22px;
-}
-nav a { color:white; text-decoration:none; font-size:17px; }
-nav a:hover { color:#be7aff; }
-
-.hamburger {
-    display:none;
-    flex-direction:column;
-    cursor:pointer;
-}
-.hamburger span {
-    width:28px;
-    height:3px;
-    background:#be7aff;
-    margin:4px 0;
+.makale-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 28px;
 }
 
-.mobile-menu {
-    position:fixed;
-    top:0;
-    left:-260px;
-    width:260px;
-    height:100%;
-    background:#0b001a;
-    padding:80px 20px;
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-    transition:.35s;
-    border-right:2px solid #5d00c9;
-}
-.mobile-menu a { font-size:20px; color:white; text-decoration:none; }
-.mobile-menu a:hover { color:#be7aff; }
-
-.container {
-    max-width:1100px;
-    margin:170px auto 40px auto;
-    padding:20px;
+.makale-card {
+    background: #12001f;
+    border: 1px solid #36005f;
+    padding: 25px;
+    border-radius: 16px;
+    transition: .35s;
+    cursor: pointer;
 }
 
-h2 {
-    font-size:36px;
-    color:#be7aff;
+.makale-card:hover {
+    transform: translateY(-7px);
+    border-color: #be7aff;
+    box-shadow: 0 0 16px #53008a;
 }
 
-/* Makale kartları */
-.articles {
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:25px;
+.makale-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    color: #d8aaff;
 }
 
-.article-card {
-    background:#12001f;
-    padding:20px;
-    border:1px solid #5d00c9;
-    border-radius:10px;
-    transition:.3s;
+.makale-card p {
+    color: #c8c8c8;
+    line-height: 1.6;
+    font-size: 15px;
 }
-.article-card:hover {
-    transform:translateY(-5px);
-    border-color:#be7aff;
-}
-.article-card h3 {
-    margin:0;
-    color:#be7aff;
-}
-.article-card p { opacity:.8; }
 
-/* Mobile */
-@media(max-width:950px){
-    nav{ display:none; }
-    .hamburger{ display:flex; }
-    .articles{ grid-template-columns:1fr; }
+.makale-tag {
+    display: inline-block;
+    background: #250040;
+    color: #d8aaff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+@media(max-width:950px) {
+    .makale-grid { grid-template-columns:1fr; }
 }
 
 </style>
 
 <script>
 function toggleMenu(){
-    let m=document.getElementById("mobileMenu");
-    m.style.left= m.style.left==="0px" ? "-260px" : "0px";
+    const m = document.getElementById("mobileMenu");
+    m.style.left = (m.style.left === "0px") ? "-260px" : "0px";
 }
 </script>
 
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
     <div class="logo">Yusuf Avşar</div>
 
@@ -136,7 +91,7 @@ function toggleMenu(){
         <a href="projeler.html">Projeler</a>
         <a href="uzmanlik.html">Uzmanlık</a>
         <a href="kitaplar.html">Kitaplar</a>
-        <a href="makaleler.html">Makaleler</a>
+        <a href="makaleler.html" class="active">Makaleler</a>
         <a href="hizmetler.html">Hizmetler</a>
         <a href="sertifikalar.html">Sertifikalar</a>
         <a href="galeri.html">Galeri</a>
@@ -149,13 +104,14 @@ function toggleMenu(){
     </div>
 </header>
 
+<!-- MOBIL MENU -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
     <a href="projeler.html">Projeler</a>
     <a href="uzmanlik.html">Uzmanlık</a>
     <a href="kitaplar.html">Kitaplar</a>
-    <a href="makaleler.html">Makaleler</a>
+    <a href="makaleler.html" class="active">Makaleler</a>
     <a href="hizmetler.html">Hizmetler</a>
     <a href="sertifikalar.html">Sertifikalar</a>
     <a href="galeri.html">Galeri</a>
@@ -163,29 +119,59 @@ function toggleMenu(){
     <a href="iletisim.html">İletişim</a>
 </div>
 
+<!-- ANA İÇERİK -->
+<div class="makale-container">
 
-<div class="container">
-    <h2>Makaleler</h2>
+    <h2 class="makale-title">Makaleler</h2>
 
-    <div class="articles">
+    <div class="makale-grid">
 
-        <a href="makale1.html" class="article-card">
-            <h3>Yapay Zekâ ile Kodlama: Yazılım Dünyasında Yeni Dönem</h3>
-            <p>Yapay zekânın yazılımcıların üretim hızını 4 kat artırdığı bu yeni çağda, kodlama alışkanlıkları kökten değişiyor...</p>
+        <!-- MAKALE 1 -->
+        <a href="makale1.html" style="text-decoration:none;">
+            <div class="makale-card">
+                <div class="makale-tag">Yapay Zekâ • Dijital Dönüşüm</div>
+                <h3>Yapay Zekâ Destekli Yazılım Geliştirme Döngüsü: 2025 ve Sonrası</h3>
+                <p>
+                    Global teknoloji şirketlerinin 2025 sonrasında benimsediği yapay zekâ tabanlı yazılım geliştirme 
+                    modelleri, ürün yaşam döngüsünü radikal şekilde değiştiriyor.  
+                    Yeni nesil iş akışları, otonom test süreçleri ve AI-first mimariler artık bir standart hâline geliyor. 
+                    Devamı için tıklayın...
+                </p>
+            </div>
         </a>
 
-        <a href="makale2.html" class="article-card">
-            <h3>Siber Güvenlikte 2025 Trendleri: Görünmeyeni Görebilmek</h3>
-            <p>Saldırılar artık insanlar yerine yapay zekâ tarafından yapılıyor. Peki savunma tarafı bunu nasıl önleyecek?</p>
+        <!-- MAKALE 2 -->
+        <a href="makale2.html" style="text-decoration:none;">
+            <div class="makale-card">
+                <div class="makale-tag">Siber Güvenlik</div>
+                <h3>2025 Siber Güvenlik Ekosistemi: Yeni Nesil Tehditler ve Savunma Stratejileri</h3>
+                <p>
+                    Saldırıların artık büyük kısmı insan değil yapay zekâ tarafından yönetiliyor.  
+                    Kurumlar için tehdit analizi, otonom saldırı simülasyonları ve davranışsal güvenlik 
+                    bu yılın en önemli gündemleri. Devamı için tıklayın...
+                </p>
+            </div>
         </a>
 
-        <a href="makale3.html" class="article-card">
-            <h3>ERP Sistemlerinin Evrimi: Şirketler Artık Neden Otomasyon İstiyor?</h3>
-            <p>Kurumsal süreçler neden otomasyonsuz ilerlemiyor? ERP neden artık bir lüks değil zorunluluk?</p>
+        <!-- MAKALE 3 -->
+        <a href="makale3.html" style="text-decoration:none;">
+            <div class="makale-card">
+                <div class="makale-tag">Kurumsal Yazılım • ERP</div>
+                <h3>ERP Sistemlerinin Yeni Evrimi: Otomasyon ve Yapay Zekâ ile Güçlenen Dijital İşletmeler</h3>
+                <p>
+                    Şirketlerin neden otomasyon olmadan ölçeklenemediği, ERP’nin artık lüks değil zorunluluk 
+                    olduğu ve veri merkezli karar alma süreçlerinin şirketleri nasıl dönüştürdüğü detaylı olarak ele alınıyor.
+                    Devamı için tıklayın...
+                </p>
+            </div>
         </a>
 
     </div>
 </div>
+
+<footer>
+    <p>© 2025 Yusuf Avşar — Tüm Hakları Saklıdır.</p>
+</footer>
 
 </body>
 </html>

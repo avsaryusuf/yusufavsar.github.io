@@ -152,3 +152,92 @@ footer span {
         display: flex;
     }
 }
+
+/* =========================================
+   YUSUF AI CHAT WIDGET
+   ========================================= */
+.ai-button {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #b06fff;
+    color: #fff;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    cursor:pointer;
+    box-shadow:0 0 18px rgba(176,111,255,0.6);
+    z-index:9999;
+    transition:0.3s;
+}
+
+.ai-button:hover {
+    transform: scale(1.1);
+}
+
+.ai-panel {
+    position: fixed;
+    bottom: 100px;
+    right: 28px;
+    width: 340px;
+    height: 480px;
+    background:#0d0d18;
+    border:1px solid #3e0071;
+    border-radius:14px;
+    display:none;
+    flex-direction:column;
+    box-shadow:0 0 25px rgba(176,111,255,0.23);
+    z-index:9998;
+}
+
+.ai-header {
+    padding:14px;
+    font-size:18px;
+    text-align:center;
+    color:#b06fff;
+    border-bottom:1px solid #3e0071;
+    font-weight:600;
+}
+
+.ai-messages {
+    flex:1;
+    padding:12px;
+    overflow-y:auto;
+    font-size:15px;
+    color:#ddd;
+}
+
+.ai-input-box {
+    display:flex;
+    gap:6px;
+    padding:12px;
+    border-top:1px solid #3e0071;
+}
+
+.ai-input-box input {
+    flex:1;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+    background:#1a1a26;
+    color:white;
+}
+
+.ai-input-box button {
+    padding:10px 14px;
+    border:none;
+    border-radius:8px;
+    background:#b06fff;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.ai-input-box button:hover {
+    background:#a357ff;
+}

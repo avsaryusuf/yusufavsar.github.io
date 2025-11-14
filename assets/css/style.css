@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0d0d0d;
+  color: #ffffff;
+  padding-bottom: 80px;
+}
+
+/* NAVBAR */
+nav {
+  width: 100%;
+  background: #121212;
+  padding: 20px;
+  border-bottom: 1px solid #222;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  justify-content: center;
+}
+
+nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: .3s;
+}
+
+nav ul li a:hover {
+  color: #00aaff;
+}
+
+/* HERO */
+.hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: .8;
+}
+
+/* YAPIM AŞAMASI */
+.construction {
+  margin-top: 40px;
+  padding: 20px 30px;
+  background: #1f1f1f;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  animation: glow 1.5s infinite ease-in-out;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #ffcc00; }
+  50% { box-shadow: 0 0 25px #ffcc00; }
+  100% { box-shadow: 0 0 10px #ffcc00; }
+}
+
+/* PAGES */
+.page-title {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-top: 60px;
+}
+
+.page-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  opacity: .7;
+}

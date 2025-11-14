@@ -5,83 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Uzmanlık | Yusuf Avşar</title>
 
+<!-- Tema -->
 <link rel="stylesheet" href="theme.css">
 
 <style>
 
-.page {
-    width: 90%;
-    max-width: 1200px;
-    margin: 150px auto 60px auto;
+.uzmanlik-container {
+    max-width: 1350px;
+    margin: 160px auto 80px auto;
+    padding: 20px;
 }
 
-.title {
+.uzmanlik-title {
     font-size: 42px;
-    font-weight: 700;
-    color: var(--neon-purple2);
     text-align: center;
-    margin-bottom: 15px;
+    color: #be7aff;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
 }
 
-.sub-title {
-    text-align: center;
-    font-size: 19px;
-    color: var(--text-muted);
-    margin-bottom: 55px;
-}
-
-.skills-grid {
+/* Grid */
+.uzmanlik-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
 }
 
-.skill-card {
-    background: var(--bg-dark2);
-    border: 1px solid #3a0063;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 0 18px rgba(150, 70, 255, 0.18);
-    transition: .3s;
+/* Kart */
+.uzmanlik-card {
+    background: #11001f;
+    border: 1px solid #3a0066;
+    border-radius: 16px;
+    padding: 25px;
+    transition: .35s;
+    position: relative;
 }
 
-.skill-card:hover {
+.uzmanlik-card:hover {
+    border-color: #be7aff;
     transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(150, 70, 255, 0.3);
+    box-shadow: 0 0 18px #43006c;
 }
 
-.skill-card h3 {
+.uzmanlik-card h3 {
     margin: 0 0 12px 0;
-    font-size: 23px;
-    color: var(--neon-purple);
+    font-size: 24px;
+    color: #d79cff;
 }
 
-.skill-card p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #d8caff;
+.uzmanlik-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #c9c9c9;
 }
 
-.tag-box {
-    margin-top: 15px;
-}
-
-.tag {
-    display: inline-block;
-    background: rgba(190, 122, 255, 0.12);
-    padding: 6px 12px;
-    font-size: 13px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    border-radius: 40px;
-    border: 1px solid var(--neon-purple2);
-}
-
-@media(max-width: 600px){
-    .skill-card { padding: 22px; }
+/* Mobil */
+@media(max-width: 950px) {
+    .uzmanlik-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 </style>
+
+<script>
+function toggleMenu(){
+    const m = document.getElementById("mobileMenu");
+    m.style.left = (m.style.left === "0px") ? "-260px" : "0px";
+}
+</script>
+
 </head>
 <body>
 
@@ -93,7 +86,7 @@
         <a href="index.html">Ana Sayfa</a>
         <a href="hakkimda.html">Hakkımda</a>
         <a href="projeler.html">Projeler</a>
-        <a href="uzmanlik.html">Uzmanlık</a>
+        <a href="uzmanlik.html" class="active">Uzmanlık</a>
         <a href="kitaplar.html">Kitaplar</a>
         <a href="makaleler.html">Makaleler</a>
         <a href="hizmetler.html">Hizmetler</a>
@@ -104,7 +97,9 @@
     </nav>
 
     <div class="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </header>
 
@@ -113,7 +108,7 @@
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
     <a href="projeler.html">Projeler</a>
-    <a href="uzmanlik.html">Uzmanlık</a>
+    <a href="uzmanlik.html" class="active">Uzmanlık</a>
     <a href="kitaplar.html">Kitaplar</a>
     <a href="makaleler.html">Makaleler</a>
     <a href="hizmetler.html">Hizmetler</a>
@@ -123,114 +118,107 @@
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<!-- ===== PAGE CONTENT ===== -->
+<!-- ANA İÇERİK -->
+<div class="uzmanlik-container">
 
-<div class="page">
+    <h2 class="uzmanlik-title">Uzmanlık Alanlarım</h2>
 
-    <div class="title">Uzmanlık Alanlarım</div>
-    <div class="sub-title">Siber güvenlikten yapay zekâya, kurumsal yazılımdan analiz sistemlerine kadar geniş ve derin teknik yetkinlik.</div>
+    <div class="uzmanlik-grid">
 
-    <div class="skills-grid">
-
-        <!-- ALAN 1 -->
-        <div class="skill-card">
-            <h3>Siber Güvenlik & Savunma Sistemleri</h3>
-            <p>
-                Ağ trafiği analizi, tehdit avcılığı, davranışsal saldırı tespiti,
-                firewall tasarımı, zafiyet analizi ve kurumsal güvenlik politikaları üzerine uzmanlık.
-            </p>
-            <div class="tag-box">
-                <span class="tag">Pentest</span>
-                <span class="tag">IDS/IPS</span>
-                <span class="tag">Threat Analysis</span>
-                <span class="tag">SOC</span>
-            </div>
-        </div>
-
-        <!-- ALAN 2 -->
-        <div class="skill-card">
+        <!-- 1 -->
+        <div class="uzmanlik-card">
             <h3>Yapay Zekâ & Makine Öğrenimi</h3>
             <p>
-                Kod denetleme, tehdit tespiti, veri tahmini, model eğitimi ve NLP temelli
-                asistan sistemleri geliştirme deneyimi.
+                Anomali tespiti, risk tahmini, metin sınıflandırma, veri tahmini
+                ve NLP tabanlı asistan modelleri geliştiriyorum.  
+                Python tabanlı veri işleme, model eğitimi ve kurumsal AI çözümleri üzerine uzmanım.
             </p>
-            <div class="tag-box">
-                <span class="tag">Python</span>
-                <span class="tag">ML</span>
-                <span class="tag">NLP</span>
-                <span class="tag">Automation AI</span>
-            </div>
         </div>
 
-        <!-- ALAN 3 -->
-        <div class="skill-card">
-            <h3>Kurumsal Yazılım & Analiz Sistemleri</h3>
+        <!-- 2 -->
+        <div class="uzmanlik-card">
+            <h3>Kurumsal Yazılım Geliştirme</h3>
             <p>
-                Orta ve büyük ölçekli işletmelere özel ERP modülleri, otomasyon çözümleri,
-                veri işleme ve karar destek sistemi geliştirme.
+                Orta ve büyük ölçekli şirketlere özel ERP modülleri, operasyon yönetimi,
+                vardiya ve lokasyon sistemleri, teklif–kontrat süreçleri ve 
+                kurumsal iş akışları oluşturuyorum.
             </p>
-            <div class="tag-box">
-                <span class="tag">ERP</span>
-                <span class="tag">Raporlama</span>
-                <span class="tag">Veri Yönetimi</span>
-            </div>
         </div>
 
-        <!-- ALAN 4 -->
-        <div class="skill-card">
-            <h3>Yazılım Mimarisi & Sistem Tasarımı</h3>
+        <!-- 3 -->
+        <div class="uzmanlik-card">
+            <h3>Veri Analizi & Karar Destek Sistemleri</h3>
             <p>
-                Yüksek ölçeklenebilir sistemler, güvenli API yapıları, mikroservis mimarileri
-                ve performans optimizasyonlarında ileri düzey bilgi.
+                KPI analizi, operasyon trendleri, performans göstergeleri ve otomatik rapor üreten
+                sistemler geliştiriyorum.  
+                Yönetici panelleri için veri görselleştirme tasarlıyorum.
             </p>
-            <div class="tag-box">
-                <span class="tag">API</span>
-                <span class="tag">Backend</span>
-                <span class="tag">Scalable Systems</span>
-            </div>
         </div>
 
-        <!-- ALAN 5 -->
-        <div class="skill-card">
-            <h3>Ağ Güvenliği & Protokol Tasarımı</h3>
+        <!-- 4 -->
+        <div class="uzmanlik-card">
+            <h3>Otomasyon & Süreç Dijitalleştirme</h3>
             <p>
-                Katmanlı ağ yapıları, paket analizi, protokol sertleştirme ve
-                güvenli iletişim altyapısı tasarımı.
+                Manuel süreçleri dijital akışlara dönüştüren sistemler kuruyorum.  
+                Görev akışı, onay zinciri, bildirim otomasyonu ve departman geçişlerini optimize ediyorum.
             </p>
-            <div class="tag-box">
-                <span class="tag">Network</span>
-                <span class="tag">Packet Analysis</span>
-                <span class="tag">Zero Trust</span>
-            </div>
         </div>
 
-        <!-- ALAN 6 -->
-        <div class="skill-card">
-            <h3>Teknoloji Araştırmaları & Danışmanlık</h3>
+        <!-- 5 -->
+        <div class="uzmanlik-card">
+            <h3>Web API & Backend Mimarı</h3>
             <p>
-                Yeni nesil yazılım trendleri, siber güvenlik standartları, üretken yapay zekâ
-                ve kurumsal dijital dönüşüm üzerine çalışmalar.
+                REST API, kimlik doğrulama, veri güvenliği, performans optimizasyonu ve 
+                backend mimari tasarımı yapıyorum.  
+                Modüler, güvenli, ölçeklenebilir sistemler geliştiriyorum.
             </p>
-            <div class="tag-box">
-                <span class="tag">Research</span>
-                <span class="tag">Tech Advisor</span>
-                <span class="tag">AI Trends</span>
-            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="uzmanlik-card">
+            <h3>Yönetim Paneli & Dashboard Tasarımı</h3>
+            <p>
+                Üst düzey yöneticilerin ihtiyaçlarına göre hazırlanmış, gerçek zamanlı
+                veri akışlı yönetim panelleri geliştiriyorum.  
+                Performans, risk ve operasyon analiz modülleri içerir.
+            </p>
+        </div>
+
+        <!-- 7 -->
+        <div class="uzmanlik-card">
+            <h3>ERP – CRM – HR Entegrasyonları</h3>
+            <p>
+                Kurumsal sistemler arasında veri eşitleme, otomasyon ve 
+                süreç hızlandırma entegrasyonları geliştiriyorum.  
+                API bağlantıları ve özel middleware çözümleri sunuyorum.
+            </p>
+        </div>
+
+        <!-- 8 -->
+        <div class="uzmanlik-card">
+            <h3>Siber Güvenlik Teknolojileri</h3>
+            <p>
+                Ağ trafiği analizi, zararlı davranış tespit sistemleri, log yönetimi, 
+                mini-SIEM yapıları ve güvenlik olay raporlama modülleri geliştiriyorum.
+            </p>
+        </div>
+
+        <!-- 9 -->
+        <div class="uzmanlik-card">
+            <h3>Envanter & Cihaz Yönetim Sistemleri</h3>
+            <p>
+                QR/NFC zimmet sistemi, cihaz geçmişi, arıza takibi, bakım planlaması ve 
+                lokasyon bazlı envanter haritalama çözümleri sunuyorum.
+            </p>
         </div>
 
     </div>
-
 </div>
 
+<!-- FOOTER -->
 <footer>
-    © 2025 <span>Yusuf Avşar</span> — Tüm Hakları Saklıdır.
+    <p>© 2025 Yusuf Avşar — Tüm Hakları Saklıdır.</p>
 </footer>
-
-<script>
-function toggleMenu(){
-    document.getElementById("mobileMenu").classList.toggle("show");
-}
-</script>
 
 </body>
 </html>

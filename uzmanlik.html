@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Uzmanlık | Yusuf Avşar</title>
 
-<!-- Tema -->
 <link rel="stylesheet" href="theme.css">
 
 <style>
@@ -66,6 +65,106 @@
     }
 }
 
+/* AI BUTTON */
+.ai-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #be7aff;
+    color: #fff;
+    font-size: 26px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(176,111,255,0.7);
+    transition: 0.3s;
+    z-index: 999;
+}
+.ai-button:hover {
+    transform: scale(1.1);
+}
+
+/* AI PANEL */
+.ai-panel {
+    position: fixed;
+    bottom: 100px;
+    right: -360px;
+    width: 350px;
+    height: 480px;
+    background: #11001c;
+    border: 1px solid #be7aff;
+    border-radius: 12px;
+    display: none;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.ai-header {
+    padding: 15px;
+    text-align: center;
+    background: #be7aff;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px 12px 0 0;
+}
+
+.ai-messages {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    color: #ddd;
+    font-size: 14px;
+}
+
+.ai-input-box {
+    display: flex;
+    border-top: 1px solid #290049;
+}
+
+.ai-input-box input {
+    flex: 1;
+    padding: 12px;
+    background: #1a0128;
+    color: white;
+    border: none;
+}
+
+.ai-input-box button {
+    padding: 12px 18px;
+    background: #be7aff;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Telif Modal */
+#telifModal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    padding: 20px;
+}
+
+#telifModal .modal-content {
+    background:#14001f;
+    max-width:800px; width:100%;
+    padding:35px;
+    border-radius:12px;
+    border:1px solid #be7aff;
+    max-height:90%;
+    overflow-y:auto;
+    color:white;
+}
+
 </style>
 
 <script>
@@ -85,7 +184,7 @@ function toggleMenu(){
         <a href="index.html">Ana Sayfa</a>
         <a href="hakkimda.html">Hakkımda</a>
         <a href="projeler.html">Projeler</a>
-        <a href="uzmanlik.html">Uzmanlık</a>
+        <a href="uzmanlik.html" class="active">Uzmanlık</a>
         <a href="makaleler.html">Makaleler</a>
         <a href="hizmetler.html">Hizmetler</a>
         <a href="sertifikalar.html">Sertifikalar</a>
@@ -104,25 +203,10 @@ function toggleMenu(){
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
     <a href="projeler.html">Projeler</a>
-    <a href="uzmanlik.html">Uzmanlık</a>
-    <a href="makaleler.html">Makaleler</a>
-    <a href="hizmetler.html">Hizmetler</a>
-    <a href="sertifikalar.html">Sertifikalar</a>
-    <a href="iletisim.html">İletişim</a>
-</div>
-
-<!-- MOBIL MENU -->
-<div id="mobileMenu" class="mobile-menu">
-    <a href="index.html">Ana Sayfa</a>
-    <a href="hakkimda.html">Hakkımda</a>
-    <a href="projeler.html">Projeler</a>
     <a href="uzmanlik.html" class="active">Uzmanlık</a>
-    <a href="kitaplar.html">Kitaplar</a>
     <a href="makaleler.html">Makaleler</a>
     <a href="hizmetler.html">Hizmetler</a>
     <a href="sertifikalar.html">Sertifikalar</a>
-    <a href="galeri.html">Galeri</a>
-    <a href="yolharitam.html">Yol Haritam</a>
     <a href="iletisim.html">İletişim</a>
 </div>
 
@@ -133,102 +217,84 @@ function toggleMenu(){
 
     <div class="uzmanlik-grid">
 
-        <!-- 1 -->
         <div class="uzmanlik-card">
             <h3>Yapay Zekâ & Makine Öğrenimi</h3>
-            <p>
-                Anomali tespiti, risk tahmini, metin sınıflandırma, veri tahmini
-                ve NLP tabanlı asistan modelleri geliştiriyorum.  
-                Python tabanlı veri işleme, model eğitimi ve kurumsal AI çözümleri üzerine uzmanım.
-            </p>
+            <p>Anomali tespiti, risk tahmini, metin sınıflandırma, NLP modelleri ve AI çözümleri geliştiriyorum.</p>
         </div>
 
-        <!-- 2 -->
         <div class="uzmanlik-card">
             <h3>Kurumsal Yazılım Geliştirme</h3>
-            <p>
-                Orta ve büyük ölçekli şirketlere özel ERP modülleri, operasyon yönetimi,
-                vardiya ve lokasyon sistemleri, teklif–kontrat süreçleri ve 
-                kurumsal iş akışları oluşturuyorum.
-            </p>
+            <p>ERP modülleri, iş akışları, süreç otomasyonları ve kurumsal sistem geliştirme.</p>
         </div>
 
-        <!-- 3 -->
         <div class="uzmanlik-card">
-            <h3>Veri Analizi & Karar Destek Sistemleri</h3>
-            <p>
-                KPI analizi, operasyon trendleri, performans göstergeleri ve otomatik rapor üreten
-                sistemler geliştiriyorum.  
-                Yönetici panelleri için veri görselleştirme tasarlıyorum.
-            </p>
+            <h3>Veri Analizi & Dashboard</h3>
+            <p>KPI analizi, otomatik raporlama sistemleri ve yönetici panelleri oluşturuyorum.</p>
         </div>
 
-        <!-- 4 -->
         <div class="uzmanlik-card">
-            <h3>Otomasyon & Süreç Dijitalleştirme</h3>
-            <p>
-                Manuel süreçleri dijital akışlara dönüştüren sistemler kuruyorum.  
-                Görev akışı, onay zinciri, bildirim otomasyonu ve departman geçişlerini optimize ediyorum.
-            </p>
+            <h3>Otomasyon Sistemleri</h3>
+            <p>İş süreçlerini dijitalleştiren otomasyon akışları, onay zincirleri ve bildirim sistemleri.</p>
         </div>
 
-        <!-- 5 -->
         <div class="uzmanlik-card">
-            <h3>Web API & Backend Mimarı</h3>
-            <p>
-                REST API, kimlik doğrulama, veri güvenliği, performans optimizasyonu ve 
-                backend mimari tasarımı yapıyorum.  
-                Modüler, güvenli, ölçeklenebilir sistemler geliştiriyorum.
-            </p>
+            <h3>Backend & API Geliştirme</h3>
+            <p>REST API, kimlik doğrulama, güvenli ve ölçeklenebilir backend mimarileri.</p>
         </div>
 
-        <!-- 6 -->
-        <div class="uzmanlik-card">
-            <h3>Yönetim Paneli & Dashboard Tasarımı</h3>
-            <p>
-                Üst düzey yöneticilerin ihtiyaçlarına göre hazırlanmış, gerçek zamanlı
-                veri akışlı yönetim panelleri geliştiriyorum.  
-                Performans, risk ve operasyon analiz modülleri içerir.
-            </p>
-        </div>
-
-        <!-- 7 -->
         <div class="uzmanlik-card">
             <h3>ERP – CRM – HR Entegrasyonları</h3>
-            <p>
-                Kurumsal sistemler arasında veri eşitleme, otomasyon ve 
-                süreç hızlandırma entegrasyonları geliştiriyorum.  
-                API bağlantıları ve özel middleware çözümleri sunuyorum.
-            </p>
+            <p>Kurumsal sistem entegrasyonları, middleware yapıları ve veri senkronizasyonu.</p>
         </div>
 
-        <!-- 8 -->
         <div class="uzmanlik-card">
-            <h3>Siber Güvenlik Teknolojileri</h3>
-            <p>
-                Ağ trafiği analizi, zararlı davranış tespit sistemleri, log yönetimi, 
-                mini-SIEM yapıları ve güvenlik olay raporlama modülleri geliştiriyorum.
-            </p>
+            <h3>Siber Güvenlik</h3>
+            <p>Ağ analizi, tehdit tespiti, log yönetimi ve mini-SIEM sistemleri geliştiriyorum.</p>
         </div>
 
-        <!-- 9 -->
         <div class="uzmanlik-card">
-            <h3>Envanter & Cihaz Yönetim Sistemleri</h3>
-            <p>
-                QR/NFC zimmet sistemi, cihaz geçmişi, arıza takibi, bakım planlaması ve 
-                lokasyon bazlı envanter haritalama çözümleri sunuyorum.
-            </p>
+            <h3>Envanter Sistemleri</h3>
+            <p>Zimmet, bakım, cihaz geçmişi, QR/NFC takip ve lokasyon bazlı yönetim sistemleri.</p>
         </div>
 
     </div>
 </div>
 
 <!-- FOOTER -->
-<footer>
-    <p>© 2025 Yusuf Avşar — Tüm Hakları Saklıdır.</p>
+<footer style="text-align:center; padding:25px; color:#ccc;">
+    © 2025 Yusuf Avşar — Tüm Hakları Saklıdır.
+    <br>
+    <button onclick="openTelif()" 
+        style="margin-top:10px; background:none; border:1px solid #be7aff;
+               padding:8px 18px; color:white; border-radius:8px; cursor:pointer;">
+        Telif & Kullanım Şartları
+    </button>
 </footer>
 
-<!-- YUSUF AI CHAT WIDGET -->
+<!-- TELİF MODAL -->
+<div id="telifModal">
+    <div class="modal-content">
+        <h2 style="color:#be7aff;">Telif Hakkı & Kullanım Şartları</h2>
+
+        <p style="line-height:1.7;">
+            Bu sitedeki tüm içerikler 5846 Sayılı Fikir ve Sanat Eserleri Kanunu ile
+            uluslararası DMCA, WIPO ve dijital telif yasaları kapsamında korunmaktadır.
+            <br><br>
+            • İçeriklerin izinsiz kopyalanması, çoğaltılması, ticari olarak kullanılması yasaktır.<br>
+            • KVKK kapsamında kişisel veriler korunur, üçüncü kişilerle paylaşılmaz.<br>
+            • Yapay zekâ modülü tavsiye amaçlıdır; tüm sorumluluk kullanıcıya aittir.<br><br>
+            İletişim: <b>avsaryusufsgu@gmail.com</b>
+        </p>
+
+        <button onclick="closeTelif()" 
+            style="margin-top:20px; padding:10px 18px; background:#be7aff;
+                   border:none; color:white; border-radius:8px; cursor:pointer;">
+            Kapat
+        </button>
+    </div>
+</div>
+
+<!-- AI WIDGET -->
 <div id="yusufAiBtn" class="ai-button">🤖</div>
 
 <div id="yusufAiPanel" class="ai-panel">
@@ -236,71 +302,58 @@ function toggleMenu(){
     <div class="ai-messages" id="aiMessages"></div>
 
     <div class="ai-input-box">
-        <input type="text" id="aiInput" placeholder="Sorunu yaz..." />
+        <input type="text" id="aiInput" placeholder="Sorunu yaz...">
         <button onclick="sendToYusufAI()">Gönder</button>
     </div>
 </div>
 
 <script>
-// Panel Aç/Kapat
+/* AI PANEL */
 const aiBtn = document.getElementById("yusufAiBtn");
 const aiPanel = document.getElementById("yusufAiPanel");
+
 aiBtn.onclick = () => {
     aiPanel.style.display = aiPanel.style.display === "flex" ? "none" : "flex";
 };
 
-// Mesaj Gönderme
 async function sendToYusufAI() {
     const input = document.getElementById("aiInput");
     const msgBox = document.getElementById("aiMessages");
     const text = input.value.trim();
     if (!text) return;
 
-    // Kullanıcı mesajı ekle
     msgBox.innerHTML += `<div><b>Sen:</b> ${text}</div>`;
     input.value = "";
 
-    // Data.json'dan verileri çek
     const data = await fetch("data.json").then(r => r.json());
-
-    // Arama yap
     const response = getBestMatch(text, data);
 
-    // Cevabı ekle
-    msgBox.innerHTML += `<div style='margin-top:6px; color:#b06fff;'><b>Yusuf AI:</b> ${response}</div>`;
-
+    msgBox.innerHTML += `<div style='color:#be7aff; margin-top:4px;'><b>Yusuf AI:</b> ${response}</div>`;
     msgBox.scrollTop = msgBox.scrollHeight;
 }
 
-
-// Basit Yapay Zekâ → En uygun bölümü buluyor
 function getBestMatch(question, data) {
     question = question.toLowerCase();
 
-    let best = "Bu konuda şu anda elimde veri yok. Lütfen daha farklı sorabilirsin.";
+    if (question.includes("kim") || question.includes("hakkında")) return data.hakkimda;
+    if (question.includes("proje")) return data.projeler;
+    if (question.includes("uzman")) return data.uzmanlik;
+    if (question.includes("makale")) return data.makaleler;
+    if (question.includes("hizmet")) return data.hizmetler;
+    if (question.includes("sertifika")) return data.sertifikalar;
 
-    if (question.includes("kim") || question.includes("hakkında") || question.includes("yusuf"))
-        best = data.hakkimda;
-
-    else if (question.includes("proje") || question.includes("ne geliştiriyorsun"))
-        best = data.projeler;
-
-    else if (question.includes("uzman") || question.includes("alan") || question.includes("tecrüb"))
-        best = data.uzmanlik;
-
-    else if (question.includes("makale") || question.includes("yazı"))
-        best = data.makaleler;
-
-    else if (question.includes("hizmet"))
-        best = data.hizmetler;
-
-    else if (question.includes("sertifika"))
-        best = data.sertifikalar;
-
-    return best;
+    return "Bu konuda elimde bilgi yok. Daha farklı sorabilirsin.";
 }
+
+/* TELİF MODAL */
+function openTelif() {
+    document.getElementById("telifModal").style.display = "flex";
+}
+function closeTelif() {
+    document.getElementById("telifModal").style.display = "none";
+}
+
 </script>
 
-    
 </body>
 </html>

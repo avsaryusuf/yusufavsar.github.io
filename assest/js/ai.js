@@ -1,78 +1,80 @@
-/* ==========================================================
-   Yusuf AI — JavaScript
-   ========================================================== */
+// ===============================
+// YUSUF AI WIDGET - PROFESSIONAL
+// ===============================
 
-// Elementler
-const yBtn = document.getElementById("yusufAiBtn");
-const yPanel = document.getElementById("yusufAiPanel");
-const yInput = document.getElementById("aiInput");
-const yMessages = document.getElementById("aiMessages");
+// Panel Aç/Kapat
+document.addEventListener("DOMContentLoaded", () => {
 
-// PANEL AÇ/KAPAT
-yBtn.onclick = () => {
-    yPanel.style.display = yPanel.style.display === "flex" ? "none" : "flex";
-    yMessages.scrollTop = yMessages.scrollHeight;
-};
+    const aiBtn = document.getElementById("yusufAiBtn");
+    const aiPanel = document.getElementById("yusufAiPanel");
+    const aiMessages = document.getElementById("aiMessages");
+    const aiInput = document.getElementById("aiInput");
 
-// ENTER TUŞU DESTEK
-yInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") sendToYusufAI();
+    if (!aiBtn || !aiPanel) return;
+
+    aiBtn.onclick = () => {
+        aiPanel.style.display = aiPanel.style.display === "flex" ? "none" : "flex";
+    };
+
+    // Enter tuşu ile mesaj gönderme
+    aiInput?.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendToYusufAI();
+    });
+
 });
 
-// MESAJ GÖNDERME
+
+// ===============================
+// Mesaj Gönderme
+// ===============================
 async function sendToYusufAI() {
-    const text = yInput.value.trim();
+
+    const input = document.getElementById("aiInput");
+    const messages = document.getElementById("aiMessages");
+
+    if (!input) return;
+
+    const text = input.value.trim();
     if (!text) return;
 
-    addMessage("sen", text);
-    yInput.value = "";
+    // Kullanıcı mesajı
+    messages.innerHTML += `<div class="msg user"><span>Sen:</span> ${text}</div>`;
+    input.value = "";
 
-    // data.js yükle
+    // Data JSON
     const data = await fetch("data.js").then(r => r.json());
 
-    // cevap bul
-    const response = getBestMatch(text.toLowerCase(), data);
+    // Cevap bul
+    const reply = getBestMatch(text, data);
 
-    setTimeout(() => {
-        addMessage("ai", response);
-    }, 300);
+    // AI cevabı
+    messages.innerHTML += `<div class="msg ai"><span>Yusuf AI:</span> ${reply}</div>`;
+
+    messages.scrollTop = messages.scrollHeight;
 }
 
-// MESAJ EKLEME
-function addMessage(sender, text) {
-    if (sender === "sen") {
-        yMessages.innerHTML += `
-            <div><b>Sen:</b> ${text}</div>
-        `;
-    } else {
-        yMessages.innerHTML += `
-            <div style="color:#b06fff; margin-top:6px;"><b>Yusuf AI:</b> ${text}</div>
-        `;
+
+// ===============================
+// BASIC NLP MATCHING
+// ===============================
+function getBestMatch(question, data) {
+
+    const q = question.toLowerCase();
+
+    const map = [
+        { keys: ["kim", "hakkında", "yusuf"], field: "hakkimda" },
+        { keys: ["proje", "ne geliştiriyorsun"], field: "projeler" },
+        { keys: ["uzman", "alan", "tecrüb"], field: "uzmanlik" },
+        { keys: ["makale", "yazı"], field: "makaleler" },
+        { keys: ["hizmet"], field: "hizmetler" },
+        { keys: ["sertifika"], field: "sertifikalar" }
+    ];
+
+    for (const item of map) {
+        if (item.keys.some(k => q.includes(k))) {
+            return data[item.field];
+        }
     }
-    yMessages.scrollTop = yMessages.scrollHeight;
-}
-
-// BASİT YAPAY ZEKÂ
-function getBestMatch(q, data) {
-    if (!data) return "Veri dosyasına ulaşılamadı.";
-
-    if (q.includes("kimdir") || q.includes("kim") || q.includes("hakkında") || q.includes("yusuf"))
-        return data.hakkimda;
-
-    if (q.includes("proje") || q.includes("ne geliştiriyorsun") || q.includes("projelerin"))
-        return data.projeler;
-
-    if (q.includes("uzmanlık") || q.includes("tecrübe") || q.includes("alan"))
-        return data.uzmanlik;
-
-    if (q.includes("makale") || q.includes("yazı"))
-        return data.makaleler;
-
-    if (q.includes("hizmet"))
-        return data.hizmetler;
-
-    if (q.includes("sertifika"))
-        return data.sertifikalar;
 
     return data.default;
 }

@@ -241,6 +241,66 @@ function toggleMenu(){
     </div>
 </div>
 
+<script>
+// Panel Aç/Kapat
+const aiBtn = document.getElementById("yusufAiBtn");
+const aiPanel = document.getElementById("yusufAiPanel");
+aiBtn.onclick = () => {
+    aiPanel.style.display = aiPanel.style.display === "flex" ? "none" : "flex";
+};
+
+// Mesaj Gönderme
+async function sendToYusufAI() {
+    const input = document.getElementById("aiInput");
+    const msgBox = document.getElementById("aiMessages");
+    const text = input.value.trim();
+    if (!text) return;
+
+    // Kullanıcı mesajı ekle
+    msgBox.innerHTML += `<div><b>Sen:</b> ${text}</div>`;
+    input.value = "";
+
+    // Data.json'dan verileri çek
+    const data = await fetch("data.json").then(r => r.json());
+
+    // Arama yap
+    const response = getBestMatch(text, data);
+
+    // Cevabı ekle
+    msgBox.innerHTML += `<div style='margin-top:6px; color:#b06fff;'><b>Yusuf AI:</b> ${response}</div>`;
+
+    msgBox.scrollTop = msgBox.scrollHeight;
+}
+
+
+// Basit Yapay Zekâ → En uygun bölümü buluyor
+function getBestMatch(question, data) {
+    question = question.toLowerCase();
+
+    let best = "Bu konuda şu anda elimde veri yok. Lütfen daha farklı sorabilirsin.";
+
+    if (question.includes("kim") || question.includes("hakkında") || question.includes("yusuf"))
+        best = data.hakkimda;
+
+    else if (question.includes("proje") || question.includes("ne geliştiriyorsun"))
+        best = data.projeler;
+
+    else if (question.includes("uzman") || question.includes("alan") || question.includes("tecrüb"))
+        best = data.uzmanlik;
+
+    else if (question.includes("makale") || question.includes("yazı"))
+        best = data.makaleler;
+
+    else if (question.includes("hizmet"))
+        best = data.hizmetler;
+
+    else if (question.includes("sertifika"))
+        best = data.sertifikalar;
+
+    return best;
+}
+</script>
+
     
 </body>
 </html>

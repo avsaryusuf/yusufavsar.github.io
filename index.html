@@ -3,22 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ana Sayfa | Yusuf Avşar</title>
+<title>Yusuf Avşar | Ana Sayfa</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
 
-<script>
-function toggleMenu(){
-    const menu = document.getElementById("mobileMenu");
-    menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
+<style>
+/* ===========================
+   ANASAYFA ÖZEL TASARIM
+   =========================== */
+
+/* HERO */
+.hero {
+    margin-top: 120px;
+    padding: 80px 40px;
+    text-align: center;
 }
-</script>
+
+.hero-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--neon-purple2);
+    text-shadow: 0 0 18px rgba(176,111,255,0.7);
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero-sub {
+    margin-top: 20px;
+    font-size: 19px;
+    color: var(--text-muted);
+}
+
+/* SECTIONS */
+.section-title {
+    font-size: 32px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--neon-purple2);
+}
+
+.section-box {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* KART GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* KART */
+.card {
+    background: var(--bg-dark2);
+    border: 1px solid #2b004f;
+    padding: 25px;
+    border-radius: 14px;
+    transition: 0.3s;
+    min-height: 170px;
+}
+
+.card:hover {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 25px rgba(176,111,255,0.25);
+}
+
+/* CARD TITLE */
+.card-title {
+    font-size: 22px;
+    color: var(--neon-purple2);
+    margin-bottom: 12px;
+}
+
+/* CARD TEXT */
+.card-text {
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+/* FOOTER SPACE */
+.space {
+    margin-bottom: 70px;
+}
+</style>
 
 </head>
-
 <body>
 
+<!-- HEADER -->
 <header>
     <div class="logo">Yusuf Avşar</div>
 
@@ -37,10 +113,13 @@ function toggleMenu(){
     </nav>
 
     <div class="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 </header>
 
+<!-- MOBILE MENU -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
@@ -55,18 +134,107 @@ function toggleMenu(){
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<!-- === ANA İÇERİK === -->
-<div class="container" style="text-align:center;">
 
-    <h1 class="page-title">Site Kurulum Aşamasındadır</h1>
+<!-- HERO -->
+<section class="hero">
+    <h1 class="hero-title">
+        Yüksek teknolojiyi bireysel seviyede üreten, global ölçekte çalışan bir geliştirici.
+    </h1>
+    <p class="hero-sub">Yazılım • Siber Güvenlik • Yapay Zekâ • Araştırma & Geliştirme</p>
+</section>
 
-    <p style="font-size:20px; max-width:800px; margin:auto; line-height:1.8;">
-        Yusuf Avşar’ın kişisel web alanına hoş geldiniz.  
-        Bu site aktif olarak geliştirilmektedir.  
-        Yakında projeler, uzmanlıklar, makaleler, siber güvenlik analizleri ve daha fazlası profesyonel bir şekilde yayında olacaktır.
-    </p>
 
+<!-- BÖLÜM: BAŞARILAR -->
+<h2 class="section-title">Başarılarım</h2>
+<div class="section-box">
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-title">14+ Yıllık Tecrübe</div>
+            <div class="card-text">2010 yılından beri yazılım ve teknoloji dünyasında aktif üretim, araştırma ve geliştirme.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">300+ Proje</div>
+            <div class="card-text">Çeşitli sektörlerde, farklı teknolojilerle geliştirilen yazılım projeleri.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Global Araştırma</div>
+            <div class="card-text">ABD, Norveç, İngiltere ve Singapur’da teknoloji üzerine çalışmalar.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Siber Güvenlik</div>
+            <div class="card-text">Kurumsal firmalara siber güvenlik yönetimi ve danışmanlığı.</div>
+        </div>
+
+    </div>
 </div>
+
+
+<!-- BÖLÜM: PROJELER (PREVIEW) -->
+<h2 class="section-title">Öne Çıkan Projeler</h2>
+<div class="section-box">
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-title">Kurumsal ERP Sistemi</div>
+            <div class="card-text">Tam entegre stok, personel, muhasebe ve raporlama fonksiyonlarına sahip gelişmiş ERP yazılımı.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Siber Güvenlik Otomasyonu</div>
+            <div class="card-text">Ağ tarama, raporlama ve tehdit tespiti için geliştirilen özel güvenlik sistemi.</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">AI Tabanlı Analiz Sistemi</div>
+            <div class="card-text">Veri analizi, trend tahmini ve otomatik karar sistemi sunan yapay zekâ projesi.</div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- BÖLÜM: MAKALELER -->
+<h2 class="section-title">Son Makaleler</h2>
+<div class="section-box">
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-title">Yapay Zekâ ve Modern Yazılım</div>
+            <div class="card-text">Yazılım geliştirme süreçlerinin yapay zekâ ile yeniden şekillenmesi...</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Siber Güvenlikte 2025 Trendleri</div>
+            <div class="card-text">Yeni tehdit türleri, koruma teknikleri ve ileri seviye güvenlik metodları...</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Kurumsal Sistem Mimarisi</div>
+            <div class="card-text">Büyük ölçekli yazılım mimarilerinin modern yaklaşımı...</div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="space"></div>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 <span>Yusuf Avşar</span> — Tüm Hakları Saklıdır.
+</footer>
+
+
+<!-- JS -->
+<script>
+function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>

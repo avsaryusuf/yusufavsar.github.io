@@ -5,66 +5,170 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hakkımda | Yusuf Avşar</title>
 
-<link rel="stylesheet" href="theme.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
-/* HAKKIMDA SAYFASI TASARIMI */
 
-.page {
-    width: 90%;
-    max-width: 1100px;
-    margin: 150px auto 60px auto;
+/* GENEL */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0f;
+    color: #fff;
 }
 
-.title {
+/* HEADER — minimalist */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.45);
+    border-bottom: 1px solid #5d00c9;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    color: #be7aff;
+    font-size: 32px;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover { color:#be7aff; }
+
+/* HAKKIMDA METNİ */
+.about {
+    max-width: 900px;
+    margin: 160px auto 60px auto;
+    padding: 20px;
+}
+
+.about h1 {
     font-size: 42px;
-    font-weight: 700;
-    color: var(--neon-purple2);
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.sub-title {
-    font-size: 20px;
-    text-align: center;
-    color: var(--text-muted);
-    margin-bottom: 50px;
-}
-
-.text-box {
-    background: var(--bg-dark2);
-    border: 1px solid #2b004f;
-    padding: 40px;
-    border-radius: 18px;
-    line-height: 1.8;
-    font-size: 18px;
-    box-shadow: 0 0 25px rgba(140, 60, 255, 0.15);
-}
-
-.text-box p {
-    color: #d7c7ff;
     margin-bottom: 20px;
+    color: #be7aff;
 }
 
-/* Quote */
-.quote {
-    margin-top: 40px;
-    padding: 25px;
-    background: rgba(190, 122, 255, 0.05);
-    border-left: 4px solid var(--neon-purple2);
+.about p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+/* TIMELINE GENEL */
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* ORTA ÇİZGİ */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: #5d00c9;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* MADDE */
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* SOL MADDE */
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+/* SAĞ MADDE */
+.timeline-item.right {
+    left: 50%;
+}
+
+/* NOKTACIK */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    width: 18px;
+    height: 18px;
+    background: #be7aff;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.timeline-item.left::before { right: -12px; }
+.timeline-item.right::before { left: -12px; }
+
+/* KUTU */
+.timeline-content {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #be7aff33;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.timeline-content h3 {
+    margin: 0 0 8px;
+    color: #be7aff;
     font-size: 20px;
-    font-style: italic;
-    color: var(--neon-purple);
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 15px;
+    color: #ddd;
+}
+
+/* MOBİL */
+@media(max-width: 900px) {
+
+    nav { display: none; }
+
+    .timeline::after {
+        left: 8px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        text-align: left;
+        padding-left: 40px;
+        padding-right: 20px;
+        margin-bottom: 30px;
+    }
+
+    .timeline-item::before {
+        left: 0;
+        right: auto;
+    }
 }
 
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="logo">Yusuf Avşar</div>
-
     <nav>
         <a href="index.html">Ana Sayfa</a>
         <a href="hakkimda.html">Hakkımda</a>
@@ -78,89 +182,75 @@
         <a href="yolharitam.html">Yol Haritam</a>
         <a href="iletisim.html">İletişim</a>
     </nav>
-
-    <div class="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-    </div>
 </header>
 
-<!-- Mobile Menu -->
-<div id="mobileMenu" class="mobile-menu">
-    <a href="index.html">Ana Sayfa</a>
-    <a href="hakkimda.html">Hakkımda</a>
-    <a href="projeler.html">Projeler</a>
-    <a href="uzmanlik.html">Uzmanlık</a>
-    <a href="kitaplar.html">Kitaplar</a>
-    <a href="makaleler.html">Makaleler</a>
-    <a href="hizmetler.html">Hizmetler</a>
-    <a href="sertifikalar.html">Sertifikalar</a>
-    <a href="galeri.html">Galeri</a>
-    <a href="yolharitam.html">Yol Haritam</a>
-    <a href="iletisim.html">İletişim</a>
+<div class="about">
+    <h1>Hakkımda</h1>
+
+    <p>
+Ben Yusuf Avşar. Profesyonel iş hayatıma <b>özel güvenlik sektöründe vardiya amiri</b> olarak başladım; ancak kariyerimin merkezinde her zaman teknoloji, yazılım ve üretmek vardı.  
+2010 yılında temellerini attığım yazılım yolculuğumu 2015’ten itibaren profesyonel seviyeye taşıdım.  
+Bu süreçte inşaat, market ve özel güvenlik gibi farklı sektörlerde çalışarak geniş bir deneyim yelpazesi kazandım.  
+
+2019’da 12 kişilik bir yazılım & siber güvenlik ekibi oluşturarak bireysel projelerimi ekip çalışmasıyla daha ileri bir noktaya taşıdım.  
+2021’den itibaren kurumsal firmalara <b>B2B yazılım çözümleri, ERP sistemleri, otomasyonlar, özel güvenlik teknolojileri, KVKK uyumluluk çalışmaları ve siber güvenlik danışmanlığı</b> sunmaya başladım.  
+
+Bugün hem özel güvenlik sektöründe aktif olarak vardiya amiri olarak görev yapıyor, hem de aynı anda birden fazla şirkete yazılım danışmanı ve siber güvenlik yöneticisi yardımcısı olarak destek veriyorum.  
+Her iki alanda hibrit çalışmak bana özellikle çok yönlülük, geniş perspektif ve disiplin kazandırdı.  
+
+Misyonum, teknoloji ile operasyonel süreçleri birleştirerek <b>güvenilir, sürdürülebilir ve yenilikçi çözümler</b> üretmek.  
+Vizyonum ise uluslararası projelerde aktif rol alan, modern teknolojileri iş süreçlerine entegre eden, her zaman gelişime açık bir profesyonel olarak ilerlemek.
+    </p>
 </div>
 
 
-<!-- PAGE CONTENT -->
-<div class="page">
+<!-- TIMELINE -->
+<div class="timeline">
 
-    <h1 class="title">Hakkımda</h1>
-    <div class="sub-title">“Sıradan bir başlangıçtan, çok yönlü bir uzmanlığa uzanan yolculuk.”</div>
-
-    <div class="text-box">
-
-        <p>
-        2010 yılında yazılıma duyduğum merak, bugüne kadar hiç azalmadan devam eden bir tutkuya dönüştü.
-        Farklı sektörlerde — inşaat, market, özel güvenlik ve VIP yakın koruma dahil — pek çok alanda çalışmama rağmen 
-        teknolojiye olan bağlılığım, hayatımın merkezinde kalmaya devam etti.
-        </p>
-
-        <p>
-        2019’dan itibaren profesyonel yazılım dünyasında aktif olarak yer almaya başladım.
-        2021’den bu yana ise bireysel olarak proje geliştiren, çeşitli şirketlere siber güvenlik desteği veren
-        hibrit bir uzman konumunda ilerliyorum. Hem yazılım geliştiriyor, hem güvenlik yönetişiminde aktif rol oynuyor,
-        hem de çok yönlü üretim yapıyorum.
-        </p>
-
-        <p>
-        Özel güvenlik proje sorumlusu olarak çalışmaya devam etmemin temel nedeni ise basit:
-        <b>Tek bir sektöre bağlı kalmak bana göre değil.</b>
-        İnsan zihni farklı alanlarla beslendiğinde daha yaratıcı, daha üretken ve daha dayanıklı oluyor.
-        Ben de bir yandan siber güvenlik ve yazılım üretirken; diğer yandan fiziksel güvenlik sektöründe aktif kalarak
-        “çok yönlü düşünce” kasımı sürekli geliştirmeye devam ediyorum.
-        </p>
-
-        <p>
-        Bugüne kadar Singapur’da 6 ay, Norveç’te 9 ay, ABD’de 3 ay ve İngiltere’de 5 ay boyunca yazılım, 
-        siber güvenlik ve modern teknolojiler üzerine araştırmalar yaptım. Farklı kültürlerde öğrenmek,
-        karşılaştığım her teknolojiyi daha derin anlamama yardımcı oldu.
-        </p>
-
-        <p>
-        Amacım hiçbir zaman sadece “iyi bir yazılımcı” olmak olmadı. 
-        Amacım; <b>bireysel seviyede global ölçekte değer üreten bir üretici</b> olmak.
-        Bugün yapay zekâ, siber güvenlik, kurumsal yazılım sistemleri ve veri teknolojileri konusunda üretiyor,
-        öğreniyor ve sürekli gelişiyorum.
-        </p>
-
-        <div class="quote">
-            “Benim işim, tek bir alanda iyi olmak değil.  
-            Birçok alanda değer üretip, o değerleri tek bir odakta birleştirmek.”
+    <div class="timeline-item left">
+        <div class="timeline-content">
+            <h3>2010 — Yazılıma İlk Adım</h3>
+            <p>Temel algoritma ve yazılım prensiplerini öğrenmeye başladım.</p>
         </div>
+    </div>
 
+    <div class="timeline-item right">
+        <div class="timeline-content">
+            <h3>2015 — Profesyonel Yazılım Dönemi</h3>
+            <p>Ticari projeler geliştirmeye başladım.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item left">
+        <div class="timeline-content">
+            <h3>2017–2019 — Çok Sektörlü Tecrübe</h3>
+            <p>Güvenlik, market ve inşaat sektörlerinde çalışarak geniş iş tecrübesi kazandım.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="timeline-content">
+            <h3>2019 — 12 Kişilik Teknoloji Ekibi</h3>
+            <p>Yazılım ve siber güvenlik alanında ekip kurup projeler geliştirdik.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item left">
+        <div class="timeline-content">
+            <h3>2021 — Kurumsal B2B Çözümler</h3>
+            <p>ERP, otomasyon ve siber güvenlik projeleri oluşturdum.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="timeline-content">
+            <h3>2023–2025 — Hibrit Kariyer</h3>
+            <p>Vardiya amiri + siber güvenlik yöneticisi yardımcısı olarak çift alanda profesyonel çalışıyorum.</p>
+        </div>
     </div>
 
 </div>
 
-
-<footer>
-    © 2025 <span>Yusuf Avşar</span> — Tüm Hakları Saklıdır.
-</footer>
-
-<script>
-function toggleMenu(){
-    document.getElementById("mobileMenu").classList.toggle("show");
-}
-</script>
 
 </body>
 </html>

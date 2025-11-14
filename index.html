@@ -72,20 +72,17 @@
     box-shadow: 0 0 25px rgba(176,111,255,0.25);
 }
 
-/* CARD TITLE */
 .card-title {
     font-size: 22px;
     color: var(--neon-purple2);
     margin-bottom: 12px;
 }
 
-/* CARD TEXT */
 .card-text {
     font-size: 15px;
     color: var(--text-muted);
 }
 
-/* FOOTER SPACE */
 .space {
     margin-bottom: 70px;
 }
@@ -115,7 +112,6 @@
     transform: scale(1.1);
 }
 
-/* PANEL */
 .ai-panel {
     position: fixed;
     bottom: 100px;
@@ -172,6 +168,31 @@
     color: white;
     cursor: pointer;
 }
+
+/* TELİF MODAL */
+#telifModal {
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    padding: 20px;
+}
+
+#telifModal .modal-content {
+    background: #14001f;
+    max-width: 800px;
+    width: 100%;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid var(--neon-purple);
+    max-height: 90%;
+    overflow-y: auto;
+    color: white;
+}
 </style>
 
 </head>
@@ -211,7 +232,6 @@
     <a href="iletisim.html">İletişim</a>
 </div>
 
-
 <!-- HERO -->
 <section class="hero">
     <h1 class="hero-title">
@@ -226,7 +246,6 @@
     <p class="hero-sub">Yazılım • Siber Güvenlik • Yapay Zekâ • Araştırma & Geliştirme</p>
 </section>
 
-
 <!-- BAŞARILAR -->
 <h2 class="section-title">Başarılarım</h2>
 <div class="section-box">
@@ -234,17 +253,17 @@
 
         <div class="card">
             <div class="card-title">14+ Yıllık Tecrübe</div>
-            <div class="card-text">2010 yılından beri yazılım ve teknoloji dünyasında aktif üretim, araştırma ve geliştirme.</div>
+            <div class="card-text">2010 yılından beri yazılım ve teknoloji dünyasında aktif üretim.</div>
         </div>
 
         <div class="card">
             <div class="card-title">300+ Proje</div>
-            <div class="card-text">Çeşitli sektörlerde, farklı teknolojilerle geliştirilen yazılım projeleri.</div>
+            <div class="card-text">Çeşitli sektörlerde geliştirilen yazılım projeleri.</div>
         </div>
 
         <div class="card">
             <div class="card-title">Global Araştırma</div>
-            <div class="card-text">ABD, Norveç, İngiltere ve Singapur’da teknoloji üzerine çalışmalar.</div>
+            <div class="card-text">ABD, Norveç, İngiltere ve Singapur’da teknoloji çalışmaları.</div>
         </div>
 
         <div class="card">
@@ -254,7 +273,6 @@
 
     </div>
 </div>
-
 
 <!-- PROJELER PREVIEW -->
 <h2 class="section-title">Öne Çıkan Projeler</h2>
@@ -268,17 +286,16 @@
 
         <div class="card">
             <div class="card-title">Siber Güvenlik Otomasyonu</div>
-            <div class="card-text">Ağ tarama, raporlama ve tehdit tespiti için geliştirilen güvenlik sistemi.</div>
+            <div class="card-text">Ağ tarama ve tehdit tespiti otomasyon sistemi.</div>
         </div>
 
         <div class="card">
             <div class="card-title">AI Analiz Sistemi</div>
-            <div class="card-text">Veri analizi, tahmin ve otomatik karar motoru sağlayan yapay zekâ projesi.</div>
+            <div class="card-text">Veri analizi, tahmin ve otomatik karar motoru sağlayan yapay zekâ modeli.</div>
         </div>
 
     </div>
 </div>
-
 
 <!-- MAKALELER PREVIEW -->
 <h2 class="section-title">Son Makaleler</h2>
@@ -292,33 +309,88 @@
 
         <div class="card">
             <div class="card-title">Siber Güvenlikte 2025 Trendleri</div>
-            <div class="card-text">Yeni tehdit türleri ve önleme yöntemleri...</div>
+            <div class="card-text">Yeni tehdit türleri ve savunma yöntemleri...</div>
         </div>
 
         <div class="card">
             <div class="card-title">Kurumsal Sistem Mimarisi</div>
-            <div class="card-text">Büyük ölçekli yazılım yapılarının modern yaklaşımı...</div>
+            <div class="card-text">Büyük ölçekli sistemlerde modern mimari yaklaşımı...</div>
         </div>
 
     </div>
 </div>
-
 
 <div class="space"></div>
 
 <!-- FOOTER -->
 <footer>
     © 2025 <span>Yusuf Avşar</span> — Tüm Hakları Saklıdır.
+    <br><br>
+
+    <button onclick="openTelif()" 
+            style="background:none; border:1px solid var(--neon-purple);
+                   padding:8px 18px; color:white; border-radius:8px;
+                   cursor:pointer; font-size:14px;">
+        Telif & Kullanım Şartları
+    </button>
 </footer>
 
 
-<!-- JS -->
+<!-- TELİF & KULLANIM MODAL -->
+<div id="telifModal">
+    <div class="modal-content">
+
+        <h2 style="color:var(--neon-purple2); margin-bottom:20px;">
+            Telif Hakkı & Kullanım Şartları
+        </h2>
+
+        <p style="line-height:1.7; color:#d6d6d6;">
+
+            Bu web sitesindeki tüm içerikler — yazılar, metinler, yazılımlar, projeler, tasarım,
+            görseller ve dijital materyaller — 
+            <b>5846 Sayılı Fikir ve Sanat Eserleri Kanunu</b> kapsamında korunmaktadır.
+            <br><br>
+
+            İzinsiz kopyalama, dağıtım, paylaşım veya ticari kullanım <b>kesinlikle yasaktır.</b>
+            <br><br>
+
+            <b>KVKK & Gizlilik</b><br>
+            • Form üzerinden iletilen bilgiler üçüncü kişilerle paylaşılmaz.<br>
+            • 6698 Sayılı KVKK kapsamında korunur.<br>
+            • Kullanıcı verilerinin silinmesini talep edebilir.<br><br>
+
+            <b>Uluslararası Telif Yasaları</b><br>
+            • DMCA — Digital Millennium Copyright Act<br>
+            • WIPO Telif Sözleşmesi<br>
+            • EU Copyright Directive <br>
+            dahil olmak üzere tüm uluslararası telif standartlarına tabidir.<br><br>
+
+            <b>AI Kullanım Şartı</b><br>
+            Yapay zekâ asistanı yönlendirici değildir, öneri niteliğindedir.  
+            Yapılan işlemlerden kullanıcı sorumludur.<br><br>
+
+            <b>Yetkisiz Kullanım</b><br>
+            Kod, projeler veya içeriklerin izinsiz kopyalanması hukuki yaptırıma tabidir.<br><br>
+
+            <b>İletişim:</b> avsaryusufsgu@gmail.com
+        </p>
+
+        <button onclick="closeTelif()"
+            style="margin-top:20px; background:var(--neon-purple);
+                   padding:10px 18px; border:none; color:white;
+                   border-radius:8px; cursor:pointer;">
+            Kapat
+        </button>
+
+    </div>
+</div>
+
+<!-- SCRIPT -->
 <script>
 function toggleMenu() {
     document.getElementById("mobileMenu").classList.toggle("show");
 }
 
-/* AI PANEL */
 document.getElementById("yusufAiBtn").addEventListener("click", () => {
     document.getElementById("yusufAiPanel").classList.toggle("show");
 });
@@ -329,13 +401,19 @@ function sendToYusufAI() {
 
     let box = document.getElementById("aiMessages");
     box.innerHTML += `<div><b>Sen:</b> ${input}</div>`;
-
-    // Bu kısmı sonra sana API anahtarınla bağlayacağım
     box.innerHTML += `<div><b>Yusuf AI:</b> Bu özellik yapım aşamasındadır.</div>`;
-
     document.getElementById("aiInput").value = "";
 }
+
+/* TELİF AÇ/KAPAT */
+function openTelif() {
+    document.getElementById("telifModal").style.display = "flex";
+}
+function closeTelif() {
+    document.getElementById("telifModal").style.display = "none";
+}
 </script>
+
 
 <!-- YUSUF AI WIDGET -->
 <div id="yusufAiBtn" class="ai-button">🤖</div>

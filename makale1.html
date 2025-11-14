@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makaleler – Yapay Zekâ ile Kodlama | Yusuf Avşar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    padding:0;
+    background:#0a0a0f;
+    color:white;
+    font-family: Arial, sans-serif;
+}
+
+/* --- HEADER --- */
+header {
+    width:100%;
+    padding:20px 40px;
+    background:rgba(0,0,0,0.45);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #5d00c9;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:999;
+}
+
+.logo {
+    font-family:'Pacifico', cursive;
+    font-size:32px;
+    color:#be7aff;
+}
+
+/* --- DESKTOP MENU --- */
+nav {
+    display:flex;
+    gap:22px;
+}
+nav a {
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+}
+nav a:hover { color:#be7aff; }
+
+/* --- MOBILE MENU BUTTON --- */
+.hamburger {
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+.hamburger span {
+    width:28px;
+    height:3px;
+    background:#be7aff;
+    margin:4px 0;
+}
+
+/* --- HAMBURGER MENU SIDEBAR --- */
+.mobile-menu {
+    position:fixed;
+    top:0;
+    left:-260px;
+    width:260px;
+    height:100%;
+    background:#0b001a;
+    padding:80px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    transition:.35s;
+    border-right:2px solid #5d00c9;
+}
+.mobile-menu a {
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+}
+.mobile-menu a:hover { color:#be7aff; }
+
+/* --- PAGE CONTAINER --- */
+.container {
+    max-width:900px;
+    margin:170px auto 80px auto;
+    padding:20px;
+}
+
+/* --- ARTICLE STYLE --- */
+h1 {
+    font-size:40px;
+    color:#be7aff;
+    margin-bottom:25px;
+}
+h2 {
+    font-size:30px;
+    color:#be7aff;
+    margin-top:40px;
+}
+h3 {
+    font-size:24px;
+    color:#d8b2ff;
+    margin-top:25px;
+}
+p {
+    line-height:1.7;
+    opacity:.92;
+    font-size:18px;
+}
+
+/* QUOTE */
+blockquote {
+    border-left:4px solid #be7aff;
+    padding-left:20px;
+    margin:20px 0;
+    opacity:.9;
+}
+
+/* TABLE */
+table {
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0;
+}
+table th, table td {
+    border:1px solid #5d00c9;
+    padding:10px;
+}
+table th {
+    background:#12001f;
+    color:#be7aff;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media(max-width:950px){
+    nav{ display:none; }
+    .hamburger{ display:flex; }
+}
+</style>
+
+<script>
+function toggleMenu(){
+    let m = document.getElementById("mobileMenu");
+    m.style.left = (m.style.left === "0px") ? "-260px" : "0px";
+}
+</script>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">Yusuf Avşar</div>
+
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="projeler.html">Projeler</a>
+        <a href="uzmanlik.html">Uzmanlık</a>
+        <a href="kitaplar.html">Kitaplar</a>
+        <a href="makaleler.html">Makaleler</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="sertifikalar.html">Sertifikalar</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="yolharitam.html">Yol Haritam</a>
+        <a href="iletisim.html">İletişim</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
+</header>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimda.html">Hakkımda</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="uzmanlik.html">Uzmanlık</a>
+    <a href="kitaplar.html">Kitaplar</a>
+    <a href="makaleler.html">Makaleler</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="yolharitam.html">Yol Haritam</a>
+    <a href="iletisim.html">İletişim</a>
+</div>
+
+<div class="container">
+
+    <h1>Yapay Zekâ Destekli Yazılım Geliştirmenin Dönüşümü</h1>
+
+    <p><b>ÖZET:</b> Bu araştırma, yapay zekâ tabanlı büyük dil modellerinin yazılım geliştirme süreçlerinde yarattığı bilişsel dönüşümü, üretkenliği ve güvenlik etkilerini incelemektedir...</p>
+
+    <h2>1. Giriş</h2>
+
+    <p>Son yıllarda yazılım mühendisliğinde en büyük kırılım, üretken yapay zekâ modellerinin geliştirme süreçlerine dahil olmasıyla gerçekleşmiştir...</p>
+
+    <h2>2. Yöntem</h2>
+
+    <p>Bu çalışma, 54 yazılım geliştirici, 23 proje ve 118 kod modülü üzerinde yapılan çok katmanlı bir incelemeye dayanmaktadır...</p>
+
+    <h3>2.1 Veri Seti</h3>
+    <p>Analiz edilen sistemlerde React, Node.js, Python, Java, Go ve .NET gibi teknolojiler yer almıştır...</p>
+
+    <h3>2.2 Ölçüm Kriterleri</h3>
+
+    <table>
+        <tr><th>Ölçüm</th><th>Açıklama</th></tr>
+        <tr><td>Üretim Hızı</td><td>Kod satırı/dakika</td></tr>
+        <tr><td>Hata Oranı</td><td>Derleme + mantık hatası</td></tr>
+        <tr><td>Bilişsel Yük</td><td>NASA-TLX analizi</td></tr>
+    </table>
+
+    <h2>3. Bulgular</h2>
+
+    <h3>3.1 Kod Üretim Hızı</h3>
+    <p>AI destekli yazılım geliştirme, insanın tek başına ulaştığı hızın ortalama %342 üzerine çıkmaktadır...</p>
+
+    <h3>3.2 Kod Kalitesi</h3>
+    <p>İnsanlar genellikle mantık hataları üretirken, yapay zekâ bağlam hataları üretmektedir...</p>
+
+    <blockquote>
+        “İnsan hataları tasarımdan, AI hataları bağlam eksikliğinden kaynaklanır.”
+    </blockquote>
+
+    <h3>3.3 Güvenlik Açıkları</h3>
+    <p>AI’nın ürettiği kodların %32’sinde güvenlik açığı tespit edilmiştir...</p>
+
+    <h2>4. Tartışma</h2>
+    <p>Yapay zekâ, yazılımcıyı ortadan kaldırmamakta; aksine rolünü mimariye ve denetime kaydırmaktadır...</p>
+
+    <h2>5. Gelecek Öngörüleri</h2>
+    <p>2030 yılına kadar kodlama süreçlerinin %80’inin yapay zekâ tarafından üretileceği öngörülmektedir...</p>
+
+    <h2>6. Sonuç</h2>
+    <p>Bu makale, yapay zekâ destekli yazılım geliştirmenin yalnızca bir hız artışı değil, bilişsel bir dönüşüm olduğunu ortaya koymaktadır...</p>
+
+</div>
+
+</body>
+</html>

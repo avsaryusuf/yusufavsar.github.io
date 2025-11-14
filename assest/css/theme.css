@@ -1,1 +1,144 @@
+/* ============================================
+   THEME CSS — GLOBAL VARIABLES & BASE SYSTEM
+   ============================================ */
 
+:root {
+    --bg-dark: #0a0013;
+    --bg-dark2: #11001f;
+
+    --neon-purple: #b06fff;
+    --neon-purple2: #d6a4ff;
+
+    --text-light: #ffffff;
+    --text-muted: #bdaaef;
+
+    --radius: 14px;
+    --radius-big: 20px;
+
+    --transition: 0.25s ease;
+    --shadow-neon: 0 0 18px rgba(176, 111, 255, 0.35);
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+html, body {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--neon-purple2);
+}
+
+/* HEADERS */
+header {
+    width: 100%;
+    padding: 18px 40px;
+    background: rgba(10, 0, 20, 0.75);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #2b0050;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--neon-purple);
+}
+
+/* NAVIGATION */
+nav a {
+    margin-left: 22px;
+    font-size: 15px;
+    color: var(--text-light);
+    opacity: 0.85;
+}
+
+nav a:hover,
+nav .active {
+    color: var(--neon-purple2);
+    opacity: 1;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: var(--neon-purple2);
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: -270px;
+    width: 230px;
+    height: calc(100% - 70px);
+    background: #120020;
+    border-right: 1px solid #2b0050;
+    padding: 20px;
+    transition: 0.35s;
+    z-index: 998;
+}
+
+.mobile-menu.show {
+    left: 0;
+}
+
+.mobile-menu a {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 16px;
+    opacity: 0.85;
+}
+
+.mobile-menu a:hover {
+    opacity: 1;
+    color: var(--neon-purple2);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    font-size: 14px;
+    color: var(--text-muted);
+    border-top: 1px solid #2b0050;
+}
+
+/* RESPONSIVE */
+@media(max-width: 850px) {
+    nav {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}

@@ -2,146 +2,11 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial=1.0">
 <title>Uzmanlık | Yusuf Avşar</title>
 
-<!-- LOGO FONTU -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
-<style>
-
-/* GENEL */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #0a0a0f;
-    color: white;
-}
-
-/* HEADER */
-header {
-    width: 100%;
-    padding: 20px 40px;
-    background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #5d00c9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-}
-
-/* LOGO */
-.logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 32px;
-    color: #be7aff;
-}
-
-/* DESKTOP MENU */
-nav {
-    display: flex;
-    gap: 22px;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-}
-nav a:hover {
-    color: #be7aff;
-}
-
-/* HAMBURGER */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-.hamburger span {
-    width: 28px;
-    height: 3px;
-    background: #be7aff;
-    margin: 4px 0;
-}
-
-/* MOBILE MENU */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: -260px;
-    width: 260px;
-    height: 100%;
-    background: #0b001a;
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border-right: 2px solid #5d00c9;
-    transition: .35s;
-}
-.mobile-menu a {
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-}
-.mobile-menu a:hover {
-    color: #be7aff;
-}
-
-/* MAIN */
-.container {
-    max-width: 1100px;
-    margin: 170px auto 40px auto;
-    padding: 20px;
-}
-
-h2 {
-    font-size: 36px;
-    color: #be7aff;
-    margin-bottom: 20px;
-}
-
-/* SKILL GRID */
-.skills {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.skill-card {
-    background: #12001f;
-    padding: 20px;
-    border: 1px solid #5d00c9;
-    border-radius: 10px;
-    transition: .3s;
-}
-.skill-card:hover {
-    transform: translateY(-5px);
-    border-color: #be7aff;
-}
-.skill-card h3 {
-    margin-top: 0;
-    color: #be7aff;
-}
-.skill-card p {
-    opacity: 0.8;
-    font-size: 16px;
-}
-
-/* MOBIL */
-@media(max-width: 950px){
-    nav { display: none; }
-    .hamburger { display: flex; }
-    .skills { grid-template-columns: 1fr; }
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
 
 <script>
 function toggleMenu(){
@@ -151,6 +16,7 @@ function toggleMenu(){
 </script>
 
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -176,7 +42,7 @@ function toggleMenu(){
     </div>
 </header>
 
-<!-- MOBILE MENU -->
+<!-- MOBIL -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
@@ -193,38 +59,107 @@ function toggleMenu(){
 
 <!-- CONTENT -->
 <div class="container">
-    <h2>Uzmanlık Alanlarım</h2>
+    <h1 class="page-title">Uzmanlık Alanlarım</h1>
 
-    <div class="skills">
+    <div class="skills-grid">
 
-        <div class="skill-card">
-            <h3>Yazılım Geliştirme</h3>
-            <p>Full-stack geliştirme, backend altyapıları, API tasarımı, modern frontend teknolojileri.</p>
+        <!-- 1 -->
+        <div class="skill">
+            <h2>Backend Geliştirme</h2>
+            <p>Yüksek trafikli sistemler, güvenli API mimarisi, mikro servis yapıları ve performans odaklı backend çözümleri.</p>
+            <span>Node.js – Python – PHP – Go</span>
         </div>
 
-        <div class="skill-card">
-            <h3>Siber Güvenlik</h3>
-            <p>Ağ güvenliği, tehdit analizi, zafiyet tespiti, güvenlik otomasyonları.</p>
+        <!-- 2 -->
+        <div class="skill">
+            <h2>Siber Güvenlik</h2>
+            <p>Kurumsal ağ güvenliği, tehdit analizi, firewall yapıları, log inceleme, zafiyet tarama ve SOC süreçleri.</p>
+            <span>Suricata – Wazuh – Elastic – OSINT</span>
         </div>
 
-        <div class="skill-card">
-            <h3>ERP & İş Süreçleri</h3>
-            <p>Kurumsal süreç analizi, otomasyon, veri optimizasyonu ve özel ERP çözümleri.</p>
+        <!-- 3 -->
+        <div class="skill">
+            <h2>Veritabanı Tasarımı</h2>
+            <p>Ölçeklenebilir ilişkisel ve NoSQL veritabanı mimarileri, optimizasyon ve veri bütünlüğü.</p>
+            <span>PostgreSQL – MongoDB – Redis – MySQL</span>
         </div>
 
-        <div class="skill-card">
-            <h3>Yapay Zeka</h3>
-            <p>Makine öğrenimi, veri analizi, AI tabanlı otomasyon ve tahminleme sistemleri.</p>
+        <!-- 4 -->
+        <div class="skill">
+            <h2>Yapay Zekâ & Makine Öğrenimi</h2>
+            <p>Veri işleme, tahmin modelleri, makine öğrenimi analizleri ve iş zekâsı süreçleri.</p>
+            <span>TensorFlow – Scikit-learn – Pandas</span>
         </div>
 
-        <div class="skill-card">
-            <h3>IT Yönetimi</h3>
-            <p>Sunucu yönetimi, ağ mimarisi, kurumsal BT operasyonlarının optimizasyonu.</p>
+        <!-- 5 -->
+        <div class="skill">
+            <h2>Web Uygulama Geliştirme</h2>
+            <p>Modern, hızlı, ölçeklenebilir, tam entegre web uygulamaları.</p>
+            <span>React – Next.js – Vue</span>
         </div>
 
-        <div class="skill-card">
-            <h3>Danışmanlık</h3>
-            <p>Teknoloji stratejisi, sistem tasarımı, proje yönetimi ve dijital dönüşüm.</p>
+        <!-- 6 -->
+        <div class="skill">
+            <h2>Mobil Uygulama Backend</h2>
+            <p>Gerçek zamanlı bildirimler, konum takibi, kullanıcı yönetimi, yüksek güvenlikli mobil API tasarımları.</p>
+            <span>Firebase – REST – MQTT</span>
+        </div>
+
+        <!-- 7 -->
+        <div class="skill">
+            <h2>Bulut Sistemleri & DevOps</h2>
+            <p>CI/CD süreçleri, konteyner mimarileri, otomasyon ve sunucu yönetimi.</p>
+            <span>Docker – Linux – Git – Nginx</span>
+        </div>
+
+        <!-- 8 -->
+        <div class="skill">
+            <h2>Network & Sistem Yönetimi</h2>
+            <p>Switch, router, network segmentasyonu, güvenli ağlar, monitoring.</p>
+            <span>SNMP – VLAN – MikroTik – Cisco</span>
+        </div>
+
+        <!-- 9 -->
+        <div class="skill">
+            <h2>ERP Sistem Tasarımı</h2>
+            <p>İş süreçlerini dijitalleştirme, iş akışı otomasyonu ve kurumsal entegrasyon çözümleri.</p>
+        </div>
+
+        <!-- 10 -->
+        <div class="skill">
+            <h2>API Entegrasyonları</h2>
+            <p>Trendyol, HB, Amazon, kargo şirketleri ve ödeme sistemleriyle entegre çözümler.</p>
+        </div>
+
+        <!-- 11 -->
+        <div class="skill">
+            <h2>Otomasyon Sistemleri</h2>
+            <p>Manuel iş yükünü azaltan otomatik işlem motorları ve iş takip algoritmaları.</p>
+        </div>
+
+        <!-- 12 -->
+        <div class="skill">
+            <h2>Veri Güvenliği & Şifreleme</h2>
+            <p>Güvenli anahtar yönetimi, hashing algoritmaları, veri maskeleme.</p>
+            <span>SHA – AES – JWT</span>
+        </div>
+
+        <!-- 13 -->
+        <div class="skill">
+            <h2>Performans Optimizasyonu</h2>
+            <p>Kod, sorgu ve sunucu performansını üst seviyeye çıkaran çözümler geliştiriyorum.</p>
+        </div>
+
+        <!-- 14 -->
+        <div class="skill">
+            <h2>Gömülü Sistemler Temeli</h2>
+            <p>IoT cihazları ve mikrokontrolcü veri toplama altyapıları üzerine deneyim.</p>
+        </div>
+
+        <!-- 15 -->
+        <div class="skill">
+            <h2>Kurumsal Çözüm Tasarımı</h2>
+            <p>Farklı sektörlere uygun, esnek ve genişleyebilir yazılım mimarileri oluşturma.</p>
         </div>
 
     </div>

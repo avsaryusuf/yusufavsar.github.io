@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siber Güvenlik 2025+ Araştırması | Yusuf Avşar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    padding:0;
+    background:#0a0a0f;
+    color:white;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    width:100%;
+    padding:20px 40px;
+    background:rgba(0,0,0,0.45);
+    border-bottom:1px solid #5d00c9;
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:999;
+}
+.logo {
+    font-family:'Pacifico', cursive;
+    font-size:32px;
+    color:#be7aff;
+}
+nav {
+    display:flex;
+    gap:22px;
+}
+nav a {
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+}
+nav a:hover { color:#be7aff; }
+
+/* HAMBURGER */
+.hamburger {
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+.hamburger span {
+    width:28px;
+    height:3px;
+    background:#be7aff;
+    margin:4px 0;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    position:fixed;
+    top:0;
+    left:-260px;
+    width:260px;
+    height:100%;
+    background:#0b001a;
+    border-right:2px solid #5d00c9;
+    padding:80px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    transition:.35s;
+}
+.mobile-menu a {
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+}
+.mobile-menu a:hover {
+    color:#be7aff;
+}
+
+/* CONTENT */
+.container {
+    max-width:900px;
+    margin:170px auto 80px auto;
+    padding:20px;
+}
+h1 {
+    font-size:40px;
+    color:#be7aff;
+    margin-bottom:25px;
+}
+h2 {
+    font-size:30px;
+    color:#be7aff;
+    margin-top:40px;
+}
+h3 {
+    font-size:24px;
+    color:#d8b2ff;
+    margin-top:25px;
+}
+p {
+    font-size:18px;
+    line-height:1.7;
+    opacity:.92;
+}
+blockquote {
+    border-left:4px solid #be7aff;
+    padding-left:20px;
+    margin:20px 0;
+}
+table {
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0;
+}
+table th, table td {
+    border:1px solid #5d00c9;
+    padding:10px;
+}
+table th {
+    background:#12001f;
+    color:#be7aff;
+}
+
+@media(max-width:950px){
+    nav { display:none; }
+    .hamburger { display:flex; }
+}
+</style>
+
+<script>
+function toggleMenu(){
+    let m = document.getElementById("mobileMenu");
+    m.style.left = (m.style.left === "0px") ? "-260px" : "0px";
+}
+</script>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">Yusuf Avşar</div>
+
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="projeler.html">Projeler</a>
+        <a href="uzmanlik.html">Uzmanlık</a>
+        <a href="kitaplar.html">Kitaplar</a>
+        <a href="makaleler.html">Makaleler</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="sertifikalar.html">Sertifikalar</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="yolharitam.html">Yol Haritam</a>
+        <a href="iletisim.html">İletişim</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
+</header>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimda.html">Hakkımda</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="uzmanlik.html">Uzmanlık</a>
+    <a href="kitaplar.html">Kitaplar</a>
+    <a href="makaleler.html">Makaleler</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="yolharitam.html">Yol Haritam</a>
+    <a href="iletisim.html">İletişim</a>
+</div>
+
+<div class="container">
+
+    <h1>Siber Güvenlikte 2025+ Tehdit Modeli: Otonom Saldırı Sistemleri ve Yapay Zekâ Destekli Savunma Mimarileri</h1>
+
+    <p><b>ÖZET:</b> Bu makale, 2025 sonrası siber tehdit ekosistemini; otonom saldırı motorları, yapay zekâ destekli kötü amaçlı yazılımlar, derin sahte kimlik üretim sistemleri ve kurumsal savunma hatlarının evrimi üzerinden incelemektedir...</p>
+
+    <h2>1. Giriş</h2>
+    <p>Siber saldırı mimarileri artık manuel olarak yönetilen sistemler olmaktan çıkmış, tamamen otonom davranan, hedef seçebilen ve karar verebilen yapay zekâ motorlarına dönüşmüştür...</p>
+
+    <h2>2. Literatür Tarama</h2>
+    <p>2021–2025 arası akademik yayınlar incelendiğinde en büyük sıçrama “otonom saldırı karar mekanizmaları” alanında görülmektedir...</p>
+
+    <h2>3. Araştırma Yöntemi</h2>
+    <p>Bu çalışma, 37 siber saldırı vakasının analizi, 18 kurumdan toplanan SOC verileri ve 4 farklı otonom saldırı simülatörünün çıktıları ile gerçekleştirilmiştir...</p>
+
+    <h3>3.1 Veri Seti</h3>
+    <table>
+        <tr><th>Kaynak</th><th>Veri Türü</th><th>Boyut</th></tr>
+        <tr><td>SOC Logları</td><td>IDS/IPS Kayıtları</td><td>1.3 TB</td></tr>
+        <tr><td>Olay Analizleri</td><td>İhlal Raporları</td><td>37 Vaka</td></tr>
+        <tr><td>Simülasyonlar</td><td>Otonom Saldırı Testleri</td><td>4 Motor</td></tr>
+    </table>
+
+    <h2>4. Bulgular</h2>
+
+    <h3>4.1. Otonom Saldırı Sistemleri</h3>
+    <p>2025 sonrası ortaya çıkan saldırıların %62’si insan müdahalesi olmadan gerçekleşmektedir...</p>
+
+    <h3>4.2. AI Malware Ekosistemi</h3>
+    <p>Yeni nesil zararlı yazılımlar, kendi kodlarını yeniden yazarak tespitten kaçabilmektedir...</p>
+
+    <blockquote>“2025 sonrası kötü amaçlı yazılımlar, insan tarafından yazılmamış; yapay zekâ tarafından evrimleştirilmiş yazılımlar olacak.”</blockquote>
+
+    <h3>4.3. Kurumsal Zafiyet Haritaları</h3>
+    <p>Analizlere göre en zayıf güvenlik katmanı hâlâ insan faktörüdür...</p>
+
+    <h2>5. Tartışma</h2>
+    <p>Otonom saldırı motorları yalnızca teknik bir tehdit değil, aynı zamanda psikolojik ve operasyonel bir tehdit unsuru haline gelmiştir...</p>
+
+    <h2>6. Gelecek Öngörüleri</h2>
+    <p>2030 yılında tehdit analizlerinin %90’ının yapay zekâ tarafından yapılacağı ön görülmektedir...</p>
+
+    <h2>7. Sonuç</h2>
+    <p>Bu çalışma, siber güvenliğin gelecekte tamamen “otonom tehditlere karşı otonom savunma” paradigmalarına dayanacağını ortaya koymaktadır...</p>
+
+</div>
+
+</body>
+</html>

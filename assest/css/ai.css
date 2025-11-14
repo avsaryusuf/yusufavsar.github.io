@@ -1,125 +1,104 @@
-/* ============================================
-   AI CSS — Yusuf AI Widget Styles
-   ============================================ */
-
-/* AI Floating Button */
+/* AI BUTTON */
 .ai-button {
     position: fixed;
-    bottom: 26px;
-    right: 26px;
-    background: var(--neon-purple);
+    bottom: 25px;
+    right: 25px;
+    background: #7a38ff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     color: white;
-    font-size: 28px;
-    width: 62px;
-    height: 62px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     cursor: pointer;
-    box-shadow: var(--shadow-neon);
-    transition: var(--transition);
-    z-index: 99999;
+    font-size: 28px;
+    box-shadow: 0 0 20px rgba(128,0,255,0.5);
+    transition: .3s;
+    z-index: 999;
 }
-
 .ai-button:hover {
-    transform: scale(1.07);
-    background: var(--neon-purple2);
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(128,0,255,0.8);
 }
 
-/* AI Panel */
+/* PANEL */
 .ai-panel {
     position: fixed;
-    bottom: 110px;
-    right: 26px;
-    width: 330px;
+    bottom: 100px;
+    right: 25px;
+    width: 320px;
     height: 430px;
-    background: #0e0618;
-    border: 1px solid #3b0073;
-    border-radius: var(--radius-big);
+    background: #0d0016;
+    border: 1px solid #3a0066;
+    border-radius: 14px;
     display: none;
     flex-direction: column;
-    box-shadow: 0 0 20px rgba(176,111,255,0.4);
-    z-index: 99999;
     overflow: hidden;
+    z-index: 999;
+    box-shadow: 0 0 25px rgba(128,0,255,0.4);
 }
 
-/* Header */
 .ai-header {
-    background: var(--neon-purple);
-    color: white;
+    background: #22003b;
+    padding: 12px;
     text-align: center;
-    padding: 14px;
-    font-size: 18px;
-    font-weight: 600;
-    border-bottom: 1px solid #530099;
+    color: #d3b0ff;
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 1px solid #3a0066;
 }
 
-/* Messages */
 .ai-messages {
     flex: 1;
     padding: 12px;
     overflow-y: auto;
+    color: #cfcfcf;
     font-size: 14px;
-    color: white;
 }
 
-.ai-messages div {
-    margin-bottom: 10px;
-    line-height: 1.5;
+.msg {
+    margin-bottom: 12px;
+    padding: 8px 10px;
+    background: #1a002b;
+    border-radius: 8px;
+    border: 1px solid #3b0067;
+}
+.msg.user {
+    background: #280040;
+    border-color: #5a00a7;
+}
+.msg span {
+    color: #b76fff;
+    font-weight: bold;
 }
 
-/* Input Box */
 .ai-input-box {
-    display: flex;
     padding: 10px;
-    border-top: 1px solid #2b004f;
-    background: #120020;
+    border-top: 1px solid #3a0066;
+    display: flex;
+    gap: 8px;
 }
 
 .ai-input-box input {
     flex: 1;
-    padding: 10px;
-    background: #0b0613;
-    border: 1px solid #3b0073;
-    border-radius: var(--radius);
-    color: white;
-    font-size: 14px;
+    padding: 9px;
+    border-radius: 8px;
+    border: 1px solid #3a0066;
+    background: #11001b;
+    color: #e2e2e2;
 }
 
 .ai-input-box button {
-    margin-left: 10px;
-    background: var(--neon-purple);
-    border: none;
-    padding: 10px 16px;
-    border-radius: var(--radius);
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: #7a38ff;
     color: white;
+    border: none;
     cursor: pointer;
-    transition: var(--transition);
+    transition: .3s;
 }
 
 .ai-input-box button:hover {
-    background: var(--neon-purple2);
-}
-
-/* Scrollbar */
-.ai-messages::-webkit-scrollbar {
-    width: 6px;
-}
-
-.ai-messages::-webkit-scrollbar-thumb {
-    background: #4f0a88;
-    border-radius: 10px;
-}
-
-/* Mobile */
-@media(max-width: 600px) {
-    .ai-panel {
-        right: 10px;
-        width: 90%;
-    }
-
-    .ai-button {
-        right: 10px;
-    }
+    background: #9b56ff;
 }

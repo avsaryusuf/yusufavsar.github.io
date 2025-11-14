@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hakkımda | Yusuf Avşar</title>
 
+<!-- Tema -->
 <link rel="stylesheet" href="theme.css">
 
 <style>
@@ -37,13 +38,8 @@
     position: relative;
 }
 
-.timeline-item:nth-child(odd) {
-    justify-content: flex-start;
-}
-
-.timeline-item:nth-child(even) {
-    justify-content: flex-end;
-}
+.timeline-item:nth-child(odd) { justify-content: flex-start; }
+.timeline-item:nth-child(even) { justify-content: flex-end; }
 
 .timeline-box {
     background: rgba(255, 255, 255, 0.05);
@@ -138,7 +134,7 @@ footer {
     </div>
 </header>
 
-<!-- ✔ TEK ve DOĞRU MOBILE MENU -->
+<!-- MOBILE MENU (TEK VE DOĞRU SÜRÜM) -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
@@ -152,8 +148,7 @@ footer {
 
 <script>
 function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.style.left = menu.style.left === "0px" ? "-260px" : "0px";
+    document.getElementById("mobileMenu").classList.toggle("show");
 }
 </script>
 
@@ -163,17 +158,23 @@ function toggleMenu() {
     <h1 style="font-size:38px; color:#c58dff;">Hakkımda</h1>
 
     <p style="max-width:900px; margin:auto; font-size:18px; line-height:1.75; color:#d8d8d8;">
-        Ben Yusuf Avşar. Kariyerime özel güvenlik sektöründe güvenlik görevlisi olarak başladım ve <b>Vardiya Amiri</b> olarak görev yapmaktayım.
-        Ancak iş hayatımdaki gerçek dönüşüm, 2010 yılında yazılıma duyduğum merakla başladı.
+        Ben Yusuf Avşar. Kariyerime özel güvenlik sektöründe güvenlik görevlisi olarak başladım ve
+        <b>Vardiya Amiri</b> olarak görev yapmaktayım. Ancak yazılım yolculuğum 2010 yılında başladı.
+        Kod yazmayı değil; düşünmeyi, analiz etmeyi ve çözüm üretmeyi öğrendim.
 
         <br><br>
-        2015’ten itibaren profesyonel yazılım geliştirmeye odaklandım ve farklı sektörlerde projeler geliştirdim.
+        2015’ten itibaren profesyonel yazılım projeleri geliştirmeye başladım. Güvenlik, market, inşaat,
+        savunma sanayi, ERP, otomasyon ve siber güvenlik gibi birçok sektörde deneyim kazandım.
 
         <br><br>
-        2019’da 12 kişilik bir teknoloji ekibi kurarak yazılım, otomasyon, güvenlik ve veri teknolojileri üzerine çok disiplinli projeler yürüttüm.
+        2019’da 12 kişilik teknoloji ekibi kurarak yapay zekâ, otomasyon, veri analizi, güvenlik ve
+        backend odaklı projeler geliştirdim. Sürekli öğrenme kültürüm; beni daha analitik, daha disiplinli,
+        daha yenilikçi yaptı.
 
         <br><br>
-        Bugün hem vardiya amiri olarak görev yapıyor hem de aktif şekilde freelance yazılım geliştiricisi / teknoloji danışmanı olarak üretmeye devam ediyorum.
+        Bugün hem vardiya amiri olarak görev yapıyor hem de freelance yazılım & teknoloji danışmanı
+        olarak projeler üretmeye devam ediyorum. Disiplin, analiz kabiliyeti ve çözüm odaklı yaklaşım;
+        çalışma kültürümün temelini oluşturuyor.
     </p>
 </section>
 
@@ -183,66 +184,68 @@ function toggleMenu() {
 
     <div class="timeline-line"></div>
 
+    <!-- 2010 -->
     <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-box">
             <div class="timeline-year">2010 — Yazılıma İlk Adım</div>
-            <div class="timeline-text">Algoritma ve temel bilgisayar bilimleri ile yazılım yolculuğum başladı.</div>
+            <div class="timeline-text">
+                Algoritma, problem çözme ve bilgisayar temelleri üzerine yoğun çalışmaya başladım.
+            </div>
         </div>
     </div>
 
+    <!-- 2015 -->
     <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-box">
-            <div class="timeline-year">2015 — Profesyonel Geliştirme</div>
-            <div class="timeline-text">Ticari yazılım projeleri üretmeye başladım.</div>
+            <div class="timeline-year">2015 — Profesyonel Yazılım</div>
+            <div class="timeline-text">
+                Ticari projeler oluşturarak profesyonel yazılım dünyasına giriş yaptım.
+            </div>
         </div>
     </div>
 
+    <!-- 2017–2019 -->
     <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-box">
-            <div class="timeline-year">2017–2019 — Çok Sektörlü Tecrübe</div>
-            <div class="timeline-text">Güvenlik, market, otomasyon ve çeşitli sektörlerde geliştirme yaptım.</div>
+            <div class="timeline-year">2017–2019 — Çok Sektörlü Deneyim</div>
+            <div class="timeline-text">
+                Güvenlik, market, inşaat ve üretim sektörlerinde teknoloji süreçlerine katkıda bulundum.
+            </div>
         </div>
     </div>
 
+    <!-- 2019 -->
     <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-box">
-            <div class="timeline-year">2019 — Teknoloji Ekibi Kurulumu</div>
-            <div class="timeline-text">12 kişilik ekip ile bağımsız projeler geliştirdim.</div>
+            <div class="timeline-year">2019 — 12 Kişilik Teknoloji Ekibi</div>
+            <div class="timeline-text">
+                Çok disiplinli bir ekip kurarak AI, backend, otomasyon ve güvenlik projeleri geliştirdim.
+            </div>
         </div>
     </div>
 
+    <!-- 2025 -->
     <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-box">
-            <div class="timeline-year">2025 — Hibrit Çalışma</div>
-            <div class="timeline-text">Hem is yerinde vardiya amirliği hem freelance yazılım geliştirme.</div>
+            <div class="timeline-year">2025 — Hibrit Çalışma Modeli</div>
+            <div class="timeline-text">
+                Hem vardiya amiri hem de bağımsız yazılım geliştiricisi olarak çalışmalarımı sürdürüyorum.
+            </div>
         </div>
     </div>
 
 </div>
 
 
+<!-- FOOTER -->
 <footer>
     © 2025 Yusuf Avşar — Tüm Hakları Saklıdır.
 </footer>
-
-
-<!-- YUSUF AI CHAT WIDGET -->
-<div id="yusufAiBtn" class="ai-button">🤖</div>
-
-<div id="yusufAiPanel" class="ai-panel">
-    <div class="ai-header">Yusuf AI Asistan</div>
-    <div class="ai-messages" id="aiMessages"></div>
-
-    <div class="ai-input-box">
-        <input type="text" id="aiInput" placeholder="Sorunu yaz..." />
-        <button onclick="sendToYusufAI()">Gönder</button>
-    </div>
-</div>
 
 </body>
 </html>

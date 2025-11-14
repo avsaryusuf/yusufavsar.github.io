@@ -3,253 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yusuf Avşar</title>
-
-<!-- Google Font (Logo İmza Fontu) -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<title>Yusuf Avşar | Yazılım & Siber Güvenlik</title>
 
 <style>
 
-/* ============================================================
-   GENEL TASARIM
-============================================================ */
-html, body {
+/* GENEL -------------------------------------------------- */
+body {
     margin: 0;
     padding: 0;
-    background: #050009;
-    color: white;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
+    background: #f8f8f8;
+    color: #222;
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.6;
 }
 
-/* ============================================================
-   ARKA PLAN PARTICLE ANİMASYON
-============================================================ */
-#particles-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(#140026, #050009);
-    z-index: -1;
-}
+a { text-decoration: none; color: inherit; }
 
-/* Minimal neon dots */
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #b56bff;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: floatUp 10s linear infinite;
-}
-
-@keyframes floatUp {
-    0% { transform: translateY(0) scale(0.7); opacity: 0.2; }
-    100% { transform: translateY(-120vh) scale(1.3); opacity: 0; }
-}
-
-/* ============================================================
-   HEADER
-============================================================ */
+/* HEADER -------------------------------------------------- */
 header {
     width: 100%;
-    padding: 20px 40px;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #6b00ff;
+    background: white;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0; left: 0;
-    z-index: 1000;
+    z-index: 999;
 }
 
-/* LOGO İMZA ANİMASYONU */
 .logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 34px;
-    color: #d8a5ff;
-    white-space: nowrap;
-    opacity: 0;
-    animation: signature 2.5s ease forwards;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-@keyframes signature {
-    0% { opacity: 0; filter: blur(5px); transform: translateY(-10px); }
-    100% { opacity: 1; filter: blur(0); transform: translateY(0); }
-}
-
-/* ============================================================
-   MASAÜSTÜ MENÜ
-============================================================ */
+/* MENÜ (Masaüstü) ---------------------------------------- */
 nav {
     display: flex;
-    gap: 22px;
+    gap: 28px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-    transition: .3s;
+    font-size: 15px;
+    color: #333;
+    transition: 0.25s;
 }
 
 nav a:hover {
-    color: #d8a5ff;
-    text-shadow: 0 0 10px #d8a5ff;
+    color: #0072e6;
 }
 
-/* ============================================================
-   HAMBURGER MENU
-============================================================ */
+/* HAMBURGER (Mobil) -------------------------------------- */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    transition: 0.3s;
+    gap: 5px;
 }
 
-.hamburger span {
-    width: 28px;
+.hamburger div {
+    width: 26px;
     height: 3px;
-    background: #d8a5ff;
-    margin: 4px 0;
-    transition: 0.4s;
+    background: #333;
 }
 
-/* Açılınca X’e dönüşsün */
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* ============================================================
-   MOBIL SLIDE MENU
-============================================================ */
-.mobile-menu-overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0; left: 0;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(4px);
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.35s;
-}
-
-.mobile-menu-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
+/* MOBIL MENU --------------------------------------------- */
 .mobile-menu {
     position: fixed;
     top: 0;
     left: -260px;
     width: 260px;
     height: 100%;
-    background: #100018;
-    border-right: 2px solid #8400ff;
+    background: white;
+    border-right: 1px solid #e5e5e5;
     padding: 80px 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    transition: .35s;
-    z-index: 9999;
+    gap: 22px;
+    transition: 0.35s ease;
+    z-index: 1000;
 }
 
 .mobile-menu a {
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
+    font-size: 16px;
+    color: #333;
 }
 
 .mobile-menu a:hover {
-    color: #d8a5ff;
+    color: #0072e6;
 }
 
-/* ============================================================
-   RESPONSIVE
-============================================================ */
-@media(max-width: 950px) {
+/* OVERLAY -------------------------------------------------- */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background: rgba(0,0,0,0.25);
+    display: none;
+    z-index: 500;
+}
+
+/* CONTENT -------------------------------------------------- */
+.container {
+    max-width: 900px;
+    margin: 160px auto 60px auto;
+    padding: 0 25px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+.info-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e4e4e4;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    font-size: 17px;
+}
+
+/* RESPONSIVE --------------------------------------------- */
+@media(max-width: 900px) {
     nav { display: none; }
     .hamburger { display: flex; }
-}
-
-/* ============================================================
-   ANA YAZI ANİMASYONU
-============================================================ */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlide 1.6s ease forwards;
-    animation-delay: 0.6s;
-}
-
-@keyframes fadeSlide {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 </style>
 
 <script>
-// ================================================
-// HAMBURGER MENÜ AÇ KAPA
-// ================================================
+// MOBIL MENÜ AÇ KAPA
 function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
+    const menu = document.getElementById("mMenu");
     const overlay = document.getElementById("overlay");
-    const burger = document.querySelector(".hamburger");
-
     const isOpen = menu.style.left === "0px";
 
-    if (isOpen) {
-        menu.style.left = "-260px";
-        overlay.classList.remove("active");
-        burger.classList.remove("active");
-    } else {
-        menu.style.left = "0px";
-        overlay.classList.add("active");
-        burger.classList.add("active");
-    }
+    menu.style.left = isOpen ? "-260px" : "0px";
+    overlay.style.display = isOpen ? "none" : "block";
 }
-
-// ================================================
-// PARTICLES OLUŞTURMA
-// ================================================
-document.addEventListener("DOMContentLoaded", () => {
-    const area = document.getElementById("particles-bg");
-
-    for (let i = 0; i < 55; i++) {
-        const p = document.createElement("div");
-        p.className = "particle";
-        p.style.left = Math.random() * 100 + "vw";
-        p.style.top = Math.random() * 120 + "vh";
-        p.style.animationDuration = (8 + Math.random() * 10) + "s";
-        p.style.opacity = 0.2 + Math.random();
-        area.appendChild(p);
-    }
-});
 </script>
 
 </head>
 <body>
 
-<!-- BACKGROUND -->
-<div id="particles-bg"></div>
-
-<!-- HEADER -->
+<!-- HEADER -------------------------------------------------->
 <header>
     <div class="logo">Yusuf Avşar</div>
 
@@ -258,54 +166,41 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="hakkimda.html">Hakkımda</a>
         <a href="projeler.html">Projeler</a>
         <a href="uzmanlik.html">Uzmanlık</a>
-        <a href="kitaplar.html">Kitaplar</a>
         <a href="makaleler.html">Makaleler</a>
-        <a href="hizmetler.html">Hizmetler</a>
-        <a href="sertifikalar.html">Sertifikalar</a>
-        <a href="galeri.html">Galeri</a>
-        <a href="yolharitam.html">Yol Haritam</a>
         <a href="iletisim.html">İletişim</a>
     </nav>
 
     <div class="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
+        <div></div><div></div><div></div>
     </div>
 </header>
 
-<!-- MOBILE OVERLAY + MENU -->
-<div id="overlay" class="mobile-menu-overlay" onclick="toggleMenu()"></div>
-
-<div id="mobileMenu" class="mobile-menu">
+<!-- MOBIL MENU --------------------------------------------- -->
+<div id="mMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
     <a href="projeler.html">Projeler</a>
     <a href="uzmanlik.html">Uzmanlık</a>
-    <a href="kitaplar.html">Kitaplar</a>
     <a href="makaleler.html">Makaleler</a>
-    <a href="hizmetler.html">Hizmetler</a>
-    <a href="sertifikalar.html">Sertifikalar</a>
-    <a href="galeri.html">Galeri</a>
-    <a href="yolharitam.html">Yol Haritam</a>
     <a href="iletisim.html">İletişim</a>
 </div>
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
 
-<!-- ANA İÇERİK -->
-<div style="margin-top:180px; text-align:center; max-width:850px; margin-left:auto; margin-right:auto; padding:20px;">
-    
-    <h1 class="fade-in" style="color:#d8b2ff; font-size:42px;">
-        Dijital Ekosistem Kurulum Aşamasındadır
-    </h1>
+<!-- MAIN ---------------------------------------------------- -->
+<div class="container">
+    <h1>Site Yayına Hazırlanıyor</h1>
+    <div class="subtitle">Profesyonel Dijital Portföy Oluşturuluyor</div>
 
-    <p class="fade-in" style="font-size:22px; line-height:1.7; margin-top:25px; color:#caa8ff;">
-        Bu platform; yazılım mühendisliği, siber güvenlik, ERP mimarisi, yapay zekâ araştırmaları
-        ve teknoloji geliştirme odaklı projelerin bulunduğu profesyonel bir çalışma alanı olarak hazırlanmaktadır.
-        Sistem yapısı optimize edilirken içerikler, görseller ve teknik modüller entegre edilmektedir.
-    </p>
+    <div class="info-box">
+        Bu platform; yazılım geliştirme, siber güvenlik, kurumsal sistem mimarisi,
+        ERP projeleri ve ileri düzey teknoloji araştırmaları alanlarında yürüttüğüm
+        çalışmaların yer aldığı profesyonel bir dijital portföydür.
 
-    <p class="fade-in" style="font-size:18px; opacity:.7; margin-top:20px;">
-        <b>Bu bir web sitesi değil; bir mühendislik vizyonunun dijital omurgasıdır.</b>
-    </p>
+        <br><br>
 
+        Sistem altyapısı tamamlanırken içerikler, projeler, makaleler ve teknik dökümanlar 
+        düzenli olarak eklenecektir.
+    </div>
 </div>
 
 </body>

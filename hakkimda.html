@@ -1,88 +1,152 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hakkımda | Yusuf Avşar</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0a0a0f;
-            color: #fff;
-        }
-        header {
-            width: 100%;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #2a0066;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 22px;
-            letter-spacing: 1px;
-            color: #b875ff;
-        }
-        nav a {
-            color: #fff;
-            margin-left: 25px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: .3s;
-        }
-        nav a:hover {
-            color: #b875ff;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 120px auto;
-            padding: 20px;
-        }
-        h2 {
-            font-size: 36px;
-            border-left: 5px solid #7f27ff;
-            padding-left: 10px;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 18px;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        .timeline {
-            margin-top: 40px;
-            border-left: 3px solid #7f27ff;
-            padding-left: 20px;
-        }
-        .item {
-            margin-bottom: 25px;
-        }
-        .item h3 {
-            margin: 0;
-            font-size: 22px;
-            color: #b875ff;
-        }
-        .item span {
-            opacity: 0.6;
-            font-size: 14px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hakkımda | Yusuf Avşar</title>
+
+<!-- EL YAZISI LOGO -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+/* GENEL */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #0a0a0f;
+    color: white;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #5d00c9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+/* LOGO */
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: #be7aff;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* DESKTOP MENU */
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #be7aff;
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #be7aff;
+    margin: 4px 0;
+}
+
+/* MOBILE MENU PANEL */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: #0b001a;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 2px solid #5d00c9;
+    transition: .35s;
+}
+
+.mobile-menu a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-menu a:hover {
+    color: #be7aff;
+}
+
+/* MOBIL GÖRÜNÜM */
+@media(max-width: 950px){
+    nav { display: none; }
+    .hamburger { display: flex; }
+}
+
+/* SAYFA İÇERİK */
+.container {
+    max-width: 900px;
+    margin: 170px auto 40px auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 36px;
+    color: #be7aff;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 19px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+</style>
+
+<script>
+function toggleMenu(){
+    const menu = document.getElementById("mobileMenu");
+    menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
+}
+</script>
+
 </head>
 <body>
 
+<!-- ================== HEADER ================== -->
 <header>
-    <h1>Yusuf Avşar</h1>
+    <div class="logo">Yusuf Avşar</div>
+
+    <!-- Desktop Menü -->
     <nav>
         <a href="index.html">Ana Sayfa</a>
+        <a href="hakkimda.html">Hakkımda</a>
         <a href="projeler.html">Projeler</a>
         <a href="uzmanlik.html">Uzmanlık</a>
         <a href="kitaplar.html">Kitaplar</a>
@@ -93,40 +157,50 @@
         <a href="yolharitam.html">Yol Haritam</a>
         <a href="iletisim.html">İletişim</a>
     </nav>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </header>
 
+<!-- Mobil Menü -->
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimda.html">Hakkımda</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="uzmanlik.html">Uzmanlık</a>
+    <a href="kitaplar.html">Kitaplar</a>
+    <a href="makaleler.html">Makaleler</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="yolharitam.html">Yol Haritam</a>
+    <a href="iletisim.html">İletişim</a>
+</div>
+
+<!-- ================== SAYFA İÇERİK ================== -->
 <div class="container">
     <h2>Hakkımda</h2>
+
     <p>
-        Ben Yusuf Avşar; yazılım geliştirme, siber güvenlik, ERP sistemleri, IT altyapıları ve teknoloji araştırmaları üzerine çalışan çok disiplinli bir teknoloji üreticisiyim.
-        Sistemleri yalnızca kullanmam; analiz eder, geliştirir ve daha verimli hale getiririm.
+        Merhaba, ben <strong>Yusuf Avşar</strong>. Yazılım, siber güvenlik, ERP ve IT alanlarında 
+        projeler geliştiren, sürekli araştıran ve üreten bir teknoloji meraklısıyım.
     </p>
 
-    <div class="timeline">
-        <div class="item">
-            <h3>Yazılım Geliştirme</h3>
-            <span>Full-stack yaklaşım • Modern mimariler</span>
-            <p>Web uygulamaları, otomasyon sistemleri, API geliştirme ve veri odaklı yazılımlar üzerinde çalışmalar yapıyorum.</p>
-        </div>
+    <p>
+        Çok yönlü çalışmayı seven, farklı alanlarda kendini geliştiren biriyim. 
+        Geliştirdiğim projelerde modern teknolojileri, güvenli altyapıları ve yüksek 
+        ölçeklenebilirliği temel alıyorum.
+    </p>
 
-        <div class="item">
-            <h3>Siber Güvenlik Araştırmaları</h3>
-            <span>Ağ güvenliği • Zafiyet analizleri • Uygulama güvenliği</span>
-            <p>Güvenlik açıklarını araştırır, saldırı tekniklerini analiz eder ve savunma stratejileri oluştururum.</p>
-        </div>
+    <p>
+        Bunun yanında yazılım ve teknoloji üzerine detaylı araştırmalar yapıyor, 
+        kitaplar yazıyor ve çeşitli özel projeler geliştiriyorum.
+    </p>
 
-        <div class="item">
-            <h3>ERP ve Kurumsal Sistemler</h3>
-            <span>İş akışları • Veri yapıları • Entegrasyon</span>
-            <p>Kurumsal süreçlerin teknoloji ile uyumlu hale getirilmesi, yönetimi ve optimize edilmesi üzerine çalışırım.</p>
-        </div>
-
-        <div class="item">
-            <h3>IT Altyapı ve Sistem Yönetimi</h3>
-            <span>Sunucu mimarisi • Ağ yapıları • Sistem tasarımı</span>
-            <p>Gerçek iş dünyasında karşılaşılan problemlere çözümler üreten pratik bir IT anlayışım vardır.</p>
-        </div>
-    </div>
 </div>
 
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +7,35 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+
 <header>
-<div class="logo" onclick="location.href='index.html'">Profesyonel Geliştirici</div>
-<nav>
+<div class="logo">Yusuf Avşar</div>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<nav id="nav-menu">
 <a href="index.html">Anasayfa</a>
 <a href="about.html">Hakkımda</a>
 <a href="services.html" class="active">Hizmetler</a>
 <a href="portfolio.html">Portföy</a>
 <a href="contact.html">İletişim</a>
 </nav>
+<button class="theme-btn" onclick="toggleTheme()">🌙</button>
 </header>
 
 
-<section class="page-header">
-<h1>Hizmetler</h1>
-</section>
+<section class="page-header"><h1>Hizmetler</h1></section>
 
 
 <section class="section services-grid">
-<div class="service-box">
-<h3>Yazılım Geliştirme</h3>
-<p>Web, masaüstü ve özel sistem yazılımları.</p>
-</div>
-<div class="service-box">
-<h3>Siber Güvenlik</h3>
-<p>Yasal pentest, sistem açık analizi ve güvenlik denetimleri.</p>
-</div>
-<div class="service-box">
-<h3>Danışmanlık</h3>
-<p>Projeler, altyapılar ve teknoloji yönlendirmesi.</p>
+<div class="service-box">💻 Web Geliştirme</div>
+<div class="service-box">🔐 Pentest & Güvenlik</div>
+<div class="service-box">⚙ Sistem Yapılandırma</div>
+<div class="service-box">🧠 Danışmanlık</div>
+</section>
+
+
+<footer>© 2025 Yusuf Avşar</footer>
+
+
+</body>
 </html>

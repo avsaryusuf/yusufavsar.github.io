@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ana Sayfa | Yusuf Avşar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yusuf Avşar</title>
 
-<!-- EL YAZISI LOGO FONTU -->
+<!-- EL YAZISI LOGO FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
-/* GENEL AYARLAR */
+
+/* GENEL */
 body {
     margin: 0;
     padding: 0;
@@ -23,29 +24,31 @@ header {
     width: 100%;
     padding: 20px 40px;
     background: rgba(0,0,0,0.45);
-    border-bottom: 1px solid #35006e;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #5d00c9;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     z-index: 999;
 }
 
-/* LOGO - EL YAZISI */
-header h1 {
-    margin: 0;
-    font-size: 32px;
+/* LOGO */
+header .logo {
     font-family: 'Pacifico', cursive;
-    color: #b875ff;
-    letter-spacing: 2px;
+    font-size: 32px;
+    color: #be7aff;
+    letter-spacing: 1px;
+    white-space: nowrap;
 }
 
-/* MASAÜSTÜ MENÜ */
+/* DESKTOP MENU */
 nav {
     display: flex;
-    gap: 25px;
+    gap: 22px;
 }
 
 nav a {
@@ -56,10 +59,10 @@ nav a {
 }
 
 nav a:hover {
-    color: #b875ff;
+    color: #be7aff;
 }
 
-/* HAMBURGER (sadece mobilde) */
+/* HAMBURGER ICON (MOBILDE) */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -69,55 +72,48 @@ nav a:hover {
 .hamburger span {
     width: 28px;
     height: 3px;
-    background: #b875ff;
-    margin: 5px 0;
+    background: #be7aff;
+    margin: 4px 0;
 }
 
-/* MOBİL MENU PANELİ */
+/* MOBIL MENU PANEL */
 .mobile-menu {
     position: fixed;
-    top: 0; 
+    top: 0;
     left: -260px;
     width: 260px;
     height: 100%;
-    background: #0d001f;
+    background: #0b001a;
     padding: 80px 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: 0.35s;
-    border-right: 2px solid #4f0099;
+    border-right: 2px solid #5d00c9;
+    transition: .35s;
 }
 
 .mobile-menu a {
+    font-size: 20px;
     color: white;
     text-decoration: none;
-    font-size: 18px;
 }
 
 .mobile-menu a:hover {
-    color: #b875ff;
+    color: #be7aff;
 }
 
-/* HERO */
-.hero {
-    margin-top: 150px;
-    text-align: center;
+/* ==== MOBIL GÖRÜNÜM ==== */
+@media(max-width: 950px) {
+
+    nav {
+        display: none; /* masaüstü menü gizlenir */
+    }
+
+    .hamburger {
+        display: flex; /* hamburger görünür */
+    }
 }
 
-.hero h2 {
-    font-size: 40px;
-    color: #b875ff;
-}
-
-/* MOBİL AYARLAR */
-@media(max-width: 900px){
-
-    nav { display: none; }
-
-    .hamburger { display: flex; }
-
-}
 </style>
 
 <script>
@@ -128,14 +124,15 @@ function toggleMenu(){
 </script>
 
 </head>
-
 <body>
 
+<!-- HEADER BAŞLANGIÇ -->
 <header>
-    <h1>Yusuf Avşar</h1>
+    <div class="logo">Yusuf Avşar</div>
 
-    <!-- MASAÜSTÜ MENÜ -->
+    <!-- Desktop Menü -->
     <nav>
+        <a href="index.html">Ana Sayfa</a>
         <a href="hakkimda.html">Hakkımda</a>
         <a href="projeler.html">Projeler</a>
         <a href="uzmanlik.html">Uzmanlık</a>
@@ -148,7 +145,7 @@ function toggleMenu(){
         <a href="iletisim.html">İletişim</a>
     </nav>
 
-    <!-- HAMBURGER MENU -->
+    <!-- Hamburger Menü -->
     <div class="hamburger" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -156,8 +153,9 @@ function toggleMenu(){
     </div>
 </header>
 
-<!-- MOBİL MENU PANELİ -->
+<!-- Mobil Menü Panel -->
 <div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
     <a href="projeler.html">Projeler</a>
     <a href="uzmanlik.html">Uzmanlık</a>
@@ -169,10 +167,11 @@ function toggleMenu(){
     <a href="yolharitam.html">Yol Haritam</a>
     <a href="iletisim.html">İletişim</a>
 </div>
+<!-- HEADER BİTİŞ -->
 
-<div class="hero">
-    <h2>Hoş Geldiniz</h2>
-    <p>Yusuf Avşar | Yazılım · Siber Güvenlik · ERP · IT · Araştırmacı</p>
+<!-- BURAYA SAYFA İÇERİĞİ GELECEK -->
+<div style="margin-top:160px; padding:20px; text-align:center; font-size:25px; color:#be7aff;">
+    Hoş Geldiniz
 </div>
 
 </body>

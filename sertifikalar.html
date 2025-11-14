@@ -8,115 +8,172 @@
 <link rel="stylesheet" href="theme.css">
 
 <style>
-/* ========= HEADER SPACE ========= */
-.page {
+.page-wrapper {
     width: 90%;
     max-width: 1200px;
-    margin: 150px auto 80px;
+    margin: 140px auto 80px auto;
 }
 
-/* ========= BAŞLIK ========= */
+/* Başlık */
 .page-title {
     font-size: 38px;
     text-align: center;
     color: var(--neon-purple2);
-    margin-bottom: 20px;
-    text-shadow: 0 0 15px rgba(180, 90, 255, 0.4);
+    text-shadow: 0 0 16px rgba(176,111,255,0.4);
+    margin-bottom: 10px;
 }
 
 .page-subtitle {
     text-align: center;
     color: var(--text-muted);
-    max-width: 700px;
-    margin: 0 auto 50px;
-    font-size: 17px;
+    font-size: 16px;
+    max-width: 750px;
+    margin: 0 auto 40px auto;
 }
 
-/* ========= GRID ========= */
+/* Kategori etiket barı */
+.category-bar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category-pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #3a0066;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 4px 5px;
+    background: #10001c;
+}
+
+/* Grid */
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 24px;
 }
 
-/* ========= KART ========= */
+/* Kart */
 .cert-card {
     background: var(--bg-dark2);
-    padding: 20px;
     border-radius: 14px;
-    border: 1px solid #2b0050;
+    border: 1px solid #2b004f;
+    padding: 18px 18px 20px 18px;
     transition: .3s;
 }
 
 .cert-card:hover {
-    border-color: var(--neon-purple);
-    box-shadow: 0 0 25px rgba(150, 50, 255, 0.3);
+    border-color: var(--neon-purple2);
+    box-shadow: 0 0 22px rgba(176,111,255,0.3);
+    transform: translateY(-4px);
 }
 
-.cert-title {
-    font-size: 20px;
-    color: var(--neon-purple2);
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 8px;
 }
 
-.cert-org {
-    font-size: 15px;
-    color: var(--text-muted);
+.cert-title {
+    font-size: 18px;
+    color: var(--neon-purple2);
+    font-weight: 600;
 }
 
-.cert-date {
-    margin-top: 10px;
+.cert-year {
     font-size: 13px;
-    color: #8f73c7;
+    color: #9b7fe0;
 }
 
-/* ========= TIMELINE ========= */
+.cert-org {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.cert-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    border: 1px solid #3c0073;
+    color: #d8b7ff;
+    margin-bottom: 8px;
+    background: #170026;
+}
+
+.cert-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Ara başlık */
+.section-sub {
+    font-size: 22px;
+    color: var(--neon-purple2);
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
+/* Timeline */
 .timeline {
-    margin-top: 80px;
-    border-left: 3px solid var(--neon-purple);
-    padding-left: 25px;
+    margin-top: 10px;
+    border-left: 2px solid var(--neon-purple2);
+    padding-left: 24px;
     position: relative;
 }
 
 .t-item {
-    margin-bottom: 45px;
+    margin-bottom: 32px;
     position: relative;
 }
 
 .t-dot {
-    width: 16px;
-    height: 16px;
-    background: var(--neon-purple2);
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
+    background: var(--neon-purple2);
     position: absolute;
-    left: -33px;
-    top: 4px;
-    box-shadow: 0 0 10px var(--neon-purple2);
+    left: -31px;
+    top: 2px;
+    box-shadow: 0 0 12px var(--neon-purple2);
 }
 
 .t-title {
-    font-size: 20px;
+    font-size: 17px;
     color: var(--neon-purple2);
+    font-weight: 600;
+}
+
+.t-meta {
+    font-size: 13px;
+    color: #a18be6;
+    margin: 2px 0 4px 0;
 }
 
 .t-desc {
+    font-size: 14px;
     color: var(--text-muted);
-    font-size: 15px;
-    margin-top: 5px;
+    line-height: 1.6;
 }
 
-.t-date {
-    margin-top: 6px;
+.note {
     font-size: 13px;
-    color: #8f73c7;
+    color: var(--text-muted);
+    margin-top: 15px;
 }
 
-/* ========= FOOTER SPACE ========= */
-.space {
-    height: 80px;
+/* Mobile */
+@media(max-width:900px){
+    .page-wrapper {
+        margin-top: 130px;
+    }
 }
 </style>
-
 </head>
 <body>
 
@@ -131,7 +188,7 @@
         <a href="uzmanlik.html">Uzmanlık</a>
         <a href="makaleler.html">Makaleler</a>
         <a href="hizmetler.html">Hizmetler</a>
-        <a href="sertifikalar.html">Sertifikalar</a>
+        <a href="sertifikalar.html" class="active">Sertifikalar</a>
         <a href="iletisim.html">İletişim</a>
     </nav>
 
@@ -148,124 +205,258 @@
     <a href="uzmanlik.html">Uzmanlık</a>
     <a href="makaleler.html">Makaleler</a>
     <a href="hizmetler.html">Hizmetler</a>
-    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="sertifikalar.html" class="active">Sertifikalar</a>
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<!-- ======= SAYFA ======= -->
-<div class="page">
+<div class="page-wrapper">
 
     <h1 class="page-title">Sertifikalarım</h1>
     <p class="page-subtitle">
-        Uluslararası kurumlar ve global teknoloji devlerinden alınmış ileri seviye yazılım, siber güvenlik ve yapay zekâ sertifikalarım.
+        Akademik programlar, global teknoloji devleri ve uzmanlık odaklı eğitimlerle 
+        hem yazılım hem de siber güvenlik tarafında sürekli kendini güncelleyen bir altyapı.
     </p>
+
+    <div class="category-bar">
+        <span class="category-pill">Akademik Programlar</span>
+        <span class="category-pill">Yapay Zekâ & Veri Bilimi</span>
+        <span class="category-pill">Bulut & DevOps</span>
+        <span class="category-pill">Siber Güvenlik</span>
+        <span class="category-pill">Backend & Web</span>
+    </div>
 
     <!-- GRID -->
     <div class="cert-grid">
 
+        <!-- Akademik -->
         <div class="cert-card">
-            <div class="cert-title">CS50 Computer Science</div>
+            <div class="cert-header">
+                <div class="cert-title">CS50: Computer Science</div>
+                <div class="cert-year">2021</div>
+            </div>
             <div class="cert-org">Harvard University</div>
-            <div class="cert-date">2021</div>
+            <div class="cert-tag">Akademik • Bilgisayar Bilimi</div>
+            <div class="cert-desc">
+                Veri yapıları, algoritmalar, bellek yönetimi ve problem çözme odaklı 
+                temel bilgisayar bilimi eğitimi.
+            </div>
         </div>
 
         <div class="cert-card">
-            <div class="cert-title">Machine Learning Fundamentals</div>
+            <div class="cert-header">
+                <div class="cert-title">Machine Learning Fundamentals</div>
+                <div class="cert-year">2022</div>
+            </div>
             <div class="cert-org">MIT – Massachusetts Institute of Technology</div>
-            <div class="cert-date">2022</div>
+            <div class="cert-tag">Akademik • Yapay Zekâ</div>
+            <div class="cert-desc">
+                Denetimli / denetimsiz öğrenme, model seçimi, overfitting ve 
+                matematiksel temelli makine öğrenimi prensipleri.
+            </div>
         </div>
 
         <div class="cert-card">
-            <div class="cert-title">Artificial Intelligence Principles</div>
+            <div class="cert-header">
+                <div class="cert-title">Artificial Intelligence Principles</div>
+                <div class="cert-year">2023</div>
+            </div>
             <div class="cert-org">Stanford University</div>
-            <div class="cert-date">2023</div>
+            <div class="cert-tag">Akademik • AI</div>
+            <div class="cert-desc">
+                AI sistem tasarımı, arama algoritmaları, karar ağacı tabanlı yapılar ve 
+                optimizasyon yaklaşımları.
+            </div>
         </div>
 
+        <!-- Güvenlik -->
         <div class="cert-card">
-            <div class="cert-title">Cybersecurity Essentials</div>
+            <div class="cert-header">
+                <div class="cert-title">Cybersecurity Essentials</div>
+                <div class="cert-year">2024</div>
+            </div>
             <div class="cert-org">UC Berkeley</div>
-            <div class="cert-date">2024</div>
+            <div class="cert-tag">Siber Güvenlik</div>
+            <div class="cert-desc">
+                Ağ güvenliği, saldırı tipleri, zafiyet analizi, olay yönetimi 
+                ve savunma stratejileri üzerine kapsamlı temel.
+            </div>
         </div>
 
+        <!-- Bulut & DevOps -->
         <div class="cert-card">
-            <div class="cert-title">Cloud Architect Professional</div>
+            <div class="cert-header">
+                <div class="cert-title">Professional Cloud Architect</div>
+                <div class="cert-year">2023</div>
+            </div>
             <div class="cert-org">Google Cloud</div>
-            <div class="cert-date">2023</div>
+            <div class="cert-tag">Bulut • Mimarî</div>
+            <div class="cert-desc">
+                Ölçeklenebilir, güvenli ve yüksek erişilebilirlik odaklı kurumsal bulut mimarilerinin tasarımı.
+            </div>
         </div>
 
         <div class="cert-card">
-            <div class="cert-title">Security Operations Analyst</div>
+            <div class="cert-header">
+                <div class="cert-title">Azure Security Engineer Associate</div>
+                <div class="cert-year">2024</div>
+            </div>
             <div class="cert-org">Microsoft Azure</div>
-            <div class="cert-date">2024</div>
+            <div class="cert-tag">Bulut • Güvenlik</div>
+            <div class="cert-desc">
+                Kimlik yönetimi, veri koruma, ağ güvenliği ve bulut tabanlı güvenlik politikaları.
+            </div>
         </div>
 
         <div class="cert-card">
-            <div class="cert-title">AWS Solutions Architect</div>
+            <div class="cert-header">
+                <div class="cert-title">AWS Solutions Architect</div>
+                <div class="cert-year">2022</div>
+            </div>
             <div class="cert-org">Amazon Web Services</div>
-            <div class="cert-date">2022</div>
+            <div class="cert-tag">Bulut • Mimarî</div>
+            <div class="cert-desc">
+                Yüksek trafikli sistemler için mimari tasarım, maliyet optimizasyonu ve güvenlik odaklı yapılandırma.
+            </div>
         </div>
 
+        <!-- Ağ & Network -->
         <div class="cert-card">
-            <div class="cert-title">Network Security Associate</div>
+            <div class="cert-header">
+                <div class="cert-title">Network Security Associate</div>
+                <div class="cert-year">2021</div>
+            </div>
             <div class="cert-org">Cisco</div>
-            <div class="cert-date">2021</div>
+            <div class="cert-tag">Network • Güvenlik</div>
+            <div class="cert-desc">
+                Ağ topolojileri, firewall politikaları, VPN mimarileri ve 
+                temel ağ güvenlik protokolleri üzerine yetkinlik.
+            </div>
         </div>
 
+        <!-- AI & Data -->
         <div class="cert-card">
-            <div class="cert-title">Deep Learning Specialization</div>
+            <div class="cert-header">
+                <div class="cert-title">Deep Learning Specialization</div>
+                <div class="cert-year">2023</div>
+            </div>
             <div class="cert-org">DeepLearning.AI</div>
-            <div class="cert-date">2023</div>
+            <div class="cert-tag">Yapay Zekâ • Deep Learning</div>
+            <div class="cert-desc">
+                Sinir ağları, CNN, RNN, optimizasyon teknikleri ve üretim ortamına model alma süreçleri.
+            </div>
         </div>
 
+        <!-- Güvenlik (Offensive) -->
         <div class="cert-card">
-            <div class="cert-title">Ethical Hacking & PenTest</div>
+            <div class="cert-header">
+                <div class="cert-title">Ethical Hacking & Penetration Testing</div>
+                <div class="cert-year">2024</div>
+            </div>
             <div class="cert-org">EC-Council</div>
-            <div class="cert-date">2024</div>
+            <div class="cert-tag">Siber Güvenlik • Offensive</div>
+            <div class="cert-desc">
+                Sızma testleri, zafiyet taramaları, exploit analizi ve kurum içi güvenlik test süreçleri.
+            </div>
         </div>
 
     </div>
 
-    <!-- TIMELINE -->
-    <h2 class="section-title" style="margin-top: 90px;">Zaman Çizelgesi</h2>
+    <!-- Timeline -->
+    <h2 class="section-sub">Zaman Çizelgesi</h2>
 
     <div class="timeline">
 
         <div class="t-item">
             <div class="t-dot"></div>
-            <div class="t-title">Harvard CS50</div>
-            <div class="t-desc">Bilgisayar biliminin temel prensipleri, algoritmalar, veri yapıları ve problem çözme.</div>
-            <div class="t-date">2021</div>
+            <div class="t-title">Harvard CS50 – Computer Science</div>
+            <div class="t-meta">Akademik Temel | 2021</div>
+            <div class="t-desc">
+                Bilgisayar biliminin çekirdeğini oluşturan yapı taşları ile algoritmik düşünce altyapısı inşa edildi.
+            </div>
         </div>
 
         <div class="t-item">
             <div class="t-dot"></div>
-            <div class="t-title">MIT - Machine Learning</div>
-            <div class="t-desc">Model eğitimi, sınıflandırma, regresyon ve matematiksel temelli veri bilimi.</div>
-            <div class="t-date">2022</div>
+            <div class="t-title">Cisco Network Security Associate</div>
+            <div class="t-meta">Network Güvenliği | 2021</div>
+            <div class="t-desc">
+                Ağ segmentasyonu, erişim kontrol listeleri ve güvenlik duvarı politikaları üzerine pratik deneyim.
+            </div>
         </div>
 
         <div class="t-item">
             <div class="t-dot"></div>
-            <div class="t-title">Stanford - Artificial Intelligence</div>
-            <div class="t-desc">AI prensipleri, arama algoritmaları, karar mekanizmaları ve optimizasyon.</div>
-            <div class="t-date">2023</div>
+            <div class="t-title">AWS Solutions Architect</div>
+            <div class="t-meta">Bulut Mimarisi | 2022</div>
+            <div class="t-desc">
+                Kritik uygulamaların AWS üzerinde ölçeklenebilir ve güvenli şekilde tasarlanması ve devreye alınması.
+            </div>
         </div>
 
         <div class="t-item">
             <div class="t-dot"></div>
-            <div class="t-title">Berkeley - Cybersecurity</div>
-            <div class="t-desc">Ağ güvenliği, saldırı analizleri, zafiyet değerlendirme.</div>
-            <div class="t-date">2024</div>
+            <div class="t-title">MIT Machine Learning Fundamentals</div>
+            <div class="t-meta">Makine Öğrenimi | 2022</div>
+            <div class="t-desc">
+                Matematiksel tabanlı ML modelleriyle veri odaklı karar sistemlerinin temeli güçlendirildi.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">DeepLearning.AI – Deep Learning Specialization</div>
+            <div class="t-meta">Derin Öğrenme | 2023</div>
+            <div class="t-desc">
+                Sinir ağları, görüntü işleme, sıralı veriler ve üretim ortamında model optimizasyonu.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">Stanford AI Principles</div>
+            <div class="t-meta">Yapay Zekâ Prensipleri | 2023</div>
+            <div class="t-desc">
+                AI sistemlerinin tasarım ilkeleri, arama stratejileri ve karar verme mekanizmaları üzerine odaklanıldı.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">Google Cloud Professional Architect</div>
+            <div class="t-meta">Kurumsal Bulut | 2023</div>
+            <div class="t-desc">
+                Büyük ölçekli projeler için çok katmanlı, mikro servis tabanlı bulut mimarileri tasarlandı.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">Berkeley Cybersecurity Essentials</div>
+            <div class="t-meta">Kurumsal Güvenlik | 2024</div>
+            <div class="t-desc">
+                Saldırı yüzeyi analizi, SOC yaklaşımı ve kurumsal güvenlik stratejileri ile pratik siber güvenlik perspektifi.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">EC-Council Ethical Hacking & PenTest</div>
+            <div class="t-meta">Sızma Testi | 2024</div>
+            <div class="t-desc">
+                Kurum içi ve dışı güvenlik testleri, zafiyet tespiti ve raporlama teknikleriyle ofansif güvenlik perspektifi kazanımı.
+            </div>
         </div>
 
     </div>
 
+    <p class="note">
+        Not: Sertifikaların detayları ve belge numaraları, talep edilmesi halinde kurumlara bireysel olarak iletilebilir.
+    </p>
+
 </div>
 
-<div class="space"></div>
-
 <footer>
-    © 2025 <span>Yusuf Avşar</span> — Tüm Hakları Saklıdır.
+    © 2025 Yusuf Avşar — Tüm Hakları Saklıdır.
 </footer>
 
 <script>

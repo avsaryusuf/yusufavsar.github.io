@@ -3,103 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hakkımda | Yusuf Avşar</title>
+<title>Ana Sayfa | Yusuf Avşar</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
+/* GENEL */
 body {
     margin: 0;
     padding: 0;
     background: #0a0a0f;
     color: #e6dfff;
     font-family: 'Inter', sans-serif;
-    line-height: 1.7;
 }
 
-.container {
-    max-width: 900px;
-    margin: 160px auto 60px auto;
+/* HEADER */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #5d00c9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+/* LOGO */
+.logo {
+    font-size: 32px;
+    color: #be7aff;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* DESKTOP MENU */
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #be7aff;
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #be7aff;
+    margin: 4px 0;
+}
+
+/* MOBIL MENU PANEL */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: #0b001a;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 2px solid #5d00c9;
+    transition: .35s;
+}
+
+.mobile-menu a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-menu a:hover {
+    color: #be7aff;
+}
+
+/* ANA SAYFA İÇERİĞİ */
+.hero {
+    margin-top: 170px;
+    text-align: center;
     padding: 20px;
 }
 
-h1 {
-    font-size: 42px;
+.hero h1 {
+    font-size: 48px;
     font-weight: 800;
     color: #be7aff;
     margin-bottom: 20px;
 }
 
-p {
-    font-size: 19px;
-    margin-bottom: 28px;
+.hero p {
+    font-size: 22px;
+    color: #e6dfff;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.75;
 }
 
-/* Mobil uyum */
-@media(max-width: 700px){
-    h1 {
-        font-size: 32px;
-    }
-    p {
-        font-size: 17px;
-    }
-    .container {
-        margin-top: 140px;
-        padding: 15px;
-    }
+/* Mobil */
+@media(max-width: 950px) {
+    nav { display: none; }
+    .hamburger { display: flex; }
+}
+
+@media(max-width: 700px) {
+    .hero h1 { font-size: 34px; }
+    .hero p { font-size: 18px; }
 }
 </style>
-</head>
 
+<script>
+function toggleMenu(){
+    const menu = document.getElementById("mobileMenu");
+    menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
+}
+</script>
+
+</head>
 <body>
 
-<div class="container">
-    <h1>Hakkımda</h1>
+<header>
+    <div class="logo">Yusuf Avşar</div>
 
-    <p>
-        Ben Yusuf Avşar. Yazılımla tanışmam 2010 yılına dayanıyor ve bu merak zaman içinde profesyonel bir uzmanlığa dönüştü. 
-        2019 yılından bu yana yazılım alanında profesyonel seviyede çalışmalar yürütüyor, 2021 itibarıyla bireysel olarak proje alıp 
-        geliştirmeye devam ediyorum. Aynı dönemde birkaç şirketin siber güvenlik yöneticisi yardımcısı olarak hibrit modelde 
-        çalıştım ve kurumların dijital güvenlik mimarisine, altyapı modellerine ve risk yönetimi süreçlerine aktif katkı sağladım.
-    </p>
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="projeler.html">Projeler</a>
+        <a href="uzmanlik.html">Uzmanlık</a>
+        <a href="kitaplar.html">Kitaplar</a>
+        <a href="makaleler.html">Makaleler</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="sertifikalar.html">Sertifikalar</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="yolharitam.html">Yol Haritam</a>
+        <a href="iletisim.html">İletişim</a>
+    </nav>
 
-    <p>
-        Bugün hâlâ özel güvenlik proje sorumlusu olarak çalışıyorum. İnsanların çoğunun anlamadığı bir nedenle iki alanı aynı anda yürütüyorum: 
-        Çünkü yalnızca tek bir alana bağlanmak insanı zamanla köreltir. Yazılım gibi yoğun odak gerektiren bir alanın yanında farklı sektörlerde 
-        aktif olarak çalışmak zihni diri tutar, problem çözme kapasitesini artırır ve bende güçlü bir denge oluşturur. 
-        Operasyonel yüküm hafif olduğundan hem teknoloji ve yazılım alanında araştırma yapıyor hem de güvenlik sektöründen gelen disiplinin 
-        beni her zaman ayakta tutmasını sağlıyorum.
-    </p>
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
+</header>
 
-    <p>
-        Bugüne kadar inşaat, market, özel güvenlik ve VIP yakın koruma gibi çok farklı alanlarda çalıştım. 
-        Bu çeşitlilik bana yalnızca iş deneyimi kazandırmadı; insanı anlama, analiz etme, kriz yönetimi, çevik düşünme ve baskı altında 
-        karar verebilme gibi birçok kişinin yıllarca uğraşarak bile kazanamayacağı güçlü beceriler sağladı. 
-        Yaşamım boyunca karşılaştığım zorluklar beni yormak yerine daha da dayanıklı hale getirdi. 
-        Pes etmeyi bilmeyen, düştüğünde daha güçlü kalkan bir yapım var.
-    </p>
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimda.html">Hakkımda</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="uzmanlik.html">Uzmanlık</a>
+    <a href="kitaplar.html">Kitaplar</a>
+    <a href="makaleler.html">Makaleler</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="yolharitam.html">Yol Haritam</a>
+    <a href="iletisim.html">İletişim</a>
+</div>
 
+<!-- ANA SAYFA İÇERİĞİ -->
+<div class="hero">
+    <h1>Site Kurulum Aşamasındadır</h1>
     <p>
-        Teknoloji alanındaki gelişimimi ise yalnızca Türkiye ile sınırlamadım. 
-        Singapur’da altı ay boyunca inovasyon kültürünü ve ileri teknoloji ekosistemini araştırdım. 
-        Norveç’te dokuz ay sistem mimarisi ve güvenlik protokollerini inceledim. 
-        ABD’de üç ay boyunca üretim odaklı yazılım süreçlerini ve hız optimizasyon tekniklerini deneyimledim. 
-        İngiltere’de ise kurumsal yazılım kültürü, proje yönetimi ve analitik yaklaşımın profesyonel yöntemlerini gözlemledim. 
-        Bu çalışmalar bana yalnızca bilgi değil, uluslararası ölçekte bir vizyon kazandırdı.
-    </p>
-
-    <p>
-        Hayatım akademik çizgiyle şekillenmedi. Sahip olduğum bilgi ve teknik beceriler tamamen kendi disiplinim, 
-        merakım ve öğrenme iştahım sayesinde oluştu. Bir şirkete bağlı kariyer inşa etmek yerine kendi sistemimi, 
-        kendi çalışma düzenimi ve kendi yol haritamı oluşturan biri oldum. Üretiyor, araştırıyor ve sürekli gelişiyorum. 
-        Benim için bulunduğum nokta bir sonuç değil, daha büyük işler yapabilmem için bir başlangıç çizgisi.
-    </p>
-
-    <p>
-        Ben Yusuf Avşar. Hayatın sert gerçeklikleri ile teknolojinin karmaşık dünyasını aynı anda taşıyabilen, 
-        zorluklardan güç alan, öğrendiği her şeyi daha ileri taşımayı ilke edinmiş biriyim. 
-        Okumamış olabilirim; fakat öğrendiklerim, yaşadıklarım ve deneyimlerim birçok kişinin ulaşamadığı bir vizyon oluşturdu. 
-        Bu yüzden durmam, yorulmam, sınır tanımam.
+        Yusuf Avşar’ın kişisel web alanına hoş geldiniz.  
+        Site aktif olarak geliştiriliyor, içerikler profesyonel bir şekilde hazırlanıyor.  
+        Yakında projeler, makaleler, siber güvenlik içerikleri ve daha fazlası yayında olacak.
     </p>
 </div>
 

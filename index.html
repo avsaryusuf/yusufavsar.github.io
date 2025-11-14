@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yusuf Avşar</title>
 
-<!-- EL YAZISI LOGO FONTS -->
+<!-- EL YAZISI LOGO FONTU -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
@@ -45,10 +45,12 @@ header .logo {
     white-space: nowrap;
 }
 
-/* DESKTOP MENU */
+/* MENÜ TÜM CİHAZLARDA HEP GÖRÜNÜR */
 nav {
     display: flex;
-    gap: 22px;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: flex-end;
 }
 
 nav a {
@@ -62,75 +64,30 @@ nav a:hover {
     color: #be7aff;
 }
 
-/* HAMBURGER ICON (MOBILDE) */
+/* HAMBURGER TAMAMEN KALDIRILDI */
 .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+    display: none !important;
 }
 
-.hamburger span {
-    width: 28px;
-    height: 3px;
-    background: #be7aff;
-    margin: 4px 0;
-}
+/* MOBILE MENU YOK — CSS TAMAMEN SİLİNDİ */
 
-/* MOBIL MENU PANEL */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: -260px;
-    width: 260px;
-    height: 100%;
-    background: #0b001a;
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border-right: 2px solid #5d00c9;
-    transition: .35s;
-}
-
-.mobile-menu a {
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-}
-
-.mobile-menu a:hover {
-    color: #be7aff;
-}
-
-/* ==== MOBIL GÖRÜNÜM ==== */
+/* Mobilde menü taşmasın diye */
 @media(max-width: 950px) {
-
     nav {
-        display: none; /* masaüstü menü gizlenir */
-    }
-
-    .hamburger {
-        display: flex; /* hamburger görünür */
+        justify-content: center;
+        gap: 12px;
     }
 }
-
 </style>
-
-<script>
-function toggleMenu(){
-    const menu = document.getElementById("mobileMenu");
-    menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
-}
-</script>
 
 </head>
 <body>
 
-<!-- HEADER BAŞLANGIÇ -->
+<!-- HEADER -->
 <header>
+
     <div class="logo">Yusuf Avşar</div>
 
-    <!-- Desktop Menü -->
     <nav>
         <a href="index.html">Ana Sayfa</a>
         <a href="hakkimda.html">Hakkımda</a>
@@ -145,31 +102,9 @@ function toggleMenu(){
         <a href="iletisim.html">İletişim</a>
     </nav>
 
-    <!-- Hamburger Menü -->
-    <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
 </header>
 
-<!-- Mobil Menü Panel -->
-<div id="mobileMenu" class="mobile-menu">
-    <a href="index.html">Ana Sayfa</a>
-    <a href="hakkimda.html">Hakkımda</a>
-    <a href="projeler.html">Projeler</a>
-    <a href="uzmanlik.html">Uzmanlık</a>
-    <a href="kitaplar.html">Kitaplar</a>
-    <a href="makaleler.html">Makaleler</a>
-    <a href="hizmetler.html">Hizmetler</a>
-    <a href="sertifikalar.html">Sertifikalar</a>
-    <a href="galeri.html">Galeri</a>
-    <a href="yolharitam.html">Yol Haritam</a>
-    <a href="iletisim.html">İletişim</a>
-</div>
-<!-- HEADER BİTİŞ -->
-
-<!-- BURAYA SAYFA İÇERİĞİ GELECEK -->
+<!-- SAYFA İÇERİĞİ -->
 <div style="margin-top:160px; padding:20px; text-align:center; font-size:25px; color:#be7aff;">
     Hoş Geldiniz
 </div>

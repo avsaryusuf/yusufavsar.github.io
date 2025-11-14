@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +8,16 @@
 </head>
 <body>
 <header>
-<div class="logo" onclick="location.href='index.html'">Profesyonel Geliştirici</div>
-<nav>
+<div class="logo" onclick="location.href='index.html'">Yusuf Avşar</div>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<nav id="nav-menu">
 <a href="index.html">Anasayfa</a>
 <a href="about.html" class="active">Hakkımda</a>
 <a href="services.html">Hizmetler</a>
 <a href="portfolio.html">Portföy</a>
 <a href="contact.html">İletişim</a>
 </nav>
+<button class="theme-btn" onclick="toggleTheme()">🌙</button>
 </header>
 
 
@@ -25,10 +27,14 @@
 
 
 <section class="section">
-<p>Yazılım geliştirme, güvenlik testleri ve modern teknolojiler üzerine çalışan profesyonel bir geliştiriciyim. Gerektiğinde ekiple birlikte kurumsal projeler yürütüyor, yüksek standartlarda çözümler sunuyorum.</p>
-</section>
+<p>Profesyonel yazılım geliştirici ve siber güvenlik uzmanıyım. Modern teknolojiler, sistem açıkları ve kurumsal projelerde aktif olarak hizmet veriyorum.</p>
 
 
-<footer>© 2025 Profesyonel Geliştirici</footer>
-</body>
+<h3>Yetenekler</h3>
+<div class="skills">
+<div class="skill"><span>HTML/CSS</span><div class="bar" style="width:95%"></div></div>
+<div class="skill"><span>JavaScript</span><div class="bar" style="width:90%"></div></div>
+<div class="skill"><span>Siber Güvenlik</span><div class="bar" style="width:92%"></div></div>
+<div class="skill"><span>Backend</span><div class="bar" style="width:85%"></div></div>
+</div>
 </html>

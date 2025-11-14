@@ -3,161 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yusuf Avşar | Yazılım & Siber Güvenlik</title>
+<title>Ana Sayfa | Yusuf Avşar</title>
 
-<style>
-
-/* GENEL -------------------------------------------------- */
-body {
-    margin: 0;
-    padding: 0;
-    background: #f8f8f8;
-    color: #222;
-    font-family: "Inter", Arial, sans-serif;
-    line-height: 1.6;
-}
-
-a { text-decoration: none; color: inherit; }
-
-/* HEADER -------------------------------------------------- */
-header {
-    width: 100%;
-    background: white;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 18px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0; left: 0;
-    z-index: 999;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-/* MENÜ (Masaüstü) ---------------------------------------- */
-nav {
-    display: flex;
-    gap: 28px;
-}
-
-nav a {
-    font-size: 15px;
-    color: #333;
-    transition: 0.25s;
-}
-
-nav a:hover {
-    color: #0072e6;
-}
-
-/* HAMBURGER (Mobil) -------------------------------------- */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.hamburger div {
-    width: 26px;
-    height: 3px;
-    background: #333;
-}
-
-/* MOBIL MENU --------------------------------------------- */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: -260px;
-    width: 260px;
-    height: 100%;
-    background: white;
-    border-right: 1px solid #e5e5e5;
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    transition: 0.35s ease;
-    z-index: 1000;
-}
-
-.mobile-menu a {
-    font-size: 16px;
-    color: #333;
-}
-
-.mobile-menu a:hover {
-    color: #0072e6;
-}
-
-/* OVERLAY -------------------------------------------------- */
-.overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0; left: 0;
-    background: rgba(0,0,0,0.25);
-    display: none;
-    z-index: 500;
-}
-
-/* CONTENT -------------------------------------------------- */
-.container {
-    max-width: 900px;
-    margin: 160px auto 60px auto;
-    padding: 0 25px;
-}
-
-h1 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 20px;
-    color: #555;
-    margin-bottom: 35px;
-}
-
-.info-box {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #e4e4e4;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    font-size: 17px;
-}
-
-/* RESPONSIVE --------------------------------------------- */
-@media(max-width: 900px) {
-    nav { display: none; }
-    .hamburger { display: flex; }
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
 
 <script>
-// MOBIL MENÜ AÇ KAPA
-function toggleMenu() {
-    const menu = document.getElementById("mMenu");
-    const overlay = document.getElementById("overlay");
-    const isOpen = menu.style.left === "0px";
-
-    menu.style.left = isOpen ? "-260px" : "0px";
-    overlay.style.display = isOpen ? "none" : "block";
+function toggleMenu(){
+    const menu = document.getElementById("mobileMenu");
+    menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
 }
 </script>
 
 </head>
+
 <body>
 
-<!-- HEADER -------------------------------------------------->
 <header>
     <div class="logo">Yusuf Avşar</div>
 
@@ -166,41 +27,45 @@ function toggleMenu() {
         <a href="hakkimda.html">Hakkımda</a>
         <a href="projeler.html">Projeler</a>
         <a href="uzmanlik.html">Uzmanlık</a>
+        <a href="kitaplar.html">Kitaplar</a>
         <a href="makaleler.html">Makaleler</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="sertifikalar.html">Sertifikalar</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="yolharitam.html">Yol Haritam</a>
         <a href="iletisim.html">İletişim</a>
     </nav>
 
     <div class="hamburger" onclick="toggleMenu()">
-        <div></div><div></div><div></div>
+        <span></span><span></span><span></span>
     </div>
 </header>
 
-<!-- MOBIL MENU --------------------------------------------- -->
-<div id="mMenu" class="mobile-menu">
+<div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
     <a href="projeler.html">Projeler</a>
     <a href="uzmanlik.html">Uzmanlık</a>
+    <a href="kitaplar.html">Kitaplar</a>
     <a href="makaleler.html">Makaleler</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="yolharitam.html">Yol Haritam</a>
     <a href="iletisim.html">İletişim</a>
 </div>
-<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
 
-<!-- MAIN ---------------------------------------------------- -->
-<div class="container">
-    <h1>Site Yayına Hazırlanıyor</h1>
-    <div class="subtitle">Profesyonel Dijital Portföy Oluşturuluyor</div>
+<!-- === ANA İÇERİK === -->
+<div class="container" style="text-align:center;">
 
-    <div class="info-box">
-        Bu platform; yazılım geliştirme, siber güvenlik, kurumsal sistem mimarisi,
-        ERP projeleri ve ileri düzey teknoloji araştırmaları alanlarında yürüttüğüm
-        çalışmaların yer aldığı profesyonel bir dijital portföydür.
+    <h1 class="page-title">Site Kurulum Aşamasındadır</h1>
 
-        <br><br>
+    <p style="font-size:20px; max-width:800px; margin:auto; line-height:1.8;">
+        Yusuf Avşar’ın kişisel web alanına hoş geldiniz.  
+        Bu site aktif olarak geliştirilmektedir.  
+        Yakında projeler, uzmanlıklar, makaleler, siber güvenlik analizleri ve daha fazlası profesyonel bir şekilde yayında olacaktır.
+    </p>
 
-        Sistem altyapısı tamamlanırken içerikler, projeler, makaleler ve teknik dökümanlar 
-        düzenli olarak eklenecektir.
-    </div>
 </div>
 
 </body>

@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sertifikalar | Yusuf Avşar</title>
 
-<!-- Tema -->
 <link rel="stylesheet" href="theme.css">
 
 <style>
-
 .page-wrapper {
     width: 90%;
     max-width: 1200px;
@@ -20,17 +18,34 @@
 .page-title {
     font-size: 38px;
     text-align: center;
-    color: #be7aff;
+    color: var(--neon-purple2);
     text-shadow: 0 0 16px rgba(176,111,255,0.4);
     margin-bottom: 10px;
 }
 
 .page-subtitle {
     text-align: center;
-    color: #c9c9c9;
+    color: var(--text-muted);
     font-size: 16px;
     max-width: 750px;
     margin: 0 auto 40px auto;
+}
+
+/* Kategori etiket barı */
+.category-bar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category-pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #3a0066;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 4px 5px;
+    background: #10001c;
 }
 
 /* Grid */
@@ -42,7 +57,7 @@
 
 /* Kart */
 .cert-card {
-    background: #11001f;
+    background: var(--bg-dark2);
     border-radius: 14px;
     border: 1px solid #2b004f;
     padding: 18px 18px 20px 18px;
@@ -50,7 +65,7 @@
 }
 
 .cert-card:hover {
-    border-color: #be7aff;
+    border-color: var(--neon-purple2);
     box-shadow: 0 0 22px rgba(176,111,255,0.3);
     transform: translateY(-4px);
 }
@@ -64,18 +79,18 @@
 
 .cert-title {
     font-size: 18px;
-    color: #d79cff;
+    color: var(--neon-purple2);
     font-weight: 600;
 }
 
 .cert-year {
     font-size: 13px;
-    color: #b07bff;
+    color: #9b7fe0;
 }
 
 .cert-org {
     font-size: 14px;
-    color: #c9c9c9;
+    color: var(--text-muted);
     margin-bottom: 6px;
 }
 
@@ -92,8 +107,64 @@
 
 .cert-desc {
     font-size: 14px;
-    color: #bbb;
+    color: var(--text-muted);
     line-height: 1.6;
+}
+
+/* Ara başlık */
+.section-sub {
+    font-size: 22px;
+    color: var(--neon-purple2);
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
+/* Timeline */
+.timeline {
+    margin-top: 10px;
+    border-left: 2px solid var(--neon-purple2);
+    padding-left: 24px;
+    position: relative;
+}
+
+.t-item {
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.t-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--neon-purple2);
+    position: absolute;
+    left: -31px;
+    top: 2px;
+    box-shadow: 0 0 12px var(--neon-purple2);
+}
+
+.t-title {
+    font-size: 17px;
+    color: var(--neon-purple2);
+    font-weight: 600;
+}
+
+.t-meta {
+    font-size: 13px;
+    color: #a18be6;
+    margin: 2px 0 4px 0;
+}
+
+.t-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.note {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 15px;
 }
 
 /* Mobile */
@@ -102,19 +173,11 @@
         margin-top: 130px;
     }
 }
-
 </style>
-
-<script>
-function toggleMenu(){
-    const m = document.getElementById("mobileMenu");
-    m.style.left = (m.style.left === "0px") ? "-260px" : "0px";
-}
-</script>
-
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
     <div class="logo">Yusuf Avşar</div>
 
@@ -130,9 +193,7 @@ function toggleMenu(){
     </nav>
 
     <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
     </div>
 </header>
 
@@ -148,44 +209,66 @@ function toggleMenu(){
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<!-- ANA İÇERİK -->
 <div class="page-wrapper">
 
     <h1 class="page-title">Sertifikalarım</h1>
-
     <p class="page-subtitle">
-        Akademik başarılar, global teknoloji eğitimleri ve uzmanlık odaklı programlarla güçlenen profesyonel gelişim.
+        Akademik programlar, global teknoloji devleri ve uzmanlık odaklı eğitimlerle 
+        hem yazılım hem de siber güvenlik tarafında sürekli kendini güncelleyen bir altyapı.
     </p>
 
+    <div class="category-bar">
+        <span class="category-pill">Akademik Programlar</span>
+        <span class="category-pill">Yapay Zekâ & Veri Bilimi</span>
+        <span class="category-pill">Bulut & DevOps</span>
+        <span class="category-pill">Siber Güvenlik</span>
+        <span class="category-pill">Backend & Web</span>
+    </div>
+
+    <!-- GRID -->
     <div class="cert-grid">
 
-        <!-- Örnek Sertifika 1 -->
+        <!-- Akademik -->
         <div class="cert-card">
             <div class="cert-header">
-                <div class="cert-title">CS50 – Computer Science</div>
+                <div class="cert-title">CS50: Computer Science</div>
                 <div class="cert-year">2021</div>
             </div>
             <div class="cert-org">Harvard University</div>
-            <div class="cert-tag">Bilgisayar Bilimi</div>
+            <div class="cert-tag">Akademik • Bilgisayar Bilimi</div>
             <div class="cert-desc">
-                Algoritmalar, veri yapıları, C programlama, bellek yönetimi.
+                Veri yapıları, algoritmalar, bellek yönetimi ve problem çözme odaklı 
+                temel bilgisayar bilimi eğitimi.
             </div>
         </div>
 
-        <!-- Örnek Sertifika 2 -->
         <div class="cert-card">
             <div class="cert-header">
-                <div class="cert-title">Machine Learning</div>
+                <div class="cert-title">Machine Learning Fundamentals</div>
                 <div class="cert-year">2022</div>
             </div>
-            <div class="cert-org">MIT</div>
-            <div class="cert-tag">Yapay Zekâ</div>
+            <div class="cert-org">MIT – Massachusetts Institute of Technology</div>
+            <div class="cert-tag">Akademik • Yapay Zekâ</div>
             <div class="cert-desc">
-                ML modelleri, veri bilimi, matematiksel optimizasyon.
+                Denetimli / denetimsiz öğrenme, model seçimi, overfitting ve 
+                matematiksel temelli makine öğrenimi prensipleri.
             </div>
         </div>
 
-        <!-- Örnek Sertifika 3 -->
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-title">Artificial Intelligence Principles</div>
+                <div class="cert-year">2023</div>
+            </div>
+            <div class="cert-org">Stanford University</div>
+            <div class="cert-tag">Akademik • AI</div>
+            <div class="cert-desc">
+                AI sistem tasarımı, arama algoritmaları, karar ağacı tabanlı yapılar ve 
+                optimizasyon yaklaşımları.
+            </div>
+        </div>
+
+        <!-- Güvenlik -->
         <div class="cert-card">
             <div class="cert-header">
                 <div class="cert-title">Cybersecurity Essentials</div>
@@ -194,19 +277,195 @@ function toggleMenu(){
             <div class="cert-org">UC Berkeley</div>
             <div class="cert-tag">Siber Güvenlik</div>
             <div class="cert-desc">
-                Ağ güvenliği, saldırı türleri, zafiyet analizi.
+                Ağ güvenliği, saldırı tipleri, zafiyet analizi, olay yönetimi 
+                ve savunma stratejileri üzerine kapsamlı temel.
+            </div>
+        </div>
+
+        <!-- Bulut & DevOps -->
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-title">Professional Cloud Architect</div>
+                <div class="cert-year">2023</div>
+            </div>
+            <div class="cert-org">Google Cloud</div>
+            <div class="cert-tag">Bulut • Mimarî</div>
+            <div class="cert-desc">
+                Ölçeklenebilir, güvenli ve yüksek erişilebilirlik odaklı kurumsal bulut mimarilerinin tasarımı.
+            </div>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-title">Azure Security Engineer Associate</div>
+                <div class="cert-year">2024</div>
+            </div>
+            <div class="cert-org">Microsoft Azure</div>
+            <div class="cert-tag">Bulut • Güvenlik</div>
+            <div class="cert-desc">
+                Kimlik yönetimi, veri koruma, ağ güvenliği ve bulut tabanlı güvenlik politikaları.
+            </div>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-title">AWS Solutions Architect</div>
+                <div class="cert-year">2022</div>
+            </div>
+            <div class="cert-org">Amazon Web Services</div>
+            <div class="cert-tag">Bulut • Mimarî</div>
+            <div class="cert-desc">
+                Yüksek trafikli sistemler için mimari tasarım, maliyet optimizasyonu ve güvenlik odaklı yapılandırma.
+            </div>
+        </div>
+
+        <!-- Ağ & Network -->
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-title">Network Security Associate</div>
+                <div class="cert-year">2021</div>
+            </div>
+            <div class="cert-org">Cisco</div>
+            <div class="cert-tag">Network • Güvenlik</div>
+            <div class="cert-desc">
+                Ağ topolojileri, firewall politikaları, VPN mimarileri ve 
+                temel ağ güvenlik protokolleri üzerine yetkinlik.
+            </div>
+        </div>
+
+        <!-- AI & Data -->
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-title">Deep Learning Specialization</div>
+                <div class="cert-year">2023</div>
+            </div>
+            <div class="cert-org">DeepLearning.AI</div>
+            <div class="cert-tag">Yapay Zekâ • Deep Learning</div>
+            <div class="cert-desc">
+                Sinir ağları, CNN, RNN, optimizasyon teknikleri ve üretim ortamına model alma süreçleri.
+            </div>
+        </div>
+
+        <!-- Güvenlik (Offensive) -->
+        <div class="cert-card">
+            <div class="cert-header">
+                <div class="cert-title">Ethical Hacking & Penetration Testing</div>
+                <div class="cert-year">2024</div>
+            </div>
+            <div class="cert-org">EC-Council</div>
+            <div class="cert-tag">Siber Güvenlik • Offensive</div>
+            <div class="cert-desc">
+                Sızma testleri, zafiyet taramaları, exploit analizi ve kurum içi güvenlik test süreçleri.
             </div>
         </div>
 
     </div>
+
+    <!-- Timeline -->
+    <h2 class="section-sub">Zaman Çizelgesi</h2>
+
+    <div class="timeline">
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">Harvard CS50 – Computer Science</div>
+            <div class="t-meta">Akademik Temel | 2021</div>
+            <div class="t-desc">
+                Bilgisayar biliminin çekirdeğini oluşturan yapı taşları ile algoritmik düşünce altyapısı inşa edildi.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">Cisco Network Security Associate</div>
+            <div class="t-meta">Network Güvenliği | 2021</div>
+            <div class="t-desc">
+                Ağ segmentasyonu, erişim kontrol listeleri ve güvenlik duvarı politikaları üzerine pratik deneyim.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">AWS Solutions Architect</div>
+            <div class="t-meta">Bulut Mimarisi | 2022</div>
+            <div class="t-desc">
+                Kritik uygulamaların AWS üzerinde ölçeklenebilir ve güvenli şekilde tasarlanması ve devreye alınması.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">MIT Machine Learning Fundamentals</div>
+            <div class="t-meta">Makine Öğrenimi | 2022</div>
+            <div class="t-desc">
+                Matematiksel tabanlı ML modelleriyle veri odaklı karar sistemlerinin temeli güçlendirildi.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">DeepLearning.AI – Deep Learning Specialization</div>
+            <div class="t-meta">Derin Öğrenme | 2023</div>
+            <div class="t-desc">
+                Sinir ağları, görüntü işleme, sıralı veriler ve üretim ortamında model optimizasyonu.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">Stanford AI Principles</div>
+            <div class="t-meta">Yapay Zekâ Prensipleri | 2023</div>
+            <div class="t-desc">
+                AI sistemlerinin tasarım ilkeleri, arama stratejileri ve karar verme mekanizmaları üzerine odaklanıldı.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">Google Cloud Professional Architect</div>
+            <div class="t-meta">Kurumsal Bulut | 2023</div>
+            <div class="t-desc">
+                Büyük ölçekli projeler için çok katmanlı, mikro servis tabanlı bulut mimarileri tasarlandı.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">Berkeley Cybersecurity Essentials</div>
+            <div class="t-meta">Kurumsal Güvenlik | 2024</div>
+            <div class="t-desc">
+                Saldırı yüzeyi analizi, SOC yaklaşımı ve kurumsal güvenlik stratejileri ile pratik siber güvenlik perspektifi.
+            </div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <div class="t-title">EC-Council Ethical Hacking & PenTest</div>
+            <div class="t-meta">Sızma Testi | 2024</div>
+            <div class="t-desc">
+                Kurum içi ve dışı güvenlik testleri, zafiyet tespiti ve raporlama teknikleriyle ofansif güvenlik perspektifi kazanımı.
+            </div>
+        </div>
+
+    </div>
+
+    <p class="note">
+        Not: Sertifikaların detayları ve belge numaraları, talep edilmesi halinde kurumlara bireysel olarak iletilebilir.
+    </p>
+
 </div>
 
-<!-- FOOTER -->
 <footer>
-    <p>© 2025 Yusuf Avşar — Tüm Hakları Saklıdır.</p>
+    © 2025 Yusuf Avşar — Tüm Hakları Saklıdır.
 </footer>
 
-<!-- AI WIDGET -->
+<script>
+function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("show");
+}
+</script>
+
+<!-- YUSUF AI CHAT WIDGET -->
 <div id="yusufAiBtn" class="ai-button">🤖</div>
 
 <div id="yusufAiPanel" class="ai-panel">
@@ -227,36 +486,58 @@ aiBtn.onclick = () => {
     aiPanel.style.display = aiPanel.style.display === "flex" ? "none" : "flex";
 };
 
-// Mesaj Gönder
+// Mesaj Gönderme
 async function sendToYusufAI() {
     const input = document.getElementById("aiInput");
     const msgBox = document.getElementById("aiMessages");
     const text = input.value.trim();
     if (!text) return;
 
+    // Kullanıcı mesajı ekle
     msgBox.innerHTML += `<div><b>Sen:</b> ${text}</div>`;
     input.value = "";
 
+    // Data.json'dan verileri çek
     const data = await fetch("data.json").then(r => r.json());
+
+    // Arama yap
     const response = getBestMatch(text, data);
 
+    // Cevabı ekle
     msgBox.innerHTML += `<div style='margin-top:6px; color:#b06fff;'><b>Yusuf AI:</b> ${response}</div>`;
+
     msgBox.scrollTop = msgBox.scrollHeight;
 }
 
+
+// Basit Yapay Zekâ → En uygun bölümü buluyor
 function getBestMatch(question, data) {
     question = question.toLowerCase();
 
-    if (question.includes("sertifika")) return data.sertifikalar;
-    if (question.includes("hakkımda") || question.includes("kim")) return data.hakkimda;
-    if (question.includes("proje")) return data.projeler;
-    if (question.includes("uzman")) return data.uzmanlik;
-    if (question.includes("makale")) return data.makaleler;
-    if (question.includes("hizmet")) return data.hizmetler;
+    let best = "Bu konuda şu anda elimde veri yok. Lütfen daha farklı sorabilirsin.";
 
-    return "Bu konu hakkında bilgi bulamadım.. Başka bir şey sorabilirsin.";
+    if (question.includes("kim") || question.includes("hakkında") || question.includes("yusuf"))
+        best = data.hakkimda;
+
+    else if (question.includes("proje") || question.includes("ne geliştiriyorsun"))
+        best = data.projeler;
+
+    else if (question.includes("uzman") || question.includes("alan") || question.includes("tecrüb"))
+        best = data.uzmanlik;
+
+    else if (question.includes("makale") || question.includes("yazı"))
+        best = data.makaleler;
+
+    else if (question.includes("hizmet"))
+        best = data.hizmetler;
+
+    else if (question.includes("sertifika"))
+        best = data.sertifikalar;
+
+    return best;
 }
 </script>
 
+    
 </body>
 </html>

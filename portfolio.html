@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,23 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+
 <header>
-<div class="logo" onclick="location.href='index.html'">Profesyonel Geliştirici</div>
-<nav>
+<div class="logo">Yusuf Avşar</div>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<nav id="nav-menu">
 <a href="index.html">Anasayfa</a>
 <a href="about.html">Hakkımda</a>
 <a href="services.html">Hizmetler</a>
 <a href="portfolio.html" class="active">Portföy</a>
 <a href="contact.html">İletişim</a>
 </nav>
+<button class="theme-btn" onclick="toggleTheme()">🌙</button>
 </header>
 
 
-<section class="page-header">
-<h1>Portföy</h1>
-</section>
+<section class="page-header"><h1>Portföy</h1></section>
 
 
 <section class="section portfolio-grid">
@@ -31,6 +33,6 @@
 </section>
 
 
-<footer>© 2025 Profesyonel Geliştirici</footer>
+<footer>© 2025 Yusuf Avşar</footer>
 </body>
 </html>

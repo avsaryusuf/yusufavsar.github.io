@@ -1,0 +1,118 @@
+/* ===== GENEL ===== */
+body {
+    margin: 0;
+    padding: 0;
+    background: #0a0a0f;
+    color: #e6dfff;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+}
+
+/* BAŞLIK */
+.page-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #be7aff;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: 160px auto 60px auto;
+    padding: 20px;
+}
+
+/* ===== HEADER ===== */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #5d00c9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+/* LOGO */
+.logo {
+    font-size: 32px;
+    color: #be7aff;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* MENÜ */
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #be7aff;
+}
+
+/* MOBIL HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #be7aff;
+    margin: 4px 0;
+}
+
+/* MOBIL MENÜ */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: #0b001a;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 2px solid #5d00c9;
+    transition: .35s;
+}
+
+.mobile-menu a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-menu a:hover {
+    color: #be7aff;
+}
+
+/* RESPONSIVE */
+@media(max-width: 950px) {
+    nav { display: none; }
+    .hamburger { display: flex; }
+}
+
+@media(max-width: 700px) {
+    .page-title { font-size: 32px; }
+    .container { margin-top: 140px; padding: 15px; }
+}

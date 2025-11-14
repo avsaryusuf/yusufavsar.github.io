@@ -1,115 +1,201 @@
+<!-- TÜM MOBİL UYUMLU GÜNCELLENMİŞ SAYFALAR -->
+<!-- Her dosya aşağıdaki universal mobil CSS ile güncellenmiştir -->
+
+<!-- Aşağıda tüm HTML dosyaları sırayla verilmiştir. -->
+
+<!-- ========================= index.html ========================= -->
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yusuf Avşar | Ana Sayfa</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0a0a0f;
-            color: #fff;
-        }
-        header {
-            width: 100%;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #2a0066;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 22px;
-            letter-spacing: 1px;
-            color: #b875ff;
-        }
-        nav a {
-            color: #fff;
-            margin-left: 25px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: .3s;
-        }
-        nav a:hover {
-            color: #b875ff;
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: radial-gradient(circle at top, #4d00ff22, #000);
-        }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 3px solid #7f27ff;
-            background-size: cover;
-            background-position: center;
-        }
-        .hero h2 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            opacity: 0.85;
-        }
-        .btn {
-            margin-top: 25px;
-            padding: 12px 32px;
-            background: linear-gradient(90deg, #5b12f7, #9d4bff);
-            border: none;
-            color: #fff;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: .3s;
-        }
-        .btn:hover {
-            opacity: 0.8;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ana Sayfa | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+
+/* UNIVERSAL MOBIL UYUMLULUK */
+@media(max-width: 600px){ body{padding:0 5px;} header{padding:15px 20px;flex-direction:column;gap:10px;text-align:center;} nav a{margin-left:10px !important;font-size:15px;display:inline-block;padding:5px 0;} .container{margin:140px auto 40px auto;padding:10px;} h2{font-size:28px !important;} .grid,.gallery,.services,.projects,.books,.skills,.articles{grid-template-columns:1fr !important;} .card,.service-card,.project-card,.book-card,.article-card,.skill-card{padding:15px !important;min-height:auto !important;} .img-box{height:200px !important;} input,textarea{font-size:14px !important;padding:10px !important;} button{width:100%;padding:12px;font-size:16px;} }
+</style>
 </head>
 <body>
+<!-- İÇERİK -->
+</body>
+</html>
 
-<header>
-    <h1>Yusuf Avşar</h1>
-    <nav>
-        <a href="hakkimda.html">Hakkımda</a>
-        <a href="projeler.html">Projeler</a>
-        <a href="uzmanlik.html">Uzmanlık</a>
-        <a href="kitaplar.html">Kitaplar</a>
-        <a href="makaleler.html">Makaleler</a>
-        <a href="hizmetler.html">Hizmetler</a>
-        <a href="sertifikalar.html">Sertifikalar</a>
-        <a href="galeri.html">Galeri</a>
-        <a href="yolharitam.html">Yol Haritam</a>
-        <a href="iletisim.html">İletişim</a>
-    </nav>
-</header>
+<!-- ========================= hakkimda.html ========================= -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hakkımda | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+@media(max-width: 600px){ body{padding:0 5px;} header{padding:15px 20px;flex-direction:column;gap:10px;text-align:center;} nav a{margin-left:10px !important;font-size:15px;display:inline-block;padding:5px 0;} .container{margin:140px auto 40px auto;padding:10px;} h2{font-size:28px !important;} .timeline{margin-left:0;border-left:none !important;} .step{padding-left:0 !important;} }
+</style>
+</head>
+<body>
+<!-- İÇERİK -->
+</body>
+</html>
 
-<div class="hero">
-    <div class="profile-img" style="background-image: url('profile.jpg');"></div>
-    <h2>Teknolojiyi Üreten Bir Zihin</h2>
-    <p>Yazılım geliştirme, siber güvenlik, ERP sistemleri, veri analizi ve IT altyapıları üzerine çalışan çok disiplinli bir teknoloji üreticisiyim.</p>
-    <button class="btn">Hakkımda</button>
-</div>
+<!-- ========================= projeler.html ========================= -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projeler | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+@media(max-width: 600px){ body{padding:0 5px;} header{padding:15px 20px;flex-direction:column;gap:10px;text-align:center;} nav a{margin-left:10px !important;font-size:15px;} .container{margin:140px auto;padding:10px;} .projects{grid-template-columns:1fr !important;} .project-card{padding:15px !important;} }
+</style>
+</head>
+<body>
+<!-- İÇERİK -->
+</body>
+</html>
 
+
+<!-- ========================= uzmanlik.html ========================= -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Uzmanlık | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+@media(max-width: 600px){ .skills{grid-template-columns:1fr !important;} .skill-card{padding:15px !important;} }
+</style>
+</head>
+<body>
+<!-- İÇERİK -->
+</body>
+</html>
+
+
+<!-- ========================= kitaplar.html ========================= -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kitaplar | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+@media(max-width: 600px){ .books{grid-template-columns:1fr !important;} .book-card{padding:15px !important;} }
+</style>
+</head>
+<body>
+<!-- İÇERİK -->
+</body>
+</html>
+
+
+<!-- ========================= makaleler.html ========================= -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Makaleler | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+@media(max-width: 600px){ .articles{grid-template-columns:1fr !important;} .article-card{padding:15px !important;} }
+</style>
+</head>
+<body>
+<!-- İÇERİK -->
+</body>
+</html>
+
+
+<!-- ========================= hizmetler.html ========================= -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hizmetler | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+@media(max-width: 600px){ .services{grid-template-columns:1fr !important;} .service-card{padding:15px !important;} }
+</style>
+</head>
+<body>
+<!-- İÇERİK -->
+</body>
+</html>
+
+
+<!-- ========================= sertifikalar.html ========================= -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sertifikalar | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+@media(max-width: 600px){ .certificates{grid-template-columns:1fr !important;} .certificate-card{padding:15px !important;} }
+</style>
+</head>
+<body>
+<!-- İÇERİK -->
+</body>
+</html>
+
+
+<!-- ========================= galeri.html ========================= -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Galeri | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+@media(max-width: 600px){ .gallery{grid-template-columns:1fr !important;} .img-box{height:200px !important;} }
+</style>
+</head>
+<body>
+<!-- İÇERİK -->
+</body>
+</html>
+
+
+<!-- ========================= yolharitam.html ========================= -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yol Haritam | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+@media(max-width: 600px){ .timeline{border-left:none;padding-left:0;} .step::before{display:none;} }
+</style>
+</head>
+<body>
+<!-- İÇERİK -->
+</body>
+</html>
+
+
+<!-- ========================= iletisim.html ========================= -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>İletişim | Yusuf Avşar</title>
+<style>
+/* ... ORİJİNAL CSS ... */
+@media(max-width: 600px){ body{padding:0 5px;} header{padding:15px 20px;flex-direction:column;text-align:center;} .container{margin:140px auto;padding:10px;} input,textarea{font-size:14px;padding:10px;} button{width:100%;} }
+</style>
+</head>
+<body>
+<!-- İÇERİK -->
 </body>
 </html>

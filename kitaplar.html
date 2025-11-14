@@ -5,152 +5,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kitaplar | Yusuf Avşar</title>
 
-<!-- LOGO FONTU -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
 
 <style>
 
-/* GENEL */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #0a0a0f;
-    color: white;
+.page {
+    width: 90%;
+    max-width: 1200px;
+    margin: 150px auto 60px auto;
 }
 
-/* HEADER */
-header {
-    width: 100%;
-    padding: 20px 40px;
-    background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #5d00c9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
+.title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--neon-purple2);
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-/* LOGO */
-.logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 32px;
-    color: #be7aff;
+.sub-title {
+    text-align: center;
+    font-size: 19px;
+    color: var(--text-muted);
+    margin-bottom: 55px;
 }
 
-/* DESKTOP MENU */
-nav {
-    display: flex;
-    gap: 22px;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-}
-nav a:hover {
-    color: #be7aff;
-}
-
-/* HAMBURGER */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-.hamburger span {
-    width: 28px;
-    height: 3px;
-    background: #be7aff;
-    margin: 4px 0;
-}
-
-/* MOBILE MENU */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: -260px;
-    width: 260px;
-    height: 100%;
-    background: #0b001a;
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border-right: 2px solid #5d00c9;
-    transition: .35s;
-}
-.mobile-menu a {
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-}
-.mobile-menu a:hover {
-    color: #be7aff;
-}
-
-/* MAIN */
-.container {
-    max-width: 1100px;
-    margin: 170px auto 40px auto;
-    padding: 20px;
-}
-
-h2 {
-    font-size: 36px;
-    color: #be7aff;
-    margin-bottom: 20px;
-}
-
-/* BOOK GRID */
 .books {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 35px;
 }
 
 .book-card {
-    background: #12001f;
-    padding: 20px;
-    border: 1px solid #5d00c9;
-    border-radius: 10px;
-    transition: .3s;
-    min-height: 200px;
-}
-.book-card:hover {
-    transform: translateY(-5px);
-    border-color: #be7aff;
-}
-.book-card h3 {
-    margin-top: 0;
-    color: #be7aff;
-}
-.book-card p {
-    opacity: 0.8;
-    font-size: 16px;
+    background: var(--bg-dark2);
+    border: 1px solid #2e0050;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 0 18px rgba(150, 70, 255, 0.18);
+    transition: .35s;
 }
 
-/* MOBIL */
-@media(max-width: 950px){
-    nav { display: none; }
-    .hamburger { display: flex; }
-    .books { grid-template-columns: 1fr; }
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(150, 70, 255, 0.3);
+}
+
+.book-cover {
+    width: 100%;
+    height: 360px;
+    background: #1b002d;
+    border: 1px solid #460077;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    background-size: cover;
+    background-position: center;
+}
+
+.book-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 23px;
+    color: var(--neon-purple);
+}
+
+.book-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e2d6ff;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(190, 122, 255, 0.15);
+    padding: 6px 12px;
+    font-size: 13px;
+    margin-right: 8px;
+    border-radius: 30px;
+    border: 1px solid var(--neon-purple2);
+}
+
+@media(max-width: 600px){
+    .book-card { padding: 20px; }
+    .book-cover { height: 260px; }
 }
 
 </style>
-
-<script>
-function toggleMenu(){
-    const menu = document.getElementById("mobileMenu");
-    menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
-}
-</script>
-
 </head>
 <body>
 
@@ -192,30 +130,70 @@ function toggleMenu(){
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<!-- CONTENT -->
-<div class="container">
-    <h2>Kitaplarım</h2>
+<!-- ==== PAGE CONTENT ==== -->
+
+<div class="page">
+
+    <div class="title">Kitaplarım</div>
+    <div class="sub-title">Teknoloji, siber güvenlik ve insan psikolojisinin birleştiği özgün çalışmalar.</div>
 
     <div class="books">
 
+        <!-- KİTAP 1 -->
         <div class="book-card">
-            <h3>Yazılımın Evrimi</h3>
-            <p>Yazılım dünyasının tarihsel gelişimi, modern yaklaşımlar ve geleceğin sistemleri.</p>
+            <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1581091870635-7a3c06a1ae9b?auto=format&fit=crop&w=900&q=60');"></div>
+
+            <h3>📘 Kodun Karanlık Yüzü</h3>
+            <p>
+                Yazılım dünyasının görünmeyen karanlık tarafını, siber tehditleri, kod mimarisindeki
+                psikolojik hataları ve modern saldırı mekanizmalarını ele alan teknik–psikolojik bir çalışma.
+            </p>
+            <div class="tag">Siber Güvenlik</div>
+            <div class="tag">Yazılım</div>
+            <div class="tag">Araştırma</div>
         </div>
 
+        <!-- KİTAP 2 -->
         <div class="book-card">
-            <h3>Siber Güvenliğin Derinlikleri</h3>
-            <p>Tehdit analizinden ağ savunmasına kadar güvenliğin bilinmeyen yönlerini ele alır.</p>
+            <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=900&q=60');"></div>
+
+            <h3>📙 Dijital Savaş: Yeni Nesil Savunma</h3>
+            <p>
+                Yapay zekâ algoritmalarının güvenlik alanında nasıl devrim yarattığını,
+                modern orduların dijitalleşme sürecini ve kurumsal savunma teknolojilerini anlatan ileri seviye bir eser.
+            </p>
+            <div class="tag">AI</div>
+            <div class="tag">Savunma</div>
+            <div class="tag">Network</div>
         </div>
 
+        <!-- KİTAP 3 -->
         <div class="book-card">
-            <h3>Makine Zekâsı Çağı</h3>
-            <p>Yapay zekânın iş dünyasına ve yaşama etkilerini, teknik detaylarla ele alır.</p>
+            <div class="book-cover" style="background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=900&q=60');"></div>
+
+            <h3>📕 İnsan & Makine</h3>
+            <p>
+                İnsan zihni ile yapay zekâ arasındaki bilişsel farkları, teknolojinin insanı nasıl şekillendirdiğini
+                ve gelecekte insan–makine ilişkilerinin alacağı yeni formları anlatan derin bir analiz kitabı.
+            </p>
+            <div class="tag">Psikoloji</div>
+            <div class="tag">Teknoloji</div>
+            <div class="tag">Gelecek</div>
         </div>
 
     </div>
 
 </div>
+
+<footer>
+    © 2025 <span>Yusuf Avşar</span> — Tüm Hakları Saklıdır.
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("mobileMenu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>

@@ -14,9 +14,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     background: #0a0a0f;
     color: white;
+    font-family: Arial, sans-serif;
 }
 
 /* HEADER */
@@ -29,7 +29,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
@@ -37,20 +36,17 @@ header {
 }
 
 /* LOGO */
-header .logo {
+.logo {
     font-family: 'Pacifico', cursive;
     font-size: 32px;
     color: #be7aff;
     letter-spacing: 1px;
-    white-space: nowrap;
 }
 
-/* MENÜ TÜM CİHAZLARDA HEP GÖRÜNÜR */
+/* DESKTOP MENÜ */
 nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    justify-content: flex-end;
+    gap: 22px;
 }
 
 nav a {
@@ -64,21 +60,65 @@ nav a:hover {
     color: #be7aff;
 }
 
-/* HAMBURGER TAMAMEN KALDIRILDI */
+/* HAMBURGER — MOBILDE */
 .hamburger {
-    display: none !important;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
-/* MOBILE MENU YOK — CSS TAMAMEN SİLİNDİ */
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #be7aff;
+    margin: 4px 0;
+}
 
-/* Mobilde menü taşmasın diye */
+/* MOBIL MENU PANEL */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: #0b001a;
+    border-right: 2px solid #5d00c9;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: .35s;
+    z-index: 9999;
+}
+
+.mobile-menu a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.mobile-menu a:hover {
+    color: #be7aff;
+}
+
+/* MOBILDE MENÜ GÖRÜNÜMÜ */
 @media(max-width: 950px) {
     nav {
-        justify-content: center;
-        gap: 12px;
+        display: none;
+    }
+    .hamburger {
+        display: flex;
     }
 }
+
 </style>
+
+<script>
+function toggleMenu(){
+    const menu = document.getElementById("mobileMenu");
+    menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
+}
+</script>
 
 </head>
 <body>
@@ -88,6 +128,7 @@ nav a:hover {
 
     <div class="logo">Yusuf Avşar</div>
 
+    <!-- MASAÜSTÜ MENÜ -->
     <nav>
         <a href="index.html">Ana Sayfa</a>
         <a href="hakkimda.html">Hakkımda</a>
@@ -102,11 +143,69 @@ nav a:hover {
         <a href="iletisim.html">İletişim</a>
     </nav>
 
+    <!-- MOBIL HAMBURGER -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
 </header>
 
-<!-- SAYFA İÇERİĞİ -->
-<div style="margin-top:160px; padding:20px; text-align:center; font-size:25px; color:#be7aff;">
-    Hoş Geldiniz
+<!-- MOBIL MENU PANEL -->
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimda.html">Hakkımda</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="uzmanlik.html">Uzmanlık</a>
+    <a href="kitaplar.html">Kitaplar</a>
+    <a href="makaleler.html">Makaleler</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="yolharitam.html">Yol Haritam</a>
+    <a href="iletisim.html">İletişim</a>
+</div>
+
+<!-- ANA İÇERİK -->
+<div style="
+    margin-top:180px;
+    text-align:center;
+    color:#be7aff;
+    padding:30px;
+    max-width:850px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:22px;
+    line-height:1.7;
+">
+
+    <h1 style="color:#d8b2ff; font-size:38px; margin-bottom:20px;">
+        Yusuf Avşar Dijital Ekosistemi<br>Kurulum Aşamasındadır
+    </h1>
+
+    Bu platform; yazılım, siber güvenlik, ERP mühendisliği, yapay zekâ araştırmaları 
+    ve teknoloji odaklı projelerin bulunduğu 
+    <span style="color:#ffffff;">profesyonel bir dijital çalışma alanı</span>
+    olarak inşa edilmektedir.
+
+    <br><br>
+
+    Sistem altyapısı optimize edilirken; güvenlik testleri, içerik entegrasyonları,
+    görsel düzenlemeler ve modüler proje alanları hazırlanmaktadır.
+
+    <br><br>
+
+    <b style="color:#d8b2ff;">Yakında aktif olacak bölümler:</b><br>
+    Proje vitrinleri • Teknik makaleler • Yapay zekâ araştırmaları • Siber güvenlik raporları<br>
+    Yazılım mühendisliği dokümantasyonları • Yol haritam • Hizmetler
+
+    <br><br>
+
+    <span style="font-size:19px; opacity:.85;">
+        Bu sadece bir web sitesi değil…<br>
+        <b style="color:#ffffff;">Bir mühendislik vizyonunun dijital dünyaya açılan kapısıdır.</b>
+    </span>
 </div>
 
 </body>

@@ -1,134 +1,188 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Makaleler | Yusuf Avşar</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0a0a0f;
-            color: #fff;
-        }
-        header {
-            width: 100%;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #2a0066;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 22px;
-            color: #b875ff;
-        }
-        nav a {
-            color: #fff;
-            margin-left: 25px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: .3s;
-        }
-        nav a:hover {
-            color: #b875ff;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 120px auto;
-            padding: 20px;
-        }
-        h2 {
-            font-size: 36px;
-            border-left: 5px solid #7f27ff;
-            padding-left: 10px;
-            margin-bottom: 40px;
-        }
-        .articles {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-            gap: 25px;
-        }
-        .card {
-            background: #111;
-            border: 1px solid #2a0066;
-            border-radius: 10px;
-            padding: 25px;
-            transition: .3s;
-        }
-        .card:hover {
-            border-color: #7f27ff;
-            transform: translateY(-5px);
-        }
-        .card h3 {
-            margin: 0;
-            margin-bottom: 10px;
-            color: #b875ff;
-        }
-        .meta {
-            font-size: 14px;
-            opacity: 0.6;
-            margin-bottom: 10px;
-        }
-        .card p {
-            opacity: .85;
-            line-height: 1.6;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makaleler | Yusuf Avşar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #0a0a0f;
+    color: white;
+}
+
+header {
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #5d00c9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: #be7aff;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+nav a { color:white; text-decoration:none; font-size:17px; }
+nav a:hover { color:#be7aff; }
+
+.hamburger {
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+.hamburger span {
+    width:28px;
+    height:3px;
+    background:#be7aff;
+    margin:4px 0;
+}
+
+.mobile-menu {
+    position:fixed;
+    top:0;
+    left:-260px;
+    width:260px;
+    height:100%;
+    background:#0b001a;
+    padding:80px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    transition:.35s;
+    border-right:2px solid #5d00c9;
+}
+.mobile-menu a { font-size:20px; color:white; text-decoration:none; }
+.mobile-menu a:hover { color:#be7aff; }
+
+.container {
+    max-width:1100px;
+    margin:170px auto 40px auto;
+    padding:20px;
+}
+
+h2 {
+    font-size:36px;
+    color:#be7aff;
+}
+
+/* Makale kartları */
+.articles {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:25px;
+}
+
+.article-card {
+    background:#12001f;
+    padding:20px;
+    border:1px solid #5d00c9;
+    border-radius:10px;
+    transition:.3s;
+}
+.article-card:hover {
+    transform:translateY(-5px);
+    border-color:#be7aff;
+}
+.article-card h3 {
+    margin:0;
+    color:#be7aff;
+}
+.article-card p { opacity:.8; }
+
+/* Mobile */
+@media(max-width:950px){
+    nav{ display:none; }
+    .hamburger{ display:flex; }
+    .articles{ grid-template-columns:1fr; }
+}
+
+</style>
+
+<script>
+function toggleMenu(){
+    let m=document.getElementById("mobileMenu");
+    m.style.left= m.style.left==="0px" ? "-260px" : "0px";
+}
+</script>
+
 </head>
 <body>
+
 <header>
-    <h1>Yusuf Avşar</h1>
+    <div class="logo">Yusuf Avşar</div>
+
     <nav>
         <a href="index.html">Ana Sayfa</a>
         <a href="hakkimda.html">Hakkımda</a>
         <a href="projeler.html">Projeler</a>
         <a href="uzmanlik.html">Uzmanlık</a>
         <a href="kitaplar.html">Kitaplar</a>
+        <a href="makaleler.html">Makaleler</a>
         <a href="hizmetler.html">Hizmetler</a>
         <a href="sertifikalar.html">Sertifikalar</a>
         <a href="galeri.html">Galeri</a>
         <a href="yolharitam.html">Yol Haritam</a>
         <a href="iletisim.html">İletişim</a>
     </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
 </header>
 
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimda.html">Hakkımda</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="uzmanlik.html">Uzmanlık</a>
+    <a href="kitaplar.html">Kitaplar</a>
+    <a href="makaleler.html">Makaleler</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="yolharitam.html">Yol Haritam</a>
+    <a href="iletisim.html">İletişim</a>
+</div>
+
+
 <div class="container">
-    <h2>Makalelerim</h2>
+    <h2>Makaleler</h2>
 
     <div class="articles">
 
-        <div class="card">
-            <h3>Modern Siber Güvenlik Yaklaşımları</h3>
-            <div class="meta">Yayın Tarihi: 2024</div>
-            <p>Saldırı teknikleri, savunma stratejileri ve güncel tehdit modelleri üzerine detaylı bir teknik inceleme.</p>
-        </div>
+        <a href="makale1.html" class="article-card">
+            <h3>Yapay Zekâ ile Kodlama: Yazılım Dünyasında Yeni Dönem</h3>
+            <p>Yapay zekânın yazılımcıların üretim hızını 4 kat artırdığı bu yeni çağda, kodlama alışkanlıkları kökten değişiyor...</p>
+        </a>
 
-        <div class="card">
-            <h3>Kurumsal ERP Sistemlerinde Veri Bütünlüğü</h3>
-            <div class="meta">Yayın Tarihi: 2023</div>
-            <p>İş süreçlerinin dijitalleştirilmesinde veri güvenliği, iş akışı tasarımı ve entegrasyon yapıları üzerine makale.</p>
-        </div>
+        <a href="makale2.html" class="article-card">
+            <h3>Siber Güvenlikte 2025 Trendleri: Görünmeyeni Görebilmek</h3>
+            <p>Saldırılar artık insanlar yerine yapay zekâ tarafından yapılıyor. Peki savunma tarafı bunu nasıl önleyecek?</p>
+        </a>
 
-        <div class="card">
-            <h3>API Güvenliği ve Modern Yazılım Mimarisine Etkisi</h3>
-            <div class="meta">Yayın Tarihi: 2024</div>
-            <p>API tasarımında güvenlik prensipleri, saldırı yüzeyi azaltma yöntemleri ve modern mimarilere etkisi.</p>
-        </div>
-
-        <div class="card">
-            <h3>Veri Analizi ve İş Zekâsı Modelleri</h3>
-            <div class="meta">Yayın Tarihi: 2022</div>
-            <p>Raporlama, veri işleme algoritmaları ve kurumsal karar mekanizmalarında veri analitiğinin önemi.</p>
-        </div>
+        <a href="makale3.html" class="article-card">
+            <h3>ERP Sistemlerinin Evrimi: Şirketler Artık Neden Otomasyon İstiyor?</h3>
+            <p>Kurumsal süreçler neden otomasyonsuz ilerlemiyor? ERP neden artık bir lüks değil zorunluluk?</p>
+        </a>
 
     </div>
 </div>

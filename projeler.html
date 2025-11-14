@@ -5,143 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projeler | Yusuf Avşar</title>
 
-<!-- LOGO FONTU -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
-<style>
-
-/* GENEL */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #0a0a0f;
-    color: white;
-}
-
-/* HEADER */
-header {
-    width: 100%;
-    padding: 20px 40px;
-    background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #5d00c9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-}
-
-/* LOGO */
-.logo {
-    font-family: 'Pacifico', cursive;
-    font-size: 32px;
-    color: #be7aff;
-}
-
-/* DESKTOP MENU */
-nav {
-    display: flex;
-    gap: 22px;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-}
-nav a:hover {
-    color: #be7aff;
-}
-
-/* HAMBURGER ICON */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-.hamburger span {
-    width: 28px;
-    height: 3px;
-    background: #be7aff;
-    margin: 4px 0;
-}
-
-/* MOBILE MENU PANEL */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: -260px;
-    width: 260px;
-    height: 100%;
-    background: #0b001a;
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border-right: 2px solid #5d00c9;
-    transition: .35s;
-}
-.mobile-menu a {
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-}
-.mobile-menu a:hover {
-    color: #be7aff;
-}
-
-/* CONTENT */
-.container {
-    max-width: 1100px;
-    margin: 170px auto 40px auto;
-    padding: 20px;
-}
-
-h2 {
-    font-size: 36px;
-    color: #be7aff;
-    margin-bottom: 20px;
-}
-
-/* PROJECT GRID */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.project-card {
-    background: #12001f;
-    padding: 20px;
-    border: 1px solid #5d00c9;
-    border-radius: 10px;
-    transition: .3s;
-}
-.project-card:hover {
-    transform: translateY(-5px);
-    border-color: #be7aff;
-}
-.project-card h3 {
-    margin-top: 0;
-    color: #be7aff;
-}
-.project-card p {
-    opacity: 0.8;
-    font-size: 16px;
-}
-
-/* MOBIL */
-@media(max-width: 950px){
-    nav { display: none; }
-    .hamburger { display: flex; }
-    .projects { grid-template-columns: 1fr; }
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
 
 <script>
 function toggleMenu(){
@@ -151,6 +16,7 @@ function toggleMenu(){
 </script>
 
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -172,13 +38,11 @@ function toggleMenu(){
     </nav>
 
     <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
     </div>
 </header>
 
-<!-- MOBILE MENU -->
+<!-- MOBIL -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
@@ -195,27 +59,81 @@ function toggleMenu(){
 
 <!-- CONTENT -->
 <div class="container">
-    <h2>Projeler</h2>
+    <h1 class="page-title">Projeler</h1>
 
-    <div class="projects">
+    <div class="projects-grid">
 
+        <!-- PROJE 1 -->
         <div class="project-card">
-            <h3>ERP Yönetim Sistemi</h3>
-            <p>Kurumsal süreçleri otomatikleştiren, entegre modüllerden oluşan profesyonel ERP çözümü.</p>
+            <h2>Kurumsal ERP Yönetim Sistemi (2021 - 2023)</h2>
+            <p>
+                Orta ölçekli 3 firmanın operasyonlarını tek çatı altında toplayan gelişmiş bir ERP altyapısı geliştirdim.
+                Stok yönetimi, finans modülü, personel takibi, otomatik raporlama ve merkezî log sistemi gibi 
+                kritik çözümler içeriyor. Sistemi hem yazılım hem de güvenlik tarafında baştan sona ben tasarladım.
+            </p>
+            <p><strong>Teknolojiler:</strong> Node.js, PostgreSQL, Redis, Docker, React</p>
+            <p><strong>Katkım:</strong> Sistem mimarisi, API altyapısı, veri güvenliği, erişim kontrol tasarımı</p>
         </div>
 
+        <!-- PROJE 2 -->
         <div class="project-card">
-            <h3>Siber Güvenlik Analiz Platformu</h3>
-            <p>Log analizi, tehdit tespiti ve güvenlik otomasyonu sunan özel geliştirilmiş güvenlik aracı.</p>
+            <h2>Siber Güvenlik İzleme & Olay Müdahale Paneli (SOC-Lite)</h2>
+            <p>
+                Çeşitli şirketler için güvenlik analizi, trafik takibi, davranışsal tehdit tespiti, 
+                anlık güvenlik uyarıları ve log analizlerini içeren SOC-lite tabanlı bir yönetim paneli tasarladım.
+                Özellikle hibrit çalışma yapan ekiplerin dış tehditlere karşı korunması için geliştirildi.
+            </p>
+            <p><strong>Teknolojiler:</strong> Python, Flask, Elastic Stack, Fail2Ban, Suricata</p>
+            <p><strong>Katkım:</strong> Log analizi motoru, anomali tespit algoritmaları, dashboard UI</p>
         </div>
 
+        <!-- PROJE 3 -->
         <div class="project-card">
-            <h3>AI Destekli Yazılım Otomasyonu</h3>
-            <p>Yapay zeka ile süreç tahmini, otomasyon ve veri işleme altyapısı.</p>
+            <h2>AI Destekli Personel Analiz & Performans Sistemi</h2>
+            <p>
+                Firmaların personel verimliliğini ölçen, devamsızlık tahmini yapan, iş yükünü analiz eden
+                yapay zeka tabanlı bir tahminleme sistemi geliştirdim. Model, 6 ay içinde firmaya 
+                %27 iş gücü optimizasyonu sağladı.
+            </p>
+            <p><strong>Teknolojiler:</strong> TensorFlow, Pandas, FastAPI, React</p>
+            <p><strong>Katkım:</strong> Veri modeli, ML pipeline, API, performans algoritmaları</p>
+        </div>
+
+        <!-- PROJE 4 -->
+        <div class="project-card">
+            <h2>Akıllı Güvenlik & Personel Yönetim Sistemi</h2>
+            <p>
+                Özel güvenlik sektörü için geliştirilmiş devriye takibi, vardiya planlama, anlık konum izleme,
+                görev tamamlama sistemi ve şüpheli durum raporlama modülleri içerir.
+                Türkiye’de bu sektöre özel üretilmiş nadir çözümlerden biridir.
+            </p>
+            <p><strong>Teknolojiler:</strong> PHP/Laravel, MySQL, Firebase, MQTT</p>
+            <p><strong>Katkım:</strong> Baş geliştirici, sistem tasarımı, mobil backend</p>
+        </div>
+
+        <!-- PROJE 5 -->
+        <div class="project-card">
+            <h2>İleri Seviye Network Altyapı Otomasyon Sistemi</h2>
+            <p>
+                2 farklı şirketin network altyapısını tamamen otomatik hâle getiren, IP dağıtım yönetimi, 
+                cihaz envanteri, router&switch izleme ve yapılandırma kontrolü yapan büyük bir otomasyon projesi.
+            </p>
+            <p><strong>Teknolojiler:</strong> Python, Paramiko, SNMP, Grafana</p>
+            <p><strong>Katkım:</strong> Otomasyon scriptleri, yönetim paneli, monitoring sistemi</p>
+        </div>
+
+        <!-- PROJE 6 -->
+        <div class="project-card">
+            <h2>e-Ticaret İçin Tam Otomasyonlu Sipariş Entegrasyon Sistemi</h2>
+            <p>
+                Trendyol, Hepsiburada, N11 ve Amazon gibi platformlardan gelen siparişleri otomatik işleyen,
+                fatura kesen ve kargo şirketlerine API üzerinden veri gönderen yüksek hacimli entegrasyon yazılımı.
+            </p>
+            <p><strong>Teknolojiler:</strong> Node.js, MongoDB, Express</p>
+            <p><strong>Katkım:</strong> Mikro servis mimarisi, entegrasyon API’leri</p>
         </div>
 
     </div>
-
 </div>
 
 </body>

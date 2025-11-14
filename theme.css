@@ -1,72 +1,82 @@
-/* ===== GENEL ===== */
-body {
+/* ===========================
+   GLOBAL QUANTUM CYBER THEME
+   =========================== */
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Pacifico&display=swap');
+
+/* COLORS */
+:root {
+    --bg-dark: #050509;
+    --bg-dark2: #0a0a14;
+    --neon-purple: #b06fff;
+    --neon-purple2: #d6b1ff;
+    --text-light: #e8e8ff;
+    --text-muted: #8e8aa6;
+}
+
+/* RESET */
+* {
     margin: 0;
     padding: 0;
-    background: #0a0a0f;
-    color: #e6dfff;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* BODY */
+body {
+    background: var(--bg-dark);
+    color: var(--text-light);
     font-family: 'Inter', sans-serif;
-    line-height: 1.7;
+    overflow-x: hidden;
 }
 
-/* BAŞLIK */
-.page-title {
-    font-size: 42px;
-    font-weight: 800;
-    color: #be7aff;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.container {
-    max-width: 900px;
-    margin: 160px auto 60px auto;
-    padding: 20px;
-}
-
-/* ===== HEADER ===== */
+/* ==============================
+   HEADER – NEON CYBER STYLE
+   ============================== */
 header {
     width: 100%;
-    padding: 20px 40px;
-    background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #5d00c9;
+    height: 80px;
+    background: rgba(10, 10, 20, 0.55);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--neon-purple);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 0 45px;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 9999;
 }
 
 /* LOGO */
 .logo {
-    font-size: 32px;
-    color: #be7aff;
-    font-weight: 800;
+    font-family: 'Pacifico', cursive;
+    font-size: 34px;
+    color: var(--neon-purple2);
     letter-spacing: 1px;
-    white-space: nowrap;
+    text-shadow: 0 0 12px rgba(176, 111, 255, 0.6);
 }
 
-/* MENÜ */
+/* DESKTOP MENU */
 nav {
     display: flex;
-    gap: 22px;
+    gap: 28px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
+    color: var(--text-light);
     font-size: 17px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #be7aff;
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px rgba(176, 111, 255, 0.8);
 }
 
-/* MOBIL HAMBURGER */
+/* HAMBURGER */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -74,45 +84,71 @@ nav a:hover {
 }
 
 .hamburger span {
-    width: 28px;
+    width: 30px;
     height: 3px;
-    background: #be7aff;
-    margin: 4px 0;
+    background: var(--neon-purple);
+    margin: 5px 0;
+    border-radius: 6px;
 }
 
-/* MOBIL MENÜ */
+/* ==============================
+   MOBILE MENU
+   ============================== */
 .mobile-menu {
     position: fixed;
     top: 0;
-    left: -260px;
-    width: 260px;
-    height: 100%;
-    background: #0b001a;
-    padding: 80px 20px;
+    right: -270px;
+    width: 270px;
+    height: 100vh;
+    background: #0d021f;
+    padding: 100px 25px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border-right: 2px solid #5d00c9;
-    transition: .35s;
+    gap: 25px;
+    border-left: 2px solid var(--neon-purple);
+    transition: 0.35s ease;
+    z-index: 99999;
 }
 
 .mobile-menu a {
+    color: var(--text-light);
     font-size: 20px;
-    color: white;
-    text-decoration: none;
 }
 
 .mobile-menu a:hover {
-    color: #be7aff;
+    color: var(--neon-purple);
 }
 
-/* RESPONSIVE */
+/* SHOW PANEL */
+.mobile-menu.show {
+    right: 0;
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+footer {
+    margin-top: 80px;
+    padding: 40px;
+    background: #070711;
+    border-top: 1px solid var(--neon-purple);
+    text-align: center;
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+footer span {
+    color: var(--neon-purple2);
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
 @media(max-width: 950px) {
-    nav { display: none; }
-    .hamburger { display: flex; }
-}
-
-@media(max-width: 700px) {
-    .page-title { font-size: 32px; }
-    .container { margin-top: 140px; padding: 15px; }
+    nav {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
 }

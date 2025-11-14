@@ -40,7 +40,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-/* 2 KOLON */
+/* GRID */
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -125,11 +125,24 @@ button:hover {
     box-shadow: 0 0 20px rgba(176,111,255,.7);
 }
 
-/* ALT BİLGİ */
-.footer-info {
+/* TELİF */
+.legal-box {
     margin-top: 50px;
+    padding: 30px;
+    background: var(--bg-dark2);
+    border-radius: 14px;
+    border: 1px solid #2b004f;
+    box-shadow: 0 0 20px rgba(176,111,255,0.08);
+}
+
+.legal-box h2 {
+    color: var(--neon-purple2);
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.legal-box p {
     color: var(--text-muted);
-    text-align: center;
     font-size: 14px;
     line-height: 1.7;
 }
@@ -179,28 +192,25 @@ button:hover {
 
     <h1>İletişim</h1>
 
-    <!-- KURUMSAL İLETİŞİM BLOĞU -->
+    <!-- BİLGİ BLOĞU -->
     <div class="info-box">
         <div class="info-title">İrtibat Bilgileri</div>
 
         <div class="info-grid">
 
             <div>
-                <p><span>Adres:</span><br>
-                İstanbul Avrupa Yakası / Türkiye</p>
-
-                <p><span>Telefon:</span><br>
-                +90 (532) 000 00 00</p>
-
                 <p><span>E-posta:</span><br>
                 avsaryusufsgu@gmail.com</p>
+
+                <p><span>WhatsApp:</span><br>
+                <a href="https://wa.me/905418194009" style="color:var(--neon-purple2); text-decoration:none;">
+                    +90 541 819 40 09
+                </a></p>
             </div>
 
             <div class="social">
                 <p><span>Sosyal Medya:</span></p>
-                <a href="#">Instagram</a>
-                <a href="#">WhatsApp</a>
-                <a href="#">GitHub</a>
+                <a href="https://instagram.com/avyusuf95" target="_blank">Instagram / avyusuf95</a>
             </div>
 
         </div>
@@ -208,16 +218,13 @@ button:hover {
 
     <!-- FORM -->
     <div class="form-box">
-        <div class="info-title">Bize Ulaşın</div>
+        <div class="info-title">Bana Ulaşın</div>
 
         <label>Adınız Soyadınız:</label>
-        <input type="text" placeholder="Yusuf Avşar">
+        <input type="text" placeholder="Adınız">
 
         <label>E-mail Adresiniz:</label>
-        <input type="email" placeholder="avsaryusufsgu@gmail.com">
-
-        <label>Telefon:</label>
-        <input type="text" placeholder="+90 (532) ...">
+        <input type="email" placeholder="E-posta adresiniz">
 
         <label>Mesajınız:</label>
         <textarea placeholder="Mesajınızı yazın..."></textarea>
@@ -225,9 +232,36 @@ button:hover {
         <button>Gönder</button>
     </div>
 
-    <div class="footer-info">
-        © 2025 Yusuf Avşar — Tüm Hakları Saklıdır.<br>
-        Bu web sitesinde yer alan bilgiler genel bilgilendirme amacıyla hazırlanmıştır.
+
+    <!-- TELİF & KULLANIM ŞARTLARI -->
+    <div class="legal-box">
+        <h2>Telif Hakkı, Gizlilik ve Kullanım Şartları</h2>
+
+        <p>
+            Bu web sitesinde yer alan tüm içerikler, yazılımlar, tasarımlar, görseller ve metinler 
+            5846 Sayılı Fikir ve Sanat Eserleri Kanunu (FSEK), 
+            6698 Sayılı Kişisel Verilerin Korunması Kanunu (KVKK), 
+            Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) 
+            ve uluslararası fikri mülkiyet mevzuatları kapsamında korunmaktadır.
+        </p>
+
+        <p>
+            Ziyaretçiler tarafından iletilen e-posta, mesaj veya kişisel bilgiler 
+            yalnızca iletişim amacıyla saklanmakta olup, 
+            üçüncü kişilerle paylaşılmamaktadır. 
+            Kullanıcı verileri, KVKK madde 4 ve GDPR madde 5 uyarınca 
+            “işlenme amacıyla sınırlı, doğru, güncel ve ölçülü” şekilde korunur.
+        </p>
+
+        <p>
+            Bu sitede yer alan hiçbir içerik, izin alınmadan kopyalanamaz, çoğaltılamaz, dağıtılamaz 
+            veya ticari amaçla kullanılamaz. 
+            Web sitesini kullanarak bu şartları kabul etmiş sayılırsınız.
+        </p>
+
+        <p>
+            © 2025 Yusuf Avşar — Tüm Telif Hakları Saklıdır.
+        </p>
     </div>
 
 </div>

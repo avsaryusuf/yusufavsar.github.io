@@ -8,151 +8,108 @@
 <link rel="stylesheet" href="theme.css">
 
 <style>
-.page-container {
-    margin-top: 140px;
+.contact-container {
     width: 90%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* BAŞLIK */
-h1 {
-    text-align: left;
-    color: var(--neon-purple2);
-    font-size: 34px;
-    margin-bottom: 25px;
-}
-
-/* KURUMSAL BLOK */
-.info-box {
-    background: var(--bg-dark2);
-    border: 1px solid #2b004f;
-    padding: 35px;
-    border-radius: 14px;
-    margin-bottom: 40px;
-    box-shadow: 0 0 20px rgba(176,111,255,0.08);
-}
-
-.info-title {
-    font-size: 26px;
-    color: var(--neon-purple2);
-    margin-bottom: 15px;
-}
-
-/* GRID */
-.info-grid {
+    max-width: 1100px;
+    margin: 130px auto 60px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 35px;
+    gap: 40px;
 }
 
-/* METİN */
-.info-box p {
-    color: var(--text-muted);
-    font-size: 16px;
-    margin: 8px 0;
+.contact-box {
+    background: var(--bg-dark2);
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid #2b004f;
 }
 
-.info-box span {
-    color: white;
-    font-weight: 600;
-}
-
-/* SOSYAL */
-.social a {
+.contact-box h2 {
     color: var(--neon-purple2);
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-    margin: 4px 0;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    margin-bottom: 18px;
+}
+
+.info-item span {
+    font-weight: bold;
+    color: var(--neon-purple2);
 }
 
 /* FORM */
-.form-box {
-    background: var(--bg-dark2);
-    border: 1px solid #2b004f;
-    padding: 35px;
-    border-radius: 14px;
-    box-shadow: 0 0 20px rgba(176,111,255,0.08);
-}
-
-.form-box label {
+.contact-form label {
     display: block;
-    color: var(--text-muted);
-    margin-top: 20px;
     margin-bottom: 6px;
+    color: var(--neon-purple);
 }
 
-.form-box input,
-.form-box textarea {
+.contact-form input, .contact-form textarea {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
+    margin-bottom: 18px;
+    background: #0e0e17;
+    border: 1px solid #2b004f;
     border-radius: 10px;
-    outline: none;
-    background: #0f0b19;
-    border: 1px solid #3a006a;
     color: white;
-    transition: .3s;
+    font-size: 15px;
 }
 
-.form-box input:focus,
-.form-box textarea:focus {
-    border-color: var(--neon-purple);
-    box-shadow: 0 0 10px rgba(176,111,255,0.5);
+.contact-form textarea {
+    height: 140px;
+    resize: none;
 }
 
-.form-box textarea {
-    height: 160px;
-}
-
-button {
-    margin-top: 25px;
+.contact-form button {
     width: 100%;
-    padding: 15px;
     background: var(--neon-purple);
     border: none;
-    border-radius: 10px;
+    padding: 14px;
     color: white;
+    font-size: 17px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 18px;
-    letter-spacing: .5px;
     transition: .3s;
 }
 
-button:hover {
+.contact-form button:hover {
     background: var(--neon-purple2);
-    box-shadow: 0 0 20px rgba(176,111,255,.7);
 }
 
-/* TELİF */
-.legal-box {
-    margin-top: 50px;
-    padding: 30px;
-    background: var(--bg-dark2);
-    border-radius: 14px;
+/* SOSYAL KARTLAR */
+.social-box {
+    margin-top: 25px;
+}
+
+.social-item {
+    background: #0e0e17;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
     border: 1px solid #2b004f;
-    box-shadow: 0 0 20px rgba(176,111,255,0.08);
+    transition: .3s;
 }
 
-.legal-box h2 {
-    color: var(--neon-purple2);
-    margin-bottom: 15px;
-    font-size: 24px;
+.social-item:hover {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 18px rgba(176,111,255,0.25);
 }
 
-.legal-box p {
-    color: var(--text-muted);
-    font-size: 14px;
-    line-height: 1.7;
+.social-item a {
+    color: white;
+    text-decoration: none;
 }
 
+/* MOBILE */
 @media(max-width: 900px) {
-    .info-grid { grid-template-columns: 1fr; }
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <!-- HEADER -->
@@ -175,7 +132,6 @@ button:hover {
     </div>
 </header>
 
-<!-- MOBILE MENU -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
@@ -187,84 +143,64 @@ button:hover {
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<!-- İLETİŞİM SAYFASI -->
-<div class="page-container">
 
-    <h1>İletişim</h1>
+<!-- İLETİŞİM -->
+<div class="contact-container">
 
-    <!-- BİLGİ BLOĞU -->
-    <div class="info-box">
-        <div class="info-title">İrtibat Bilgileri</div>
+    <!-- SOL TARAF: İLETİŞİM BİLGİLERİ -->
+    <div class="contact-box">
+        <h2>İletişim Bilgileri</h2>
 
-        <div class="info-grid">
+        <div class="info-item"><span>İsim:</span> Yusuf Avşar</div>
+        <div class="info-item"><span>E-posta:</span> avsaryusufsgu@gmail.com</div>
 
-            <div>
-                <p><span>E-posta:</span><br>
-                avsaryusufsgu@gmail.com</p>
+        <h2 style="margin-top:25px;">Hızlı Erişim</h2>
 
-                <p><span>WhatsApp:</span><br>
-                <a href="https://wa.me/905418194009" style="color:var(--neon-purple2); text-decoration:none;">
-                    +90 541 819 40 09
-                </a></p>
+        <div class="social-box">
+
+            <div class="social-item">
+                <a href="mailto:avsaryusufsgu@gmail.com">📧 Mail Gönder</a>
             </div>
 
-            <div class="social">
-                <p><span>Sosyal Medya:</span></p>
-                <a href="https://instagram.com/avyusuf95" target="_blank">Instagram / avyusuf95</a>
+            <div class="social-item">
+                <a href="https://wa.me/905418194009" target="_blank">📱 WhatsApp: +90 541 819 40 09</a>
+            </div>
+
+            <div class="social-item">
+                <a href="https://instagram.com/avyusuf95" target="_blank">📸 Instagram: @avyusuf95</a>
             </div>
 
         </div>
     </div>
 
-    <!-- FORM -->
-    <div class="form-box">
-        <div class="info-title">Bana Ulaşın</div>
 
-        <label>Adınız Soyadınız:</label>
-        <input type="text" placeholder="Adınız">
+    <!-- SAĞ TARAF: FORM -->
+    <div class="contact-box">
+        <h2>İletişim Formu</h2>
 
-        <label>E-mail Adresiniz:</label>
-        <input type="email" placeholder="E-posta adresiniz">
+        <form class="contact-form">
+            <label>Adınız Soyadınız</label>
+            <input type="text" placeholder="Adınızı yazın">
 
-        <label>Mesajınız:</label>
-        <textarea placeholder="Mesajınızı yazın..."></textarea>
+            <label>E-posta Adresiniz</label>
+            <input type="email" placeholder="mail@example.com">
 
-        <button>Gönder</button>
-    </div>
+            <label>Konu</label>
+            <input type="text" placeholder="Konu başlığı">
 
+            <label>Mesaj</label>
+            <textarea placeholder="Mesajınızı yazın..."></textarea>
 
-    <!-- TELİF & KULLANIM ŞARTLARI -->
-    <div class="legal-box">
-        <h2>Telif Hakkı, Gizlilik ve Kullanım Şartları</h2>
-
-        <p>
-            Bu web sitesinde yer alan tüm içerikler, yazılımlar, tasarımlar, görseller ve metinler 
-            5846 Sayılı Fikir ve Sanat Eserleri Kanunu (FSEK), 
-            6698 Sayılı Kişisel Verilerin Korunması Kanunu (KVKK), 
-            Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) 
-            ve uluslararası fikri mülkiyet mevzuatları kapsamında korunmaktadır.
-        </p>
-
-        <p>
-            Ziyaretçiler tarafından iletilen e-posta, mesaj veya kişisel bilgiler 
-            yalnızca iletişim amacıyla saklanmakta olup, 
-            üçüncü kişilerle paylaşılmamaktadır. 
-            Kullanıcı verileri, KVKK madde 4 ve GDPR madde 5 uyarınca 
-            “işlenme amacıyla sınırlı, doğru, güncel ve ölçülü” şekilde korunur.
-        </p>
-
-        <p>
-            Bu sitede yer alan hiçbir içerik, izin alınmadan kopyalanamaz, çoğaltılamaz, dağıtılamaz 
-            veya ticari amaçla kullanılamaz. 
-            Web sitesini kullanarak bu şartları kabul etmiş sayılırsınız.
-        </p>
-
-        <p>
-            © 2025 Yusuf Avşar — Tüm Telif Hakları Saklıdır.
-        </p>
+            <button type="submit">Gönder</button>
+        </form>
     </div>
 
 </div>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 Yusuf Avşar — Tüm Hakları Saklıdır.
+</footer>
 
 <script>
 function toggleMenu() {

@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hakkımda | Yusuf Avşar</title>
 
-<!-- Tema -->
 <link rel="stylesheet" href="theme.css">
 
 <style>
@@ -83,7 +82,7 @@
     border: 3px solid #0a0a0f;
 }
 
-/* ======== MOBİL TASARIM ======== */
+/* ======== MOBİL ======== */
 @media(max-width: 900px) {
 
     .timeline-line {
@@ -125,7 +124,7 @@ footer {
 
     <nav>
         <a href="index.html">Ana Sayfa</a>
-        <a href="hakkimda.html">Hakkımda</a>
+        <a href="hakkimda.html" class="active">Hakkımda</a>
         <a href="projeler.html">Projeler</a>
         <a href="uzmanlik.html">Uzmanlık</a>
         <a href="makaleler.html">Makaleler</a>
@@ -135,13 +134,11 @@ footer {
     </nav>
 
     <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
     </div>
 </header>
 
-<!-- MOBILE MENU -->
+<!-- ✔ TEK ve DOĞRU MOBILE MENU -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
@@ -150,20 +147,6 @@ footer {
     <a href="makaleler.html">Makaleler</a>
     <a href="hizmetler.html">Hizmetler</a>
     <a href="sertifikalar.html">Sertifikalar</a>
-    <a href="iletisim.html">İletişim</a>
-</div>
-
-<div id="mobileMenu" class="mobile-menu">
-    <a href="index.html">Ana Sayfa</a>
-    <a href="hakkimda.html">Hakkımda</a>
-    <a href="projeler.html">Projeler</a>
-    <a href="uzmanlik.html">Uzmanlık</a>
-    <a href="kitaplar.html">Kitaplar</a>
-    <a href="makaleler.html">Makaleler</a>
-    <a href="hizmetler.html">Hizmetler</a>
-    <a href="sertifikalar.html">Sertifikalar</a>
-    <a href="galeri.html">Galeri</a>
-    <a href="yolharitam.html">Yol Haritam</a>
     <a href="iletisim.html">İletişim</a>
 </div>
 
@@ -182,34 +165,15 @@ function toggleMenu() {
     <p style="max-width:900px; margin:auto; font-size:18px; line-height:1.75; color:#d8d8d8;">
         Ben Yusuf Avşar. Kariyerime özel güvenlik sektöründe güvenlik görevlisi olarak başladım ve <b>Vardiya Amiri</b> olarak görev yapmaktayım.
         Ancak iş hayatımdaki gerçek dönüşüm, 2010 yılında yazılıma duyduğum merakla başladı.
-        Yıllar içinde yalnızca kod yazmayı değil; problem çözmeyi, süreç tasarlamayı ve teknolojiyi yönetmeyi öğrendim.
 
         <br><br>
-
-        2015’ten itibaren profesyonel yazılım geliştirmeye odaklanarak ticari projeler üretmeye başladım.
-        Yazılım serüvenim, sektör bağımsız çalışabilme kabiliyetimi güçlendirdi: güvenlik, market, inşaat,
-        savunma sanayi, otomasyon, ERP ve siber güvenlik alanlarında deneyim kazandım.
+        2015’ten itibaren profesyonel yazılım geliştirmeye odaklandım ve farklı sektörlerde projeler geliştirdim.
 
         <br><br>
-
-        2019’da 12 kişilik bir teknoloji ekibi kurarak çok disiplinli projelere imza attım.
-        Bu ekip ile yazılım, siber güvenlik, veri analizi ve otomasyon sistemleri üzerine birçok bağımsız çalışma yürüttüm.
-        Sürekli öğrenme prensibini benimseyerek uluslararası topluluklara, konferanslara ve çevrim içi eğitim programlarına katıldım.
+        2019’da 12 kişilik bir teknoloji ekibi kurarak yazılım, otomasyon, güvenlik ve veri teknolojileri üzerine çok disiplinli projeler yürüttüm.
 
         <br><br>
-
-        Bugün hem vardiya amiri olarak görev yapıyor hem de bağımsız yazılım geliştiricisi / teknoloji danışmanı olarak üretmeye devam ediyorum.
-        Tek bir alana bağlı kalmadan çalışan bir profesyonel olmak; beni zihinsel olarak canlı, üretken ve yenilikçi tutan en önemli unsur.
-
-        <br><br>
-
-        Misyonum; iş dünyasında güveni, kaliteyi ve sürdürülebilirliği ön planda tutarak çözümler üretmek.
-        Vizyonum ise ulusal ve uluslararası arenada daha büyük teknolojik projelerde yer alarak uzun soluklu bir değer yaratmak.
-
-        <br><br>
-
-        Disiplin, ekip ruhu, analiz kabiliyeti ve çözüm odaklı yaklaşım; çalışma kültürümün temelini oluşturur.
-        Her proje benim için sadece bir iş değil; aynı zamanda bir sorumluluk, gelişim ve iz bırakma fırsatıdır.
+        Bugün hem vardiya amiri olarak görev yapıyor hem de aktif şekilde freelance yazılım geliştiricisi / teknoloji danışmanı olarak üretmeye devam ediyorum.
     </p>
 </section>
 
@@ -219,68 +183,53 @@ function toggleMenu() {
 
     <div class="timeline-line"></div>
 
-    <!-- 2010 -->
     <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-box">
             <div class="timeline-year">2010 — Yazılıma İlk Adım</div>
-            <div class="timeline-text">
-                Algoritmalar, fonksiyon mantığı ve bilgisayar sistemlerinin temelini öğrenerek yazılım dünyasına giriş yaptım.
-            </div>
+            <div class="timeline-text">Algoritma ve temel bilgisayar bilimleri ile yazılım yolculuğum başladı.</div>
         </div>
     </div>
 
-    <!-- 2015 -->
     <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-box">
-            <div class="timeline-year">2015 — Profesyonel Yazılım</div>
-            <div class="timeline-text">
-                Ticari projeler geliştirerek gerçek dünya ihtiyaçlarına uygun yazılım üretmeye başladım.
-            </div>
+            <div class="timeline-year">2015 — Profesyonel Geliştirme</div>
+            <div class="timeline-text">Ticari yazılım projeleri üretmeye başladım.</div>
         </div>
     </div>
 
-    <!-- 2017–2019 -->
     <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-box">
             <div class="timeline-year">2017–2019 — Çok Sektörlü Tecrübe</div>
-            <div class="timeline-text">
-                Güvenlik, market ve inşaat sektörlerinde çalışarak çok yönlü bir iş deneyimi kazandım.
-            </div>
+            <div class="timeline-text">Güvenlik, market, otomasyon ve çeşitli sektörlerde geliştirme yaptım.</div>
         </div>
     </div>
 
-    <!-- 2019 -->
     <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-box">
-            <div class="timeline-year">2019 — 12 Kişilik Teknoloji Ekibi</div>
-            <div class="timeline-text">
-                Yazılım ve teknoloji alanında 12 kişilik çekirdek bir ekip kurarak bağımsız projeler geliştirdim.
-            </div>
+            <div class="timeline-year">2019 — Teknoloji Ekibi Kurulumu</div>
+            <div class="timeline-text">12 kişilik ekip ile bağımsız projeler geliştirdim.</div>
         </div>
     </div>
 
-    <!-- 2025 -->
     <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-box">
-            <div class="timeline-year">2025 — Hibrit Çalışma Modeli</div>
-            <div class="timeline-text">
-                Hem vardiya amiri olarak görev yapıp hem de freelance yazılım projeleri yürütmeye devam ettim.
-            </div>
+            <div class="timeline-year">2025 — Hibrit Çalışma</div>
+            <div class="timeline-text">Hem is yerinde vardiya amirliği hem freelance yazılım geliştirme.</div>
         </div>
     </div>
 
 </div>
 
 
-<!-- ======== FOOTER ======== -->
 <footer>
     © 2025 Yusuf Avşar — Tüm Hakları Saklıdır.
 </footer>
+
 
 <!-- YUSUF AI CHAT WIDGET -->
 <div id="yusufAiBtn" class="ai-button">🤖</div>
@@ -295,6 +244,5 @@ function toggleMenu() {
     </div>
 </div>
 
-    
 </body>
 </html>

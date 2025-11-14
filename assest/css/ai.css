@@ -1,1 +1,125 @@
+/* ============================================
+   AI CSS — Yusuf AI Widget Styles
+   ============================================ */
 
+/* AI Floating Button */
+.ai-button {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    background: var(--neon-purple);
+    color: white;
+    font-size: 28px;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow-neon);
+    transition: var(--transition);
+    z-index: 99999;
+}
+
+.ai-button:hover {
+    transform: scale(1.07);
+    background: var(--neon-purple2);
+}
+
+/* AI Panel */
+.ai-panel {
+    position: fixed;
+    bottom: 110px;
+    right: 26px;
+    width: 330px;
+    height: 430px;
+    background: #0e0618;
+    border: 1px solid #3b0073;
+    border-radius: var(--radius-big);
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(176,111,255,0.4);
+    z-index: 99999;
+    overflow: hidden;
+}
+
+/* Header */
+.ai-header {
+    background: var(--neon-purple);
+    color: white;
+    text-align: center;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #530099;
+}
+
+/* Messages */
+.ai-messages {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    font-size: 14px;
+    color: white;
+}
+
+.ai-messages div {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Input Box */
+.ai-input-box {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #2b004f;
+    background: #120020;
+}
+
+.ai-input-box input {
+    flex: 1;
+    padding: 10px;
+    background: #0b0613;
+    border: 1px solid #3b0073;
+    border-radius: var(--radius);
+    color: white;
+    font-size: 14px;
+}
+
+.ai-input-box button {
+    margin-left: 10px;
+    background: var(--neon-purple);
+    border: none;
+    padding: 10px 16px;
+    border-radius: var(--radius);
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.ai-input-box button:hover {
+    background: var(--neon-purple2);
+}
+
+/* Scrollbar */
+.ai-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ai-messages::-webkit-scrollbar-thumb {
+    background: #4f0a88;
+    border-radius: 10px;
+}
+
+/* Mobile */
+@media(max-width: 600px) {
+    .ai-panel {
+        right: 10px;
+        width: 90%;
+    }
+
+    .ai-button {
+        right: 10px;
+    }
+}

@@ -1,43 +1,42 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ana Sayfa</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Profesyonel yazılım geliştirici ve güvenlik uzmanı">
 <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-<div class="logo" onclick="location.href='index.html'">Profesyonel Geliştirici</div>
-<nav>
-<a href="index.html">Anasayfa</a>
+<div class="logo" onclick="location.href='index.html'">Yusuf Avşar</div>
+
+
+<div class="hamburger" onclick="toggleMenu()">
+☰
+</div>
+
+
+<nav id="nav-menu">
+<a href="index.html" class="active">Anasayfa</a>
 <a href="about.html">Hakkımda</a>
 <a href="services.html">Hizmetler</a>
 <a href="portfolio.html">Portföy</a>
 <a href="contact.html">İletişim</a>
 </nav>
+
+
+<button class="theme-btn" onclick="toggleTheme()">🌙</button>
 </header>
 
 
 <section class="hero">
-<h1>Yazılım & Güvenlik Alanında Profesyonel Çözümler</h1>
-<p>Modern yazılım geliştirme, güvenlik testleri ve kurumsal projeler ile profesyonel hizmet sunuyorum.</p>
+<h1>Yazılım Geliştirme & Güvenlik Çözümleri</h1>
+<p>Modern yazılım projeleri, sistem güvenliği ve kurumsal çözümler sunuyorum.</p>
 <a href="about.html" class="btn">Beni Tanıyın</a>
 </section>
 
 
 <section class="section">
-<h2>Öne Çıkan Hizmetler</h2>
-<div class="services-grid">
-<div class="service-box">Yazılım Geliştirme</div>
-<div class="service-box">Siber Güvenlik</div>
-<div class="service-box">Web Arayüz Tasarımı</div>
-</div>
-</section>
-
-
-<footer>© 2025 Profesyonel Geliştirici</footer>
-<script src="js/main.js"></script>
-</body>
 </html>

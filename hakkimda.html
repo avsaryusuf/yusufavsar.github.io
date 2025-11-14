@@ -1,120 +1,155 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hakkımda | Yusuf Avşar</title>
 
-<!-- Tema -->
 <link rel="stylesheet" href="theme.css">
 
 <style>
-
-/* ======== TIMELINE GENEL ======== */
-.timeline-container {
+.page-wrapper {
     width: 90%;
-    max-width: 1100px;
-    margin: 160px auto 80px auto;
-    position: relative;
+    max-width: 1150px;
+    margin: 140px auto 80px auto;
 }
 
-.timeline-line {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 100%;
-    background: #9b4dff;
-    border-radius: 5px;
-    opacity: 0.30;
-    z-index: 1;
-}
-
-.timeline-item {
-    width: 100%;
-    display: flex;
-    margin: 70px 0;
-    position: relative;
-}
-
-.timeline-item:nth-child(odd) { justify-content: flex-start; }
-.timeline-item:nth-child(even) { justify-content: flex-end; }
-
-.timeline-box {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(6px);
-    padding: 25px 35px;
-    width: 45%;
-    border-radius: 12px;
-    border: 1px solid rgba(155, 77, 255, 0.25);
-    position: relative;
-    z-index: 2;
-}
-
-.timeline-year {
-    font-size: 24px;
-    font-weight: 700;
-    color: #c58dff;
+/* Başlık */
+.page-title {
+    font-size: 40px;
+    text-align: center;
+    color: var(--neon-purple2);
+    text-shadow: 0 0 20px rgba(176,111,255,0.5);
     margin-bottom: 10px;
 }
 
-.timeline-text {
+.page-subtitle {
+    text-align: center;
+    color: var(--text-muted);
     font-size: 17px;
-    line-height: 1.6;
-    color: #dedede;
+    max-width: 800px;
+    margin: 0 auto 35px auto;
 }
 
-.timeline-dot {
-    width: 20px;
-    height: 20px;
-    background: #c58dff;
+/* Hakkımda kart */
+.about-box {
+    background: var(--bg-dark2);
+    border: 1px solid #320058;
+    border-radius: 14px;
+    padding: 30px 35px;
+    line-height: 1.8;
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    box-shadow: 0 0 22px rgba(176,111,255,0.12);
+}
+
+.about-box b {
+    color: var(--neon-purple2);
+}
+
+/* Özellik listeleri */
+.feature-section {
+    margin-top: 50px;
+}
+
+.feature-title {
+    font-size: 28px;
+    color: var(--neon-purple2);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 22px;
+}
+
+.feature-card {
+    background: var(--bg-dark2);
+    border: 1px solid #2c0051;
+    padding: 22px;
+    border-radius: 12px;
+    transition: .25s;
+}
+
+.feature-card:hover {
+    border-color: var(--neon-purple2);
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(176,111,255,0.25);
+}
+
+.feature-card h3 {
+    color: var(--neon-purple2);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* Timeline */
+.timeline-title {
+    font-size: 30px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--neon-purple2);
+}
+
+.timeline {
+    border-left: 2px solid var(--neon-purple2);
+    margin-top: 25px;
+    padding-left: 25px;
+}
+
+.t-item {
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.t-dot {
+    width: 14px;
+    height: 14px;
+    background: var(--neon-purple2);
     border-radius: 50%;
     position: absolute;
-    top: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    border: 3px solid #0a0a0f;
+    left: -32px;
+    top: 2px;
+    box-shadow: 0 0 14px var(--neon-purple2);
 }
 
-/* ======== MOBİL ======== */
-@media(max-width: 900px) {
-
-    .timeline-line {
-        left: 12px;
-        transform: none;
-    }
-
-    .timeline-item {
-        justify-content: flex-start !important;
-        padding-left: 35px;
-    }
-
-    .timeline-box {
-        width: 85%;
-    }
-
-    .timeline-dot {
-        left: 12px;
-        transform: none;
-    }
+.t-item h3 {
+    font-size: 18px;
+    color: var(--neon-purple2);
+    margin-bottom: 4px;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px 0;
-    color: #aaa;
+.t-meta {
+    font-size: 14px;
+    color: #a58ee9;
+    margin-bottom: 6px;
+}
+
+.t-desc {
     font-size: 15px;
-    margin-top: 60px;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
 
+/* Mobile */
+@media(max-width:900px){
+    .page-wrapper{ margin-top:130px; }
+}
 </style>
 
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
     <div class="logo">Yusuf Avşar</div>
 
@@ -134,10 +169,10 @@ footer {
     </div>
 </header>
 
-<!-- MOBILE MENU (TEK VE DOĞRU SÜRÜM) -->
+<!-- MOBILE MENU -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
-    <a href="hakkimda.html">Hakkımda</a>
+    <a href="hakkimda.html" class="active">Hakkımda</a>
     <a href="projeler.html">Projeler</a>
     <a href="uzmanlik.html">Uzmanlık</a>
     <a href="makaleler.html">Makaleler</a>
@@ -146,106 +181,110 @@ footer {
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<script>
-function toggleMenu() {
-    document.getElementById("mobileMenu").classList.toggle("show");
-}
-</script>
+<div class="page-wrapper">
 
-
-<!-- ======== HAKKIMDA ALANI ======== -->
-<section class="hero-text" style="margin-top:140px; text-align:center; padding:20px;">
-    <h1 style="font-size:38px; color:#c58dff;">Hakkımda</h1>
-
-    <p style="max-width:900px; margin:auto; font-size:18px; line-height:1.75; color:#d8d8d8;">
-        Ben Yusuf Avşar. Kariyerime özel güvenlik sektöründe güvenlik görevlisi olarak başladım ve
-        <b>Vardiya Amiri</b> olarak görev yapmaktayım. Ancak yazılım yolculuğum 2010 yılında başladı.
-        Kod yazmayı değil; düşünmeyi, analiz etmeyi ve çözüm üretmeyi öğrendim.
-
-        <br><br>
-        2015’ten itibaren profesyonel yazılım projeleri geliştirmeye başladım. Güvenlik, market, inşaat,
-        savunma sanayi, ERP, otomasyon ve siber güvenlik gibi birçok sektörde deneyim kazandım.
-
-        <br><br>
-        2019’da 12 kişilik teknoloji ekibi kurarak yapay zekâ, otomasyon, veri analizi, güvenlik ve
-        backend odaklı projeler geliştirdim. Sürekli öğrenme kültürüm; beni daha analitik, daha disiplinli,
-        daha yenilikçi yaptı.
-
-        <br><br>
-        Bugün hem vardiya amiri olarak görev yapıyor hem de freelance yazılım & teknoloji danışmanı
-        olarak projeler üretmeye devam ediyorum. Disiplin, analiz kabiliyeti ve çözüm odaklı yaklaşım;
-        çalışma kültürümün temelini oluşturuyor.
+    <h1 class="page-title">Yusuf Avşar</h1>
+    <p class="page-subtitle">
+        Teknoloji üreten, yapay zekâ sistemleri geliştiren, siber güvenlik ve full-stack yazılım alanlarında uzman bir geliştirici.
     </p>
-</section>
 
+    <!-- HAKKIMDA ANA KUTU -->
+    <div class="about-box">
+        14 yılı aşkın süredir yazılım teknolojileri, yapay zekâ, siber güvenlik ve kurumsal sistem
+        geliştirme üzerine profesyonel çalışmalar yapıyorum. 
+        <br><br>
+        Bugüne kadar <b>300’den fazla yazılım projesi</b> geliştirdim, farklı ülkelerde (ABD, Norveç,
+        Singapur, İngiltere) araştırma ve geliştirme odaklı işler yürüttüm.
+        <br><br>
+        Çalışmalarımın temel odağı:
+        <br><br>
+        • <b>Yapay Zekâ Sistemleri</b><br>
+        • <b>Siber Güvenlik ve Ofansif Güvenlik</b><br>
+        • <b>Full-Stack Kurumsal Yazılım Mimarisi</b><br>
+        • <b>Veri Analizi & Otonom Sistemler</b><br><br>
 
-<!-- ======== ZAMAN ÇİZELGESİ ======== -->
-<div class="timeline-container">
+        Aynı zamanda çeşitli kurumlara danışmanlık veriyor, projeleri için özel yazılım ve 
+        siber güvenlik çözümleri geliştiriyorum.
+    </div>
 
-    <div class="timeline-line"></div>
+    <!-- TEKNİK ALANLAR -->
+    <div class="feature-section">
+        <h2 class="feature-title">Teknik Uzmanlık Alanlarım</h2>
 
-    <!-- 2010 -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-box">
-            <div class="timeline-year">2010 — Yazılıma İlk Adım</div>
-            <div class="timeline-text">
-                Algoritma, problem çözme ve bilgisayar temelleri üzerine yoğun çalışmaya başladım.
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Full-Stack Development</h3>
+                <p>.NET • Node.js • React • API Architecture • Microservices</p>
             </div>
+
+            <div class="feature-card">
+                <h3>Siber Güvenlik</h3>
+                <p>Red Team • PenTest • Ağ Güvenliği • Uygulama Güvenliği</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Yapay Zekâ</h3>
+                <p>LLM • GPT Modelleri • Veri İşleme • AI Otomasyon Sistemleri</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Bulut & DevOps</h3>
+                <p>AWS • Azure • Docker • CI/CD Pipelines • Cloud Security</p>
+            </div>
+
         </div>
     </div>
 
-    <!-- 2015 -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-box">
-            <div class="timeline-year">2015 — Profesyonel Yazılım</div>
-            <div class="timeline-text">
-                Ticari projeler oluşturarak profesyonel yazılım dünyasına giriş yaptım.
-            </div>
-        </div>
-    </div>
+    <!-- ZAMAN ÇİZELGESİ -->
+    <h2 class="timeline-title">Kariyer Yolculuğu</h2>
+    <div class="timeline">
 
-    <!-- 2017–2019 -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-box">
-            <div class="timeline-year">2017–2019 — Çok Sektörlü Deneyim</div>
-            <div class="timeline-text">
-                Güvenlik, market, inşaat ve üretim sektörlerinde teknoloji süreçlerine katkıda bulundum.
-            </div>
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <h3>İlk Yazılım Deneyimi</h3>
+            <div class="t-meta">2010</div>
+            <div class="t-desc">Temel algoritma ve masaüstü yazılımlar üzerinde çalışmalar.</div>
         </div>
-    </div>
 
-    <!-- 2019 -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-box">
-            <div class="timeline-year">2019 — 12 Kişilik Teknoloji Ekibi</div>
-            <div class="timeline-text">
-                Çok disiplinli bir ekip kurarak AI, backend, otomasyon ve güvenlik projeleri geliştirdim.
-            </div>
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <h3>Web ve Backend'e Giriş</h3>
+            <div class="t-meta">2013-2016</div>
+            <div class="t-desc">Kurumsal projeler, backend mimarisi ve sistem tasarımı.</div>
         </div>
-    </div>
 
-    <!-- 2025 -->
-    <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-box">
-            <div class="timeline-year">2025 — Hibrit Çalışma Modeli</div>
-            <div class="timeline-text">
-                Hem vardiya amiri hem de bağımsız yazılım geliştiricisi olarak çalışmalarımı sürdürüyorum.
-            </div>
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <h3>Siber Güvenlik & AI Yönelimi</h3>
+            <div class="t-meta">2017-2020</div>
+            <div class="t-desc">Sızma testleri, tehdit analizi, makine öğrenimi ve otomasyon.</div>
         </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <h3>Uluslararası Projeler</h3>
+            <div class="t-meta">2020-2024</div>
+            <div class="t-desc">ABD, Norveç, İngiltere ve Singapur’da AI & güvenlik projeleri.</div>
+        </div>
+
+        <div class="t-item">
+            <div class="t-dot"></div>
+            <h3>AI Sistemleri & Otonom Yazılım</h3>
+            <div class="t-meta">2024-2025</div>
+            <div class="t-desc">LLM tabanlı analiz, karar motorları, güvenlik odaklı AI çözümleri.</div>
+        </div>
+
     </div>
 
 </div>
 
-
-<!-- FOOTER -->
 <footer>
     © 2025 Yusuf Avşar — Tüm Hakları Saklıdır.
 </footer>
+
+<script src="menu.js"></script>
+<script src="ai.js"></script>
 
 </body>
 </html>

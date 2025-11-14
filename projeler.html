@@ -5,18 +5,84 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projeler | Yusuf Avşar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
 
-<script>
-function toggleMenu(){
-    const menu = document.getElementById("mobileMenu");
-    menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
+<style>
+
+.page {
+    width: 90%;
+    max-width: 1200px;
+    margin: 150px auto 60px auto;
 }
-</script>
 
+.title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--neon-purple2);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 19px;
+    color: var(--text-muted);
+    margin-bottom: 55px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
+
+.project-card {
+    background: var(--bg-dark2);
+    border: 1px solid #2b004f;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(150, 70, 255, 0.15);
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(150, 70, 255, 0.25);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: var(--neon-purple);
+}
+
+.project-card p {
+    color: #cebfff;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.tag-box {
+    margin-top: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(190, 122, 255, 0.15);
+    padding: 6px 12px;
+    font-size: 13px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 40px;
+    border: 1px solid var(--neon-purple2);
+}
+
+@media(max-width: 600px){
+    .project-card { padding: 20px; }
+}
+
+</style>
 </head>
-
 <body>
 
 <!-- HEADER -->
@@ -42,7 +108,7 @@ function toggleMenu(){
     </div>
 </header>
 
-<!-- MOBIL -->
+<!-- MOBILE MENU -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
@@ -57,84 +123,106 @@ function toggleMenu(){
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<!-- CONTENT -->
-<div class="container">
-    <h1 class="page-title">Projeler</h1>
+<!-- ===== PAGE CONTENT ===== -->
+<div class="page">
 
-    <div class="projects-grid">
+    <div class="title">Projelerim</div>
+    <div class="sub-title">Gerçek, profesyonel ve aktif olarak geliştirdiğim projeler.</div>
+
+    <div class="projects">
 
         <!-- PROJE 1 -->
         <div class="project-card">
-            <h2>Kurumsal ERP Yönetim Sistemi (2021 - 2023)</h2>
+            <h3>🔐 Siber Güvenlik Tehdit Analiz Platformu</h3>
             <p>
-                Orta ölçekli 3 firmanın operasyonlarını tek çatı altında toplayan gelişmiş bir ERP altyapısı geliştirdim.
-                Stok yönetimi, finans modülü, personel takibi, otomatik raporlama ve merkezî log sistemi gibi 
-                kritik çözümler içeriyor. Sistemi hem yazılım hem de güvenlik tarafında baştan sona ben tasarladım.
+                Kurumsal şirketlerin ağ trafiğini analiz ederek sıfırıncı gün açıklarını,
+                kimlik avı girişimlerini ve zararlı trafik davranışlarını gerçek zamanlı tespit eden 
+                yapay zekâ destekli güvenlik platformu.
             </p>
-            <p><strong>Teknolojiler:</strong> Node.js, PostgreSQL, Redis, Docker, React</p>
-            <p><strong>Katkım:</strong> Sistem mimarisi, API altyapısı, veri güvenliği, erişim kontrol tasarımı</p>
+
+            <div class="tag-box">
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Siber Güvenlik</span>
+                <span class="tag">Network Analysis</span>
+            </div>
         </div>
 
         <!-- PROJE 2 -->
         <div class="project-card">
-            <h2>Siber Güvenlik İzleme & Olay Müdahale Paneli (SOC-Lite)</h2>
+            <h3>🤖 Yapay Zekâ Destekli Kod Denetleme Sistemi</h3>
             <p>
-                Çeşitli şirketler için güvenlik analizi, trafik takibi, davranışsal tehdit tespiti, 
-                anlık güvenlik uyarıları ve log analizlerini içeren SOC-lite tabanlı bir yönetim paneli tasarladım.
-                Özellikle hibrit çalışma yapan ekiplerin dış tehditlere karşı korunması için geliştirildi.
+                Yazılımcıların geliştirdiği kodları analiz ederek güvenlik açıklarını bulan,
+                mimari hataları raporlayan ve performans önerileri sunan yapay zekâ tabanlı
+                otomatik kod analiz sistemi.
             </p>
-            <p><strong>Teknolojiler:</strong> Python, Flask, Elastic Stack, Fail2Ban, Suricata</p>
-            <p><strong>Katkım:</strong> Log analizi motoru, anomali tespit algoritmaları, dashboard UI</p>
+
+            <div class="tag-box">
+                <span class="tag">AI</span>
+                <span class="tag">Deep Learning</span>
+                <span class="tag">SAST</span>
+                <span class="tag">Backend</span>
+            </div>
         </div>
 
         <!-- PROJE 3 -->
         <div class="project-card">
-            <h2>AI Destekli Personel Analiz & Performans Sistemi</h2>
+            <h3>📡 Kurumsal Çok Katmanlı Güvenlik Duvarı</h3>
             <p>
-                Firmaların personel verimliliğini ölçen, devamsızlık tahmini yapan, iş yükünü analiz eden
-                yapay zeka tabanlı bir tahminleme sistemi geliştirdim. Model, 6 ay içinde firmaya 
-                %27 iş gücü optimizasyonu sağladı.
+                Büyük ölçekli şirketlerde kullanılan, davranışsal trafik analizi yapan ve
+                otomatik saldırı önleme modülleri içeren yeni nesil güvenlik duvarı mimarisi.
             </p>
-            <p><strong>Teknolojiler:</strong> TensorFlow, Pandas, FastAPI, React</p>
-            <p><strong>Katkım:</strong> Veri modeli, ML pipeline, API, performans algoritmaları</p>
+
+            <div class="tag-box">
+                <span class="tag">Firewall</span>
+                <span class="tag">Security Engineering</span>
+                <span class="tag">Network Security</span>
+            </div>
         </div>
 
         <!-- PROJE 4 -->
         <div class="project-card">
-            <h2>Akıllı Güvenlik & Personel Yönetim Sistemi</h2>
+            <h3>📊 Veri Görselleştirme & Karar Destek Sistemi</h3>
             <p>
-                Özel güvenlik sektörü için geliştirilmiş devriye takibi, vardiya planlama, anlık konum izleme,
-                görev tamamlama sistemi ve şüpheli durum raporlama modülleri içerir.
-                Türkiye’de bu sektöre özel üretilmiş nadir çözümlerden biridir.
+                Orta ve büyük ölçekli işletmeler için finansal, operasyonel ve güvenlik verilerini
+                tek panelde toplayıp anlamlı grafiklere dönüştüren karar destek yapısı.
             </p>
-            <p><strong>Teknolojiler:</strong> PHP/Laravel, MySQL, Firebase, MQTT</p>
-            <p><strong>Katkım:</strong> Baş geliştirici, sistem tasarımı, mobil backend</p>
+
+            <div class="tag-box">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Dashboards</span>
+                <span class="tag">Data Engineering</span>
+            </div>
         </div>
 
         <!-- PROJE 5 -->
         <div class="project-card">
-            <h2>İleri Seviye Network Altyapı Otomasyon Sistemi</h2>
+            <h3>🧬 Kişisel Yapay Zekâ Asistanım</h3>
             <p>
-                2 farklı şirketin network altyapısını tamamen otomatik hâle getiren, IP dağıtım yönetimi, 
-                cihaz envanteri, router&switch izleme ve yapılandırma kontrolü yapan büyük bir otomasyon projesi.
+                Günlük iş yükünü optimize eden, planlama yapan, araştırma desteği sağlayan
+                ve kişisel çalışma düzenimi takip eden kendi özel AI asistanım.
             </p>
-            <p><strong>Teknolojiler:</strong> Python, Paramiko, SNMP, Grafana</p>
-            <p><strong>Katkım:</strong> Otomasyon scriptleri, yönetim paneli, monitoring sistemi</p>
-        </div>
 
-        <!-- PROJE 6 -->
-        <div class="project-card">
-            <h2>e-Ticaret İçin Tam Otomasyonlu Sipariş Entegrasyon Sistemi</h2>
-            <p>
-                Trendyol, Hepsiburada, N11 ve Amazon gibi platformlardan gelen siparişleri otomatik işleyen,
-                fatura kesen ve kargo şirketlerine API üzerinden veri gönderen yüksek hacimli entegrasyon yazılımı.
-            </p>
-            <p><strong>Teknolojiler:</strong> Node.js, MongoDB, Express</p>
-            <p><strong>Katkım:</strong> Mikro servis mimarisi, entegrasyon API’leri</p>
+            <div class="tag-box">
+                <span class="tag">AI Assistant</span>
+                <span class="tag">NLP</span>
+                <span class="tag">Automation</span>
+            </div>
         </div>
 
     </div>
+
 </div>
+
+<footer>
+    © 2025 <span>Yusuf Avşar</span> — Tüm Hakları Saklıdır.
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("mobileMenu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>

@@ -5,18 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hakkımda | Yusuf Avşar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
 
-<script>
-function toggleMenu(){
-    const menu = document.getElementById("mobileMenu");
-    menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
+<style>
+/* HAKKIMDA SAYFASI TASARIMI */
+
+.page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 150px auto 60px auto;
 }
-</script>
 
+.title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--neon-purple2);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.sub-title {
+    font-size: 20px;
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 50px;
+}
+
+.text-box {
+    background: var(--bg-dark2);
+    border: 1px solid #2b004f;
+    padding: 40px;
+    border-radius: 18px;
+    line-height: 1.8;
+    font-size: 18px;
+    box-shadow: 0 0 25px rgba(140, 60, 255, 0.15);
+}
+
+.text-box p {
+    color: #d7c7ff;
+    margin-bottom: 20px;
+}
+
+/* Quote */
+.quote {
+    margin-top: 40px;
+    padding: 25px;
+    background: rgba(190, 122, 255, 0.05);
+    border-left: 4px solid var(--neon-purple2);
+    font-size: 20px;
+    font-style: italic;
+    color: var(--neon-purple);
+}
+
+</style>
 </head>
-
 <body>
 
 <!-- HEADER -->
@@ -42,7 +84,7 @@ function toggleMenu(){
     </div>
 </header>
 
-<!-- MOBIL MENU -->
+<!-- Mobile Menu -->
 <div id="mobileMenu" class="mobile-menu">
     <a href="index.html">Ana Sayfa</a>
     <a href="hakkimda.html">Hakkımda</a>
@@ -57,58 +99,68 @@ function toggleMenu(){
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<!-- İÇERİK -->
-<div class="container">
 
-    <h1 class="page-title">Hakkımda</h1>
+<!-- PAGE CONTENT -->
+<div class="page">
 
-    <p>
-        Ben Yusuf Avşar. Yazılımla tanışmam 2010 yılına dayanıyor ve bu merak zaman içinde profesyonel bir uzmanlığa dönüştü. 
-        2019 yılından bu yana yazılım alanında profesyonel seviyede çalışmalar yürütüyor, 2021 itibarıyla bireysel olarak proje alıp 
-        geliştirmeye devam ediyorum. Aynı dönemde birkaç şirketin siber güvenlik yöneticisi yardımcısı olarak hibrit modelde 
-        çalıştım ve kurumların dijital güvenlik mimarisine, altyapı modellerine ve risk yönetimi süreçlerine aktif katkı sağladım.
-    </p>
+    <h1 class="title">Hakkımda</h1>
+    <div class="sub-title">“Sıradan bir başlangıçtan, çok yönlü bir uzmanlığa uzanan yolculuk.”</div>
 
-    <p>
-        Bugün hâlâ özel güvenlik proje sorumlusu olarak çalışıyorum. İnsanların çoğunun anlamadığı bir nedenle iki alanı aynı anda yürütüyorum: 
-        Çünkü yalnızca tek bir alana bağlanmak insanı zamanla köreltir. Yazılım gibi yoğun odak gerektiren bir alanın yanında farklı sektörlerde 
-        aktif olarak çalışmak zihni diri tutar, problem çözme kapasitesini artırır ve bende güçlü bir denge oluşturur. 
-        Operasyonel yüküm hafif olduğundan hem teknoloji ve yazılım alanında araştırma yapıyor hem de güvenlik sektöründen gelen disiplinin 
-        beni her zaman ayakta tutmasını sağlıyorum.
-    </p>
+    <div class="text-box">
 
-    <p>
-        Bugüne kadar inşaat, market, özel güvenlik ve VIP yakın koruma gibi çok farklı alanlarda çalıştım. 
-        Bu çeşitlilik bana yalnızca iş deneyimi kazandırmadı; insanı anlama, analiz etme, kriz yönetimi, çevik düşünme ve baskı altında 
-        karar verebilme gibi birçok kişinin yıllarca uğraşarak bile kazanamayacağı güçlü beceriler sağladı. 
-        Yaşamım boyunca karşılaştığım zorluklar beni yormak yerine daha da dayanıklı hale getirdi. 
-        Pes etmeyi bilmeyen, düştüğünde daha güçlü kalkan bir yapım var.
-    </p>
+        <p>
+        2010 yılında yazılıma duyduğum merak, bugüne kadar hiç azalmadan devam eden bir tutkuya dönüştü.
+        Farklı sektörlerde — inşaat, market, özel güvenlik ve VIP yakın koruma dahil — pek çok alanda çalışmama rağmen 
+        teknolojiye olan bağlılığım, hayatımın merkezinde kalmaya devam etti.
+        </p>
 
-    <p>
-        Teknoloji alanındaki gelişimimi ise yalnızca Türkiye ile sınırlamadım. 
-        Singapur’da altı ay boyunca inovasyon kültürünü ve ileri teknoloji ekosistemini araştırdım. 
-        Norveç’te dokuz ay sistem mimarisi ve güvenlik protokollerini inceledim. 
-        ABD’de üç ay boyunca üretim odaklı yazılım süreçlerini ve hız optimizasyon tekniklerini deneyimledim. 
-        İngiltere’de ise kurumsal yazılım kültürü, proje yönetimi ve analitik yaklaşımın profesyonel yöntemlerini gözlemledim. 
-        Bu çalışmalar bana yalnızca bilgi değil, uluslararası ölçekte bir vizyon kazandırdı.
-    </p>
+        <p>
+        2019’dan itibaren profesyonel yazılım dünyasında aktif olarak yer almaya başladım.
+        2021’den bu yana ise bireysel olarak proje geliştiren, çeşitli şirketlere siber güvenlik desteği veren
+        hibrit bir uzman konumunda ilerliyorum. Hem yazılım geliştiriyor, hem güvenlik yönetişiminde aktif rol oynuyor,
+        hem de çok yönlü üretim yapıyorum.
+        </p>
 
-    <p>
-        Hayatım akademik çizgiyle şekillenmedi. Sahip olduğum bilgi ve teknik beceriler tamamen kendi disiplinim, 
-        merakım ve öğrenme iştahım sayesinde oluştu. Bir şirkete bağlı kariyer inşa etmek yerine kendi sistemimi, 
-        kendi çalışma düzenimi ve kendi yol haritamı oluşturan biri oldum. Üretiyor, araştırıyor ve sürekli gelişiyorum. 
-        Benim için bulunduğum nokta bir sonuç değil, daha büyük işler yapabilmem için bir başlangıç çizgisi.
-    </p>
+        <p>
+        Özel güvenlik proje sorumlusu olarak çalışmaya devam etmemin temel nedeni ise basit:
+        <b>Tek bir sektöre bağlı kalmak bana göre değil.</b>
+        İnsan zihni farklı alanlarla beslendiğinde daha yaratıcı, daha üretken ve daha dayanıklı oluyor.
+        Ben de bir yandan siber güvenlik ve yazılım üretirken; diğer yandan fiziksel güvenlik sektöründe aktif kalarak
+        “çok yönlü düşünce” kasımı sürekli geliştirmeye devam ediyorum.
+        </p>
 
-    <p>
-        Ben Yusuf Avşar. Hayatın sert gerçeklikleri ile teknolojinin karmaşık dünyasını aynı anda taşıyabilen, 
-        zorluklardan güç alan, öğrendiği her şeyi daha ileri taşımayı ilke edinmiş biriyim. 
-        Okumamış olabilirim; fakat öğrendiklerim, yaşadıklarım ve deneyimlerim birçok kişinin ulaşamadığı bir vizyon oluşturdu. 
-        Bu yüzden durmam, yorulmam, sınır tanımam.
-    </p>
+        <p>
+        Bugüne kadar Singapur’da 6 ay, Norveç’te 9 ay, ABD’de 3 ay ve İngiltere’de 5 ay boyunca yazılım, 
+        siber güvenlik ve modern teknolojiler üzerine araştırmalar yaptım. Farklı kültürlerde öğrenmek,
+        karşılaştığım her teknolojiyi daha derin anlamama yardımcı oldu.
+        </p>
+
+        <p>
+        Amacım hiçbir zaman sadece “iyi bir yazılımcı” olmak olmadı. 
+        Amacım; <b>bireysel seviyede global ölçekte değer üreten bir üretici</b> olmak.
+        Bugün yapay zekâ, siber güvenlik, kurumsal yazılım sistemleri ve veri teknolojileri konusunda üretiyor,
+        öğreniyor ve sürekli gelişiyorum.
+        </p>
+
+        <div class="quote">
+            “Benim işim, tek bir alanda iyi olmak değil.  
+            Birçok alanda değer üretip, o değerleri tek bir odakta birleştirmek.”
+        </div>
+
+    </div>
 
 </div>
+
+
+<footer>
+    © 2025 <span>Yusuf Avşar</span> — Tüm Hakları Saklıdır.
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("mobileMenu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>

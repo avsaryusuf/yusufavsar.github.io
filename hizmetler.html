@@ -5,18 +5,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hizmetler | Yusuf Avşar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
+
+<style>
+
+.hizmetler-container {
+    max-width: 1350px;
+    margin: 160px auto 80px auto;
+    padding: 20px;
+}
+
+.hizmetler-title {
+    text-align: center;
+    font-size: 42px;
+    color: #be7aff;
+    margin-bottom: 50px;
+}
+
+.hizmetler-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 28px;
+}
+
+.hizmet-card {
+    background: #11001f;
+    border: 1px solid #3a0066;
+    padding: 30px;
+    border-radius: 18px;
+    transition: .35s;
+}
+
+.hizmet-card:hover {
+    transform: translateY(-7px);
+    border-color: #be7aff;
+    box-shadow: 0 0 16px #53008a;
+}
+
+.hizmet-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 24px;
+    color: #d79cff;
+}
+
+.hizmet-card p {
+    color: #c8c8c8;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Mobil görünüm */
+@media(max-width: 950px) {
+    .hizmetler-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
 
 <script>
 function toggleMenu(){
-    const menu = document.getElementById("mobileMenu");
-    menu.style.left = (menu.style.left === "0px") ? "-260px" : "0px";
+    const m = document.getElementById("mobileMenu");
+    m.style.left = (m.style.left === "0px") ? "-260px" : "0px";
 }
 </script>
 
 </head>
-
 <body>
 
 <!-- HEADER -->
@@ -30,7 +84,7 @@ function toggleMenu(){
         <a href="uzmanlik.html">Uzmanlık</a>
         <a href="kitaplar.html">Kitaplar</a>
         <a href="makaleler.html">Makaleler</a>
-        <a href="hizmetler.html">Hizmetler</a>
+        <a href="hizmetler.html" class="active">Hizmetler</a>
         <a href="sertifikalar.html">Sertifikalar</a>
         <a href="galeri.html">Galeri</a>
         <a href="yolharitam.html">Yol Haritam</a>
@@ -50,99 +104,109 @@ function toggleMenu(){
     <a href="uzmanlik.html">Uzmanlık</a>
     <a href="kitaplar.html">Kitaplar</a>
     <a href="makaleler.html">Makaleler</a>
-    <a href="hizmetler.html">Hizmetler</a>
+    <a href="hizmetler.html" class="active">Hizmetler</a>
     <a href="sertifikalar.html">Sertifikalar</a>
     <a href="galeri.html">Galeri</a>
     <a href="yolharitam.html">Yol Haritam</a>
     <a href="iletisim.html">İletişim</a>
 </div>
 
-<!-- CONTENT -->
-<div class="container">
-    <h1 class="page-title">Hizmetler</h1>
+<!-- ANA İÇERİK -->
+<div class="hizmetler-container">
 
-    <p class="page-desc">
-        Bireysel olarak çalışıyorum ancak sunduğum çözümler tamamen kurumsal standartlardadır.  
-        Her hizmet, ihtiyaca özel planlama, analiz, geliştirme ve güvenlik doğrulamaları ile birlikte sunulur.
-    </p>
+    <h2 class="hizmetler-title">Hizmetlerim</h2>
 
-    <div class="services-grid">
+    <div class="hizmetler-grid">
 
-        <!-- HİZMET 1 -->
-        <div class="service-card">
-            <h2>Kurumsal Yazılım Geliştirme</h2>
-            <p>Firmanızın iş süreçlerine özel, modüler ve ölçeklenebilir yazılım çözümleri geliştiriyorum.</p>
+        <!-- 1 -->
+        <div class="hizmet-card">
+            <h3>Kurumsal Yazılım Çözümleri</h3>
+            <p>
+                ERP, CRM, vardiya & operasyon yönetimi, raporlama ve otomasyon sistemlerinin
+                kurumunuza özel olarak geliştirilmesi.  
+                Tamamen B2B odaklı, ölçeklenebilir çözümler.
+            </p>
         </div>
 
-        <!-- HİZMET 2 -->
-        <div class="service-card">
-            <h2>Backend & API Geliştirme</h2>
-            <p>Güvenli, performanslı ve yüksek trafikli sistemlere uygun REST & mikro servis mimarileri.</p>
+        <!-- 2 -->
+        <div class="hizmet-card">
+            <h3>Yapay Zekâ Tabanlı Sistem Geliştirme</h3>
+            <p>
+                Veri işleme, otomatik karar mekanizmaları, NLP asistanları,
+                anomali tespit motorları ve tahminleme modelleri geliştiriyorum.
+            </p>
         </div>
 
-        <!-- HİZMET 3 -->
-        <div class="service-card">
-            <h2>Siber Güvenlik Analizi</h2>
-            <p>Zafiyet taramaları, ağ güvenliği testleri, log analizleri ve saldırı simülasyonları.</p>
+        <!-- 3 -->
+        <div class="hizmet-card">
+            <h3>İş Süreçleri Dijitalleştirme</h3>
+            <p>
+                Karmaşık operasyon süreçlerini dijital iş akışlarına dönüştürerek
+                hız, verimlilik ve kontrol kazandırıyorum.  
+                Manuel süreçler → tam otomatik yapıya dönüşür.
+            </p>
         </div>
 
-        <!-- HİZMET 4 -->
-        <div class="service-card">
-            <h2>DevOps & Sunucu Yönetimi</h2>
-            <p>Linux sunucu kurulumu, Docker, CI/CD, optimize yapılandırma ve güvenlik sertifikaları.</p>
+        <!-- 4 -->
+        <div class="hizmet-card">
+            <h3>Özel Dashboard & Yönetim Paneli Geliştirme</h3>
+            <p>
+                Yöneticiler için özel KPI panelleri, canlı veri akışı,
+                performans ve risk analiz ekranları tasarlıyorum.
+            </p>
         </div>
 
-        <!-- HİZMET 5 -->
-        <div class="service-card">
-            <h2>ERP Sistemleri Geliştirme</h2>
-            <p>Finans, stok, personel, analiz, iş akışları ve kurumsal otomasyon çözümleri.</p>
+        <!-- 5 -->
+        <div class="hizmet-card">
+            <h3>Backend & API Mimari Tasarımı</h3>
+            <p>
+                Güvenli, hızlı, optimize edilmiş REST API mimarileri.
+                Veri işleme, token güvenliği ve modüler backend yapıları.
+            </p>
         </div>
 
-        <!-- HİZMET 6 -->
-        <div class="service-card">
-            <h2>AI & Veri Analitiği Çözümleri</h2>
-            <p>Makine öğrenimi modelleri, iş zekâsı raporlamaları ve tahminleme sistemleri.</p>
+        <!-- 6 -->
+        <div class="hizmet-card">
+            <h3>Siber Güvenlik Danışmanlığı</h3>
+            <p>
+                Ağ analizi, risk değerlendirme, log çözümleme, mini-SIEM sistemleri,
+                kurum içi güvenlik süreçlerinin dijitalleştirilmesi.
+            </p>
         </div>
 
-        <!-- HİZMET 7 -->
-        <div class="service-card">
-            <h2>Web Uygulama Geliştirme</h2>
-            <p>Modern ve hızlı kullanıcı arayüzleri, tam entegre web yazılımları.</p>
+        <!-- 7 -->
+        <div class="hizmet-card">
+            <h3>Otomasyon Senaryoları & RPA</h3>
+            <p>
+                Tekrarlayan işlerin otomatik yapılması, bot süreçleri,
+                operasyonel zaman kaybının %70'e varan azaltılması.
+            </p>
         </div>
 
-        <!-- HİZMET 8 -->
-        <div class="service-card">
-            <h2>Mobil Backend Sistemleri</h2>
-            <p>Mobil uygulamalar için API, bildirim, gerçek zamanlı veriler ve kullanıcı yönetimi.</p>
+        <!-- 8 -->
+        <div class="hizmet-card">
+            <h3>Entegrasyon Hizmetleri</h3>
+            <p>
+                ERP, CRM, muhasebe, stok, IoT cihazları ve şirket içi uygulamalar arasında
+                çift yönlü veri entegrasyonları geliştiriyorum.
+            </p>
         </div>
 
-        <!-- HİZMET 9 -->
-        <div class="service-card">
-            <h2>Entegrasyon Çözümleri</h2>
-            <p>Trendyol – Hepsiburada – N11 – Amazon – Kargo firmaları – Ödeme sistemleri entegrasyonları.</p>
-        </div>
-
-        <!-- HİZMET 10 -->
-        <div class="service-card">
-            <h2>Ağ & Network Yapılandırması</h2>
-            <p>Router, switch, VLAN, güvenlik duvarı, ağ segmentasyonu ve monitoring.</p>
-        </div>
-
-        <!-- HİZMET 11 -->
-        <div class="service-card">
-            <h2>Personel Yönetim Çözümleri</h2>
-            <p>Devriye takibi, vardiya, konum izleme, görev planlama ve özel güvenlik sektörü yazılımları.</p>
-        </div>
-
-        <!-- HİZMET 12 -->
-        <div class="service-card">
-            <h2>Kurum Danışmanlığı</h2>
-            <p>İş akışı optimizasyonu, dijital dönüşüm, güvenlik planlaması ve sistem mimarisi danışmanlığı.</p>
+        <!-- 9 -->
+        <div class="hizmet-card">
+            <h3>Kurumlara Özel Dijital Dönüşüm Danışmanlığı</h3>
+            <p>
+                Şirketinizin mevcut yapısını analiz ederek dijital dönüşüm yol haritası çıkarıyor,
+                sürdürülebilir teknolojik büyüme için strateji oluşturuyorum.
+            </p>
         </div>
 
     </div>
-
 </div>
+
+<footer>
+    <p>© 2025 Yusuf Avşar — Tüm Hakları Saklıdır.</p>
+</footer>
 
 </body>
 </html>

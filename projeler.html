@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeler | Yusuf Avşar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+        }
+        header {
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #2a0066;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+            letter-spacing: 1px;
+            color: #b875ff;
+        }
+        nav a {
+            color: #fff;
+            margin-left: 25px;
+            text-decoration: none;
+            font-size: 17px;
+            transition: .3s;
+        }
+        nav a:hover {
+            color: #b875ff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 120px auto;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 36px;
+            border-left: 5px solid #7f27ff;
+            padding-left: 10px;
+            margin-bottom: 40px;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: #111;
+            border: 1px solid #2a0066;
+            border-radius: 10px;
+            padding: 25px;
+            transition: .3s;
+        }
+        .card:hover {
+            border-color: #7f27ff;
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #b875ff;
+        }
+        .card p {
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Yusuf Avşar</h1>
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="uzmanlik.html">Uzmanlık</a>
+        <a href="kitaplar.html">Kitaplar</a>
+        <a href="makaleler.html">Makaleler</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="sertifikalar.html">Sertifikalar</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="yolharitam.html">Yol Haritam</a>
+        <a href="iletisim.html">İletişim</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Projeler</h2>
+
+    <div class="projects">
+
+        <div class="card">
+            <h3>ERP Sistem Entegrasyonu</h3>
+            <p>Kurumsal iş süreçlerini dijital hale getirmek için geliştirdiğim stok yönetimi, sipariş akışı, kullanıcı rolleri ve veri senkronizasyonu gibi modülleri içeren ERP yapısı.</p>
+        </div>
+
+        <div class="card">
+            <h3>Siber Güvenlik Test Platformu</h3>
+            <p>Ağ güvenliği testleri, zafiyet analizleri ve uygulama güvenliği denemeleri için oluşturduğum özel güvenlik laboratuvar ortamı.</p>
+        </div>
+
+        <div class="card">
+            <h3>Otomasyon & Veri İşleme Sistemleri</h3>
+            <p>Şirket içi operasyonları hızlandırmak için hazırlanan raporlama araçları, veri temizleme algoritmaları ve iş akışı otomasyonları.</p>
+        </div>
+
+        <div class="card">
+            <h3>Web Uygulama Geliştirme</h3>
+            <p>Modern arayüzler, API bağlantıları, veri tabanı yönetimi ve performans odaklı yazılım geliştirme üzerine çeşitli web projeleri.</p>
+        </div>
+
+        <div class="card">
+            <h3>IT Altyapı Düzenleme</h3>
+            <p>Sunucu yapılandırma, ağ kurulumu, sistem analizi ve güvenlik kontrolleri dahil olmak üzere pratik IT çözümleri.</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

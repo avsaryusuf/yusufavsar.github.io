@@ -1,174 +1,120 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hakkımda | Yusuf Avşar</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+<!-- Ana Tema -->
+<link rel="stylesheet" href="theme.css">
 
+<!-- Timeline CSS (Bu sayfaya özel) -->
 <style>
 
-/* GENEL */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background: #0a0a0f;
-    color: #fff;
-}
-
-/* HEADER — minimalist */
-header {
-    width: 100%;
-    padding: 20px 40px;
-    background: rgba(0,0,0,0.45);
-    border-bottom: 1px solid #5d00c9;
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-}
-
-.logo {
-    font-family: 'Pacifico', cursive;
-    color: #be7aff;
-    font-size: 32px;
-}
-
-nav a {
-    color: white;
-    margin-left: 25px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-nav a:hover { color:#be7aff; }
-
-/* HAKKIMDA METNİ */
-.about {
-    max-width: 900px;
-    margin: 160px auto 60px auto;
-    padding: 20px;
-}
-
-.about h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-    color: #be7aff;
-}
-
-.about p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #ddd;
-}
-
-/* TIMELINE GENEL */
-.timeline {
-    position: relative;
+/* ======== TIMELINE GENEL ======== */
+.timeline-container {
+    width: 90%;
     max-width: 1100px;
-    margin: 60px auto;
-    padding: 0 20px;
+    margin: 160px auto 80px auto;
+    position: relative;
 }
 
-/* ORTA ÇİZGİ */
-.timeline::after {
-    content: '';
+.timeline-line {
     position: absolute;
-    width: 3px;
-    background: #5d00c9;
     top: 0;
-    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #9b4dff;
+    border-radius: 5px;
+    z-index: 1;
+    opacity: 0.35;
 }
 
-/* MADDE */
 .timeline-item {
-    padding: 20px 40px;
+    width: 100%;
+    display: flex;
+    margin: 70px 0;
     position: relative;
-    width: 50%;
 }
 
-/* SOL MADDE */
-.timeline-item.left {
-    left: 0;
-    text-align: right;
+.timeline-item:nth-child(odd) {
+    justify-content: flex-start;
 }
 
-/* SAĞ MADDE */
-.timeline-item.right {
-    left: 50%;
+.timeline-item:nth-child(even) {
+    justify-content: flex-end;
 }
 
-/* NOKTACIK */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 22px;
-    width: 18px;
-    height: 18px;
-    background: #be7aff;
+.timeline-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+    padding: 25px 35px;
+    width: 45%;
+    border-radius: 12px;
+    border: 1px solid rgba(155, 77, 255, 0.25);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-year {
+    font-size: 24px;
+    font-weight: 700;
+    color: #c58dff;
+    margin-bottom: 10px;
+}
+
+.timeline-text {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #dedede;
+}
+
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: #c58dff;
     border-radius: 50%;
-    border: 2px solid white;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    border: 3px solid #0a0a0f;
 }
 
-.timeline-item.left::before { right: -12px; }
-.timeline-item.right::before { left: -12px; }
-
-/* KUTU */
-.timeline-content {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid #be7aff33;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.timeline-content h3 {
-    margin: 0 0 8px;
-    color: #be7aff;
-    font-size: 20px;
-}
-
-.timeline-content p {
-    margin: 0;
-    font-size: 15px;
-    color: #ddd;
-}
-
-/* MOBİL */
+/* ======== MOBİL TASARIM ======== */
 @media(max-width: 900px) {
 
-    nav { display: none; }
-
-    .timeline::after {
-        left: 8px;
+    .timeline-line {
+        left: 12px;
+        transform: none;
     }
 
     .timeline-item {
-        width: 100%;
-        left: 0 !important;
-        text-align: left;
-        padding-left: 40px;
-        padding-right: 20px;
-        margin-bottom: 30px;
+        justify-content: flex-start !important;
+        padding-left: 35px;
     }
 
-    .timeline-item::before {
-        left: 0;
-        right: auto;
+    .timeline-box {
+        width: 85%;
+    }
+
+    .timeline-dot {
+        left: 12px;
+        transform: none;
     }
 }
-
 </style>
+
 </head>
 <body>
 
+<!-- HEADER (theme.css bunu otomatik stilliyor) -->
 <header>
     <div class="logo">Yusuf Avşar</div>
+
     <nav>
         <a href="index.html">Ana Sayfa</a>
         <a href="hakkimda.html">Hakkımda</a>
@@ -182,75 +128,106 @@ nav a:hover { color:#be7aff; }
         <a href="yolharitam.html">Yol Haritam</a>
         <a href="iletisim.html">İletişim</a>
     </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </div>
 </header>
 
-<div class="about">
-    <h1>Hakkımda</h1>
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Ana Sayfa</a>
+    <a href="hakkimda.html">Hakkımda</a>
+    <a href="projeler.html">Projeler</a>
+    <a href="uzmanlik.html">Uzmanlık</a>
+    <a href="kitaplar.html">Kitaplar</a>
+    <a href="makaleler.html">Makaleler</a>
+    <a href="hizmetler.html">Hizmetler</a>
+    <a href="sertifikalar.html">Sertifikalar</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="yolharitam.html">Yol Haritam</a>
+    <a href="iletisim.html">İletişim</a>
+</div>
 
-    <p>
-Ben Yusuf Avşar. Profesyonel iş hayatıma <b>özel güvenlik sektöründe vardiya amiri</b> olarak başladım; ancak kariyerimin merkezinde her zaman teknoloji, yazılım ve üretmek vardı.  
-2010 yılında temellerini attığım yazılım yolculuğumu 2015’ten itibaren profesyonel seviyeye taşıdım.  
-Bu süreçte inşaat, market ve özel güvenlik gibi farklı sektörlerde çalışarak geniş bir deneyim yelpazesi kazandım.  
+<script>
+function toggleMenu(){
+    const menu = document.getElementById("mobileMenu");
+    menu.style.left = menu.style.left === "0px" ? "-260px" : "0px";
+}
+</script>
 
-2019’da 12 kişilik bir yazılım & siber güvenlik ekibi oluşturarak bireysel projelerimi ekip çalışmasıyla daha ileri bir noktaya taşıdım.  
-2021’den itibaren kurumsal firmalara <b>B2B yazılım çözümleri, ERP sistemleri, otomasyonlar, özel güvenlik teknolojileri, KVKK uyumluluk çalışmaları ve siber güvenlik danışmanlığı</b> sunmaya başladım.  
-
-Bugün hem özel güvenlik sektöründe aktif olarak vardiya amiri olarak görev yapıyor, hem de aynı anda birden fazla şirkete yazılım danışmanı ve siber güvenlik yöneticisi yardımcısı olarak destek veriyorum.  
-Her iki alanda hibrit çalışmak bana özellikle çok yönlülük, geniş perspektif ve disiplin kazandırdı.  
-
-Misyonum, teknoloji ile operasyonel süreçleri birleştirerek <b>güvenilir, sürdürülebilir ve yenilikçi çözümler</b> üretmek.  
-Vizyonum ise uluslararası projelerde aktif rol alan, modern teknolojileri iş süreçlerine entegre eden, her zaman gelişime açık bir profesyonel olarak ilerlemek.
+<!-- ======== HAKKIMDA METİN ALANI ======== -->
+<section class="hero-text" style="margin-top:140px; text-align:center; padding:20px;">
+    <h1 style="font-size:38px; color:#c58dff;">Hakkımda</h1>
+    <p style="max-width:850px; margin:auto; font-size:18px; line-height:1.7; color:#d8d8d8;">
+        Merhaba, ben Yusuf Avşar.  
+        Profesyonel iş hayatıma özel güvenlik sektöründe <b>Vardiya Amiri</b> olarak başladım.  
+        2010’dan beri yazılım geliştiriyor, 2015'ten itibaren ise bu alanda profesyonel projeler üretiyorum.  
+        12 kişilik çekirdek bir ekip kurarak yazılım, siber güvenlik ve teknoloji alanında bağımsız projeler yürüttüm.  
+        Amacım, ulusal ve uluslararası alanda güvenilir, yenilikçi ve sürdürülebilir çözümler sunmak.
     </p>
+</section>
+
+<!-- ======== ZAMAN ÇİZELGESİ ======== -->
+<div class="timeline-container">
+
+    <div class="timeline-line"></div>
+
+    <!-- 2010 -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-box">
+            <div class="timeline-year">2010 — Yazılıma İlk Adım</div>
+            <div class="timeline-text">
+                Temel algoritmalar, yazılım prensipleri ve bilgisayar mantığını öğrenmeye başladım.
+            </div>
+        </div>
+    </div>
+
+    <!-- 2015 -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-box">
+            <div class="timeline-year">2015 — Profesyonel Yazılım</div>
+            <div class="timeline-text">
+                İlk ticari yazılım projelerimi geliştirerek profesyonel alanda deneyim kazanmaya başladım.
+            </div>
+        </div>
+    </div>
+
+    <!-- 2017–2019 -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-box">
+            <div class="timeline-year">2017–2019 — Çok Sektörlü Tecrübe</div>
+            <div class="timeline-text">
+                Güvenlik, market ve inşaat sektörlerinde çalışarak çok yönlü iş deneyimi edindim.
+            </div>
+        </div>
+    </div>
+
+    <!-- 2019 -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-box">
+            <div class="timeline-year">2019 — 12 Kişilik Teknoloji Ekibi</div>
+            <div class="timeline-text">
+                Yazılım ve siber güvenlik alanında ekip kurarak yerli projeler geliştirdik.
+            </div>
+        </div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-box">
+            <div class="timeline-year">2023 — Hibrit Çalışma Modeli</div>
+            <div class="timeline-text">
+                Hem özel güvenlik vardiya amirliği hem de yazılım geliştiriciliğini bir arada yürüttüm.
+            </div>
+        </div>
+    </div>
+
 </div>
-
-
-<!-- TIMELINE -->
-<div class="timeline">
-
-    <div class="timeline-item left">
-        <div class="timeline-content">
-            <h3>2010 — Yazılıma İlk Adım</h3>
-            <p>Temel algoritma ve yazılım prensiplerini öğrenmeye başladım.</p>
-        </div>
-    </div>
-
-    <div class="timeline-item right">
-        <div class="timeline-content">
-            <h3>2015 — Profesyonel Yazılım Dönemi</h3>
-            <p>Ticari projeler geliştirmeye başladım.</p>
-        </div>
-    </div>
-
-    <div class="timeline-item left">
-        <div class="timeline-content">
-            <h3>2017–2019 — Çok Sektörlü Tecrübe</h3>
-            <p>Güvenlik, market ve inşaat sektörlerinde çalışarak geniş iş tecrübesi kazandım.</p>
-        </div>
-    </div>
-
-    <div class="timeline-item right">
-        <div class="timeline-content">
-            <h3>2019 — 12 Kişilik Teknoloji Ekibi</h3>
-            <p>Yazılım ve siber güvenlik alanında ekip kurup projeler geliştirdik.</p>
-        </div>
-    </div>
-
-    <div class="timeline-item left">
-        <div class="timeline-content">
-            <h3>2021 — Kurumsal B2B Çözümler</h3>
-            <p>ERP, otomasyon ve siber güvenlik projeleri oluşturdum.</p>
-        </div>
-    </div>
-
-    <div class="timeline-item right">
-        <div class="timeline-content">
-            <h3>2023–2025 — Hibrit Kariyer</h3>
-            <p>Vardiya amiri + siber güvenlik yöneticisi yardımcısı olarak çift alanda profesyonel çalışıyorum.</p>
-        </div>
-    </div>
-
-</div>
-
 
 </body>
 </html>

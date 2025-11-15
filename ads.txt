@@ -1,2 +1,0 @@
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
-# Adsense kodun geldiğinde buradaki X alanını kendi yayıncı ID’n ile değiştir.

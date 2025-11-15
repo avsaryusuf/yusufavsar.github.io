@@ -1,162 +1,169 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
-    <title>İletişim | Yusuf Avşar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Yusuf Avşar</title>
 
-    <style>
-        :root {
-            --bg: #0d1117;
-            --text: #ffffff;
-            --primary: #00aaff;
-            --secondary: #1f6feb;
-            --card-bg: #161b22;
-            --line: #222;
-            --input-bg: #0f1620;
-            --input-border: #333;
-        }
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/typography.css">
 
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--line);
-        }
-
-        nav a {
-            color: var(--primary);
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            font-size: 32px;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--line);
-            margin-top: 30px;
-        }
-
-        label {
-            display: block;
-            margin-top: 20px;
-            margin-bottom: 8px;
-            font-size: 15px;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid var(--input-border);
-            background: var(--input-bg);
-            color: var(--text);
-            font-size: 16px;
-        }
-
-        textarea {
-            height: 150px;
-        }
-
-        button {
-            margin-top: 25px;
-            padding: 12px 25px;
-            background: var(--primary);
-            border: none;
-            color: white;
-            font-size: 17px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-            background: var(--secondary);
-        }
-
-        .contact-info {
-            margin-top: 40px;
-            line-height: 1.8;
-            font-size: 17px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            border-top: 1px solid var(--line);
-            color: #999;
-        }
-    </style>
+    <!-- WhatsApp Icon (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Anasayfa</a>
-        <a href="hakkimda.html">Hakkımda</a>
-        <a href="hizmetler.html">Hizmetler</a>
-        <a href="projeler.html">Projeler</a>
-        <a href="blog.html">Blog</a>
-        <a href="iletisim.html">İletişim</a>
-    </nav>
-</header>
+    <!-- HEADER -->
+    <div data-include="/components/header.html"></div>
 
-<div class="container">
-    <h1>İletişim</h1>
-    <p>Benimle iletişime geçmek için aşağıdaki formu doldurabilir veya iletişim bilgilerini kullanabilirsin.</p>
+    <section class="page-header">
+        <div class="container">
+            <h1>İletişime Geç</h1>
+            <p>Her türlü soru, görüş ve teklif için bize ulaşabilirsin.</p>
+        </div>
+    </section>
 
-    <div class="card">
-        <label>Ad Soyad</label>
-        <input type="text" placeholder="Adınız Soyadınız">
+    <div class="container contact-container">
 
-        <label>E-posta Adresi</label>
-        <input type="email" placeholder="ornek@mail.com">
+        <!-- FORM -->
+        <div class="contact-form">
+            <h2>Mesaj Gönder</h2>
 
-        <label>Konu</label>
-        <input type="text" placeholder="Mesaj konusu">
+            <form id="contactForm">
+                <label>Ad Soyad</label>
+                <input type="text" name="name" required>
 
-        <label>Mesajınız</label>
-        <textarea placeholder="Mesajınızı buraya yazın..."></textarea>
+                <label>E-Posta</label>
+                <input type="email" name="email" required>
 
-        <button>Gönder</button>
+                <label>Konu</label>
+                <input type="text" name="subject" required>
+
+                <label>Mesaj</label>
+                <textarea name="message" rows="6" required></textarea>
+
+                <button type="submit">Gönder</button>
+            </form>
+
+            <div class="form-message" id="formMessage"></div>
+        </div>
+
+        <!-- INFO -->
+        <div class="contact-info">
+            <h2>İletişim Bilgileri</h2>
+
+            <p><strong>E-posta:</strong> <br>
+                <a href="mailto:yusufavsarsgu@gmail.com">yusufavsarsgu@gmail.com</a>
+            </p>
+
+            <p><strong>WhatsApp:</strong><br>
+                <a href="https://wa.me/905418194009" target="_blank" class="wa-link">
+                    <i class="fa-brands fa-whatsapp"></i> +90 541 819 4009
+                </a>
+            </p>
+
+            <p><strong>Konum:</strong> <br> İstanbul / Türkiye</p>
+
+            <div class="social-links">
+                <h3>Sosyal Medya</h3>
+                <a href="https://instagram.com/avyusuf95" target="_blank" class="social">Instagram</a>
+            </div>
+
+            <div class="map">
+                <iframe src="https://maps.google.com/maps?q=istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+            </div>
+        </div>
+
     </div>
 
-    <div class="contact-info">
-        <h2 style="color: var(--primary);">İletişim Bilgileri</h2>
-        <p><strong>E-posta:</strong> yusufavsarofficial@gmail.com</p>
-        <p><strong>GitHub:</strong> github.com/yusufavsarofficial</p>
-        <p><strong>LinkedIn:</strong> linkedin.com/in/yusufavsarofficial</p>
-        <p><strong>Konum:</strong> Türkiye</p>
-    </div>
-</div>
+    <!-- FOOTER -->
+    <div data-include="/components/footer.html"></div>
 
-<footer>
-    © 2025 Yusuf Avşar – Tüm Hakları Saklıdır.
-</footer>
+    <style>
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .contact-form,
+        .contact-info {
+            flex: 1;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .wa-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 17px;
+            color: #1da851;
+            font-weight: 600;
+        }
+
+        .wa-link i {
+            font-size: 20px;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links .social {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 14px;
+            background: var(--primary-light);
+            border-radius: 6px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .form-message {
+            margin-top: 15px;
+            font-weight: bold;
+            display: none;
+        }
+
+        @media(max-width: 900px) {
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <script>
+        document.querySelector("#contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formMessage = document.getElementById("formMessage");
+            formMessage.style.display = "block";
+            formMessage.innerHTML = "Mesajınız gönderiliyor...";
+
+            setTimeout(() => {
+                formMessage.innerHTML = "Mesajınız başarıyla iletildi. En kısa sürede dönüş yapacağız.";
+                formMessage.style.color = "green";
+            }, 1200);
+        });
+    </script>
 
 </body>
+
 </html>

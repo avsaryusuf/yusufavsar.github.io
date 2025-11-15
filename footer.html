@@ -1,127 +1,76 @@
 <footer class="footer">
-    <div class="container footer-grid">
+    <div class="container footer-container">
 
-        <!-- SOL TARAF -->
-        <div class="footer-brand">
-            <h3>Yusuf Avşar</h3>
-            <p>Yazılım geliştirici, güvenlik araştırmacısı ve teknoloji tutkunu.</p>
-            <p>Profesyonel çözümler, modern altyapılar ve güvenli sistemler.</p>
+        <!-- FOOTER TOP -->
+        <div class="footer-sections">
+
+            <!-- ABOUT -->
+            <div class="footer-col">
+                <h3>Yusuf Avşar</h3>
+                <p>
+                    Yazılım geliştirici, güvenlik araştırmacısı ve teknoloji meraklısı.
+                    15+ yıllık deneyim ile web teknolojileri, siber güvenlik ve sistem geliştirme projelerinde yer aldım.
+                </p>
+            </div>
+
+            <!-- NAVIGATION -->
+            <div class="footer-col">
+                <h4>Menü</h4>
+                <ul>
+                    <li><a href="/index.html">Anasayfa</a></li>
+                    <li><a href="/hakkimda.html">Hakkımda</a></li>
+                    <li><a href="/hizmetler.html">Hizmetler</a></li>
+                    <li><a href="/projeler.html">Projeler</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/ekip.html">Ekip</a></li>
+                    <li><a href="/iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+
+            <!-- LEGAL -->
+            <div class="footer-col">
+                <h4>Yasal</h4>
+                <ul>
+                    <li><a href="/legal.html">Gizlilik Politikası</a></li>
+                    <li><a href="/politikalar.html">KVKK & Kullanım Şartları</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h4>İletişim</h4>
+                <ul class="contact-list">
+                    <li>
+                        <i class="icon-mail"></i>
+                        <a href="mailto:yusufavsarsgu@gmail.com">yusufavsarsgu@gmail.com</a>
+                    </li>
+
+                    <li>
+                        <i class="icon-whatsapp"></i>
+                        <a href="https://wa.me/905418194009" target="_blank">
+                            WhatsApp: +90 541 819 40 09
+                        </a>
+                    </li>
+
+                    <li>
+                        <i class="icon-location"></i>
+                        İstanbul / Türkiye
+                    </li>
+                </ul>
+
+                <h4>Sosyal Medya</h4>
+                <div class="social-icons">
+                    <a href="https://instagram.com/avyusuf95" target="_blank" class="social-icon insta">
+                        <i class="icon-instagram"></i>
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <!-- MENÜ -->
-        <div class="footer-links">
-            <h4>Hızlı Erişim</h4>
-            <ul>
-                <li><a href="/index.html">Anasayfa</a></li>
-                <li><a href="/pages/hakkimda.html">Hakkımda</a></li>
-                <li><a href="/pages/hizmetler.html">Hizmetler</a></li>
-                <li><a href="/pages/projeler.html">Projeler</a></li>
-                <li><a href="/pages/blog.html">Blog</a></li>
-                <li><a href="/pages/iletisim.html">İletişim</a></li>
-            </ul>
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+            <p>© 2025 Yusuf Avşar. Tüm hakları saklıdır.</p>
         </div>
 
-        <!-- YASAL METİNLER -->
-        <div class="footer-links">
-            <h4>Yasal Bilgiler</h4>
-            <ul>
-                <li><a href="/pages/gizlilik.html">Gizlilik Politikası</a></li>
-                <li><a href="/pages/sartlar.html">Kullanım Şartları</a></li>
-                <li><a href="/pages/kvkk.html">KVKK Aydınlatma Metni</a></li>
-            </ul>
-        </div>
-
-        <!-- İLETİŞİM -->
-        <div class="footer-contact">
-            <h4>İletişim</h4>
-            <p>E-posta: <a href="mailto:yusufavsarofficial@gmail.com">yusufavsarofficial@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/yusufavsarofficial" target="_blank">GitHub Profilim</a></p>
-            <p>Konum: İstanbul / Türkiye</p>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2025 Yusuf Avşar — Tüm hakları saklıdır.</p>
     </div>
 </footer>
-
-<style>
-.footer {
-    background: var(--bg);
-    border-top: 1px solid var(--border);
-    padding: 50px 0 20px;
-    margin-top: 60px;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 35px;
-}
-
-.footer-brand h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.footer-brand p {
-    color: var(--text-light);
-    margin-bottom: 6px;
-}
-
-/* Başlıklar */
-.footer-links h4,
-.footer-contact h4 {
-    font-size: 18px;
-    margin-bottom: 12px;
-}
-
-/* Link listesi */
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links ul li {
-    margin-bottom: 8px;
-}
-
-.footer-links ul li a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.footer-links ul li a:hover {
-    color: var(--primary);
-}
-
-.footer-contact p a {
-    color: var(--text);
-    text-decoration: none;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px solid var(--border);
-}
-
-.footer-bottom p {
-    color: var(--text-light);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang='tr'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Hakkýmda – Yusuf Avþar</title>
+    <link rel='stylesheet' href='../assets/css/style.css'>
+
+    <style>
+        body {
+            background: #0d0d0d;
+            color: #eaeaea;
+            font-family: Arial, sans-serif;
+        }
+
+        .about-wrapper {
+            max-width: 1150px;
+            margin: auto;
+            padding: 70px 20px 150px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+
+        .bio-box {
+            background: #161616;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid #222;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        .bio-box strong {
+            color: #3ea6ff;
+        }
+
+        .section-title {
+            margin-top: 70px;
+            margin-bottom: 30px;
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* Timeline */
+        .timeline {
+            border-left: 2px solid #3ea6ff44;
+            padding-left: 25px;
+            margin-left: 5px;
+        }
+
+        .timeline-item {
+            margin-bottom: 28px;
+        }
+
+        .timeline-item .year {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #3ea6ff;
+        }
+
+        .timeline-item .desc {
+            color: #ccc;
+            margin-top: 3px;
+            font-size: 1rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: #171717;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid #222;
+            transition: 0.25s;
+        }
+
+        .skill-card:hover {
+            border-color: #3ea6ff;
+            box-shadow: 0 0 20px rgba(62,166,255,0.15);
+            transform: translateY(-4px);
+        }
+
+        .skill-title {
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .skill-desc {
+            color: #bbb;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body class='dark'>
+
+    <!-- NAVBAR -->
+    <nav>     <div class='nav-container'>         <h1>Yusuf Avþar</h1>          <ul>             <li><a href='index.html'>Anasayfa</a></li>             <li><a href='hakkimda.html'>Hakkýmda</a></li>             <li><a href='hizmetler.html'>Hizmetler</a></li>             <li><a href='projeler.html'>Projeler</a></li>             <li><a href='blog.html'>Blog</a></li>             <li><a href='ekip.html'>Ekip</a></li>             <li><a href='iletisim.html'>Ýletiþim</a></li>         </ul>     </div> </nav>
+
+    <div class='about-wrapper'>
+
+        <h1>Hakkýmda</h1>
+
+        <div class='bio-box'>
+            Merhaba, ben <strong>Yusuf Avþar</strong>. 1995 yýlýnda Kahramanmaraþ’ta doðdum, ancak 2 aylýkken Ýstanbul’a
+            taþýndým ve o günden beri burada yaþamaktayým. Küçük yaþlardan beri teknolojiye ilgi duydum ve özellikle
+            2010 yýlýndan itibaren yazýlým dünyasýna yoðun þekilde odaklandým.
+            <br><br>
+            Farklý sektörlerde çalýþmýþ olsam da, yazýlým ve siber güvenlik hayatým boyunca bana eþlik eden bir tutku oldu.
+            Gerek Türkiye’de gerek yurt dýþýnda; <strong>ABD, Singapur ve Ýngiltere</strong> gibi ülkelerde
+            gönüllü olarak çeþitli projelerde yer aldým.
+            <br><br>
+            2019 yýlýnda bir ekip kurarak birçok firmaya altyapý güçlendirme, özel yazýlým geliþtirme ve güvenlik danýþmanlýðý sunduk.
+            2025 yýlýndan itibaren ise bireysel olarak profesyonel projelere devam ediyorum.
+            <br><br>
+            Þu anda aktif olarak <strong>özel güvenlik görevlisi & VIP yakýn koruma</strong> olarak çalýþýyor olsam da,
+            yazýlým, sistem tasarýmý, güvenlik analizleri ve büyük projeler üretmek her zaman bir parçam oldu.
+        </div>
+
+        <!-- TIMELINE -->
+        <div class='section-title'>Zaman Çizelgesi</div>
+
+        <div class='timeline'>
+
+            <div class='timeline-item'>
+                <div class='year'>1995</div>
+                <div class='desc'>Kahramanmaraþ’ta doðdum.</div>
+            </div>
+
+            <div class='timeline-item'>
+                <div class='year'>2010</div>
+                <div class='desc'>Liseyi býrakarak tamamen yazýlým dünyasýna yöneldim.</div>
+            </div>
+
+            <div class='timeline-item'>
+                <div class='year'>2013</div>
+                <div class='desc'>Ýlk profesyonel iþ hayatým: Market sektörü.</div>
+            </div>
+
+            <div class='timeline-item'>
+                <div class='year'>2014 – 2015</div>
+                <div class='desc'>Ýnþaat sektöründe aktif çalýþma dönemi.</div>
+            </div>
+
+            <div class='timeline-item'>
+                <div class='year'>2015 – 2017</div>
+                <div class='desc'>Askerlik hizmeti.</div>
+            </div>
+
+            <div class='timeline-item'>
+                <div class='year'>2017 – 2019</div>
+                <div class='desc'>Ýnþaat sektörüne dönüþ.</div>
+            </div>
+
+            <div class='timeline-item'>
+                <div class='year'>2020 – 2025</div>
+                <div class='desc'>Özel güvenlik & VIP yakýn koruma.</div>
+            </div>
+
+            <div class='timeline-item'>
+                <div class='year'>Uluslararasý Görevler</div>
+                <div class='desc'>ABD (6 ay), Singapur (6 ay), Ýngiltere (8 ay) – gönüllü teknoloji projeleri.</div>
+            </div>
+
+            <div class='timeline-item'>
+                <div class='year'>2019 – 2025</div>
+                <div class='desc'>Kurucu olduðum ekiple çok sayýda altyapý, güvenlik ve yazýlým geliþtirme projesi.</div>
+            </div>
+
+        </div>
+
+        <!-- SKILLS -->
+        <div class='section-title'>Alanlarým</div>
+
+        <div class='skills-grid'>
+
+            <div class='skill-card'>
+                <div class='skill-title'>Yazýlým Geliþtirme</div>
+                <div class='skill-desc'>
+                    Web, masaüstü ve özel sistem geliþtirmelerinde deneyim. Farklý dillerde çok yönlü çalýþma.
+                </div>
+            </div>
+
+            <div class='skill-card'>
+                <div class='skill-title'>Siber Güvenlik</div>
+                <div class='skill-desc'>
+                    Sistem açýklarý bulma, test etme ve raporlama. Güvenlik denetimleri ve savunma çözümleri.
+                </div>
+            </div>
+
+            <div class='skill-card'>
+                <div class='skill-title'>Altyapý & Sistem Tasarýmý</div>
+                <div class='skill-desc'>
+                    Þirketlere özel altyapý, performans ve güvenlik odaklý yapýlandýrmalar.
+                </div>
+            </div>
+
+            <div class='skill-card'>
+                <div class='skill-title'>Proje Danýþmanlýðý</div>
+                <div class='skill-desc'>
+                    Büyük projelerde mimari, güvenlik ve geliþtirme yönlendirmesi.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class='footer'>     <div class='footer-container'>          <div class='footer-about'>             <h3>Yusuf Avþar</h3>             <p>Profesyonel Web Geliþtirici • UI/UX Tasarým • SEO • Güvenlik Odaklý Modern Web Sistemleri</p>         </div>          <div class='footer-links'>             <h4>Hýzlý Baðlantýlar</h4>             <ul>                 <li><a href='index.html'>Anasayfa</a></li>                 <li><a href='hakkimda.html'>Hakkýmda</a></li>                 <li><a href='hizmetler.html'>Hizmetler</a></li>                 <li><a href='projeler.html'>Projeler</a></li>                 <li><a href='blog.html'>Blog</a></li>                 <li><a href='iletisim.html'>Ýletiþim</a></li>             </ul>         </div>          <div class='footer-contact'>             <h4>Ýletiþim</h4>             <ul>                 <li>Email: <a href='mailto:yusufavsarsgu@gmail.com'>yusufavsarsgu@gmail.com</a></li>                 <li>WhatsApp: <a href='https://wa.me/905418194009'>+90 541 819 40 09</a></li>                 <li>Konum: Ýstanbul / Türkiye</li>                 <li>Instagram: <a href='https://instagram.com/avyusuf95'>@avyusuf95</a></li>             </ul>         </div>      </div>      <div class='footer-bottom'>         <p>© 2025 Yusuf Avþar — Tüm Haklarý Saklýdýr.</p>     </div> </footer>
+
+</body>
+</html>

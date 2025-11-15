@@ -1,187 +1,152 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Ekip | Yusuf Avşar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekip - Yusuf Avşar</title>
 
-    <style>
-        :root {
-            --bg: #0d1117;
-            --text: #ffffff;
-            --primary: #00aaff;
-            --secondary: #1f6feb;
-            --card-bg: #151b23;
-            --line: #222;
-        }
-
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--line);
-        }
-
-        nav a {
-            color: var(--primary);
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            color: var(--primary);
-            font-size: 34px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 40px;
-            color: #b8b8b8;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 14px;
-            text-align: center;
-            border: 1px solid var(--line);
-            transition: 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-
-        .photo {
-            width: 120px;
-            height: 120px;
-            background: #0f1620;
-            border-radius: 50%;
-            margin: auto;
-            border: 2px solid var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            margin: 0;
-            font-size: 22px;
-        }
-
-        .role {
-            color: var(--primary);
-            margin: 8px 0 15px;
-        }
-
-        .bio {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #ccc;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            border-top: 1px solid var(--line);
-            color: #999;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/typography.css">
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Anasayfa</a>
-        <a href="hakkimda.html">Hakkımda</a>
-        <a href="hizmetler.html">Hizmetler</a>
-        <a href="projeler.html">Projeler</a>
-        <a href="blog.html">Blog</a>
-        <a href="iletisim.html">İletişim</a>
-    </nav>
-</header>
+    <!-- HEADER -->
+    <div data-include="/components/header.html"></div>
 
-<div class="container">
-    <h1>Ekip</h1>
-    <p class="subtitle">Birlikte çalıştığım ve projelere katkı sağlayan değerli ekip arkadaşlarım.</p>
+    <section class="page-header">
+        <div class="container">
+            <h1>Ekibimiz</h1>
+            <p>Birlikte çalıştığım değerli ekip arkadaşlarım.</p>
+        </div>
+    </section>
 
-    <div class="team-grid">
+    <section class="container team-section">
 
-        <div class="card">
-            <div class="photo"></div>
-            <h3>Negin Alya Turanoğlu</h3>
-            <p class="role">Proje Yöneticisi</p>
-            <p class="bio">
-                Planlama, organizasyon ve proje süreçlerinin yönetiminde uzman.  
-                Uluslararası proje koordinasyonunda aktif rol aldı.
-            </p>
+        <h2>Profesyonel Ekip</h2>
+        <p>Aşağıdaki ekip, geçmişte birlikte yer aldığım projelerde en güvendiğim kişilerden oluşmaktadır.</p>
+
+        <div class="team-grid">
+
+            <!-- KART 1 -->
+            <div class="team-card">
+                <div class="team-info">
+                    <h3>Negin Alya Turanoğlu</h3>
+                    <p class="role">Proje Koordinatörü</p>
+                    <p class="desc">
+                        Proje süreçlerini organize eden, planlama, koordinasyon ve iletişim yönetiminde uzman.
+                    </p>
+                </div>
+            </div>
+
+            <!-- KART 2 -->
+            <div class="team-card">
+                <div class="team-info">
+                    <h3>Ferya Özyılmaz</h3>
+                    <p class="role">UI / UX Tasarımcısı</p>
+                    <p class="desc">
+                        Kullanıcı deneyimi, modern arayüz tasarımı ve estetik dokunuşlarda uzman.
+                    </p>
+                </div>
+            </div>
+
+            <!-- KART 3 -->
+            <div class="team-card">
+                <div class="team-info">
+                    <h3>Aslı Durmuş</h3>
+                    <p class="role">İçerik & Dokümantasyon Uzmanı</p>
+                    <p class="desc">
+                        Proje dokümantasyonları, içerik hazırlığı ve stratejik planlamalarda deneyimli.
+                    </p>
+                </div>
+            </div>
+
+            <!-- KART 4 -->
+            <div class="team-card">
+                <div class="team-info">
+                    <h3>Ferdi Özyeğen</h3>
+                    <p class="role">Sistem & Altyapı Uzmanı</p>
+                    <p class="desc">
+                        Sunucu kurulumu, ağ yönetimi, altyapı güvenliği ve teknik destek konularında uzman.
+                    </p>
+                </div>
+            </div>
+
+            <!-- KART 5 -->
+            <div class="team-card">
+                <div class="team-info">
+                    <h3>Ahmet Dokunmaz</h3>
+                    <p class="role">Yazılım Geliştirici</p>
+                    <p class="desc">
+                        Uygulama geliştirme, backend sistemleri ve proje teknik destek alanında yetkin.
+                    </p>
+                </div>
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="photo"></div>
-            <h3>Ferya Özyılmaz</h3>
-            <p class="role">Frontend & UI/UX Designer</p>
-            <p class="bio">
-                Modern kullanıcı arayüzleri, minimalist tasarım trendleri ve kullanıcı deneyimi üzerine çalışıyor.
-            </p>
-        </div>
+    </section>
 
-        <div class="card">
-            <div class="photo"></div>
-            <h3>Aslı Durmuş</h3>
-            <p class="role">İçerik & Teknik Dokümantasyon Uzmanı</p>
-            <p class="bio">
-                Teknik makaleler, proje raporları ve kullanıcı kılavuzları oluşturma konusunda uzman bir yazar.
-            </p>
-        </div>
+    <!-- FOOTER -->
+    <div data-include="/components/footer.html"></div>
 
-        <div class="card">
-            <div class="photo"></div>
-            <h3>Ferdi Özyegen</h3>
-            <p class="role">Full Stack Developer</p>
-            <p class="bio">
-                Hem backend hem frontend tarafında güçlü altyapı geliştiren tecrübeli bir yazılım uzmanı.
-            </p>
-        </div>
+    <script src="/assets/js/main.js"></script>
 
-        <div class="card">
-            <div class="photo"></div>
-            <h3>Ahmet Dokunmaz</h3>
-            <p class="role">Siber Güvenlik & Penetrasyon Test Uzmanı</p>
-            <p class="bio">
-                Siber tehdit analizi, sistem açıkları tespiti ve güvenlik testlerinde derin bilgi sahibidir.
-            </p>
-        </div>
+    <style>
+        .team-section {
+            margin-top: 40px;
+        }
 
-    </div>
-</div>
+        .team-grid {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
-<footer>
-    © 2025 Yusuf Avşar – Tüm Hakları Saklıdır.
-</footer>
+        .team-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            background: var(--bg-light);
+            border-radius: 10px;
+            transition: .25s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .team-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            color: var(--text-light);
+        }
+
+        @media(max-width: 900px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
 </body>
+
 </html>

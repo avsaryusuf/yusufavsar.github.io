@@ -1,191 +1,150 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Projeler | Yusuf Avşar</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yusuf Avşar'ın geliştirdiği yazılım projeleri, global görevler, altyapı çalışmaları ve siber güvenlik uygulamaları.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeler - Yusuf Avşar</title>
 
-    <style>
-        :root {
-            --bg: #0d1117;
-            --text: #ffffff;
-            --primary: #00aaff;
-            --secondary: #1f6feb;
-            --card-bg: #161b22;
-            --line: #222;
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--line);
-        }
-
-        nav a {
-            color: var(--primary);
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: var(--primary);
-        }
-
-        .project-grid {
-            margin-top: 40px;
-            display: grid;
-            gap: 25px;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        }
-
-        .project-box {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid var(--line);
-            transition: 0.2s;
-        }
-
-        .project-box:hover {
-            border-color: var(--primary);
-            transform: scale(1.02);
-        }
-
-        .project-title {
-            font-size: 22px;
-            color: var(--primary);
-            margin: 0 0 10px 0;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 5px 10px;
-            background: var(--secondary);
-            border-radius: 5px;
-            margin-right: 5px;
-            margin-bottom: 10px;
-            font-size: 12px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #aaa;
-            border-top: 1px solid var(--line);
-            margin-top: 40px;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/layout.css" />
+    <link rel="stylesheet" href="/assets/css/typography.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Anasayfa</a>
-        <a href="hakkimda.html">Hakkımda</a>
-        <a href="hizmetler.html">Hizmetler</a>
-        <a href="projeler.html">Projeler</a>
-        <a href="blog.html">Blog</a>
-        <a href="iletisim.html">İletişim</a>
-    </nav>
-</header>
+    <!-- HEADER -->
+    <div data-include="/components/header.html"></div>
 
-<div class="container">
-
-    <h1>Projeler</h1>
-
-    <div class="project-grid">
-
-        <!-- GLOBAL PROJECTS -->
-        <div class="project-box">
-            <h2 class="project-title">🌍 Global Güvenlik & Sistem Otomasyonu (ABD - 6 Ay)</h2>
-            <span class="tag">Siber Güvenlik</span>
-            <span class="tag">Otomasyon</span>
-            <span class="tag">Network</span>
-            <p>ABD’de gönüllü olarak şirket içi güvenlik denetimleri, sistem otomasyonları, veri analizi ve network trafiği inceleme projelerinde görev aldım.</p>
+    <!-- BAŞLIK -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Projeler</h1>
+            <p>Gerçek deneyim, gerçek teknoloji, gerçek çözümler.</p>
         </div>
+    </section>
 
-        <div class="project-box">
-            <h2 class="project-title">🇸🇬 Yapay Zeka Tabanlı Güvenlik Modülleri (Singapur - 6 Ay)</h2>
-            <span class="tag">AI</span>
-            <span class="tag">Security</span>
-            <span class="tag">Backend</span>
-            <p>Singapur’da veri işleme, AI tabanlı anomali tespiti ve sistem doğrulama modülleri geliştirdim. Güvenlik protokolleri optimize edildi.</p>
-        </div>
+    <!-- PROJE LİSTESİ -->
+    <section class="container project-section">
 
-        <div class="project-box">
-            <h2 class="project-title">🇬🇧 Siber Güvenlik Testleri & Özel Araç Geliştirme (İngiltere - 8 Ay)</h2>
-            <span class="tag">Pentest</span>
-            <span class="tag">Exploit Research</span>
-            <span class="tag">Full Stack</span>
-            <p>İngiltere’de kurum içi güvenlik açık testleri, özel raporlama araçları, şifreleme modülleri ve log analiz sistemleri üzerine çalıştım.</p>
-        </div>
+        <h2>Yaptığım Projeler</h2>
+        <p>Aşağıda, çeşitli dönemlerde geliştirdiğim profesyonel projeler bulunmaktadır.</p>
 
-        <!-- DEFENSE INDUSTRY -->
-        <div class="project-box">
-            <h2 class="project-title">🛡 Savunma Sanayi Altyapı Güçlendirme</h2>
-            <span class="tag">Savunma</span>
-            <span class="tag">Gizli Proje</span>
-            <span class="tag">Analiz</span>
-            <p>Türkiye'nin önde gelen savunma sanayii firmalarında gönüllü görev aldım. Güvenlik modülleri, sunucu optimizasyonları ve saldırı simülasyonları geliştirdim.</p>
-        </div>
+        <div id="project-grid" class="project-grid"></div>
 
-        <!-- TEAM PROJECTS -->
-        <div class="project-box">
-            <h2 class="project-title">👥 Teknik Ekip ile Kurumsal Altyapı Projeleri (2019 - 2025)</h2>
-            <span class="tag">Backend</span>
-            <span class="tag">Infra</span>
-            <span class="tag">Security</span>
-            <p>Kurucu ortağı olduğum ekiple çok sayıda firmanın altyapılarını güçlendirdik. Veri tabanı mimarileri, özel yazılımlar ve güvenlik çözümleri ürettik.</p>
-        </div>
+    </section>
 
-        <!-- CUSTOM SOFTWARE -->
-        <div class="project-box">
-            <h2 class="project-title">🧩 Özel Yazılım ve Otomasyon Sistemleri</h2>
-            <span class="tag">Desktop App</span>
-            <span class="tag">Automation</span>
-            <span class="tag">Database</span>
-            <p>Şirketlere özel geliştirilen masaüstü yazılımlar, kontrol panelleri ve iş yönetim araçları. Sıfırdan geliştirilmiş özelleştirilmiş çözümler.</p>
-        </div>
+    <!-- FOOTER -->
+    <div data-include="/components/footer.html"></div>
 
-        <!-- WEB PROJECTS -->
-        <div class="project-box">
-            <h2 class="project-title">🌐 Web Uygulamaları ve Portal Sistemleri</h2>
-            <span class="tag">Web Security</span>
-            <span class="tag">Frontend</span>
-            <span class="tag">Backend</span>
-            <p>Modern, hızlı ve dayanıklı web uygulamaları, kurumsal siteler, paneller ve güvenlik odaklı yüksek performanslı altyapılar.</p>
-        </div>
+    <script src="/assets/js/main.js"></script>
 
-        <div class="project-box">
-            <h2 class="project-title">⚡ Performans & Güvenlik Optimizasyonu</h2>
-            <span class="tag">Optimization</span>
-            <span class="tag">Security</span>
-            <p>Yavaş çalışan veya yüksek trafikte çöken sistemleri optimize edip güçlendirdim. Uygulama güvenliği en üst seviyeye çıkarıldı.</p>
-        </div>
+    <!-- PROJE VERİLERİ -->
+    <script>
+        fetch("/data/projects.json")
+            .then(res => res.json())
+            .then(data => {
+                const grid = document.getElementById("project-grid");
 
-    </div>
-</div>
+                data.forEach(project => {
+                    const card = document.createElement("div");
+                    card.className = "project-card";
 
-<footer>
-    © 2025 Yusuf Avşar – Tüm Hakları Saklıdır.
-</footer>
+                    card.innerHTML = `
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+
+                        <ul class="project-tags">
+                            ${project.tags.map(tag => `<li>${tag}</li>`).join("")}
+                        </ul>
+
+                        <a class="project-btn" href="${project.link}" target="_blank">
+                            Projeyi İncele
+                        </a>
+                    `;
+
+                    grid.appendChild(card);
+                });
+            });
+    </script>
+
+    <!-- SAYFA İÇİ TASARIM -->
+    <style>
+        .project-section {
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .project-grid {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-light);
+            transition: 0.25s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-tags {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-tags li {
+            background: var(--primary-light);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .project-btn {
+            display: inline-block;
+            padding: 10px 14px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .project-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        @media (max-width: 900px) {
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
 </body>
+
 </html>

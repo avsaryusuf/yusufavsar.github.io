@@ -4,128 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekibimiz - Yusuf Avşar</title>
+    <title>Ekip - Yusuf Avşar</title>
 
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
     <link rel="stylesheet" href="/assets/css/components.css">
-    <link rel="stylesheet" href="/assets/css/typography.css">
-
-    <style>
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .team-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-            transition: 0.25s;
-        }
-
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-        }
-
-        .team-card h3 {
-            margin-bottom: 5px;
-            font-size: 22px;
-        }
-
-        .team-role {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        .team-bio {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 18px;
-            color: var(--text-muted);
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <div data-include="/components/header.html"></div>
+    <!-- NAVBAR -->
+    <div data-include="/navbar.html"></div>
 
     <section class="page-header">
         <div class="container">
-            <h1>Ekibimiz</h1>
-            <p>Birlikte üretiyor, geliştiriyor ve geleceği inşa ediyoruz.</p>
+            <h1>Ekip</h1>
+            <p>Beraber çalıştığım uzman ekip arkadaşlarım</p>
         </div>
     </section>
 
-    <div class="container">
-        
-        <div class="team-grid">
+    <section class="section team">
+        <div class="container">
 
-            <!-- -- TEAM MEMBER -- -->
-            <div class="team-card">
-                <h3>Negin Alya Turanoğlu</h3>
-                <div class="team-role">Operasyon ve Strateji Sorumlusu</div>
-                <p class="team-bio">
-                    Uluslararası proje takibi, süreç yönetimi ve operasyon stratejisi konusunda uzman.
-                    Ekip süreçlerini hızlandıran, verimliliği arttıran yönetim sistemleri kurma konusunda deneyimli.
-                </p>
-            </div>
+            <div class="team-grid">
 
-            <!-- -- TEAM MEMBER -- -->
-            <div class="team-card">
-                <h3>Ferya Özyılmaz</h3>
-                <div class="team-role">Proje Yöneticisi</div>
-                <p class="team-bio">
-                    Proje planlama, zaman yönetimi ve müşteri koordinasyonu konusunda güçlü bir liderlik yapısına sahiptir.
-                    Ürün geliştirme adımlarının uçtan uca takibini sağlar.
-                </p>
-            </div>
+                <!-- ÜYE 1 -->
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="/assets/img/team/negin.jpg" alt="Negin Alya Turanoğlu">
+                    </div>
+                    <h3>Negin Alya Turanoğlu</h3>
+                    <p class="role">Proje Koordinatörü</p>
+                    <p>
+                        Operasyon ve süreç yönetiminde uzman. Proje akışlarının düzenli işlemesini sağlar,
+                        müşteri ilişkilerini yönetir ve kalite kontrol aşamalarını koordine eder.
+                    </p>
+                </div>
 
-            <!-- -- TEAM MEMBER -- -->
-            <div class="team-card">
-                <h3>Aslı Durmuş</h3>
-                <div class="team-role">İçerik ve Araştırma Uzmanı</div>
-                <p class="team-bio">
-                    Teknik analiz, içerik üretimi ve araştırma süreçlerinde aktif rol oynayan yaratıcı bir ekip üyesidir.
-                    Proje belgeleri, raporlar ve dokümantasyon görevlerini yürütür.
-                </p>
-            </div>
+                <!-- ÜYE 2 -->
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="/assets/img/team/ferya.jpg" alt="Ferya Özyılmaz">
+                    </div>
+                    <h3>Ferya Özyılmaz</h3>
+                    <p class="role">UI/UX Tasarımcı</p>
+                    <p>
+                        Kullanıcı deneyimi ve arayüz tasarımlarında uzman. Modern, temiz ve kullanıcı dostu
+                        tasarım yaklaşımlarıyla projelerin görsel kalitesini yükseltir.
+                    </p>
+                </div>
 
-            <!-- -- TEAM MEMBER -- -->
-            <div class="team-card">
-                <h3>Ferdi Özyeğen</h3>
-                <div class="team-role">Teknik Destek ve Test Uzmanı</div>
-                <p class="team-bio">
-                    Sistem testleri, hata tespiti, kalite kontrol ve teknik destek konularında uzmandır.
-                    Ürünlerin güvenilir, hızlı ve sorunsuz çalışması için tüm test süreçlerini yürütür.
-                </p>
-            </div>
+                <!-- ÜYE 3 -->
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="/assets/img/team/asli.jpg" alt="Aslı Durmuş">
+                    </div>
+                    <h3>Aslı Durmuş</h3>
+                    <p class="role">İçerik & Metin Yazarı</p>
+                    <p>
+                        SEO uyumlu içerik üretimi, marka dili oluşturma ve yaratıcı içerik stratejileri
+                        geliştirme konusunda yetkin. Projelerin metinsel iletişimini güçlendirir.
+                    </p>
+                </div>
 
-            <!-- -- TEAM MEMBER -- -->
-            <div class="team-card">
-                <h3>Ahmet Dokunmaz</h3>
-                <div class="team-role">Yazılım Destek ve Demo Uzmanı</div>
-                <p class="team-bio">
-                    Sistem kurulumları, demo yazılımlar ve uygulama içi test alanlarında destek verir.
-                    Teknik süreçlerde operasyonu hızlandıran önemli ekip üyelerindendir.
-                </p>
+                <!-- ÜYE 4 -->
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="/assets/img/team/ferdi.jpg" alt="Ferdi Özyeğen">
+                    </div>
+                    <h3>Ferdi Özyeğen</h3>
+                    <p class="role">Frontend Geliştirici</p>
+                    <p>
+                        HTML, CSS ve modern JS yapılarında uzman. Arayüzlerin hız, performans ve
+                        erişilebilirlik standartlarında geliştirilmesini sağlar.
+                    </p>
+                </div>
+
+                <!-- ÜYE 5 -->
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="/assets/img/team/ahmet.jpg" alt="Ahmet Dokunmaz">
+                    </div>
+                    <h3>Ahmet Dokunmaz</h3>
+                    <p class="role">Backend & Sistem Destek</p>
+                    <p>
+                        Sunucu, veri akışı ve altyapı süreçlerinde destek sağlar. Projelerin güvenli, stabil
+                        çalışma altyapısına katkıda bulunur.
+                    </p>
+                </div>
+
             </div>
 
         </div>
-
-    </div>
+    </section>
 
     <!-- FOOTER -->
-    <div data-include="/components/footer.html"></div>
+    <div data-include="/footer.html"></div>
 
 </body>
+
 </html>

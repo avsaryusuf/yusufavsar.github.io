@@ -1,176 +1,87 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Blog | Yusuf Avşar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yusuf Avşar tarafından yazılan yazılıma, siber güvenliğe, teknolojiye ve kariyer gelişimine dair blog yazıları.">
+    <title>Blog - Yusuf Avşar</title>
 
-    <style>
-        :root {
-            --bg: #0d1117;
-            --text: #ffffff;
-            --primary: #00aaff;
-            --secondary: #1f6feb;
-            --card-bg: #161b22;
-            --line: #222;
-        }
-
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--line);
-        }
-
-        nav a {
-            color: var(--primary);
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: var(--primary);
-        }
-
-        .categories {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .cat-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--line);
-            padding: 8px 18px;
-            border-radius: 8px;
-            color: var(--primary);
-            cursor: pointer;
-            margin: 5px;
-            transition: 0.2s;
-        }
-
-        .cat-btn:hover {
-            transform: scale(1.05);
-            border-color: var(--primary);
-        }
-
-        .blog-grid {
-            margin-top: 40px;
-            display: grid;
-            gap: 25px;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        }
-
-        .post-card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid var(--line);
-            transition: 0.2s;
-        }
-
-        .post-card:hover {
-            border-color: var(--primary);
-            transform: scale(1.02);
-        }
-
-        .post-title {
-            font-size: 20px;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .post-desc {
-            color: #ccc;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            border-top: 1px solid var(--line);
-            color: #999;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Anasayfa</a>
-        <a href="hakkimda.html">Hakkımda</a>
-        <a href="hizmetler.html">Hizmetler</a>
-        <a href="projeler.html">Projeler</a>
-        <a href="blog.html">Blog</a>
-        <a href="iletisim.html">İletişim</a>
-    </nav>
-</header>
+    <!-- NAVBAR -->
+    <div data-include="/navbar.html"></div>
 
-<div class="container">
+    <section class="page-header">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Yazılım, güvenlik, teknoloji ve profesyonel hayata dair yazılarım</p>
+        </div>
+    </section>
 
-    <h1>Blog</h1>
+    <section class="section">
+        <div class="container">
+            <div class="blog-grid">
 
-    <div class="categories">
-        <button class="cat-btn">Tümü</button>
-        <button class="cat-btn">Teknoloji</button>
-        <button class="cat-btn">Siber Güvenlik</button>
-        <button class="cat-btn">Yazılım</button>
-        <button class="cat-btn">Kariyer</button>
-    </div>
+                <!-- BLOG 1 -->
+                <a href="/blog-detay.html?id=1" class="blog-card">
+                    <h3>Siber Güvenlikte Temel Mantık: Önce Tespit</h3>
+                    <p>
+                        Bir sistemin güvenliğini sağlamak onu kilitlemekle değil, anlayarak başlar.  
+                        Bu yazıda saldırgan gözüyle düşünmenin öneminden bahsediyorum.
+                    </p>
+                    <span class="blog-date">01 Ocak 2025</span>
+                </a>
 
-    <div class="blog-grid">
+                <!-- BLOG 2 -->
+                <a href="/blog-detay.html?id=2" class="blog-card">
+                    <h3>Modern Web Sitelerinde Performans Artırma Teknikleri</h3>
+                    <p>
+                        Lazy load, cache yönetimi, minify işlemleri ve daha fazlasını bu teknik yazıda derledim.
+                    </p>
+                    <span class="blog-date">12 Ocak 2025</span>
+                </a>
 
-        <a href="blog-detay.html" style="text-decoration:none; color:inherit;">
-            <div class="post-card">
-                <h2 class="post-title">Siber Güvenlikte 2025 Trendleri</h2>
-                <p class="post-desc">Günümüzün saldırı yöntemleri nasıl değişiyor? 2025 yılında şirketleri neler bekliyor?</p>
+                <!-- BLOG 3 -->
+                <a href="/blog-detay.html?id=3" class="blog-card">
+                    <h3>Yurt Dışı Proje Deneyimlerim</h3>
+                    <p>
+                        ABD, Singapur ve İngiltere’de yer aldığım projelerde neler öğrendim?  
+                        Kişisel notlarımı ve deneyimlerimi burada paylaşıyorum.
+                    </p>
+                    <span class="blog-date">24 Ocak 2025</span>
+                </a>
+
+                <!-- BLOG 4 -->
+                <a href="/blog-detay.html?id=4" class="blog-card">
+                    <h3>Yazılımı Hobi Olarak Yapmak</h3>
+                    <p>
+                        Hobi olarak başlayan bu yolculuk yıllar içinde profesyonel bir tutkuya dönüştü.  
+                        Yazılımı neden bir işten öte görüyorum?
+                    </p>
+                    <span class="blog-date">07 Şubat 2025</span>
+                </a>
+
+                <!-- BLOG 5 -->
+                <a href="/blog-detay.html?id=5" class="blog-card">
+                    <h3>Kurumsal Web Projeleri Nasıl Planlanır?</h3>
+                    <p>
+                        İhtiyaç analizi, mimari planlama, tasarım ve yazılım süreçlerinin tamamını anlatıyorum.
+                    </p>
+                    <span class="blog-date">19 Şubat 2025</span>
+                </a>
+
             </div>
-        </a>
+        </div>
+    </section>
 
-        <a href="blog-detay.html" style="text-decoration:none; color:inherit;">
-            <div class="post-card">
-                <h2 class="post-title">Yazılım Öğrenmenin En Doğru Yolu</h2>
-                <p class="post-desc">Her dilin mantığı aynıdır. Peki nereden başlamalı? Hangi yol daha hızlı ilerletir?</p>
-            </div>
-        </a>
-
-        <a href="blog-detay.html" style="text-decoration:none; color:inherit;">
-            <div class="post-card">
-                <h2 class="post-title">Global Projelerde Ekip Yönetimi</h2>
-                <p class="post-desc">ABD, Singapur ve İngiltere projelerinde öğrendiklerimden bazı önemli noktalar.</p>
-            </div>
-        </a>
-
-        <a href="blog-detay.html" style="text-decoration:none; color:inherit;">
-            <div class="post-card">
-                <h2 class="post-title">Savunma Sanayinde Siber Güvenlik</h2>
-                <p class="post-desc">Kritik sistemler nasıl korunur? Saldırı simülasyonları neden hayati önem taşır?</p>
-            </div>
-        </a>
-
-    </div>
-</div>
-
-<footer>
-    © 2025 Yusuf Avşar – Tüm Hakları Saklıdır.
-</footer>
+    <!-- FOOTER -->
+    <div data-include="/footer.html"></div>
 
 </body>
+
 </html>

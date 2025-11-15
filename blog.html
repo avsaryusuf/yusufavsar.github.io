@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Blog | Yusuf Avşar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yusuf Avşar'ın yazıları, teknik makaleleri, siber güvenlik analizleri, yazılım ve savunma sanayii içerikleri.">
+    <meta name="description" content="Yusuf Avşar tarafından yazılan yazılıma, siber güvenliğe, teknolojiye ve kariyer gelişimine dair blog yazıları.">
 
     <style>
         :root {
@@ -13,19 +13,20 @@
             --primary: #00aaff;
             --secondary: #1f6feb;
             --card-bg: #161b22;
+            --line: #222;
         }
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
             background: var(--bg);
             color: var(--text);
+            font-family: Arial, sans-serif;
         }
 
         header {
             padding: 20px;
             text-align: center;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid var(--line);
         }
 
         nav a {
@@ -44,50 +45,67 @@
         h1 {
             text-align: center;
             color: var(--primary);
-            margin-bottom: 30px;
         }
 
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        .categories {
+            text-align: center;
+            margin-top: 20px;
         }
 
-        .blog-card {
+        .cat-btn {
             background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #222;
+            border: 1px solid var(--line);
+            padding: 8px 18px;
+            border-radius: 8px;
+            color: var(--primary);
+            cursor: pointer;
+            margin: 5px;
             transition: 0.2s;
         }
 
-        .blog-card:hover {
+        .cat-btn:hover {
+            transform: scale(1.05);
             border-color: var(--primary);
-            transform: translateY(-4px);
         }
 
-        .blog-card h3 {
-            margin: 0 0 15px 0;
-            color: var(--secondary);
+        .blog-grid {
+            margin-top: 40px;
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         }
 
-        .blog-card p {
+        .post-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            transition: 0.2s;
+        }
+
+        .post-card:hover {
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .post-title {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .post-desc {
             color: #ccc;
+            font-size: 15px;
             line-height: 1.6;
         }
 
-        .blog-card a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
         footer {
-            margin-top: 50px;
-            padding: 20px;
             text-align: center;
-            border-top: 1px solid #222;
-            color: #aaa;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 1px solid var(--line);
+            color: #999;
         }
     </style>
 </head>
@@ -106,39 +124,46 @@
 </header>
 
 <div class="container">
-    <h1>Blog Yazıları</h1>
+
+    <h1>Blog</h1>
+
+    <div class="categories">
+        <button class="cat-btn">Tümü</button>
+        <button class="cat-btn">Teknoloji</button>
+        <button class="cat-btn">Siber Güvenlik</button>
+        <button class="cat-btn">Yazılım</button>
+        <button class="cat-btn">Kariyer</button>
+    </div>
 
     <div class="blog-grid">
 
-        <div class="blog-card">
-            <h3>Siber Güvenlikte Yeni Nesil Tehditler</h3>
-            <p>Son dönemlerde gelişen saldırı yöntemleri, yapay zeka destekli tehditler ve savunma mekanizmaları...</p>
-            <a href="yazi1.html">Devamını Oku →</a>
-        </div>
+        <a href="blog-detay.html" style="text-decoration:none; color:inherit;">
+            <div class="post-card">
+                <h2 class="post-title">Siber Güvenlikte 2025 Trendleri</h2>
+                <p class="post-desc">Günümüzün saldırı yöntemleri nasıl değişiyor? 2025 yılında şirketleri neler bekliyor?</p>
+            </div>
+        </a>
 
-        <div class="blog-card">
-            <h3>Askeri Sistemlerde Güvenli Yazılım Geliştirme</h3>
-            <p>Savunma projelerinde yazılım mimarisinin kritik önemi ve uygulanması gereken güvenlik katmanları...</p>
-            <a href="yazi2.html">Devamını Oku →</a>
-        </div>
+        <a href="blog-detay.html" style="text-decoration:none; color:inherit;">
+            <div class="post-card">
+                <h2 class="post-title">Yazılım Öğrenmenin En Doğru Yolu</h2>
+                <p class="post-desc">Her dilin mantığı aynıdır. Peki nereden başlamalı? Hangi yol daha hızlı ilerletir?</p>
+            </div>
+        </a>
 
-        <div class="blog-card">
-            <h3>ABD'deki Görevimden Edindiğim Deneyimler</h3>
-            <p>6 aylık ABD yazılım görevimde öğrendiklerim, global çalışma kültürü ve karşılaştığım teknolojiler...</p>
-            <a href="yazi3.html">Devamını Oku →</a>
-        </div>
+        <a href="blog-detay.html" style="text-decoration:none; color:inherit;">
+            <div class="post-card">
+                <h2 class="post-title">Global Projelerde Ekip Yönetimi</h2>
+                <p class="post-desc">ABD, Singapur ve İngiltere projelerinde öğrendiklerimden bazı önemli noktalar.</p>
+            </div>
+        </a>
 
-        <div class="blog-card">
-            <h3>Singapur – Teknoloji & Yapay Zeka Ekosistemi</h3>
-            <p>Asya’da yapay zeka gelişimi, şirketlerin kullandığı altyapılar ve karşılaştığınız fırsatlar...</p>
-            <a href="yazi4.html">Devamını Oku →</a>
-        </div>
-
-        <div class="blog-card">
-            <h3>Ekip Kurma & Kurumsal Projeler Yönetimi</h3>
-            <p>Kurduğum ekip ile 2019–2025 arasında yaptığımız kurumsal projelerden önemli başarı örnekleri...</p>
-            <a href="yazi5.html">Devamını Oku →</a>
-        </div>
+        <a href="blog-detay.html" style="text-decoration:none; color:inherit;">
+            <div class="post-card">
+                <h2 class="post-title">Savunma Sanayinde Siber Güvenlik</h2>
+                <p class="post-desc">Kritik sistemler nasıl korunur? Saldırı simülasyonları neden hayati önem taşır?</p>
+            </div>
+        </a>
 
     </div>
 </div>

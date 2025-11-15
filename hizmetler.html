@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hizmetler - Yusuf Avşar</title>
+
     <link rel="stylesheet" href="/assets/css/base.css">
-    <link rel="stylesheet" href="/assets/css/typography.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
     <link rel="stylesheet" href="/assets/css/components.css">
-    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <style>
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.25s;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            line-height: 1.6;
+        }
+
+        .benefits {
+            margin-top: 50px;
+        }
+
+        .benefits-list {
+            list-style: square;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,158 +58,90 @@
     <!-- HEADER -->
     <div data-include="/components/header.html"></div>
 
-    <!-- SAYFA BAŞLIĞI -->
     <section class="page-header">
         <div class="container">
             <h1>Hizmetler</h1>
-            <p>Yazılım, güvenlik, altyapı ve teknoloji alanlarında profesyonel çözümler.</p>
+            <p>Yazılım, güvenlik ve teknoloji alanında profesyonel çözümler.</p>
         </div>
     </section>
 
-    <section class="services container">
+    <div class="container">
 
-        <h2>Uzmanlık Alanlarım</h2>
-        <p>Aşağıda, yıllara dayanan tecrübemle sunduğum hizmetlerin detaylarını bulabilirsiniz.</p>
-
-        <!-- HİZMET LİSTESİ -->
         <div class="service-grid">
 
-            <!-- Web Geliştirme -->
+            <!-- SERVICE 1 -->
             <div class="service-card">
-                <h3>Web Geliştirme</h3>
+                <h3>Web Yazılım Geliştirme</h3>
                 <p>
-                    Modern, hızlı, güvenli ve tamamen responsive web siteleri geliştiriyorum.
-                    Kurumsal, kişisel veya proje tabanlı tüm yapılar için özel çözümler sunarım.
+                    Modern, hızlı ve güvenli web siteleri geliştiriyorum. Kurumsal siteler, kişisel projeler, admin panelleri,
+                    özel dashboard yapılandırmaları ve tam ölçekli web çözümleri üretiyorum.
                 </p>
-                <ul>
-                    <li>HTML / CSS / JS</li>
-                    <li>Frontend mimarisi</li>
-                    <li>Performans optimizasyonu</li>
-                    <li>Modern arayüz bileşenleri</li>
-                </ul>
             </div>
 
-            <!-- Backend & API -->
+            <!-- SERVICE 2 -->
             <div class="service-card">
-                <h3>Backend & API Geliştirme</h3>
+                <h3>Siber Güvenlik & Sistem Testleri</h3>
                 <p>
-                    Profesyonel ve ölçeklenebilir backend sistemleri yazıyorum.
-                    Veri işleme, güvenlik, API tasarımı ve iş mantığı geliştirme.
+                    Yasal çerçevede sistem açıklarını tespit ediyor, raporluyor ve kurumlara güvenlik güçlendirmeleri sağlıyorum.
+                    Penetrasyon testleri, ağ güvenliği analizi ve uygulama güvenliği danışmanlığı veriyorum.
                 </p>
-                <ul>
-                    <li>Node.js / Python / PHP</li>
-                    <li>REST API</li>
-                    <li>Veritabanı tasarımı</li>
-                    <li>Yetkilendirme & kimlik doğrulama</li>
-                </ul>
             </div>
 
-            <!-- Siber Güvenlik -->
+            <!-- SERVICE 3 -->
             <div class="service-card">
-                <h3>Siber Güvenlik Analizi</h3>
+                <h3>Altyapı Güçlendirme</h3>
                 <p>
-                    Yasalar çerçevesinde sistem, yazılım ve ağ güvenlik testleri gerçekleştiriyorum.
-                    Açık tarama, zafiyet tespiti ve raporlama hizmeti sunarım.
+                    Firmaların altyapılarının daha hızlı, güvenli ve stabil çalışması için gereken teknik düzenlemeleri
+                    sağlıyorum. Sunucu optimizasyonu, yapılandırma, hız artırma ve uzun vadeli stabilite çözümleri sunuyorum.
                 </p>
-                <ul>
-                    <li>Penetrasyon testi</li>
-                    <li>OWASP güvenlik analizi</li>
-                    <li>Zafiyet tespiti</li>
-                    <li>Güvenli kod incelemesi</li>
-                </ul>
             </div>
 
-            <!-- Sistem & Altyapı Danışmanlığı -->
+            <!-- SERVICE 4 -->
             <div class="service-card">
-                <h3>Altyapı ve Sistem Danışmanlığı</h3>
+                <h3>Danışmanlık & Teknik Rehberlik</h3>
                 <p>
-                    Firmaların ve projelerin dijital altyapılarını kuruyor, yönetiyor ve optimize ediyorum.
+                    Yazılım, donanım, güvenlik ve sistem mimarisi üzerine teknik danışmanlık hizmeti veriyorum.
+                    Proje planlama, teknoloji seçimi ve mimari tasarım konularında yol göstericilik sağlıyorum.
                 </p>
-                <ul>
-                    <li>Sunucu yapılandırması</li>
-                    <li>Ağ analizi</li>
-                    <li>Performans tuning</li>
-                    <li>Yedekleme & güvenlik çözümleri</li>
-                </ul>
             </div>
 
-            <!-- Proje Geliştirme -->
+            <!-- SERVICE 5 -->
             <div class="service-card">
-                <h3>Proje Geliştirme</h3>
+                <h3>Özel Proje Geliştirme</h3>
                 <p>
-                    İster kişisel, ister kurumsal… Sıfırdan özel yazılım projeleri geliştiriyorum.
+                    Şirketlere veya bireylere özel yazılım çözümleri üretiyorum. İster bir otomasyon sistemi,
+                    ister özel bir uygulama, ister sıfırdan bir proje olsun—tam ihtiyaca göre geliştirme sağlıyorum.
                 </p>
-                <ul>
-                    <li>Çok dilli uygulamalar</li>
-                    <li>Dashboard / panel geliştirme</li>
-                    <li>Özel yazılım çözümleri</li>
-                    <li>UX odaklı mimari</li>
-                </ul>
             </div>
 
-            <!-- Danışmanlık -->
+            <!-- SERVICE 6 -->
             <div class="service-card">
-                <h3>Teknik Danışmanlık</h3>
+                <h3>Etik Hacking & Güvenlik Bildirimi</h3>
                 <p>
-                    Yazılım, güvenlik, altyapı veya proje yönetimi konularında teknik danışmanlık sunuyorum.
+                    Sistemlerde gördüğüm kritik güvenlik açıklarını ilgili kurumlara raporlayarak güvenliğin arttırılmasına
+                    katkı sağlıyorum. Etik hacking prensiplerine tamamen bağlı şekilde çalışıyorum.
                 </p>
-                <ul>
-                    <li>Sistem tasarımı</li>
-                    <li>Teknik yol haritası</li>
-                    <li>Mimari planlama</li>
-                    <li>Performans & kalite analizleri</li>
-                </ul>
             </div>
 
         </div>
-    </section>
+
+        <!-- BENEFITS SECTION -->
+        <div class="benefits">
+            <h2>Neden Ben?</h2>
+            <ul class="benefits-list">
+                <li>15+ yıllık yazılım ve siber güvenlik deneyimi</li>
+                <li>Sahada gerçek projelerde elde edilmiş tecrübe</li>
+                <li>Uluslararası proje deneyimi (ABD, Singapur, İngiltere)</li>
+                <li>Savunma sanayi dahil birçok projeye teknik destek</li>
+                <li>Hızlı, güvenilir, modern ve sürdürülebilir çözümler</li>
+                <li>Tek kişi değil, gerektiğinde ekip desteğiyle çalışma imkânı</li>
+            </ul>
+        </div>
+
+    </div>
 
     <!-- FOOTER -->
     <div data-include="/components/footer.html"></div>
-
-    <script src="/assets/js/main.js"></script>
-
-    <style>
-        .service-grid {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .service-card {
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            background: var(--bg-light);
-            transition: 0.2s;
-        }
-
-        .service-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .service-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .service-card ul li {
-            margin: 4px 0;
-        }
-
-        @media (max-width: 900px) {
-            .service-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 
 </body>
 </html>

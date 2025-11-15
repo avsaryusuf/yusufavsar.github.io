@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Yusuf Avşar - Siber Güvenlik Uzmanı & Yazılım Geliştirici</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Yusuf Avşar - Siber Güvenlik, Yazılım Geliştirme, Pentest, Otomasyon ve Network Hizmetleri." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Adsense kodu buraya eklenecek -->
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* Cyber Blue Tema */
+        body { background:#050510; }
+        h2, h3 { color:#00cfff !important; }
+        a { color:#00cfff; }
+
+        /* AI Chatbot CSS */
+        #ai-chatbot {
+            position: fixed; bottom: 20px; right: 20px; font-family: Arial; z-index: 9999;
+        }
+        #ai-toggle {
+            background: #0a0a23; color: #00b7ff; padding: 12px;
+            border-radius: 50%; cursor: pointer; width: 50px; height: 50px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; box-shadow: 0 0 10px #00b7ff;
+        }
+        #ai-window {
+            display: none; width: 280px; height: 360px; background: #0c0c1b;
+            border: 1px solid #00aaff; border-radius: 10px; margin-bottom: 10px;
+            box-shadow: 0 0 15px #0084ff;
+        }
+        #ai-header {
+            background: #001f3f; color: #00c6ff; padding: 10px; text-align: center; border-bottom:1px solid #00aaff;
+        }
+        #ai-messages {
+            height: 260px; padding: 10px; overflow-y: auto; color:#ddd; font-size:14px;
+        }
+        #ai-messages .bot { color:#00c6ff; margin-bottom:10px; }
+        #ai-messages .user { color:white; text-align:right; margin-bottom:10px; }
+        #ai-input {
+            width:100%; padding:10px; background:#0f0f2e; color:white;
+            border:none; border-top:1px solid #00aaff; outline:none;
+        }
+    </style>
+</head>
+
+<body class="homepage">
+<div id="page-wrapper">
+
+    <!-- HEADER -->
+    <section id="header" class="dark">
+        <h1 id="logo"><a href="#">Yusuf Avşar</a></h1>
+        <p>Siber Güvenlik Uzmanı • Yazılım Geliştirici • Network & Sistem</p>
+
+        <nav id="nav">
+            <ul>
+                <li class="current"><a href="#header">Ana Sayfa</a></li>
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#skills">Yetenekler</a></li>
+                <li><a href="#projects">Projeler</a></li>
+                <li><a href="#services">Hizmetler</a></li>
+                <li><a href="#stats">İstatistikler</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="wrapper style1">
+        <div class="container">
+            <header class="major"><h2>Hakkımda</h2></header>
+            <p>
+                Kahramanmaraş’ta doğdum, yaklaşık 30 yıldır İstanbul’da yaşıyorum.  
+                Teknolojiye çocukluktan beri ilgiliyim. Yazılım geliştirme, siber güvenlik, pentest,
+                sistem ve ağ yönetimi gibi birçok alanda tecrübeye sahibim.  
+                Şu anda hem özel güvenlik görevlisi olarak çalışıyor, hem bireysel olarak
+                proje geliştiriyor hem de iki farklı şirketin siber güvenlik departmanında
+                hibrit olarak görev yapıyorum.
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="wrapper style2">
+        <div class="container">
+            <header class="major"><h2>Yetenekler</h2></header>
+
+            <p><strong>Yazılım:</strong> HTML, CSS, JS, PHP, Python, API, UI/UX</p>
+            <p><strong>Siber Güvenlik:</strong> Pentest, OWASP, Ağ güvenliği, Linux hardening</p>
+            <p><strong>Sistem:</strong> Windows Server, Active Directory, VPN, Network</p>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="wrapper style1">
+        <div class="container">
+            <header class="major"><h2>Projeler</h2></header>
+            <p>Proje listeleri buraya gelecek.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="wrapper style2">
+        <div class="container">
+            <header class="major"><h2>Hizmetler</h2></header>
+            <p>Web geliştirme, pentest, network analizi, otomasyon, sistem yapılandırma.</p>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="stats" class="wrapper style3">
+        <div class="container">
+            <header class="major"><h2>İstatistikler</h2></header>
+            <p>10+ yıl tecrübe • 50+ proje • 2 şirket • 20+ araç geliştirildi</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="wrapper style4">
+        <div class="container">
+            <header class="major"><h2>İletişim</h2></header>
+
+            <p><strong>E-posta:</strong> yusufavsarofficial@proton.me</p>
+
+            <p>
+                <a href="https://instagram.com/avyusuf95"
+                   target="_blank"
+                   class="icon fa-instagram"> Instagram</a>
+            </p>
+
+            <!-- Basit İletişim Formu -->
+            <form>
+                <input type="text" placeholder="Ad Soyad">
+                <input type="email" placeholder="E-posta">
+                <textarea placeholder="Mesaj"></textarea>
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </section>
+
+</div>
+
+<!-- AI ASISTAN -->
+<div id="ai-chatbot">
+    <div id="ai-toggle">🤖</div>
+    <div id="ai-window">
+        <div id="ai-header">AI Asistan</div>
+        <div id="ai-messages"></div>
+        <input id="ai-input" type="text" placeholder="Mesaj yaz..." />
+    </div>
+</div>
+
+<script>
+const aiToggle = document.getElementById("ai-toggle");
+const aiWindow = document.getElementById("ai-window");
+const aiInput = document.getElementById("ai-input");
+const aiMessages = document.getElementById("ai-messages");
+
+aiToggle.onclick = () => {
+    aiWindow.style.display = aiWindow.style.display === "block" ? "none" : "block";
+};
+
+function botReply(txt) {
+    txt = txt.toLowerCase();
+    if (txt.includes("merhaba")) return "Merhaba! Nasıl yardımcı olabilirim?";
+    if (txt.includes("yusuf")) return "Yusuf Avşar bir siber güvenlik uzmanı ve yazılım geliştiricisidir.";
+    if (txt.includes("mail")) return "E-posta: yusufavsarofficial@proton.me";
+    if (txt.includes("instagram")) return "Instagram: instagram.com/avyusuf95";
+    return "Bu konuda çok emin değilim ama yardımcı olmaya çalışırım 🙂";
+}
+
+aiInput.addEventListener("keypress", e => {
+    if (e.key === "Enter") {
+        let text = aiInput.value.trim();
+        if (!text) return;
+
+        aiMessages.innerHTML += `<div class="user">${text}</div>`;
+        aiInput.value = "";
+
+        setTimeout(() => {
+            let reply = botReply(text);
+            aiMessages.innerHTML += `<div class="bot">${reply}</div>`;
+            aiMessages.scrollTop = aiMessages.scrollHeight;
+        }, 300);
+    }
+});
+</script>
+
+</body>
+</html>

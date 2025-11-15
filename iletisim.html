@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>İletişim | Yusuf Avşar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yusuf Avşar iletişim sayfası. İş teklifleri, global projeler, danışmanlık, işbirliği ve teknik talepler için ulaşabilirsiniz.">
 
     <style>
         :root {
@@ -13,20 +12,22 @@
             --primary: #00aaff;
             --secondary: #1f6feb;
             --card-bg: #161b22;
-            --input-bg: #0f141a;
+            --line: #222;
+            --input-bg: #0f1620;
+            --input-border: #333;
         }
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
             background: var(--bg);
             color: var(--text);
+            font-family: Arial, sans-serif;
         }
 
         header {
             padding: 20px;
             text-align: center;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid var(--line);
         }
 
         nav a {
@@ -43,90 +44,70 @@
         }
 
         h1 {
-            text-align: center;
+            font-size: 32px;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
-        p.center {
-            text-align: center;
-            color: #ccc;
-            font-size: 16px;
-            margin-bottom: 40px;
-        }
-
-        .form-box {
+        .card {
             background: var(--card-bg);
             padding: 30px;
             border-radius: 12px;
-            border: 1px solid #222;
+            border: 1px solid var(--line);
+            margin-top: 30px;
         }
 
         label {
             display: block;
-            margin: 15px 0 5px;
-            color: var(--secondary);
-            font-weight: bold;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            background: var(--input-bg);
-            border: 1px solid #333;
-            color: var(--text);
-            border-radius: 8px;
+            margin-top: 20px;
+            margin-bottom: 8px;
             font-size: 15px;
         }
 
+        input,
         textarea {
-            height: 140px;
-            resize: vertical;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--input-border);
+            background: var(--input-bg);
+            color: var(--text);
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 150px;
         }
 
         button {
-            margin-top: 20px;
-            width: 100%;
-            padding: 14px;
+            margin-top: 25px;
+            padding: 12px 25px;
             background: var(--primary);
             border: none;
+            color: white;
+            font-size: 17px;
             border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #000;
             cursor: pointer;
             transition: 0.2s;
         }
 
         button:hover {
+            transform: scale(1.05);
             background: var(--secondary);
         }
 
         .contact-info {
             margin-top: 40px;
-            padding: 25px;
-            background: var(--card-bg);
-            border-radius: 12px;
-            border: 1px solid #222;
-        }
-
-        .contact-info h2 {
-            margin-top: 0;
-            color: var(--secondary);
-        }
-
-        .contact-info p {
-            color: #ccc;
-            font-size: 15px;
-            line-height: 1.7;
+            line-height: 1.8;
+            font-size: 17px;
         }
 
         footer {
-            margin-top: 50px;
-            padding: 20px;
             text-align: center;
-            border-top: 1px solid #222;
-            color: #aaa;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 1px solid var(--line);
+            color: #999;
         }
     </style>
 </head>
@@ -146,32 +127,30 @@
 
 <div class="container">
     <h1>İletişim</h1>
-    <p class="center">Her türlü iş teklifi, proje, danışmanlık veya kariyer fırsatları için benimle iletişime geçebilirsiniz.</p>
+    <p>Benimle iletişime geçmek için aşağıdaki formu doldurabilir veya iletişim bilgilerini kullanabilirsin.</p>
 
-    <div class="form-box">
-        <form>
-            <label>Ad Soyad</label>
-            <input type="text" placeholder="Adınızı girin">
+    <div class="card">
+        <label>Ad Soyad</label>
+        <input type="text" placeholder="Adınız Soyadınız">
 
-            <label>E-posta</label>
-            <input type="email" placeholder="ornek@mail.com">
+        <label>E-posta Adresi</label>
+        <input type="email" placeholder="ornek@mail.com">
 
-            <label>Konu</label>
-            <input type="text" placeholder="Mesaj konusu">
+        <label>Konu</label>
+        <input type="text" placeholder="Mesaj konusu">
 
-            <label>Mesajınız</label>
-            <textarea placeholder="Mesajınızı buraya yazın..."></textarea>
+        <label>Mesajınız</label>
+        <textarea placeholder="Mesajınızı buraya yazın..."></textarea>
 
-            <button>Gönder</button>
-        </form>
+        <button>Gönder</button>
     </div>
 
     <div class="contact-info">
-        <h2>İletişim Bilgilerim</h2>
+        <h2 style="color: var(--primary);">İletişim Bilgileri</h2>
         <p><strong>E-posta:</strong> yusufavsarofficial@gmail.com</p>
         <p><strong>GitHub:</strong> github.com/yusufavsarofficial</p>
-        <p><strong>LinkedIn:</strong> linkedin.com/in/yusufavsar</p>
-        <p><strong>Konum:</strong> Türkiye / ABD aktif çalışma</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/yusufavsarofficial</p>
+        <p><strong>Konum:</strong> Türkiye</p>
     </div>
 </div>
 

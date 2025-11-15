@@ -2,164 +2,172 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Hizmetler | Yusuf Avşar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yusuf Avşar'ın sunduğu profesyonel yazılım geliştirme, siber güvenlik, altyapı güçlendirme, web tasarımı ve özel danışmanlık hizmetleri.">
-
-    <style>
-        :root {
-            --bg: #0d1117;
-            --text: #ffffff;
-            --primary: #00aaff;
-            --secondary: #1f6feb;
-            --card-bg: #161b22;
-            --border: #222;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-        }
-
-        header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav a {
-            color: var(--primary);
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: var(--primary);
-        }
-
-        .intro {
-            text-align: center;
-            color: #ccc;
-            font-size: 18px;
-            margin-top: 10px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .service-box {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: 0.2s;
-        }
-
-        .service-box:hover {
-            border-color: var(--primary);
-            transform: scale(1.02);
-        }
-
-        .service-title {
-            font-size: 22px;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        footer {
-            padding: 20px;
-            text-align: center;
-            color: #999;
-            margin-top: 50px;
-            border-top: 1px solid var(--border);
-        }
-    </style>
+    <title>Hizmetler - Yusuf Avşar</title>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/typography.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Anasayfa</a>
-        <a href="hakkimda.html">Hakkımda</a>
-        <a href="hizmetler.html">Hizmetler</a>
-        <a href="projeler.html">Projeler</a>
-        <a href="blog.html">Blog</a>
-        <a href="iletisim.html">İletişim</a>
-    </nav>
-</header>
+    <!-- HEADER -->
+    <div data-include="/components/header.html"></div>
 
-<div class="container">
-    <h1>Hizmetler</h1>
-    <p class="intro">Profesyonel yazılım, siber güvenlik, altyapı mühendisliği ve özel danışmanlık hizmetleri.</p>
-
-    <div class="services-grid">
-
-        <div class="service-box">
-            <h2 class="service-title">🔐 Siber Güvenlik & Açık Analizi</h2>
-            <p>Sistem açıkları tespiti, network zafiyet taramaları, OWASP testleri, exploit analizleri ve kurumsal güvenlik güçlendirme çalışmaları.</p>
+    <!-- SAYFA BAŞLIĞI -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Hizmetler</h1>
+            <p>Yazılım, güvenlik, altyapı ve teknoloji alanlarında profesyonel çözümler.</p>
         </div>
+    </section>
 
-        <div class="service-box">
-            <h2 class="service-title">💻 Yazılım Geliştirme</h2>
-            <p>Python, JavaScript, C#, PHP ve Node.js ile kurumsal uygulamalar, otomasyon sistemleri ve özel backend çözümleri.</p>
+    <section class="services container">
+
+        <h2>Uzmanlık Alanlarım</h2>
+        <p>Aşağıda, yıllara dayanan tecrübemle sunduğum hizmetlerin detaylarını bulabilirsiniz.</p>
+
+        <!-- HİZMET LİSTESİ -->
+        <div class="service-grid">
+
+            <!-- Web Geliştirme -->
+            <div class="service-card">
+                <h3>Web Geliştirme</h3>
+                <p>
+                    Modern, hızlı, güvenli ve tamamen responsive web siteleri geliştiriyorum.
+                    Kurumsal, kişisel veya proje tabanlı tüm yapılar için özel çözümler sunarım.
+                </p>
+                <ul>
+                    <li>HTML / CSS / JS</li>
+                    <li>Frontend mimarisi</li>
+                    <li>Performans optimizasyonu</li>
+                    <li>Modern arayüz bileşenleri</li>
+                </ul>
+            </div>
+
+            <!-- Backend & API -->
+            <div class="service-card">
+                <h3>Backend & API Geliştirme</h3>
+                <p>
+                    Profesyonel ve ölçeklenebilir backend sistemleri yazıyorum.
+                    Veri işleme, güvenlik, API tasarımı ve iş mantığı geliştirme.
+                </p>
+                <ul>
+                    <li>Node.js / Python / PHP</li>
+                    <li>REST API</li>
+                    <li>Veritabanı tasarımı</li>
+                    <li>Yetkilendirme & kimlik doğrulama</li>
+                </ul>
+            </div>
+
+            <!-- Siber Güvenlik -->
+            <div class="service-card">
+                <h3>Siber Güvenlik Analizi</h3>
+                <p>
+                    Yasalar çerçevesinde sistem, yazılım ve ağ güvenlik testleri gerçekleştiriyorum.
+                    Açık tarama, zafiyet tespiti ve raporlama hizmeti sunarım.
+                </p>
+                <ul>
+                    <li>Penetrasyon testi</li>
+                    <li>OWASP güvenlik analizi</li>
+                    <li>Zafiyet tespiti</li>
+                    <li>Güvenli kod incelemesi</li>
+                </ul>
+            </div>
+
+            <!-- Sistem & Altyapı Danışmanlığı -->
+            <div class="service-card">
+                <h3>Altyapı ve Sistem Danışmanlığı</h3>
+                <p>
+                    Firmaların ve projelerin dijital altyapılarını kuruyor, yönetiyor ve optimize ediyorum.
+                </p>
+                <ul>
+                    <li>Sunucu yapılandırması</li>
+                    <li>Ağ analizi</li>
+                    <li>Performans tuning</li>
+                    <li>Yedekleme & güvenlik çözümleri</li>
+                </ul>
+            </div>
+
+            <!-- Proje Geliştirme -->
+            <div class="service-card">
+                <h3>Proje Geliştirme</h3>
+                <p>
+                    İster kişisel, ister kurumsal… Sıfırdan özel yazılım projeleri geliştiriyorum.
+                </p>
+                <ul>
+                    <li>Çok dilli uygulamalar</li>
+                    <li>Dashboard / panel geliştirme</li>
+                    <li>Özel yazılım çözümleri</li>
+                    <li>UX odaklı mimari</li>
+                </ul>
+            </div>
+
+            <!-- Danışmanlık -->
+            <div class="service-card">
+                <h3>Teknik Danışmanlık</h3>
+                <p>
+                    Yazılım, güvenlik, altyapı veya proje yönetimi konularında teknik danışmanlık sunuyorum.
+                </p>
+                <ul>
+                    <li>Sistem tasarımı</li>
+                    <li>Teknik yol haritası</li>
+                    <li>Mimari planlama</li>
+                    <li>Performans & kalite analizleri</li>
+                </ul>
+            </div>
+
         </div>
+    </section>
 
-        <div class="service-box">
-            <h2 class="service-title">🌐 Web Sitesi & Altyapı Kurulumu</h2>
-            <p>Sıfırdan hızlı, güvenli ve SEO uyumlu web sitesi kurulumu. Kurumsal, kişisel ya da özel projeler için kapsamlı geliştirme.</p>
-        </div>
+    <!-- FOOTER -->
+    <div data-include="/components/footer.html"></div>
 
-        <div class="service-box">
-            <h2 class="service-title">🛡 Sistem Güçlendirme</h2>
-            <p>Şirket ağları, sunucular, API'ler ve kurumsal servisler için güvenlik, performans ve stabilite artırıcı gelişmiş optimizasyon.</p>
-        </div>
+    <script src="/assets/js/main.js"></script>
 
-        <div class="service-box">
-            <h2 class="service-title">⚙ Altyapı Tasarımı</h2>
-            <p>Server konfigürasyonu, yük dengeleme, CDN, cache mimarisi ve yüksek trafik için özel yapılandırmalar.</p>
-        </div>
+    <style>
+        .service-grid {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
 
-        <div class="service-box">
-            <h2 class="service-title">👨‍💻 Danışmanlık & Ekip Yönetimi</h2>
-            <p>Teknik ekip yönlendirmesi, proje analizi, strateji belirleme ve teknoloji danışmanlığı.</p>
-        </div>
+        .service-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-light);
+            transition: 0.2s;
+        }
 
-        <div class="service-box">
-            <h2 class="service-title">🔍 Pentest Raporlama</h2>
-            <p>Profesyonel saldırı simülasyonu, raporlama, çözüm önerileri ve güvenlik seviyesinin yükseltilmesi.</p>
-        </div>
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
 
-        <div class="service-box">
-            <h2 class="service-title">📊 Veri Analizi & Otomasyon</h2>
-            <p>İş süreçleri için otomasyon yazılımları, veri işleme çözümleri ve yüksek verimli analiz sistemleri.</p>
-        </div>
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
 
-        <div class="service-box">
-            <h2 class="service-title">💼 VIP Güvenlik Teknolojileri</h2>
-            <p>VIP koruma, özel güvenlik ve hassas kişi/kurum analizleri için özel dijital güvenlik modülleri.</p>
-        </div>
+        .service-card ul li {
+            margin: 4px 0;
+        }
 
-    </div>
-</div>
+        @media (max-width: 900px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-<footer>
-    © 2025 Yusuf Avşar – Tüm Hakları Saklıdır.
-</footer>
+        @media (max-width: 600px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
 </body>
 </html>

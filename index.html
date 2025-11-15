@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Web Sitesi</title>
+  <title>Yusuf Avşar - Teknoloji Uzmanı</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <style>
@@ -12,7 +12,7 @@
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 50%, #dc2626 100%);
         }
         
         .card-hover {
@@ -41,7 +41,41 @@
         
         .navbar-blur {
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .page-content {
+            opacity: 0;
+            animation: pageSlideIn 0.5s ease-out forwards;
+        }
+        
+        .page-content.hidden {
+            display: none !important;
+        }
+        
+        @keyframes pageSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cyber-glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .skill-bar {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            animation: skillLoad 2s ease-out;
+        }
+        
+        @keyframes skillLoad {
+            from { width: 0; }
+            to { width: var(--skill-width); }
         }
     </style>
   <style>@view-transition { navigation: auto; }</style>
@@ -51,11 +85,10 @@
   <nav class="fixed top-0 w-full z-50 navbar-blur border-b border-gray-200">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
-     <div class="flex-shrink-0">
-      <h1 id="nav-title" class="text-2xl font-bold text-gray-900">ModernSite</h1>
+     <div class="flex-shrink-0"><button onclick="showPage('home')" id="nav-title" class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors cursor-pointer">Yusuf Avşar</button>
      </div>
      <div class="hidden md:block">
-      <div class="ml-10 flex items-baseline space-x-4"><a href="#home" class="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Ana Sayfa</a> <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Hakkımda</a> <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Hizmetler</a> <a href="#portfolio" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Portfolio</a> <a href="#blog" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a> <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">İletişim</a>
+      <div class="ml-10 flex items-baseline space-x-4"><button onclick="showPage('home')" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="home">Ana Sayfa</button> <button onclick="showPage('about')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="about">Hakkımda</button> <button onclick="showPage('services')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="services">Hizmetler</button> <button onclick="showPage('portfolio')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="portfolio">Portfolio</button> <button onclick="showPage('blog')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="blog">Blog</button> <button onclick="showPage('contact')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="contact">İletişim</button>
       </div>
      </div>
      <div class="md:hidden"><button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
@@ -65,349 +98,713 @@
     </div>
    </div><!-- Mobile menu -->
    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="#home" class="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Ana Sayfa</a> <a href="#about" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Hakkımda</a> <a href="#services" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Hizmetler</a> <a href="#portfolio" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Portfolio</a> <a href="#blog" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Blog</a> <a href="#contact" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">İletişim</a>
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><button onclick="showPage('home')" class="nav-link text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="home">Ana Sayfa</button> <button onclick="showPage('about')" class="nav-link text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="about">Hakkımda</button> <button onclick="showPage('services')" class="nav-link text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="services">Hizmetler</button> <button onclick="showPage('portfolio')" class="nav-link text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="portfolio">Portfolio</button> <button onclick="showPage('blog')" class="nav-link text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="blog">Blog</button> <button onclick="showPage('contact')" class="nav-link text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="contact">İletişim</button>
     </div>
    </div>
-  </nav><!-- Hero Section -->
-  <section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-white">
-   <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-    <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 fade-in">Dijital Dünyada Fark Yaratın</h1>
-    <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 opacity-90 fade-in">Modern web çözümleri ile işinizi bir üst seviyeye taşıyın</p>
-    <div class="space-x-4 fade-in"><button onclick="scrollToSection('contact')" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">İletişime Geç</button> <button onclick="scrollToSection('portfolio')" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors">Çalışmalarımı Gör</button>
-    </div>
-   </div>
-  </section><!-- About Section -->
-  <section id="about" class="py-20 bg-gray-50">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-     <h2 id="about-title" class="text-4xl font-bold text-gray-900 mb-4 fade-in">Hakkımda</h2>
-     <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">Yılların deneyimi ile modern web teknolojilerinde uzmanlaşmış, yaratıcı çözümler üreten bir profesyonelim.</p>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-     <div class="fade-in">
-      <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
-       <h3 class="text-2xl font-bold mb-4">Deneyim &amp; Uzmanlık</h3>
-       <div class="space-y-4">
-        <div class="flex items-center">
-         <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>5+ Yıl Web Geliştirme</span>
+  </nav><!-- Main Content Container -->
+  <div id="main-content" class="pt-16"><!-- Home Page -->
+   <div id="page-home" class="page-content"><!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden">
+     <div class="absolute inset-0 bg-black opacity-20"></div>
+     <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="mb-6"><span class="inline-block px-4 py-2 bg-white bg-opacity-20 rounded-full text-sm font-semibold mb-4">🔒 Siber Güvenlik &amp; Teknoloji Uzmanı</span>
+      </div>
+      <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 fade-in">Teknolojinin Her Alanında Uzman Çözümler</h1>
+      <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 opacity-90 fade-in">Siber güvenlikten web geliştirmeye, 14 yıllık deneyimle kurumsal projelerinizi hayata geçiriyorum</p>
+      <div class="space-x-4 fade-in"><button onclick="openWhatsApp()" class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors cyber-glow">WhatsApp'tan İletişim</button> <button onclick="showPage('portfolio')" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors">400+ Projeyi İncele</button>
+      </div>
+     </div>
+    </section><!-- Quick Stats Section -->
+    <section class="py-20 bg-gray-900 text-white">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+       <div class="fade-in">
+        <div class="text-4xl font-bold text-blue-400 mb-2">
+         14+
         </div>
-        <div class="flex items-center">
-         <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>100+ Başarılı Proje</span>
+        <div class="text-gray-300">
+         Yıl Deneyim
         </div>
-        <div class="flex items-center">
-         <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>Modern Teknolojiler</span>
+       </div>
+       <div class="fade-in">
+        <div class="text-4xl font-bold text-green-400 mb-2">
+         400+
+        </div>
+        <div class="text-gray-300">
+         Tamamlanan Proje
+        </div>
+       </div>
+       <div class="fade-in">
+        <div class="text-4xl font-bold text-purple-400 mb-2">
+         24/7
+        </div>
+        <div class="text-gray-300">
+         Acil Destek
+        </div>
+       </div>
+       <div class="fade-in">
+        <div class="text-4xl font-bold text-red-400 mb-2">
+         🌍
+        </div>
+        <div class="text-gray-300">
+         Uluslararası Hizmet
         </div>
        </div>
       </div>
      </div>
-     <div class="fade-in">
-      <h3 class="text-2xl font-bold text-gray-900 mb-6">Neden Benimle Çalışmalısınız?</h3>
-      <div class="space-y-4">
-       <div class="flex items-start">
-        <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1"><span class="text-white text-sm">✓</span>
-        </div>
-        <div>
-         <h4 class="font-semibold text-gray-900">Kaliteli Kod</h4>
-         <p class="text-gray-600">Temiz, optimize edilmiş ve sürdürülebilir kod yazıyorum.</p>
-        </div>
-       </div>
-       <div class="flex items-start">
-        <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1"><span class="text-white text-sm">✓</span>
-        </div>
-        <div>
-         <h4 class="font-semibold text-gray-900">Hızlı Teslimat</h4>
-         <p class="text-gray-600">Projelerinizi zamanında ve kaliteli şekilde teslim ediyorum.</p>
-        </div>
-       </div>
-       <div class="flex items-start">
-        <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1"><span class="text-white text-sm">✓</span>
-        </div>
-        <div>
-         <h4 class="font-semibold text-gray-900">7/24 Destek</h4>
-         <p class="text-gray-600">Proje sonrası da yanınızdayım, sürekli destek sağlıyorum.</p>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- Services Section -->
-  <section id="services" class="py-20 bg-white">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-     <h2 id="services-title" class="text-4xl font-bold text-gray-900 mb-4 fade-in">Hizmetlerim</h2>
-     <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">Size özel çözümler sunarak dijital hedeflerinize ulaşmanızı sağlıyorum.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-     <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
-      <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-       <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-       </svg>
-      </div>
-      <h3 class="text-xl font-bold text-gray-900 mb-4">Web Tasarım</h3>
-      <p class="text-gray-600 mb-6">Modern, responsive ve kullanıcı dostu web siteleri tasarlıyorum.</p>
-      <ul class="text-sm text-gray-500 space-y-2">
-       <li>• Responsive Tasarım</li>
-       <li>• UI/UX Optimizasyonu</li>
-       <li>• Modern Arayüzler</li>
-      </ul>
-     </div>
-     <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
-      <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-       <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-       </svg>
-      </div>
-      <h3 class="text-xl font-bold text-gray-900 mb-4">Web Geliştirme</h3>
-      <p class="text-gray-600 mb-6">Performanslı ve güvenli web uygulamaları geliştiriyorum.</p>
-      <ul class="text-sm text-gray-500 space-y-2">
-       <li>• Frontend Geliştirme</li>
-       <li>• Backend Entegrasyonu</li>
-       <li>• API Geliştirme</li>
-      </ul>
-     </div>
-     <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
-      <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-       <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-       </svg>
-      </div>
-      <h3 class="text-xl font-bold text-gray-900 mb-4">SEO Optimizasyonu</h3>
-      <p class="text-gray-600 mb-6">Sitenizin arama motorlarında üst sıralarda yer almasını sağlıyorum.</p>
-      <ul class="text-sm text-gray-500 space-y-2">
-       <li>• Teknik SEO</li>
-       <li>• İçerik Optimizasyonu</li>
-       <li>• Performans İyileştirme</li>
-      </ul>
-     </div>
-     <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
-      <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-       <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-       </svg>
-      </div>
-      <h3 class="text-xl font-bold text-gray-900 mb-4">Mobil Uygulama</h3>
-      <p class="text-gray-600 mb-6">iOS ve Android için native ve hybrid uygulamalar geliştiriyorum.</p>
-      <ul class="text-sm text-gray-500 space-y-2">
-       <li>• React Native</li>
-       <li>• Progressive Web Apps</li>
-       <li>• Cross-Platform</li>
-      </ul>
-     </div>
-     <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
-      <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
-       <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-       </svg>
-      </div>
-      <h3 class="text-xl font-bold text-gray-900 mb-4">Güvenlik &amp; Bakım</h3>
-      <p class="text-gray-600 mb-6">Sitenizin güvenliğini sağlıyor ve düzenli bakımını yapıyorum.</p>
-      <ul class="text-sm text-gray-500 space-y-2">
-       <li>• Güvenlik Taraması</li>
-       <li>• Düzenli Yedekleme</li>
-       <li>• Performans İzleme</li>
-      </ul>
-     </div>
-     <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in">
-      <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
-       <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
-       </svg>
-      </div>
-      <h3 class="text-xl font-bold text-gray-900 mb-4">Dijital Pazarlama</h3>
-      <p class="text-gray-600 mb-6">Online varlığınızı güçlendiren pazarlama stratejileri geliştiriyorum.</p>
-      <ul class="text-sm text-gray-500 space-y-2">
-       <li>• Sosyal Medya Yönetimi</li>
-       <li>• Google Ads</li>
-       <li>• İçerik Pazarlama</li>
-      </ul>
-     </div>
-    </div>
-   </div>
-  </section><!-- Portfolio Section -->
-  <section id="portfolio" class="py-20 bg-gray-50">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-     <h2 class="text-4xl font-bold text-gray-900 mb-4 fade-in">Portfolio</h2>
-     <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">Son projelerimden örnekler ve başarı hikayelerim.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-     <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-      <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">E-Ticaret Sitesi</span>
-      </div>
-      <div class="p-6">
-       <h3 class="text-xl font-bold text-gray-900 mb-2">Modern E-Ticaret</h3>
-       <p class="text-gray-600 mb-4">React ve Node.js ile geliştirilmiş tam özellikli e-ticaret platformu.</p>
-       <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span> <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Node.js</span> <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">MongoDB</span>
-       </div><button class="text-blue-600 hover:text-blue-800 font-semibold">Detayları Gör →</button>
-      </div>
-     </div>
-     <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-      <div class="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">Kurumsal Website</span>
-      </div>
-      <div class="p-6">
-       <h3 class="text-xl font-bold text-gray-900 mb-2">Kurumsal Portal</h3>
-       <p class="text-gray-600 mb-4">Büyük ölçekli şirket için tasarlanan kurumsal web sitesi.</p>
-       <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Vue.js</span> <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">Laravel</span> <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">MySQL</span>
-       </div><button class="text-blue-600 hover:text-blue-800 font-semibold">Detayları Gör →</button>
-      </div>
-     </div>
-     <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-      <div class="h-48 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">Mobil Uygulama</span>
-      </div>
-      <div class="p-6">
-       <h3 class="text-xl font-bold text-gray-900 mb-2">Sosyal Platform</h3>
-       <p class="text-gray-600 mb-4">React Native ile geliştirilmiş cross-platform mobil uygulama.</p>
-       <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React Native</span> <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Firebase</span> <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">Redux</span>
-       </div><button class="text-blue-600 hover:text-blue-800 font-semibold">Detayları Gör →</button>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- Blog Section -->
-  <section id="blog" class="py-20 bg-white">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-     <h2 class="text-4xl font-bold text-gray-900 mb-4 fade-in">Blog</h2>
-     <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">Teknoloji dünyasından güncel yazılar ve ipuçları.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-     <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
-      <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center"><span class="text-white text-lg font-semibold">📱 Mobil Geliştirme</span>
-      </div>
-      <div class="p-6">
-       <div class="flex items-center text-sm text-gray-500 mb-3"><span>15 Aralık 2024</span> <span class="mx-2">•</span> <span>5 dk okuma</span>
-       </div>
-       <h3 class="text-xl font-bold text-gray-900 mb-3">2024'te Mobil Uygulama Trendleri</h3>
-       <p class="text-gray-600 mb-4">Bu yıl mobil uygulama geliştirme dünyasında öne çıkan trendler ve gelecek öngörüleri...</p><button class="text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
-      </div>
-     </article>
-     <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
-      <div class="h-48 bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center"><span class="text-white text-lg font-semibold">🚀 Web Performans</span>
-      </div>
-      <div class="p-6">
-       <div class="flex items-center text-sm text-gray-500 mb-3"><span>12 Aralık 2024</span> <span class="mx-2">•</span> <span>7 dk okuma</span>
-       </div>
-       <h3 class="text-xl font-bold text-gray-900 mb-3">Web Sitesi Hızlandırma İpuçları</h3>
-       <p class="text-gray-600 mb-4">Web sitenizin yükleme hızını artırmak için uygulayabileceğiniz pratik yöntemler...</p><button class="text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
-      </div>
-     </article>
-     <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
-      <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center"><span class="text-white text-lg font-semibold">🎨 UI/UX Tasarım</span>
-      </div>
-      <div class="p-6">
-       <div class="flex items-center text-sm text-gray-500 mb-3"><span>10 Aralık 2024</span> <span class="mx-2">•</span> <span>6 dk okuma</span>
-       </div>
-       <h3 class="text-xl font-bold text-gray-900 mb-3">Modern UI Tasarım Prensipleri</h3>
-       <p class="text-gray-600 mb-4">Kullanıcı deneyimini iyileştiren modern arayüz tasarım yaklaşımları...</p><button class="text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
-      </div>
-     </article>
-    </div>
-   </div>
-  </section><!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-900 text-white">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-     <h2 id="contact-title" class="text-4xl font-bold mb-4 fade-in">İletişim</h2>
-     <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in">Projeleriniz için benimle iletişime geçin. Size en kısa sürede dönüş yapacağım.</p>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-     <div class="fade-in">
-      <h3 class="text-2xl font-bold mb-6">Bana Ulaşın</h3>
-      <div class="space-y-6">
-       <div class="flex items-center">
-        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </section><!-- Quick Overview Section -->
+    <section class="py-20 bg-white">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold text-gray-900 mb-8">Uzmanlık Alanlarım</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+       <div class="p-6 card-hover">
+        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+         <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
          </svg>
         </div>
-        <div>
-         <h4 class="font-semibold">E-posta</h4>
-         <p class="text-gray-300">info@modernsite.com</p>
-        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Siber Güvenlik</h3>
+        <p class="text-gray-600">Penetration testing, güvenlik denetimi ve koruma sistemleri</p>
        </div>
-       <div class="flex items-center">
-        <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
-         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+       <div class="p-6 card-hover">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
          </svg>
         </div>
-        <div>
-         <h4 class="font-semibold">Telefon</h4>
-         <p class="text-gray-300">+90 555 123 45 67</p>
-        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Full Stack Geliştirme</h3>
+        <p class="text-gray-600">Web uygulamaları, mobil uygulamalar ve sistem entegrasyonları</p>
        </div>
-       <div class="flex items-center">
-        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
-         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+       <div class="p-6 card-hover">
+        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+         <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
          </svg>
         </div>
-        <div>
-         <h4 class="font-semibold">Adres</h4>
-         <p class="text-gray-300">İstanbul, Türkiye</p>
-        </div>
-       </div>
-      </div>
-      <div class="mt-8">
-       <h4 class="font-semibold mb-4">Sosyal Medya</h4>
-       <div class="flex space-x-4"><button class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"> <span class="text-sm font-bold">Li</span> </button> <button class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-600 transition-colors"> <span class="text-sm font-bold">Gh</span> </button> <button class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors"> <span class="text-sm font-bold">Tw</span> </button>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Altyapı &amp; DevOps</h3>
+        <p class="text-gray-600">Sunucu yönetimi, cloud çözümleri ve sistem optimizasyonu</p>
        </div>
       </div>
      </div>
-     <div class="fade-in">
-      <form id="contact-form" class="space-y-6">
-       <div><label for="name" class="block text-sm font-medium mb-2">Adınız</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+    </section>
+   </div><!-- About Page -->
+   <div id="page-about" class="page-content hidden">
+    <section class="py-20 bg-gray-50 min-h-screen">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+       <h1 id="about-title" class="text-5xl font-bold text-gray-900 mb-6 fade-in">Hakkımda</h1>
+       <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">2010 yılında merakla başladığım teknoloji yolculuğum, bugün 400+ başarılı projeyle devam ediyor.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+       <div class="fade-in">
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+         <h3 class="text-2xl font-bold mb-6">Profesyonel Yolculuğum</h3>
+         <div class="space-y-4">
+          <div class="flex items-center">
+           <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>2010: Teknolojiye merak ile başlangıç</span>
+          </div>
+          <div class="flex items-center">
+           <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>2014: İlk profesyonel projeler</span>
+          </div>
+          <div class="flex items-center">
+           <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>2024: 400+ başarılı proje</span>
+          </div>
+          <div class="flex items-center">
+           <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>MIT &amp; Harvard sertifikaları</span>
+          </div>
+         </div>
+        </div>
        </div>
-       <div><label for="email" class="block text-sm font-medium mb-2">E-posta</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+       <div class="fade-in">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Çalışma Felsefem</h3>
+        <div class="space-y-4">
+         <div class="flex items-start">
+          <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1"><span class="text-white text-sm">✓</span>
+          </div>
+          <div>
+           <h4 class="font-semibold text-gray-900">Hobi Tutkusu</h4>
+           <p class="text-gray-600">Teknoloji benim için bir hobi. Bu tutku, her projede mükemmellik arayışımı besliyor.</p>
+          </div>
+         </div>
+         <div class="flex items-start">
+          <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1"><span class="text-white text-sm">✓</span>
+          </div>
+          <div>
+           <h4 class="font-semibold text-gray-900">Sınırsız Uzmanlık</h4>
+           <p class="text-gray-600">Kendimi hiçbir alanda kısıtlamam. Her teknolojide uzmanlaşmaya odaklanırım.</p>
+          </div>
+         </div>
+         <div class="flex items-start">
+          <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1"><span class="text-white text-sm">✓</span>
+          </div>
+          <div>
+           <h4 class="font-semibold text-gray-900">Kurumsal Odak</h4>
+           <p class="text-gray-600">Sadece kurumsal projelerle çalışır, uzaktan ekip yönetimi yaparım.</p>
+          </div>
+         </div>
+        </div>
        </div>
-       <div><label for="subject" class="block text-sm font-medium mb-2">Konu</label> <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+      </div><!-- Work Schedule -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg mb-8 fade-in">
+       <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Çalışma Programım</h3>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+         <h4 class="text-lg font-semibold text-gray-900 mb-4">🕒 Aktif Destek Saatleri</h4>
+         <div class="space-y-2 text-gray-600">
+          <p><strong>Pazartesi, Çarşamba, Cuma</strong></p>
+          <p>10:00 - 16:00 arası</p>
+          <p class="text-sm text-blue-600">Bu saatlerde doğrudan benimle iletişim kurabilirsiniz</p>
+         </div>
+        </div>
+        <div>
+         <h4 class="text-lg font-semibold text-gray-900 mb-4">🤖 AI Destek Sistemi</h4>
+         <div class="space-y-2 text-gray-600">
+          <p><strong>Diğer günler</strong></p>
+          <p>AI sistemim sizinle ilgilenir</p>
+          <p class="text-sm text-red-600">Acil durumlar için 7/24 ulaşabilirsiniz</p>
+         </div>
+        </div>
        </div>
-       <div><label for="message" class="block text-sm font-medium mb-2">Mesajınız</label> <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white resize-none"></textarea>
-       </div><button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"> Mesaj Gönder </button>
-      </form>
-      <div id="form-message" class="mt-4 p-4 rounded-lg hidden"></div>
+      </div><!-- Skills Section -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg fade-in">
+       <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Teknik Yetkinliklerim</h3>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+         <h4 class="text-xl font-semibold text-gray-900 mb-4">🔒 Siber Güvenlik</h4>
+         <div class="space-y-3">
+          <div class="flex justify-between items-center"><span class="text-gray-700">Penetration Testing</span>
+           <div class="w-24 bg-gray-200 rounded-full h-2">
+            <div class="skill-bar h-2 rounded-full" style="--skill-width: 95%; width: 95%"></div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center"><span class="text-gray-700">Network Security</span>
+           <div class="w-24 bg-gray-200 rounded-full h-2">
+            <div class="skill-bar h-2 rounded-full" style="--skill-width: 92%; width: 92%"></div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center"><span class="text-gray-700">Malware Analysis</span>
+           <div class="w-24 bg-gray-200 rounded-full h-2">
+            <div class="skill-bar h-2 rounded-full" style="--skill-width: 88%; width: 88%"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div>
+         <h4 class="text-xl font-semibold text-gray-900 mb-4">💻 Geliştirme</h4>
+         <div class="space-y-3">
+          <div class="flex justify-between items-center"><span class="text-gray-700">Full Stack Development</span>
+           <div class="w-24 bg-gray-200 rounded-full h-2">
+            <div class="skill-bar h-2 rounded-full" style="--skill-width: 96%; width: 96%"></div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center"><span class="text-gray-700">Mobile Development</span>
+           <div class="w-24 bg-gray-200 rounded-full h-2">
+            <div class="skill-bar h-2 rounded-full" style="--skill-width: 90%; width: 90%"></div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center"><span class="text-gray-700">API Development</span>
+           <div class="w-24 bg-gray-200 rounded-full h-2">
+            <div class="skill-bar h-2 rounded-full" style="--skill-width: 94%; width: 94%"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div>
+         <h4 class="text-xl font-semibold text-gray-900 mb-4">🏗️ Altyapı</h4>
+         <div class="space-y-3">
+          <div class="flex justify-between items-center"><span class="text-gray-700">Cloud Architecture</span>
+           <div class="w-24 bg-gray-200 rounded-full h-2">
+            <div class="skill-bar h-2 rounded-full" style="--skill-width: 91%; width: 91%"></div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center"><span class="text-gray-700">DevOps</span>
+           <div class="w-24 bg-gray-200 rounded-full h-2">
+            <div class="skill-bar h-2 rounded-full" style="--skill-width: 87%; width: 87%"></div>
+           </div>
+          </div>
+          <div class="flex justify-between items-center"><span class="text-gray-700">System Administration</span>
+           <div class="w-24 bg-gray-200 rounded-full h-2">
+            <div class="skill-bar h-2 rounded-full" style="--skill-width: 93%; width: 93%"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
      </div>
-    </div>
+    </section>
+   </div><!-- Services Page -->
+   <div id="page-services" class="page-content hidden">
+    <section class="py-20 bg-white min-h-screen">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+       <h1 id="services-title" class="text-5xl font-bold text-gray-900 mb-6 fade-in">Hizmetlerim</h1>
+       <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">Kurumsal müşterilerime teknolojinin her alanında profesyonel çözümler sunuyorum.</p>
+      </div><!-- Payment Info -->
+      <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-12 fade-in">
+       <div class="flex items-center mb-4">
+        <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <h3 class="text-lg font-semibold text-blue-900">Ödeme Koşulları</h3>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-blue-800">
+        <div class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span> <span>%25 Peşin ödeme</span>
+        </div>
+        <div class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span> <span>%25 Proje yarısında</span>
+        </div>
+        <div class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span> <span>%50 Proje tesliminde</span>
+        </div>
+       </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-red-500">
+        <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+         <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+         </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Siber Güvenlik Denetimi</h3>
+        <p class="text-gray-600 mb-6">Kurumsal altyapınızın güvenlik açıklarını tespit eder ve çözüm önerileri sunarım.</p>
+        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+         <li>• Penetration Testing</li>
+         <li>• Güvenlik Açığı Taraması</li>
+         <li>• Risk Analizi ve Raporlama</li>
+         <li>• Güvenlik Politikaları</li>
+        </ul>
+        <div class="text-sm text-blue-600 font-semibold">
+         ⏱️ Süre: 2-4 hafta
+        </div>
+       </div>
+       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-blue-500">
+        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+         </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Web Uygulama Geliştirme</h3>
+        <p class="text-gray-600 mb-6">Modern teknolojilerle kurumsal web uygulamaları ve portallar geliştiriyorum.</p>
+        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+         <li>• React, Vue.js, Angular</li>
+         <li>• Node.js, Python, PHP</li>
+         <li>• Responsive Tasarım</li>
+         <li>• API Entegrasyonları</li>
+        </ul>
+        <div class="text-sm text-blue-600 font-semibold">
+         ⏱️ Süre: 4-12 hafta
+        </div>
+       </div>
+       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-green-500">
+        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+         </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Mobil Uygulama</h3>
+        <p class="text-gray-600 mb-6">iOS ve Android platformları için native ve cross-platform uygulamalar.</p>
+        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+         <li>• React Native</li>
+         <li>• Flutter</li>
+         <li>• Native iOS/Android</li>
+         <li>• Progressive Web Apps</li>
+        </ul>
+        <div class="text-sm text-blue-600 font-semibold">
+         ⏱️ Süre: 6-16 hafta
+        </div>
+       </div>
+       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-purple-500">
+        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+         <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+         </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Altyapı &amp; DevOps</h3>
+        <p class="text-gray-600 mb-6">Sunucu kurulumu, cloud migrasyonu ve sistem optimizasyonu hizmetleri.</p>
+        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+         <li>• AWS, Azure, Google Cloud</li>
+         <li>• Docker &amp; Kubernetes</li>
+         <li>• CI/CD Pipeline</li>
+         <li>• Monitoring &amp; Logging</li>
+        </ul>
+        <div class="text-sm text-blue-600 font-semibold">
+         ⏱️ Süre: 2-8 hafta
+        </div>
+       </div>
+       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-yellow-500">
+        <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
+         <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+         </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">ERP &amp; Kurumsal Sistemler</h3>
+        <p class="text-gray-600 mb-6">Büyük ölçekli kurumsal yazılımlar ve iş süreçleri yönetim sistemleri.</p>
+        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+         <li>• Özel ERP Çözümleri</li>
+         <li>• CRM Sistemleri</li>
+         <li>• İş Süreçleri Otomasyonu</li>
+         <li>• Veri Entegrasyonu</li>
+        </ul>
+        <div class="text-sm text-blue-600 font-semibold">
+         ⏱️ Süre: 12-24 hafta
+        </div>
+       </div>
+       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-indigo-500">
+        <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+         <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+         </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Danışmanlık &amp; Eğitim</h3>
+        <p class="text-gray-600 mb-6">Teknoloji stratejisi danışmanlığı ve ekip eğitimleri veriyorum.</p>
+        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+         <li>• Teknoloji Stratejisi</li>
+         <li>• Kod İnceleme</li>
+         <li>• Ekip Eğitimleri</li>
+         <li>• Best Practices</li>
+        </ul>
+        <div class="text-sm text-blue-600 font-semibold">
+         ⏱️ Süre: 1-4 hafta
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Portfolio Page -->
+   <div id="page-portfolio" class="page-content hidden">
+    <section class="py-20 bg-gray-50 min-h-screen">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+       <h1 class="text-5xl font-bold text-gray-900 mb-6 fade-in">Portfolio</h1>
+       <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">400+ başarılı projeden seçilmiş örnekler ve kurumsal çözümlerim.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-red-500 to-red-700 flex items-center justify-center">
+         <div class="text-center text-white">
+          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg><span class="text-lg font-semibold">Siber Güvenlik Projesi</span>
+         </div>
+        </div>
+        <div class="p-6">
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Kurumsal Güvenlik Denetimi</h3>
+         <p class="text-gray-600 mb-4">Büyük ölçekli finans kurumu için kapsamlı siber güvenlik denetimi ve penetration testing projesi.</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Penetration Testing</span> <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">Risk Analysis</span> <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Security Audit</span>
+         </div>
+         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Tamamlandı: 2024</span> <span class="text-sm font-semibold text-green-600">✓ Başarılı</span>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
+         <div class="text-center text-white">
+          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg><span class="text-lg font-semibold">ERP Sistemi</span>
+         </div>
+        </div>
+        <div class="p-6">
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Kurumsal ERP Çözümü</h3>
+         <p class="text-gray-600 mb-4">500+ çalışanlı üretim şirketi için özel geliştirilmiş ERP sistemi ve süreç otomasyonu.</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span> <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Node.js</span> <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">PostgreSQL</span>
+         </div>
+         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Süre: 6 ay</span> <span class="text-sm font-semibold text-green-600">✓ Aktif Kullanımda</span>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
+         <div class="text-center text-white">
+          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg><span class="text-lg font-semibold">Mobil Uygulama</span>
+         </div>
+        </div>
+        <div class="p-6">
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Kurumsal Mobil Platform</h3>
+         <p class="text-gray-600 mb-4">Lojistik şirketi için saha ekipleri ve müşteri takip sistemi mobil uygulaması.</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React Native</span> <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Firebase</span> <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">GPS Tracking</span>
+         </div>
+         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Platform: iOS/Android</span> <span class="text-sm font-semibold text-green-600">✓ 10K+ Kullanıcı</span>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center">
+         <div class="text-center text-white">
+          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg><span class="text-lg font-semibold">Cloud Migrasyonu</span>
+         </div>
+        </div>
+        <div class="p-6">
+         <h3 class="text-xl font-bold text-gray-900 mb-2">AWS Cloud Migration</h3>
+         <p class="text-gray-600 mb-4">Geleneksel altyapıdan AWS bulut sistemine tam migrasyon ve DevOps süreçleri kurulumu.</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">AWS</span> <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Docker</span> <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Kubernetes</span>
+         </div>
+         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Maliyet: %40 azalma</span> <span class="text-sm font-semibold text-green-600">✓ Performans: %300 artış</span>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center">
+         <div class="text-center text-white">
+          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg><span class="text-lg font-semibold">Veri Analizi</span>
+         </div>
+        </div>
+        <div class="p-6">
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Big Data Analytics Platform</h3>
+         <p class="text-gray-600 mb-4">E-ticaret şirketi için gerçek zamanlı veri analizi ve raporlama dashboard sistemi.</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">Python</span> <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Apache Spark</span> <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Elasticsearch</span>
+         </div>
+         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Veri: 1TB+/gün</span> <span class="text-sm font-semibold text-green-600">✓ Real-time Processing</span>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-indigo-500 to-indigo-700 flex items-center justify-center">
+         <div class="text-center text-white">
+          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+          </svg><span class="text-lg font-semibold">API Gateway</span>
+         </div>
+        </div>
+        <div class="p-6">
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Mikroservis Mimarisi</h3>
+         <p class="text-gray-600 mb-4">Bankacılık sektörü için yüksek güvenlikli mikroservis mimarisi ve API gateway sistemi.</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Node.js</span> <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Kong Gateway</span> <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Redis</span>
+         </div>
+         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Throughput: 100K req/s</span> <span class="text-sm font-semibold text-green-600">✓ 99.9% Uptime</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Blog Page -->
+   <div id="page-blog" class="page-content hidden">
+    <section class="py-20 bg-white min-h-screen">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+       <h1 class="text-5xl font-bold text-gray-900 mb-6 fade-in">Blog</h1>
+       <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">Siber güvenlik ve teknoloji dünyasından güncel yazılar, deneyimler ve ipuçları.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">🔒 Siber Güvenlik</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-center text-sm text-gray-500 mb-3"><span>15 Aralık 2024</span> <span class="mx-2">•</span> <span>8 dk okuma</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-3">2024'te Siber Güvenlik Trendleri</h3>
+         <p class="text-gray-600 mb-4">Bu yıl siber güvenlik dünyasında öne çıkan tehditler, savunma stratejileri ve gelecek öngörüleri...</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">Penetration Testing</span> <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded">Zero Trust</span>
+         </div><button class="text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
+        </div>
+       </article>
+       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">☁️ Cloud Computing</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-center text-sm text-gray-500 mb-3"><span>12 Aralık 2024</span> <span class="mx-2">•</span> <span>6 dk okuma</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-3">AWS vs Azure vs Google Cloud</h3>
+         <p class="text-gray-600 mb-4">Büyük cloud sağlayıcılarının karşılaştırması ve hangi durumda hangisini seçmeniz gerektiği...</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded">AWS</span> <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Azure</span>
+         </div><button class="text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
+        </div>
+       </article>
+       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">📱 Mobil Geliştirme</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-center text-sm text-gray-500 mb-3"><span>10 Aralık 2024</span> <span class="mx-2">•</span> <span>5 dk okuma</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-3">React Native vs Flutter 2024</h3>
+         <p class="text-gray-600 mb-4">Cross-platform mobil geliştirme framework'lerinin güncel karşılaştırması ve seçim kriterleri...</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">React Native</span> <span class="px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded">Flutter</span>
+         </div><button class="text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
+        </div>
+       </article>
+       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">🤖 AI &amp; Machine Learning</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-center text-sm text-gray-500 mb-3"><span>8 Aralık 2024</span> <span class="mx-2">•</span> <span>10 dk okuma</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-3">AI Destekli Siber Güvenlik</h3>
+         <p class="text-gray-600 mb-4">Yapay zeka teknolojilerinin siber güvenlik alanındaki uygulamaları ve gelecek potansiyeli...</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">Machine Learning</span> <span class="px-2 py-1 bg-pink-100 text-pink-800 text-xs rounded">AI Security</span>
+         </div><button class="text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
+        </div>
+       </article>
+       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center"><span class="text-white text-lg font-semibold">⚡ Performance</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-center text-sm text-gray-500 mb-3"><span>5 Aralık 2024</span> <span class="mx-2">•</span> <span>7 dk okuma</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-3">Web Uygulaması Optimizasyonu</h3>
+         <p class="text-gray-600 mb-4">Yüksek trafikli web uygulamalarında performans optimizasyonu teknikleri ve best practice'ler...</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">Performance</span> <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Optimization</span>
+         </div><button class="text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
+        </div>
+       </article>
+       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in">
+        <div class="h-48 bg-gradient-to-r from-indigo-500 to-indigo-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">🏗️ DevOps</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-center text-sm text-gray-500 mb-3"><span>2 Aralık 2024</span> <span class="mx-2">•</span> <span>9 dk okuma</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-3">Modern DevOps Pipeline Kurulumu</h3>
+         <p class="text-gray-600 mb-4">CI/CD pipeline'ları, containerization ve infrastructure as code ile modern DevOps süreçleri...</p>
+         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Docker</span> <span class="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded">Kubernetes</span>
+         </div><button class="text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+   </div><!-- Contact Page -->
+   <div id="page-contact" class="page-content hidden">
+    <section class="py-20 bg-gray-900 text-white min-h-screen">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+       <h1 id="contact-title" class="text-5xl font-bold mb-6 fade-in">İletişim</h1>
+       <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in">Kurumsal projeleriniz için benimle iletişime geçin. Sadece kurumsal müşterilerle çalışıyorum.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+       <div class="fade-in">
+        <h3 class="text-2xl font-bold mb-6">İletişim Bilgileri</h3>
+        <div class="space-y-6">
+         <div class="flex items-center">
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+           </svg>
+          </div>
+          <div>
+           <h4 class="font-semibold">E-posta</h4>
+           <p class="text-gray-300">yusufavsarofficial@proton.me</p>
+          </div>
+         </div>
+         <div class="flex items-center">
+          <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
+           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+           </svg>
+          </div>
+          <div>
+           <h4 class="font-semibold">WhatsApp</h4>
+           <p class="text-gray-300">+90 541 819 40 09</p><button onclick="openWhatsApp()" class="text-green-400 hover:text-green-300 text-sm">Hemen Mesaj Gönder →</button>
+          </div>
+         </div>
+         <div class="flex items-center">
+          <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
+           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+           </svg>
+          </div>
+          <div>
+           <h4 class="font-semibold">Konum</h4>
+           <p class="text-gray-300">İstanbul, Türkiye</p>
+           <p class="text-sm text-gray-400">Uzaktan çalışma - Uluslararası hizmet</p>
+          </div>
+         </div>
+        </div><!-- Work Schedule -->
+        <div class="mt-8 bg-gray-800 rounded-lg p-6">
+         <h4 class="font-semibold mb-4 flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg> Çalışma Saatleri</h4>
+         <div class="space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-green-400">Pazartesi, Çarşamba, Cuma</span> <span>10:00 - 16:00</span>
+          </div>
+          <div class="flex justify-between text-gray-400"><span>Diğer günler</span> <span>AI Destek Sistemi</span>
+          </div>
+          <div class="text-xs text-red-400 mt-2">
+           ⚡ Acil durumlar için 7/24 ulaşabilirsiniz
+          </div>
+         </div>
+        </div>
+        <div class="mt-8">
+         <h4 class="font-semibold mb-4">Sosyal Medya</h4>
+         <div class="flex space-x-4"><a href="https://instagram.com/avyusuf95" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors"> <span class="text-sm font-bold">IG</span> </a> <button class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-600 transition-colors"> <span class="text-sm font-bold">Li</span> </button> <button class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-600 transition-colors"> <span class="text-sm font-bold">Gh</span> </button>
+         </div>
+        </div>
+       </div>
+       <div class="fade-in">
+        <div class="bg-blue-900 bg-opacity-50 rounded-lg p-6 mb-6">
+         <h4 class="font-semibold mb-2 flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg> Önemli Bilgiler</h4>
+         <ul class="text-sm text-blue-200 space-y-1">
+          <li>• Sadece kurumsal müşterilerle çalışıyorum</li>
+          <li>• Aynı anda maksimum 6 proje alıyorum</li>
+          <li>• Tüm projeler sözleşme ile güvence altında</li>
+          <li>• Minimum proje süresi: 4 hafta</li>
+         </ul>
+        </div>
+        <form id="contact-form" class="space-y-6">
+         <div><label for="company" class="block text-sm font-medium mb-2">Şirket Adı *</label> <input type="text" id="company" name="company" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div><label for="name" class="block text-sm font-medium mb-2">Adınız *</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+          </div>
+          <div><label for="position" class="block text-sm font-medium mb-2">Pozisyonunuz</label> <input type="text" id="position" name="position" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+          </div>
+         </div>
+         <div><label for="email" class="block text-sm font-medium mb-2">E-posta *</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+         </div>
+         <div><label for="project-type" class="block text-sm font-medium mb-2">Proje Türü *</label> <select id="project-type" name="project-type" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"> <option value="">Seçiniz</option> <option value="cyber-security">Siber Güvenlik Denetimi</option> <option value="web-development">Web Uygulama Geliştirme</option> <option value="mobile-app">Mobil Uygulama</option> <option value="erp-system">ERP &amp; Kurumsal Sistem</option> <option value="infrastructure">Altyapı &amp; DevOps</option> <option value="consulting">Danışmanlık &amp; Eğitim</option> <option value="other">Diğer</option> </select>
+         </div>
+         <div><label for="budget" class="block text-sm font-medium mb-2">Tahmini Bütçe</label> <select id="budget" name="budget" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"> <option value="">Seçiniz</option> <option value="50k-100k">50.000₺ - 100.000₺</option> <option value="100k-250k">100.000₺ - 250.000₺</option> <option value="250k-500k">250.000₺ - 500.000₺</option> <option value="500k+">500.000₺+</option> </select>
+         </div>
+         <div><label for="timeline" class="block text-sm font-medium mb-2">Hedef Teslim Tarihi</label> <input type="date" id="timeline" name="timeline" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+         </div>
+         <div><label for="message" class="block text-sm font-medium mb-2">Proje Detayları *</label> <textarea id="message" name="message" rows="5" required placeholder="Projenizin detaylarını, gereksinimlerinizi ve beklentilerinizi açıklayın..." class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white resize-none"></textarea>
+         </div><button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors cyber-glow"> Proje Teklifini Gönder </button>
+         <div class="text-center">
+          <p class="text-gray-400 text-sm mb-2">veya</p><button type="button" onclick="openWhatsApp()" class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors"> WhatsApp'tan Hızlı İletişim </button>
+         </div>
+        </form>
+        <div id="form-message" class="mt-4 p-4 rounded-lg hidden"></div>
+       </div>
+      </div>
+     </div>
+    </section>
    </div>
-  </section><!-- Footer -->
+  </div><!-- Footer -->
   <footer class="bg-black text-white py-12">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
      <div>
-      <h3 class="text-xl font-bold mb-4">ModernSite</h3>
-      <p class="text-gray-400">Dijital dünyada fark yaratan web çözümleri.</p>
+      <h3 class="text-xl font-bold mb-4">Yusuf Avşar</h3>
+      <p class="text-gray-400">Teknolojinin her alanında uzman çözümler. 14 yıllık deneyim, 400+ başarılı proje.</p>
+      <div class="mt-4"><span class="inline-block px-3 py-1 bg-blue-600 text-white text-xs rounded-full">Siber Güvenlik Uzmanı</span>
+      </div>
      </div>
      <div>
       <h4 class="font-semibold mb-4">Hizmetler</h4>
       <ul class="space-y-2 text-gray-400">
-       <li><a href="#" class="hover:text-white transition-colors">Web Tasarım</a></li>
-       <li><a href="#" class="hover:text-white transition-colors">Web Geliştirme</a></li>
-       <li><a href="#" class="hover:text-white transition-colors">SEO</a></li>
-       <li><a href="#" class="hover:text-white transition-colors">Mobil Uygulama</a></li>
+       <li><button onclick="showPage('services')" class="hover:text-white transition-colors">Siber Güvenlik</button></li>
+       <li><button onclick="showPage('services')" class="hover:text-white transition-colors">Web Geliştirme</button></li>
+       <li><button onclick="showPage('services')" class="hover:text-white transition-colors">Mobil Uygulama</button></li>
+       <li><button onclick="showPage('services')" class="hover:text-white transition-colors">ERP Sistemleri</button></li>
       </ul>
      </div>
      <div>
       <h4 class="font-semibold mb-4">Şirket</h4>
       <ul class="space-y-2 text-gray-400">
-       <li><a href="#" class="hover:text-white transition-colors">Hakkımda</a></li>
-       <li><a href="#" class="hover:text-white transition-colors">Portfolio</a></li>
-       <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
-       <li><a href="#" class="hover:text-white transition-colors">İletişim</a></li>
+       <li><button onclick="showPage('about')" class="hover:text-white transition-colors">Hakkımda</button></li>
+       <li><button onclick="showPage('portfolio')" class="hover:text-white transition-colors">Portfolio</button></li>
+       <li><button onclick="showPage('blog')" class="hover:text-white transition-colors">Blog</button></li>
+       <li><button onclick="showPage('contact')" class="hover:text-white transition-colors">İletişim</button></li>
       </ul>
      </div>
      <div>
       <h4 class="font-semibold mb-4">İletişim</h4>
       <ul class="space-y-2 text-gray-400">
-       <li>info@modernsite.com</li>
-       <li>+90 555 123 45 67</li>
+       <li>yusufavsarofficial@proton.me</li>
+       <li>+90 541 819 40 09</li>
        <li>İstanbul, Türkiye</li>
+       <li class="pt-2"><a href="https://instagram.com/avyusuf95" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300">@avyusuf95</a></li>
       </ul>
      </div>
     </div>
     <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-     <p>© 2024 ModernSite. Tüm hakları saklıdır.</p>
+     <p>© 2024 Yusuf Avşar. Tüm hakları saklıdır. | Kurumsal Teknoloji Çözümleri</p>
     </div>
    </div>
   </footer>
   <script>
         // Default configuration
         const defaultConfig = {
-            site_title: "ModernSite",
-            hero_title: "Dijital Dünyada Fark Yaratın",
-            hero_subtitle: "Modern web çözümleri ile işinizi bir üst seviyeye taşıyın",
+            site_title: "Yusuf Avşar",
+            hero_title: "Teknolojinin Her Alanında Uzman Çözümler",
+            hero_subtitle: "Siber güvenlikten web geliştirmeye, 14 yıllık deneyimle kurumsal projelerinizi hayata geçiriyorum",
             about_title: "Hakkımda",
             services_title: "Hizmetlerim",
             contact_title: "İletişim",
@@ -420,32 +817,64 @@
             font_size: 16
         };
 
+        // Current page tracking
+        let currentPage = 'home';
+
+        // WhatsApp function
+        function openWhatsApp() {
+            const phoneNumber = "905418194009";
+            const message = "Merhaba Yusuf Bey, web sitenizden geliyorum. Kurumsal projemiz hakkında görüşmek istiyorum.";
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Page navigation system
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(`page-${pageId}`);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                currentPage = pageId;
+                
+                // Update navigation active states
+                updateNavigation(pageId);
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // Trigger animations
+                setTimeout(() => {
+                    handleScrollAnimations();
+                }, 100);
+            }
+        }
+
+        // Update navigation active states
+        function updateNavigation(activePageId) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const pageId = link.getAttribute('data-page');
+                if (pageId === activePageId) {
+                    link.classList.remove('text-gray-700');
+                    link.classList.add('text-gray-900');
+                } else {
+                    link.classList.remove('text-gray-900');
+                    link.classList.add('text-gray-700');
+                }
+            });
+        }
+
         // Mobile menu functionality
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
-        });
-
-        // Smooth scrolling
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-
-        // Add click handlers to navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    // Close mobile menu if open
-                    document.getElementById('mobile-menu').classList.add('hidden');
-                }
-            });
         });
 
         // Fade in animation on scroll
@@ -470,16 +899,16 @@
             
             // Simulate form submission
             messageDiv.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
-            messageDiv.textContent = 'Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağım.';
+            messageDiv.textContent = 'Proje teklifiniz başarıyla gönderildi! En kısa sürede size dönüş yapacağım. Acil durumlar için WhatsApp\'tan ulaşabilirsiniz.';
             messageDiv.classList.remove('hidden');
             
             // Reset form
             this.reset();
             
-            // Hide message after 5 seconds
+            // Hide message after 8 seconds
             setTimeout(() => {
                 messageDiv.classList.add('hidden');
-            }, 5000);
+            }, 8000);
         });
 
         // Initialize animations on page load
@@ -620,5 +1049,5 @@
             });
         }
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99f0016de72dde7a',t:'MTc2MzIyMjg4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99f022e5b63623a1',t:'MTc2MzIyNDI1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

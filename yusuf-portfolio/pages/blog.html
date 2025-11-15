@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang='tr'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Blog — Yusuf Avþar</title>
+    <link rel='stylesheet' href='../assets/css/style.css'>
+
+    <style>
+
+        .header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f0f, #191919);
+            border-bottom: 1px solid #333;
+        }
+
+        .header h1 {
+            font-size: 2.6rem;
+        }
+
+        .header p {
+            color: #aaa;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 15px auto 0 auto;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 35px;
+        }
+
+        .blog-card {
+            background: #121212;
+            border: 1px solid #2f2f2f;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: .3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            border-color: #3ea6ff;
+        }
+
+        .blog-img {
+            background: linear-gradient(135deg, #151515, #0a0a0a);
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #222;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-content h3 {
+            margin: 0 0 12px 0;
+            color: #3ea6ff;
+            font-size: 1.35rem;
+        }
+
+        .blog-content p {
+            color: #b8b8b8;
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        .blog-meta {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .blog-readmore {
+            margin-top: 18px;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: #1d1d1d;
+            border: 1px solid #333;
+            color: #aaa;
+            transition: .2s;
+            font-size: 0.85rem;
+        }
+
+        .blog-readmore:hover {
+            color: #3ea6ff;
+            border-color: #3ea6ff;
+        }
+
+    </style>
+
+</head>
+
+<body class='dark'>
+
+    <!-- NAVBAR -->
+    <nav>     <div class='nav-container'>         <h1>Yusuf Avþar</h1>          <ul>             <li><a href='index.html'>Anasayfa</a></li>             <li><a href='hakkimda.html'>Hakkýmda</a></li>             <li><a href='hizmetler.html'>Hizmetler</a></li>             <li><a href='projeler.html'>Projeler</a></li>             <li><a href='blog.html'>Blog</a></li>             <li><a href='ekip.html'>Ekip</a></li>             <li><a href='iletisim.html'>Ýletiþim</a></li>         </ul>     </div> </nav>
+
+    <!-- HEADER -->
+    <div class='header'>
+        <h1>Blog</h1>
+        <p>Siber güvenlik, yazýlým, teknoloji ve kariyer üzerine yazdýðým içerikler.</p>
+    </div>
+
+    <!-- BLOG LISTESÝ -->
+    <section class='section'>
+        <div class='blog-grid'>
+
+            <div class='blog-card'>
+                <div class='blog-img'>Görsel Alaný</div>
+                <div class='blog-content'>
+                    <h3>Siber Güvenlikte En Çok Yapýlan Hatalar</h3>
+                    <p>Sistemlerde karþýlaþýlan kritik hatalar, zafiyet oluþturma süreçleri ve bunlardan kaçýnmanýn yollarý.</p>
+                    <div class='blog-meta'>12 Ocak 2025 • Güvenlik</div>
+                    <a href='blog-detay.html' class='blog-readmore'>Devamýný Oku</a>
+                </div>
+            </div>
+
+            <div class='blog-card'>
+                <div class='blog-img'>Görsel Alaný</div>
+                <div class='blog-content'>
+                    <h3>Yazýlým Öðrenmek Ýçin En Doðru Yol</h3>
+                    <p>Sýfýrdan baþlayan biri için temiz, düzenli ve sürdürülebilir þekilde yazýlým öðrenme tavsiyeleri.</p>
+                    <div class='blog-meta'>28 Aralýk 2024 • Yazýlým</div>
+                    <a href='blog-detay.html' class='blog-readmore'>Devamýný Oku</a>
+                </div>
+            </div>
+
+            <div class='blog-card'>
+                <div class='blog-img'>Görsel Alaný</div>
+                <div class='blog-content'>
+                    <h3>DDoS Saldýrýlarý Nasýl Engellenir?</h3>
+                    <p>Gerçek hayat örnekleriyle DDoS saldýrýlarýnýn tespit edilmesi, engellenmesi ve altyapý güçlendirme süreçleri.</p>
+                    <div class='blog-meta'>04 Aralýk 2024 • Siber</div>
+                    <a href='blog-detay.html' class='blog-readmore'>Devamýný Oku</a>
+                </div>
+            </div>
+
+            <div class='blog-card'>
+                <div class='blog-img'>Görsel Alaný</div>
+                <div class='blog-content'>
+                    <h3>Ýngiltere Projesinde Edindiðim Deneyimler</h3>
+                    <p>8 aylýk çalýþma sürecinde karþýlaþýlan teknik sorunlar, çözüm yollarý ve kurumsal iþ disiplinleri.</p>
+                    <div class='blog-meta'>19 Kasým 2024 • Deneyim</div>
+                    <a href='blog-detay.html' class='blog-readmore'>Devamýný Oku</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class='footer'>     <div class='footer-container'>          <div class='footer-about'>             <h3>Yusuf Avþar</h3>             <p>Profesyonel Web Geliþtirici • UI/UX Tasarým • SEO • Güvenlik Odaklý Modern Web Sistemleri</p>         </div>          <div class='footer-links'>             <h4>Hýzlý Baðlantýlar</h4>             <ul>                 <li><a href='index.html'>Anasayfa</a></li>                 <li><a href='hakkimda.html'>Hakkýmda</a></li>                 <li><a href='hizmetler.html'>Hizmetler</a></li>                 <li><a href='projeler.html'>Projeler</a></li>                 <li><a href='blog.html'>Blog</a></li>                 <li><a href='iletisim.html'>Ýletiþim</a></li>             </ul>         </div>          <div class='footer-contact'>             <h4>Ýletiþim</h4>             <ul>                 <li>Email: <a href='mailto:yusufavsarsgu@gmail.com'>yusufavsarsgu@gmail.com</a></li>                 <li>WhatsApp: <a href='https://wa.me/905418194009'>+90 541 819 40 09</a></li>                 <li>Konum: Ýstanbul / Türkiye</li>                 <li>Instagram: <a href='https://instagram.com/avyusuf95'>@avyusuf95</a></li>             </ul>         </div>      </div>      <div class='footer-bottom'>         <p>© 2025 Yusuf Avþar — Tüm Haklarý Saklýdýr.</p>     </div> </footer>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang='tr'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Projeler — Yusuf Avþar</title>
+    <link rel='stylesheet' href='../assets/css/style.css'>
+
+    <style>
+        .header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f0f, #191919);
+            border-bottom: 1px solid #333;
+        }
+        .header h1 {
+            font-size: 2.6rem;
+        }
+        .header p {
+            color: #aaa;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 15px auto 0 auto;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .project-card {
+            background: #121212;
+            border: 1px solid #2f2f2f;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: .3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #3ea6ff;
+        }
+
+        .project-img {
+            height: 170px;
+            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #262626;
+        }
+
+        .project-content {
+            padding: 22px;
+        }
+
+        .project-content h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            color: #3ea6ff;
+        }
+
+        .project-content p {
+            color: #b2b2b2;
+            line-height: 1.55;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #1e1e1e;
+            border: 1px solid #333;
+            color: #aaa;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-right: 6px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class='dark'>
+
+    <!-- NAVBAR -->
+    <nav>     <div class='nav-container'>         <h1>Yusuf Avþar</h1>          <ul>             <li><a href='index.html'>Anasayfa</a></li>             <li><a href='hakkimda.html'>Hakkýmda</a></li>             <li><a href='hizmetler.html'>Hizmetler</a></li>             <li><a href='projeler.html'>Projeler</a></li>             <li><a href='blog.html'>Blog</a></li>             <li><a href='ekip.html'>Ekip</a></li>             <li><a href='iletisim.html'>Ýletiþim</a></li>         </ul>     </div> </nav>
+
+    <!-- HEADER -->
+    <div class='header'>
+        <h1>Projeler</h1>
+        <p>Gerçek, gönüllü ve profesyonel olarak yer aldýðým tüm projelerin öne çýkan örnekleri.</p>
+    </div>
+
+    <!-- PROJELER -->
+    <section class='section'>
+        <div class='projects-grid'>
+
+            <div class='project-card'>
+                <div class='project-img'>Görsel Alaný</div>
+                <div class='project-content'>
+                    <h3>Savunma Sanayi Altyapý Optimizasyonu</h3>
+                    <p>Türkiye’de çeþitli savunma sanayi firmalarý için güvenlik açýðý taramalarý, altyapý iyileþtirmeleri ve sistem performans optimizasyonlarý saðlandý.</p>
+                    <span class='tag'>Siber Güvenlik</span>
+                    <span class='tag'>Altyapý</span>
+                </div>
+            </div>
+
+            <div class='project-card'>
+                <div class='project-img'>Görsel Alaný</div>
+                <div class='project-content'>
+                    <h3>ABD — Veri Güvenliði Görevi</h3>
+                    <p>6 ay süren gönüllü görevde sistem loglarýnýn analizi, saldýrý tespit süreçlerinin geliþtirilmesi ve kurumsal veri güvenliði düzenlemeleri yapýldý.</p>
+                    <span class='tag'>Pentest</span>
+                    <span class='tag'>Risk Analizi</span>
+                </div>
+            </div>
+
+            <div class='project-card'>
+                <div class='project-img'>Görsel Alaný</div>
+                <div class='project-content'>
+                    <h3>Ýngiltere — Web Platform Yenileme</h3>
+                    <p>Kritik bir kurumun eski yazýlým altyapýsý tamamen yenilendi, modern ve yüksek hýzlý bir web platformu oluþturuldu.</p>
+                    <span class='tag'>Web Geliþtirme</span>
+                    <span class='tag'>Performans</span>
+                </div>
+            </div>
+
+            <div class='project-card'>
+                <div class='project-img'>Görsel Alaný</div>
+                <div class='project-content'>
+                    <h3>Singapur — Sunucu Dayanýklýlýk Testleri</h3>
+                    <p>Yük testleri, stres testleri, sistem stabilite analizleri ve kurumsal ölçekli altyapý dayanýklýlýðý kontrolleri saðlandý.</p>
+                    <span class='tag'>Load Test</span>
+                    <span class='tag'>Sistem Stabilitesi</span>
+                </div>
+            </div>
+
+            <div class='project-card'>
+                <div class='project-img'>Görsel Alaný</div>
+                <div class='project-content'>
+                    <h3>Kurumsal ERP Mini Modülleri</h3>
+                    <p>Firmalarýn ihtiyaçlarýna özel mini otomasyon sistemleri, raporlama modülleri ve veri yönetim bileþenleri geliþtirildi.</p>
+                    <span class='tag'>Otomasyon</span>
+                    <span class='tag'>Backend</span>
+                </div>
+            </div>
+
+            <div class='project-card'>
+                <div class='project-img'>Görsel Alaný</div>
+                <div class='project-content'>
+                    <h3>Güvenlik Açýðý Bildirimleri</h3>
+                    <p>Yasal çerçevede birçok sistemde kritik açýklar tespit edilerek yetkili mercilere bildirildi ve çözüm aþamalarýnda destek saðlandý.</p>
+                    <span class='tag'>Etik Hackerlýk</span>
+                    <span class='tag'>Zafiyet Analizi</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class='footer'>     <div class='footer-container'>          <div class='footer-about'>             <h3>Yusuf Avþar</h3>             <p>Profesyonel Web Geliþtirici • UI/UX Tasarým • SEO • Güvenlik Odaklý Modern Web Sistemleri</p>         </div>          <div class='footer-links'>             <h4>Hýzlý Baðlantýlar</h4>             <ul>                 <li><a href='index.html'>Anasayfa</a></li>                 <li><a href='hakkimda.html'>Hakkýmda</a></li>                 <li><a href='hizmetler.html'>Hizmetler</a></li>                 <li><a href='projeler.html'>Projeler</a></li>                 <li><a href='blog.html'>Blog</a></li>                 <li><a href='iletisim.html'>Ýletiþim</a></li>             </ul>         </div>          <div class='footer-contact'>             <h4>Ýletiþim</h4>             <ul>                 <li>Email: <a href='mailto:yusufavsarsgu@gmail.com'>yusufavsarsgu@gmail.com</a></li>                 <li>WhatsApp: <a href='https://wa.me/905418194009'>+90 541 819 40 09</a></li>                 <li>Konum: Ýstanbul / Türkiye</li>                 <li>Instagram: <a href='https://instagram.com/avyusuf95'>@avyusuf95</a></li>             </ul>         </div>      </div>      <div class='footer-bottom'>         <p>© 2025 Yusuf Avþar — Tüm Haklarý Saklýdýr.</p>     </div> </footer>
+
+</body>
+</html>

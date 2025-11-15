@@ -4,192 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik, KVKK ve Şartlar - Yusuf Avşar</title>
+    <title>Yasal Bilgiler - Yusuf Avşar</title>
 
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
     <link rel="stylesheet" href="/assets/css/components.css">
-    <link rel="stylesheet" href="/assets/css/typography.css">
+
+    <style>
+        .legal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .legal-item {
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            transition: 0.2s;
+        }
+
+        .legal-item:hover {
+            background: var(--hover-bg);
+        }
+
+        .legal-item a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
+
+        .legal-item p {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <div data-include="/components/header.html"></div>
+    <!-- NAVBAR -->
+    <div data-include="/navbar.html"></div>
 
     <section class="page-header">
         <div class="container">
-            <h1>Gizlilik, KVKK ve Kullanım Şartları</h1>
-            <p>Platformumuzun yasal metinleri ve politikaları.</p>
+            <h1>Yasal Bilgiler</h1>
+            <p>Gizlilik, veri koruma ve kullanım şartlarına ilişkin tüm belgeler.</p>
         </div>
     </section>
 
-    <div class="container legal-container">
+    <section class="section">
+        <div class="container">
 
-        <aside class="legal-menu">
-            <a href="#gizlilik">Gizlilik Politikası</a>
-            <a href="#kvkk">KVKK Aydınlatma Metni</a>
-            <a href="#sartlar">Kullanım Şartları</a>
-        </aside>
+            <div class="legal-list">
 
-        <main class="legal-content">
+                <div class="legal-item">
+                    <a href="/politikalar.html#gizlilik">Gizlilik Politikası</a>
+                    <p>Kişisel verilerinin nasıl toplandığı, saklandığı ve kullanıldığı hakkında bilgiler.</p>
+                </div>
 
-            <!-- GİZLİLİK -->
-            <section id="gizlilik">
-                <h2>Gizlilik Politikası</h2>
-                <p>
-                    Bu gizlilik politikası, ziyaretçilerin kişisel bilgilerinin hangi şartlarda işlendiğini,
-                    korunduğunu ve saklandığını açıklamaktadır. Web sitemizi kullanarak bu politikayı kabul etmiş olursunuz.
-                </p>
+                <div class="legal-item">
+                    <a href="/politikalar.html#kvkk">KVKK Aydınlatma Metni</a>
+                    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında bilgilendirme.</p>
+                </div>
 
-                <h3>Toplanan Bilgiler</h3>
-                <ul>
-                    <li>İletişim formları aracılığıyla iletilen bilgiler</li>
-                    <li>Ip adresi, tarayıcı bilgisi ve cihaz türü</li>
-                    <li>Çerezler aracılığıyla anonim kullanım verileri</li>
-                </ul>
+                <div class="legal-item">
+                    <a href="/politikalar.html#sartlar">Kullanım Şartları</a>
+                    <p>Web sitesinin kullanımıyla ilgili şartlar ve yükümlülükler.</p>
+                </div>
 
-                <h3>Bilgilerin Kullanımı</h3>
-                <p>Kişisel veriler aşağıdaki amaçlarla kullanılabilir:</p>
-                <ul>
-                    <li>İletişim taleplerine yanıt vermek</li>
-                    <li>Hizmet kalitesini artırmak</li>
-                    <li>Güvenlik kontrolleri sağlamak</li>
-                </ul>
+                <div class="legal-item">
+                    <a href="/politikalar.html#cerezler">Çerez Politikası</a>
+                    <p>Site üzerinde kullanılan çerez türleri ve amaçları.</p>
+                </div>
 
-                <h3>Çerezler</h3>
-                <p>
-                    Web sitemiz kullanıcı deneyimini iyileştirmek için çerezler kullanmaktadır. Çerez tercihlerini
-                    tarayıcı ayarlarından değiştirebilirsiniz.
-                </p>
+            </div>
 
-            </section>
-
-            <hr>
-
-            <!-- KVKK -->
-            <section id="kvkk">
-                <h2>KVKK Aydınlatma Metni</h2>
-                <p>
-                    Bu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında kişisel verilerin
-                    işlenmesine ilişkin esasları açıklar.
-                </p>
-
-                <h3>Veri Sorumlusu</h3>
-                <p>
-                    Bu web sitesinin veri sorumlusu Yusuf Avşar’dır.
-                </p>
-
-                <h3>İşlenen Kişisel Veriler</h3>
-                <ul>
-                    <li>Ad – Soyad</li>
-                    <li>E-posta adresi</li>
-                    <li>Mesaj içerikleri</li>
-                </ul>
-
-                <h3>Veri İşleme Amaçları</h3>
-                <ul>
-                    <li>İletişim kurulması ve taleplerin yanıtlanması</li>
-                    <li>Hizmet süreçlerinin yürütülmesi</li>
-                    <li>Güvenlik ve doğrulama işlemleri</li>
-                </ul>
-
-                <h3>Haklarınız</h3>
-                <p>KVKK kapsamında aşağıdaki haklara sahipsiniz:</p>
-                <ul>
-                    <li>Verilerinizin işlenip işlenmediğini öğrenme</li>
-                    <li>Düzeltme veya silme talep etme</li>
-                    <li>İtiraz etme</li>
-                </ul>
-            </section>
-
-            <hr>
-
-            <!-- ŞARTLAR -->
-            <section id="sartlar">
-                <h2>Kullanım Şartları</h2>
-                <p>
-                    Bu kullanım şartları, web sitesini kullanırken tabi olduğunuz kuralları içerir.
-                    Siteyi ziyaret eden herkes bu şartları kabul etmiş sayılır.
-                </p>
-
-                <h3>Genel Kurallar</h3>
-                <ul>
-                    <li>Sitedeki içeriklerin izinsiz kopyalanması yasaktır.</li>
-                    <li>Hackerlık, spam, kötüye kullanım gibi davranışlar yasaktır.</li>
-                    <li>Hizmetlerde değişiklik yapma hakkı saklıdır.</li>
-                </ul>
-
-                <h3>Sorumluluk Reddi</h3>
-                <p>
-                    Bu sitede sunulan bilgiler genel amaçlıdır. Oluşabilecek teknik hatalardan sorumluluk kabul edilmez.
-                </p>
-
-                <h3>Fikri Mülkiyet</h3>
-                <p>
-                    Tüm tasarım, metin ve kod yapıları Yusuf Avşar’a aittir. İzinsiz kullanılamaz.
-                </p>
-
-            </section>
-
-        </main>
-
-    </div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
-    <div data-include="/components/footer.html"></div>
-
-    <style>
-        .legal-container {
-            display: flex;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .legal-menu {
-            width: 220px;
-            position: sticky;
-            top: 120px;
-            height: fit-content;
-            border-right: 1px solid var(--border);
-            padding-right: 20px;
-        }
-
-        .legal-menu a {
-            display: block;
-            margin-bottom: 12px;
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .legal-content {
-            flex: 1;
-        }
-
-        hr {
-            margin: 40px 0;
-            border: none;
-            border-top: 1px solid var(--border);
-        }
-
-        @media(max-width: 900px) {
-            .legal-container {
-                flex-direction: column;
-            }
-
-            .legal-menu {
-                width: 100%;
-                position: relative;
-                top: 0;
-                border: none;
-                padding: 0;
-                display: flex;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-        }
-    </style>
+    <div data-include="/footer.html"></div>
 
 </body>
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Projeler | Yusuf Avşar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yusuf Avşar'ın yer aldığı projeler: Savunma sanayi, uluslararası görevler, yazılım geliştirme ve altyapı çalışmaları.">
+    <meta name="description" content="Yusuf Avşar'ın geliştirdiği yazılım projeleri, global görevler, altyapı çalışmaları ve siber güvenlik uygulamaları.">
 
     <style>
         :root {
@@ -13,19 +13,20 @@
             --primary: #00aaff;
             --secondary: #1f6feb;
             --card-bg: #161b22;
+            --line: #222;
         }
 
         body {
-            margin: 0;
             background: var(--bg);
             color: var(--text);
+            margin: 0;
             font-family: Arial, sans-serif;
         }
 
         header {
             padding: 20px;
             text-align: center;
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid var(--line);
         }
 
         nav a {
@@ -44,56 +45,54 @@
         h1 {
             text-align: center;
             color: var(--primary);
-            margin-bottom: 35px;
         }
 
-        .project-section {
-            margin-bottom: 50px;
+        .project-grid {
+            margin-top: 40px;
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         }
 
-        .project-section h2 {
-            font-size: 28px;
-            color: var(--secondary);
-            margin-bottom: 20px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 10px;
-        }
-
-        .project-card {
+        .project-box {
             background: var(--card-bg);
             padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #222;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--line);
             transition: 0.2s;
         }
 
-        .project-card:hover {
+        .project-box:hover {
             border-color: var(--primary);
-            transform: translateY(-4px);
+            transform: scale(1.02);
         }
 
-        .project-card h3 {
+        .project-title {
+            font-size: 22px;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin: 0 0 10px 0;
         }
 
-        .project-card p {
-            color: #ccc;
-            font-size: 16px;
-            line-height: 1.6;
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            background: var(--secondary);
+            border-radius: 5px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            font-size: 12px;
         }
 
         footer {
-            margin-top: 50px;
-            padding: 20px;
             text-align: center;
-            border-top: 1px solid #222;
+            padding: 20px;
             color: #aaa;
+            border-top: 1px solid var(--line);
+            margin-top: 40px;
         }
     </style>
-
 </head>
+
 <body>
 
 <header>
@@ -108,63 +107,80 @@
 </header>
 
 <div class="container">
+
     <h1>Projeler</h1>
 
-    <!-- Savunma Sanayi -->
-    <div class="project-section">
-        <h2>🇹🇷 Savunma Sanayii Projeleri</h2>
+    <div class="project-grid">
 
-        <div class="project-card">
-            <h3>Gizli Kod Analiz ve Sistem Güçlendirme Projesi</h3>
-            <p>Türkiye'nin önde gelen savunma sanayii şirketlerinde gönüllü olarak sistem güvenliği, kod analizi ve altyapı güçlendirme çalışmalarında bulundum. Çeşitli askeri yazılımlar ve iç ağ yapıları üzerinde uzman destek sağladım.</p>
+        <!-- GLOBAL PROJECTS -->
+        <div class="project-box">
+            <h2 class="project-title">🌍 Global Güvenlik & Sistem Otomasyonu (ABD - 6 Ay)</h2>
+            <span class="tag">Siber Güvenlik</span>
+            <span class="tag">Otomasyon</span>
+            <span class="tag">Network</span>
+            <p>ABD’de gönüllü olarak şirket içi güvenlik denetimleri, sistem otomasyonları, veri analizi ve network trafiği inceleme projelerinde görev aldım.</p>
         </div>
 
-        <div class="project-card">
-            <h3>İç Ağ Güvenlik Testleri & Sızma Testleri</h3>
-            <p>Kritik savunma projeleri kapsamında ağ güvenliği, saldırı simülasyonları ve zafiyet tespiti çalışmaları yaptım. Bulgular raporlanarak kurumlara iletildi.</p>
+        <div class="project-box">
+            <h2 class="project-title">🇸🇬 Yapay Zeka Tabanlı Güvenlik Modülleri (Singapur - 6 Ay)</h2>
+            <span class="tag">AI</span>
+            <span class="tag">Security</span>
+            <span class="tag">Backend</span>
+            <p>Singapur’da veri işleme, AI tabanlı anomali tespiti ve sistem doğrulama modülleri geliştirdim. Güvenlik protokolleri optimize edildi.</p>
         </div>
+
+        <div class="project-box">
+            <h2 class="project-title">🇬🇧 Siber Güvenlik Testleri & Özel Araç Geliştirme (İngiltere - 8 Ay)</h2>
+            <span class="tag">Pentest</span>
+            <span class="tag">Exploit Research</span>
+            <span class="tag">Full Stack</span>
+            <p>İngiltere’de kurum içi güvenlik açık testleri, özel raporlama araçları, şifreleme modülleri ve log analiz sistemleri üzerine çalıştım.</p>
+        </div>
+
+        <!-- DEFENSE INDUSTRY -->
+        <div class="project-box">
+            <h2 class="project-title">🛡 Savunma Sanayi Altyapı Güçlendirme</h2>
+            <span class="tag">Savunma</span>
+            <span class="tag">Gizli Proje</span>
+            <span class="tag">Analiz</span>
+            <p>Türkiye'nin önde gelen savunma sanayii firmalarında gönüllü görev aldım. Güvenlik modülleri, sunucu optimizasyonları ve saldırı simülasyonları geliştirdim.</p>
+        </div>
+
+        <!-- TEAM PROJECTS -->
+        <div class="project-box">
+            <h2 class="project-title">👥 Teknik Ekip ile Kurumsal Altyapı Projeleri (2019 - 2025)</h2>
+            <span class="tag">Backend</span>
+            <span class="tag">Infra</span>
+            <span class="tag">Security</span>
+            <p>Kurucu ortağı olduğum ekiple çok sayıda firmanın altyapılarını güçlendirdik. Veri tabanı mimarileri, özel yazılımlar ve güvenlik çözümleri ürettik.</p>
+        </div>
+
+        <!-- CUSTOM SOFTWARE -->
+        <div class="project-box">
+            <h2 class="project-title">🧩 Özel Yazılım ve Otomasyon Sistemleri</h2>
+            <span class="tag">Desktop App</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Database</span>
+            <p>Şirketlere özel geliştirilen masaüstü yazılımlar, kontrol panelleri ve iş yönetim araçları. Sıfırdan geliştirilmiş özelleştirilmiş çözümler.</p>
+        </div>
+
+        <!-- WEB PROJECTS -->
+        <div class="project-box">
+            <h2 class="project-title">🌐 Web Uygulamaları ve Portal Sistemleri</h2>
+            <span class="tag">Web Security</span>
+            <span class="tag">Frontend</span>
+            <span class="tag">Backend</span>
+            <p>Modern, hızlı ve dayanıklı web uygulamaları, kurumsal siteler, paneller ve güvenlik odaklı yüksek performanslı altyapılar.</p>
+        </div>
+
+        <div class="project-box">
+            <h2 class="project-title">⚡ Performans & Güvenlik Optimizasyonu</h2>
+            <span class="tag">Optimization</span>
+            <span class="tag">Security</span>
+            <p>Yavaş çalışan veya yüksek trafikte çöken sistemleri optimize edip güçlendirdim. Uygulama güvenliği en üst seviyeye çıkarıldı.</p>
+        </div>
+
     </div>
-
-    <!-- Uluslararası Projeler -->
-    <div class="project-section">
-        <h2>🌎 Uluslararası Projeler</h2>
-
-        <div class="project-card">
-            <h3>ABD – 6 Aylık Gönüllü Yazılım Destek Programı</h3>
-            <p>ABD’de çeşitli teknoloji girişimlerine gönüllü yazılım desteği sağladım. Sistem geliştirme, güvenlik danışmanlığı ve optimizasyon görevlerinde yer aldım.</p>
-        </div>
-
-        <div class="project-card">
-            <h3>Singapur – Yenilikçi Teknolojiler Projesi</h3>
-            <p>Singapur’da 6 ay boyunca yapay zeka, ağ teknolojileri ve veri güvenliği konusunda projelerde görev aldım. Asya bölgesinde kullanılan yeni teknolojiler üzerinde deneyim kazandım.</p>
-        </div>
-
-        <div class="project-card">
-            <h3>İngiltere – 8 Aylık Teknik Geliştirme Görevi</h3>
-            <p>İngiltere’de çeşitli teknoloji ekipleriyle ortak çalışarak proje geliştirme, sistem kurma ve yazılım optimizasyonu üzerinde görev aldım.</p>
-        </div>
-    </div>
-
-    <!-- Kurumsal Projeler -->
-    <div class="project-section">
-        <h2>🏢 Kurumsal & Teknoloji Projeleri</h2>
-
-        <div class="project-card">
-            <h3>Altyapı Güçlendirme & Kurumsal Sistem Modernizasyonu</h3>
-            <p>2019–2025 yılları arasında kurduğum ekip ile birçok firmanın altyapılarını yeniledik, güvenlik seviyelerini artırdık ve performans odaklı çözümler geliştirdik.</p>
-        </div>
-
-        <div class="project-card">
-            <h3>Özel Yazılım Geliştirme</h3>
-            <p>Firmalar için özel yönetim panelleri, takip sistemleri, otomasyon yazılımları ve güvenlik araçları geliştirdik.</p>
-        </div>
-
-        <div class="project-card">
-            <h3>Kritik Sistemler İçin Güvenlik Danışmanlığı</h3>
-            <p>Birçok kurum için saldırı simülasyonları, risk analizleri ve siber güvenlik danışmanlığı sağladım. Zafiyetlerin kapatılmasına yönelik çözümler ürettim.</p>
-        </div>
-    </div>
-
 </div>
 
 <footer>

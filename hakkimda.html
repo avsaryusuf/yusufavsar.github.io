@@ -2,233 +2,103 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Hakkımda | Yusuf Avşar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yusuf Avşar hakkında detaylı bilgi. Yazılım, siber güvenlik, global projeler, kariyer geçmişi, VIP koruma, gönüllü savunma sanayi çalışmaları.">
-
-    <style>
-        :root {
-            --bg: #0d1117;
-            --text: #ffffff;
-            --primary: #00aaff;
-            --secondary: #1f6feb;
-            --card-bg: #161b22;
-            --line: #222;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-        }
-
-        header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #222;
-        }
-
-        nav a {
-            color: var(--primary);
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .intro {
-            font-size: 18px;
-            color: #ccc;
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.8;
-        }
-
-        .section-title {
-            margin-top: 50px;
-            font-size: 26px;
-            color: var(--secondary);
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid var(--line);
-            margin-top: 20px;
-        }
-
-        .timeline {
-            border-left: 2px solid var(--secondary);
-            margin-top: 30px;
-            padding-left: 20px;
-        }
-
-        .timeline-item {
-            margin-bottom: 25px;
-        }
-
-        .timeline-item span {
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .skill-box {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid var(--line);
-        }
-
-        .skill-box h3 {
-            color: var(--primary);
-            margin-top: 0;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid #222;
-            color: #aaa;
-        }
-    </style>
+    <title>Hakkımda - Yusuf Avşar</title>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/typography.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Anasayfa</a>
-        <a href="hakkimda.html">Hakkımda</a>
-        <a href="hizmetler.html">Hizmetler</a>
-        <a href="projeler.html">Projeler</a>
-        <a href="blog.html">Blog</a>
-        <a href="iletisim.html">İletişim</a>
-    </nav>
-</header>
+    <!-- HEADER -->
+    <div data-include="/components/header.html"></div>
 
-<div class="container">
-    <h1>Hakkımda</h1>
-
-    <p class="intro">
-        Merhaba, ben <strong>Yusuf Avşar</strong>. 1995 yılında Kahramanmaraş’ta doğdum, 2 aylıkken İstanbul’a taşındım ve o günden beri burada yaşıyorum.
-        2010 yılında liseyi bıraktım ancak o gün yazılıma tutkuyla bağlandım. O zamandan beri her fırsatta bilgisayar bilimi, yazılım geliştirme,
-        siber güvenlik ve sistem mühendisliği alanlarında kendimi geliştirdim. Bugün dünyadaki birçok teknolojiyi bilen, üreten ve
-        analiz eden teknik bir profesyonelim.
-    </p>
-
-    <h2 class="section-title">🌍 Global Deneyimler</h2>
-    <div class="card">
-        6 ay ABD, 6 ay Singapur ve 8 ay İngiltere’de gönüllü olarak birçok teknik projede görev aldım.
-        Çeşitli ekiplerle çalıştım, farklı kültürler ve teknolojik disiplinlerle tanıştım ve özellikle
-        güvenlik, optimizasyon ve sistem tasarımı alanlarında katkı sağladım.
-    </div>
-
-    <h2 class="section-title">🛡 Savunma Sanayii Çalışmaları</h2>
-    <div class="card">
-        Türkiye'nin önde gelen savunma sanayii şirketlerinde gönüllü olarak projelerde yer aldım.
-        Siber güvenlik testleri, yazılım modülleri, altyapı güçlendirmeleri ve özel güvenlik analizleri gerçekleştirdim.
-    </div>
-
-    <h2 class="section-title">📌 Profesyonel Kariyer Timeline</h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-            <span>1995</span> — Doğum: Kahramanmaraş
+    <section class="page-header">
+        <div class="container">
+            <h1>Hakkımda</h1>
+            <p>Yazılım geliştirme, güvenlik araştırmaları ve modern teknolojiye adanmış bir hayat.</p>
         </div>
+    </section>
 
-        <div class="timeline-item">
-            <span>2010</span> — Liseyi bıraktım ve tamamen yazılıma yöneldim.
-        </div>
+    <section class="about-section container">
 
-        <div class="timeline-item">
-            <span>2013</span> — İlk iş deneyimi: Market çalışanı.
-        </div>
+        <h2>Ben Kimim?</h2>
 
-        <div class="timeline-item">
-            <span>2014 - 2015</span> — İnşaat sektöründe aktif çalışma.
-        </div>
+        <p>
+            Ben <strong>Yusuf Avşar</strong>. 1995 yılında Kahramanmaraş’ta doğdum, henüz 2 aylıkken İstanbul’a taşındım ve
+            o günden beri hayatımın büyük bölümünü bu şehirde geçirdim. 2010 yılında liseyi bıraktıktan sonra tüm
+            enerjimi yazılıma yönelttim. Eğitime değil, pratiğe ve üretmeye odaklandım. Kendi kendime öğrenerek
+            geliştim, araştırdım, denedim ve yılmadan devam ettim.
+        </p>
 
-        <div class="timeline-item">
-            <span>2015 - 2017</span> — Askerlik görevi.
-        </div>
+        <p>
+            2013 yılında iş hayatına markette çalışarak başladım. Ardından 2014–2015 yıllarında inşaat sektöründe
+            çalıştım. 2015 sonunda askere gittim ve 2017’de geri döndüm. 2017–2019 yılları arasında yeniden inşaat
+            işindeydim. 2020–2025 arasında ise özel güvenlik görevlisi ve VIP yakın koruma olarak görev yaptım.
+            Bu süreçlerin hiçbiri beni yazılımdan koparmadı; her fırsatta öğrendim, ürettim ve geliştim.
+        </p>
 
-        <div class="timeline-item">
-            <span>2017 - 2019</span> — Yeniden inşaat işleri.
-        </div>
+        <h2>Yazılım ve Güvenlik Yolculuğum</h2>
 
-        <div class="timeline-item">
-            <span>2020 - 2025</span> — Özel güvenlik ve VIP yakın koruma.
-        </div>
+        <p>
+            2010 yılından itibaren programlamaya, bilgisayar bilimlerine ve özellikle siber güvenliğe yoğunlaştım.
+            HTML, CSS, JavaScript, Python, PHP, C#, SQL, ağ teknolojileri, explo it araştırmaları, sistem mantığı,
+            veri işleme, uygulama güvenliği gibi birçok alanda bilgi biriktirdim.
+        </p>
 
-        <div class="timeline-item">
-            <span>2019 - 2025</span> — Kurduğumuz teknik ekiple şirket altyapıları geliştirdik, programlar yazdık, sistemler güçlendirdik.
-        </div>
+        <p>
+            Zaman zaman yasal çerçeveler içinde güvenlik açıkları araştırıp kurumlara bildirdim.  
+            Bazen bir web sitesi geliştirdim, bazen büyük çaplı projelerde görev aldım.  
+            Gerektiğinde bir sistem analiz ettim, gerektiğinde sıfırdan bir yazılım geliştirdim.
+        </p>
 
-    </div>
+        <h2>Uluslararası Deneyimler</h2>
 
-    <h2 class="section-title">⚙ Uzmanlık Alanlarım</h2>
+        <p>
+            6 ay ABD, 6 ay Singapur ve 8 ay İngiltere’de çeşitli projelerde gönüllü olarak çalıştım.  
+            Bu süreçte hem kültürel hem teknik anlamda çok geniş bir perspektif kazandım.
+        </p>
 
-    <div class="skills-grid">
+        <h2>Savunma Sanayi Tecrübeleri</h2>
 
-        <div class="skill-box">
-            <h3>Yazılım Geliştirme</h3>
-            <p>Python, JavaScript, C#, PHP, Node.js, API geliştirme, sistem entegrasyonları.</p>
-        </div>
+        <p>
+            Türkiye’de bilinen savunma sanayi şirketlerinde bazı teknik projelerde gönüllü olarak yer aldım.  
+            Güvenlik, altyapı, veri analizi ve yazılım üzerinde çalışmalar yaptım.
+        </p>
 
-        <div class="skill-box">
-            <h3>Siber Güvenlik</h3>
-            <p>Açık tarama, pentest, network analizi, sosyal mühendislik savunmaları, exploit incelemeleri.</p>
-        </div>
+        <h2>Kurduğum Ekip ve Projeler</h2>
 
-        <div class="skill-box">
-            <h3>Web Geliştirme</h3>
-            <p>Modern web sistemleri, optimizasyon, yüksek güvenlikli mimari tasarımı.</p>
-        </div>
+        <p>
+            2019 yılında arkadaşlarımla birlikte küçük bir teknik ekip kurduk.  
+            Birçok firmanın altyapısını güçlendirdik, bazı kurumlara özel yazılımlar geliştirdik.  
+            2025 yılında yaşanan bazı sorunlardan dolayı ekip dağıldı ama dostluğumuz hâlâ devam ediyor.
+        </p>
 
-        <div class="skill-box">
-            <h3>Analiz & Problem Çözme</h3>
-            <p>Karmaşık teknik sorunları hızlıca analiz edip çözme becerisi.</p>
-        </div>
+        <p>
+            Bugün hâlâ yazılımı bir meslekten çok bir tutku olarak görüyor, boş zamanlarımda üretmeye devam ediyorum.
+        </p>
 
-        <div class="skill-box">
-            <h3>Altyapı ve Sistem Tasarımı</h3>
-            <p>Sunucu yönetimi, yapılandırma, güvenlik, otomasyon.</p>
-        </div>
+        <h2>Aktif Meslek</h2>
 
-        <div class="skill-box">
-            <h3>Proje Yönetimi</h3>
-            <p>Ekip yönetimi, teknik yönlendirme, süreç planlama ve uygulama.</p>
-        </div>
+        <p>
+            Şu anda aktif olarak <strong>özel güvenlik görevlisi</strong> olarak çalışıyorum.  
+            Ama biliyorum ki hayatımın her döneminde yazılım benimle olacak.
+        </p>
 
-    </div>
-</div>
+        <h2>Vizyonum</h2>
+        <p>
+            Teknolojiye, güvenliğe ve dijital dünyaya katkı sağlayan işler yapmak;  
+            deneyimlerimi paylaşmak ve üretmeye devam etmek.
+        </p>
 
-<footer>
-    © 2025 Yusuf Avşar – Tüm Hakları Saklıdır.
-</footer>
+    </section>
 
+    <!-- FOOTER -->
+    <div data-include="/components/footer.html"></div>
+
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>

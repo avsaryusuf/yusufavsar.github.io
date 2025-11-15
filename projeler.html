@@ -9,189 +9,95 @@
     <link rel="stylesheet" href="/assets/css/base.css">
     <link rel="stylesheet" href="/assets/css/layout.css">
     <link rel="stylesheet" href="/assets/css/components.css">
-
-    <style>
-        .filter-bar {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .filter-btn {
-            padding: 8px 18px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin: 5px;
-            cursor: pointer;
-            transition: .25s;
-        }
-
-        .filter-btn:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            border-radius: 10px;
-            transition: 0.25s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-        }
-
-        .project-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .tech-list {
-            font-size: .9rem;
-            opacity: .7;
-        }
-
-        .btn-detail {
-            margin-top: 12px;
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 6px;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            transition: .25s;
-        }
-
-        .btn-detail:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <div data-include="/components/header.html"></div>
+    <!-- NAVBAR -->
+    <div data-include="/navbar.html"></div>
 
     <section class="page-header">
         <div class="container">
             <h1>Projeler</h1>
-            <p>Türkiye ve yurt dışında yer aldığım profesyonel proje çalışmaları.</p>
+            <p>Üzerinde çalıştığım sistemler, araçlar ve yazılım geliştirmeleri</p>
         </div>
     </section>
 
-    <div class="container">
+    <section class="section projects">
+        <div class="container">
 
-        <!-- FILTER -->
-        <div class="filter-bar">
-            <button class="filter-btn">Tümü</button>
-            <button class="filter-btn">Web Geliştirme</button>
-            <button class="filter-btn">Siber Güvenlik</button>
-            <button class="filter-btn">Kurum Altyapı</button>
-            <button class="filter-btn">Özel Proje</button>
-        </div>
+            <div class="project-grid">
 
-        <!-- PROJECT GRID -->
-        <div class="projects-grid">
+                <!-- PROJE 1 -->
+                <div class="project-card">
+                    <h3>Güvenlik Açığı Analiz Aracı</h3>
+                    <p>
+                        Web uygulamaları üzerinde OWASP standartlarına göre çalışan ve potansiyel
+                        güvenlik açıklarını tespit eden mini analiz aracı. Manuel + otomatik tarama özellikleri içerir.
+                    </p>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Security</span>
+                    <span class="tag">Automation</span>
+                </div>
 
-            <!-- PROJE 1 -->
-            <div class="project-card">
-                <h3>Savunma Sanayi Ar-Ge Destek Platformu</h3>
-                <p>
-                    Türkiye’deki büyük bir savunma sanayi şirketi için dahili Ar-Ge izleme ve raporlama sistemi
-                    geliştirme süreçlerinde gönüllü olarak görev aldım.
-                </p>
-                <div class="tech-list">Kullanılan Teknolojiler: Python, PostgreSQL, Node.js, Güvenlik Katmanı</div>
-                <a class="btn-detail" href="#">Detay</a>
-            </div>
+                <!-- PROJE 2 -->
+                <div class="project-card">
+                    <h3>Mini Blog Yönetim Sistemi</h3>
+                    <p>
+                        Admin paneli, kategori yönetimi, SEO desteği ve içerik düzenleme özelliklerine sahip
+                        hafif CMS yapısı. Hızlı yüklenen optimize bir blog altyapısı.
+                    </p>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JS</span>
+                </div>
 
-            <!-- PROJE 2 -->
-            <div class="project-card">
-                <h3>ABD Veri Analiz Otomasyonu (6 Ay)</h3>
-                <p>
-                    Amerika’da bir teknoloji girişimi için veri toplama, işleme, güvenlik ve analiz süreçlerinin
-                    otomatikleştirildiği yazılım projelerinde görev aldım.
-                </p>
-                <div class="tech-list">Kullanılan Teknolojiler: Python, FastAPI, Linux, Automation</div>
-                <a class="btn-detail" href="#">Detay</a>
-            </div>
+                <!-- PROJE 3 -->
+                <div class="project-card">
+                    <h3>Otomatik Form Doğrulama Kütüphanesi</h3>
+                    <p>
+                        Web formlarındaki verileri gerçek zamanlı kontrol eden, 20+ validasyon kuralına sahip
+                        bağımsız bir frontend kütüphanesi.
+                    </p>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Validation</span>
+                </div>
 
-            <!-- PROJE 3 -->
-            <div class="project-card">
-                <h3>Singapur Finans Güvenlik Testleri (6 Ay)</h3>
-                <p>
-                    Finans sektörüne yönelik uygulamalarda ciddi güvenlik testleri ve zafiyet tespit süreçlerinde
-                    etik hacker olarak görev aldım.
-                </p>
-                <div class="tech-list">Siber Güvenlik, Pentest, Risk Analizi, Web Uygulama Testleri</div>
-                <a class="btn-detail" href="#">Detay</a>
-            </div>
+                <!-- PROJE 4 -->
+                <div class="project-card">
+                    <h3>Sistem Performans İzleyici</h3>
+                    <p>
+                        CPU, RAM, IO ve gecikme sürelerini kaydeden; grafiklerle sunan hafif bir performans
+                        takip scripti. Geliştiriciler için debugging kolaylığı sağlar.
+                    </p>
+                    <span class="tag">Monitoring</span>
+                    <span class="tag">Optimization</span>
+                </div>
 
-            <!-- PROJE 4 -->
-            <div class="project-card">
-                <h3>İngiltere E-Ticaret Platformu Optimizasyonu (8 Ay)</h3>
-                <p>
-                    Büyük bir e-ticaret firmasının altyapısını hız, güvenlik ve stabilite açısından iyileştirme çalışmalarında yer aldım.
-                </p>
-                <div class="tech-list">NGINX, Redis, React, Node.js, Server Optimization</div>
-                <a class="btn-detail" href="#">Detay</a>
-            </div>
+                <!-- PROJE 5 -->
+                <div class="project-card">
+                    <h3>Veri Temizleme & Log Optimize Scriptleri</h3>
+                    <p>
+                        Büyük boyutlu log dosyaları için veri ayıklama, sıkıştırma ve format standardizasyonu
+                        yapan otomasyon scriptleri.
+                    </p>
+                    <span class="tag">Automation</span>
+                    <span class="tag">Node.js</span>
+                </div>
 
-            <!-- PROJE 5 -->
-            <div class="project-card">
-                <h3>Yerel Firmalar İçin Altyapı Güçlendirme</h3>
-                <p>
-                    Ekibimle birlikte Türkiye’de birçok şirkete altyapı iyileştirmesi, güvenlik konfigürasyonları ve tam korumalı sistem kurulumları sağladık.
-                </p>
-                <div class="tech-list">Firewall, Sunucu Güçlendirme, Monitoring</div>
-                <a class="btn-detail" href="#">Detay</a>
-            </div>
-
-            <!-- PROJE 6 -->
-            <div class="project-card">
-                <h3>Kurumsal Dashboard ve Yönetim Paneli Projeleri</h3>
-                <p>
-                    Sıfırdan tasarlanmış özel yönetim panelleri, data yönetimi sistemleri, müşteri takip
-                    yazılımları gibi birçok yüksek hacimli projede görev aldım.
-                </p>
-                <div class="tech-list">JavaScript, Node, MySQL, Custom API</div>
-                <a class="btn-detail" href="#">Detay</a>
-            </div>
-
-            <!-- PROJE 7 -->
-            <div class="project-card">
-                <h3>Sistem Açığı Bildirimleri (Etik Hacker)</h3>
-                <p>
-                    Kritik güvenlik açıklarını resmi kurumlara ve şirketlere bildirerek güvenlik seviyelerinin artırılmasına katkıda bulundum.
-                </p>
-                <div class="tech-list">OWASP, CVE Araştırma, Exploit Analizi</div>
-                <a class="btn-detail" href="#">Detay</a>
-            </div>
-
-            <!-- PROJE 8 -->
-            <div class="project-card">
-                <h3>Yazılım Otomasyon Araçları</h3>
-                <p>
-                    İş süreçlerini %60 hızlandıran otomasyon projeleri geliştirdim. Veri işleme, raporlama, sistem kontrol mekanizmaları ve güvenlik katmanları içeriyor.
-                </p>
-                <div class="tech-list">Python, Automation Scripts, AI Destekli Mantık</div>
-                <a class="btn-detail" href="#">Detay</a>
             </div>
 
         </div>
+    </section>
 
-    </div>
+    <section class="section">
+        <div class="container center">
+            <a href="/iletisim.html" class="btn-primary">Proje Talebi Oluştur</a>
+        </div>
+    </section>
 
     <!-- FOOTER -->
-    <div data-include="/components/footer.html"></div>
+    <div data-include="/footer.html"></div>
 
 </body>
 

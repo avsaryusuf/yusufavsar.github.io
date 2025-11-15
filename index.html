@@ -1,120 +1,154 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yusuf Avşar - Yazılım geliştirici, siber güvenlik araştırmacısı ve tam donanımlı teknoloji meraklısı.">
-    <title>Yusuf Avşar | Resmî Web Sitesi</title>
+    <title>Yusuf Avşar - Yazılım Geliştirici & Güvenlik Araştırmacısı</title>
 
-    <!-- Tema -->
-    <style>
-        :root {
-            --bg: #0d1117;
-            --text: #ffffff;
-            --primary: #00aaff;
-            --secondary: #1f6feb;
-        }
-
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #222;
-        }
-
-        nav a {
-            color: var(--primary);
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .hero {
-            padding: 70px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .hero p {
-            max-width: 600px;
-            margin: auto;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        .section {
-            padding: 50px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .footer {
-            margin-top: 50px;
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid #222;
-            font-size: 14px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: var(--primary);
-            color: #fff;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .btn:hover { background: var(--secondary); }
-    </style>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Anasayfa</a>
-        <a href="hakkimda.html">Hakkımda</a>
-        <a href="hizmetler.html">Hizmetler</a>
-        <a href="projeler.html">Projeler</a>
-        <a href="blog.html">Blog</a>
-        <a href="iletisim.html">İletişim</a>
-    </nav>
-</header>
+    <!-- NAVBAR -->
+    <div data-include="/navbar.html"></div>
 
-<section class="hero">
-    <h1>Yusuf Avşar</h1>
-    <p>Yazılım geliştirici, siber güvenlik araştırmacısı, teknoloji üreticisi ve 15+ yıllık tecrübe sahibi profesyonel.</p>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Yusuf Avşar</h1>
+            <p class="hero-subtitle">
+                Yazılım Geliştirici • Siber Güvenlik Araştırmacısı • Sistem Tasarımcısı
+            </p>
+            <p class="hero-desc">
+                15+ yıllık deneyim ile yazılım geliştirme, sistem güvenliği, altyapı tasarımı ve web teknolojileri
+                alanlarında çözümler üretiyorum.
+            </p>
 
-    <a href="hakkimda.html" class="btn">Beni Tanıyın</a>
-</section>
+            <div class="hero-buttons">
+                <a href="/projeler.html" class="btn-primary">Projelerimi İncele</a>
+                <a href="/iletisim.html" class="btn-secondary">İletişime Geç</a>
+            </div>
+        </div>
+    </section>
 
-<section class="section">
-    <h2>Yetenekler</h2>
-    <p>Yazılım geliştirme, siber güvenlik, sistem tasarımı, proje yönetimi ve uluslararası gönüllü çalışmalar.</p>
-</section>
+    <!-- ABOUT PREVIEW -->
+    <section class="section about-preview">
+        <div class="container">
+            <h2>Ben Kimim?</h2>
 
-<section class="section">
-    <h2>Son Projeler</h2>
-    <p>Birçok kurum ve şirkete altyapı geliştirme, uygulama tasarımı ve güvenlik danışmanlığı.</p>
-    <a href="projeler.html" class="btn">Tüm Projeler</a>
-</section>
+            <p>
+                1995 yılında Kahramanmaraş’ta doğdum. 2 aylıkken İstanbul’a taşındım ve o günden beri İstanbul’da
+                yaşıyorum.
+                2010’dan beri yazılım ve siber güvenlik alanında kendimi geliştiriyor, yurt içi ve yurt dışında
+                çeşitli projelerde
+                aktif roller alıyorum.
+            </p>
 
-<footer class="footer">
-    © 2025 Yusuf Avşar – Tüm Hakları Saklıdır.
-</footer>
+            <p>
+                ABD, Singapur ve İngiltere’de gönüllü olarak yazılım & güvenlik projelerine katıldım. Türkiye’de bazı
+                savunma sanayi projelerinde
+                Ar-Ge süreçlerinde görev aldım. Web geliştirme, sistem tasarımı, altyapı güçlendirme ve güvenlik analizi
+                üzerine çalışıyorum.
+            </p>
+
+            <a href="/hakkimda.html" class="btn-more">Hakkımda Daha Fazlası →</a>
+        </div>
+    </section>
+
+    <!-- SERVICES PREVIEW -->
+    <section class="section services-preview">
+        <div class="container">
+            <h2>Hizmetlerim</h2>
+
+            <div class="grid-3">
+                <div class="service-card">
+                    <h3>Web Geliştirme</h3>
+                    <p>Profesyonel, hızlı, güvenli ve modern web siteleri geliştiriyorum.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Siber Güvenlik Analizi</h3>
+                    <p>Sistem açıkları tespit eder, raporlar oluşturur ve çözüm önerileri sunarım.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Altyapı Güçlendirme</h3>
+                    <p>Şirketlerin sistem altyapılarını optimize eder, hız ve güvenlik artırırım.</p>
+                </div>
+            </div>
+
+            <a href="/hizmetler.html" class="btn-more">Tüm Hizmetleri Gör →</a>
+        </div>
+    </section>
+
+    <!-- PROJECTS PREVIEW -->
+    <section class="section projects-preview">
+        <div class="container">
+            <h2>Projelerim</h2>
+
+            <div class="grid-3">
+                <div class="project-card">
+                    <h3>Kurumsal Web Platformları</h3>
+                    <p>Güvenli, hızlı ve ölçeklenebilir şirket web platformları geliştirme.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Güvenlik Testleri & Pentest</h3>
+                    <p>Web uygulamaları ve sistemler için kapsamlı güvenlik test süreçleri.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Altyapı Optimizasyon Sistemleri</h3>
+                    <p>Server, CDN, cache ve network optimizasyon projeleri.</p>
+                </div>
+            </div>
+
+            <a href="/projeler.html" class="btn-more">Tüm Projeleri Gör →</a>
+        </div>
+    </section>
+
+    <!-- BLOG PREVIEW -->
+    <section class="section blog-preview">
+        <div class="container">
+            <h2>Blog Yazılarım</h2>
+
+            <div class="grid-3">
+                <div class="blog-card">
+                    <h3>Web Güvenliğinde En Kritik 10 Zafiyet</h3>
+                    <p>Siber güvenlik dünyasında sık sık karşılaşılan hata türleri ve korunma yöntemleri.</p>
+                </div>
+
+                <div class="blog-card">
+                    <h3>Modern Web Tasarım Trendleri</h3>
+                    <p>2025 yılına damga vuran yeni nesil tasarım tekniklerinin analizi.</p>
+                </div>
+
+                <div class="blog-card">
+                    <h3>Altyapı Performansını Artırma Yöntemleri</h3>
+                    <p>Gerçek dünyadan uygulamalar ile performans optimizasyon rehberi.</p>
+                </div>
+            </div>
+
+            <a href="/blog.html" class="btn-more">Tüm Yazılar →</a>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Benimle Çalışmak İster misiniz?</h2>
+            <p>Profesyonel web çözümleri, güvenlik analizi veya projeleriniz için iletişime geçebilirsiniz.</p>
+            <a href="/iletisim.html" class="btn-primary">İletişim Sayfası</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div data-include="/footer.html"></div>
 
 </body>
+
 </html>

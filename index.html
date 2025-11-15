@@ -3,18 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yusuf Avşar - Siber Güvenlik & Yazılım</title>
+    <title>Yusuf Avşar – Resmi Web Sitesi</title>
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
 
-<!-- HEADER -->
-<header id="header">
-    <h1>Yusuf Avşar</h1>
-    <p>Siber Güvenlik Uzmanı • Yazılım Geliştirici • Sistem Yönetimi</p>
-</header>
-
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav id="nav">
     <ul>
         <li><a href="about.html">Hakkımda</a></li>
@@ -26,87 +20,132 @@
     </ul>
 </nav>
 
-<!-- SECTIONS REMOVED FROM HOMEPAGE — NAVIGATION LINKS TO NEW PAGES -->
- -->
-<section id="skills" class="wrapper style2">
-    <h2>Yetenekler</h2>
+<header id="header">
+    <h1>Yusuf Avşar</h1>
+    <p>Siber Güvenlik Uzmanı • Yazılım Geliştirici</p>
+</header>
 
-    <h3>Yazılım</h3>
-    <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>PHP & Python geliştirme</li>
-        <li>API entegrasyon & otomasyon</li>
-        <li>Responsive arayüz tasarım</li>
-    </ul>
-
-    <h3>Siber Güvenlik</h3>
-    <ul>
-        <li>Pentest & OWASP Top 10</li>
-        <li>Web uygulama güvenliği</li>
-        <li>Ağ güvenliği & Hardening</li>
-        <li>SIEM, Log analizi, IDS/IPS</li>
-    </ul>
-
-    <h3>Sistem & Network</h3>
-    <ul>
-        <li>Linux & Windows Server yönetimi</li>
-        <li>Active Directory</li>
-        <li>Firewall, VPN, Port yönetimi</li>
-        <li>SSH, RDP, DHCP, DNS yapılandırma</li>
-    </ul>
-
-    <h3>Ek Teknik Yeterlilikler</h3>
-    <ul>
-        <li>Git & GitHub</li>
-        <li>Shell Scripting & Otomasyon</li>
-        <li>Docker (temel)</li>
-        <li>SQL & Veri Tabanı yönetimi</li>
-    </ul>
+<section class="wrapper style1">
+    <h2>Hoş geldin</h2>
+    <p>Menüden istediğin bölüme geçebilirsin.</p>
 </section>
 
-<!-- PROJELER -->
-<section id="projects" class="wrapper style3">
-    <h2>Projeler</h2>
-    <ul>
-        <li>Web uygulaması geliştirme (kişisel & kurumsal)</li>
-        <li>Pentest raporlaması ve güvenlik açığı analizi</li>
-        <li>Python otomasyon & özel script geliştirme</li>
-        <li>Linux hardening & sistem yapılandırma</li>
-        <li>Ağ topolojisi ve güvenlik politikaları oluşturma</li>
-        <li>Monitoring & log takip sistemleri</li>
-        <li>API tabanlı veri toplama araçları</li>
-        <li>Web scraping & analiz çözümleri</li>
-        <li>VPN & güvenli erişim sistemleri</li>
-    </ul>
-</section>
+<!-- AI ASSISTANT BUTTON -->
+<div id="ai-btn">AI</div>
 
-<!-- HİZMETLER -->
-<section id="services" class="wrapper style1">
-    <h2>Hizmetler</h2>
-    <ul>
-        <li>Siber Güvenlik Testleri (Pentest - Web & Network)</li>
-        <li>Kurumsal Ağ Güvenliği Analizi</li>
-        <li>Web Sitesi & Yönetim Paneli Geliştirme</li>
-        <li>Script & Otomasyon Çözümleri</li>
-        <li>Linux & Windows Server Kurulumu</li>
-        <li>VPN, Güvenli Erişim, Firewall yapılandırma</li>
-        <li>Log analizi & SIEM danışmanlığı</li>
-    </ul>
-</section>
+<!-- AI TERMINAL -->
+<div id="ai-terminal">
+    <div id="ai-header">AI TERMINAL <span id="ai-close">X</span></div>
+    <div id="ai-output"></div>
+    <input id="ai-input" type="text" placeholder="Komut yaz..." autocomplete="off">
+</div>
 
-<!-- İSTATİSTİKLER -->
-<section id="stats" class="wrapper style2">
-    <h2>İstatistikler</h2>
-    <ul>
-        <li><strong>10+ yıl</strong> teknoloji tecrübesi</li>
-        <li><strong>50+ proje</strong> başarıyla teslim edildi</li>
-        <li><strong>2 şirket</strong> ile aktif siber güvenlik iş birliği</li>
-        <li><strong>20+ araç</strong> & script geliştirildi</li>
-    </ul>
-</section>
+<!-- AI CSS (EKLEMEN GEREKEN) -->
+<style>
+#ai-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #00ff55;
+    color: #000;
+    padding: 12px 17px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 9999;
+}
 
-<!-- İLETİŞİM -->
+#ai-terminal {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    width: 350px;
+    height: 430px;
+    background: #000;
+    border: 2px solid #00ff55;
+    display: none;
+    flex-direction: column;
+    z-index: 9999;
+}
 
+#ai-header {
+    background: #00ff55;
+    color: #000;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ai-close { cursor: pointer; }
+
+#ai-output {
+    flex: 1;
+    padding: 10px;
+    color: #00ff55;
+    font-family: monospace;
+    font-size: 14px;
+    overflow-y: auto;
+}
+
+#ai-input {
+    width: 100%;
+    padding: 10px;
+    background: #111;
+    border: none;
+    color: #00ff55;
+    outline: none;
+    font-family: monospace;
+}
+</style>
+
+<!-- JAVASCRIPT -->
+<script>
+const apiKey = "BURAYA_API_KEY_GELECEK";
+
+document.getElementById("ai-btn").onclick = () => {
+    document.getElementById("ai-terminal").style.display = "flex";
+};
+
+document.getElementById("ai-close").onclick = () => {
+    document.getElementById("ai-terminal").style.display = "none";
+};
+
+const input = document.getElementById("ai-input");
+const output = document.getElementById("ai-output");
+
+input.addEventListener("keydown", async function(e) {
+    if (e.key === "Enter") {
+        let text = input.value.trim();
+        if (text === "") return;
+
+        output.innerHTML += `<div>> ${text}</div>`;
+        input.value = "";
+
+        try {
+            const response = await fetch("https://api.openai.com/v1/chat/completions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: "gpt-4o-mini",
+                    messages: [{ role: "user", content: text }]
+                })
+            });
+
+            const data = await response.json();
+            const reply = data.choices?.[0]?.message?.content || "Bir hata oluştu.";
+            output.innerHTML += `<div style='color:#0f0;'>${reply}</div>`;
+            output.scrollTop = output.scrollHeight;
+        } catch(err) {
+            output.innerHTML += `<div style='color:red;'>API bağlantı hatası.</div>`;
+        }
+    }
+});
+</script>
 
 </body>
 </html>

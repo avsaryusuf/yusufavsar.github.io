@@ -1,164 +1,158 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Blog Yazısı | Yusuf Avşar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detay - Yusuf Avşar</title>
 
-    <style>
-        :root {
-            --bg: #0d1117;
-            --text: #ffffff;
-            --primary: #00aaff;
-            --secondary: #1f6feb;
-            --card-bg: #161b22;
-            --line: #222;
-        }
-
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--line);
-        }
-
-        nav a {
-            color: var(--primary);
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h1 {
-            font-size: 32px;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .meta {
-            color: #ccc;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-
-        article {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--line);
-            line-height: 1.7;
-            font-size: 17px;
-        }
-
-        article h2 {
-            color: var(--primary);
-            margin-top: 25px;
-        }
-
-        a.back {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 10px 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            border-radius: 8px;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        a.back:hover {
-            transform: scale(1.05);
-            background: #0f1620;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            border-top: 1px solid var(--line);
-            color: #999;
-        }
-
-    </style>
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Anasayfa</a>
-        <a href="hakkimda.html">Hakkımda</a>
-        <a href="hizmetler.html">Hizmetler</a>
-        <a href="projeler.html">Projeler</a>
-        <a href="blog.html">Blog</a>
-        <a href="iletisim.html">İletişim</a>
-    </nav>
-</header>
+    <!-- NAVBAR -->
+    <div data-include="/navbar.html"></div>
 
-<div class="container">
+    <section class="page-header">
+        <div class="container">
+            <h1 id="post-title">Blog Yazısı</h1>
+            <p id="post-date"></p>
+        </div>
+    </section>
 
-    <h1>Siber Güvenlikte 2025 Trendleri</h1>
-    <div class="meta">Yayınlanma: 28 Ocak 2025 • Kategori: Siber Güvenlik</div>
+    <section class="section">
+        <div class="container">
+            <div id="post-content" class="blog-content">
+                <!-- İçerik JS ile yüklenecek -->
+            </div>
+        </div>
+    </section>
 
-    <article>
-        <p>
-            2025 yılı, siber güvenlik dünyasında önemli değişimlerin yaşandığı bir yıl olarak kayıtlara geçiyor.
-            Özellikle devlet destekli saldırılar, yapay zeka tabanlı tehditler ve kurumsal siber direnç
-            kapasitesindeki artış bu değişimi şekillendiriyor.
-        </p>
+    <!-- FOOTER -->
+    <div data-include="/footer.html"></div>
 
-        <h2>1. Yapay Zeka Tabanlı Saldırılar Artıyor</h2>
-        <p>
-            Saldırganlar artık yapay zekayı aktif şekilde kullanıyor. Otomatik phishing saldırıları,
-            davranış analizi ile yapılan sosyal mühendislik girişimleri ve otomatik zafiyet tespiti gibi teknikler
-            savunma tarafını zorlamaya devam ediyor.
-        </p>
+    <script>
+        // URL Parametresi Alma
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get("id");
 
-        <h2>2. Kurumsal Güvenlik Mimarisinde Sıfır Güven (Zero Trust)</h2>
-        <p>
-            Zero Trust mimarisi artık sadece büyük şirketlerde değil, orta ölçekli işletmelerde de standart hâline geliyor.
-            Her erişimin doğrulanması, sürekli kimlik takibi ve mikro segmentasyon önem kazandı.
-        </p>
+        // Blog Yazıları
+        const posts = {
+            1: {
+                title: "Siber Güvenlikte Temel Mantık: Önce Tespit",
+                date: "01 Ocak 2025",
+                content: `
+                    <p>
+                        Siber güvenlik dünyasında en önemli adım, saldırı gerçekleşmeden önce açıkların
+                        tespit edilmesidir. Bir sistemi korumak, o sistemi anlamaktan geçer.
+                    </p>
+                    <p>
+                        Zafiyet analizi, log inceleme, yapılandırma testleri ve sosyal mühendislik
+                        senaryolarıyla bir sistemin ne kadar dayanıklı olduğu ölçülebilir.
+                    </p>
+                    <p>
+                        Yasal çerçevede yapılan bu testler kurumları gelecekte oluşabilecek büyük risklerden
+                        korur. Güvenlik, sadece teknik bir konu değil; aynı zamanda bir bilinçtir.
+                    </p>
+                `
+            },
 
-        <h2>3. Uluslararası Siber Savaşlar</h2>
-        <p>
-            Devlet destekli siber saldırılar 2025’te zirve yapmış durumda. Savunma sanayii, enerji sektörü ve
-            finans kuruluşları gibi kritik altyapılar sürekli hedef haline geliyor.
-        </p>
+            2: {
+                title: "Modern Web Sitelerinde Performans Artırma Teknikleri",
+                date: "12 Ocak 2025",
+                content: `
+                    <p>
+                        Performans, modern web geliştirme süreçlerinde kritik bir rol oynar. Kullanıcı beklemez,
+                        yavaş siteler ise yüksek terk oranına sebep olur.
+                    </p>
+                    <ul>
+                        <li>Lazy Load</li>
+                        <li>Minify işlemleri</li>
+                        <li>Önbellek yönetimi</li>
+                        <li>CDN kullanımı</li>
+                        <li>Render blocking elementlerinin azaltılması</li>
+                    </ul>
+                    <p>
+                        Tüm bu adımlar bir web sitesinin hızını ciddi şekilde artırabilir.
+                    </p>
+                `
+            },
 
-        <h2>4. Güvenlikte OT Sistemlerine Odaklanma</h2>
-        <p>
-            Fabrika, tesis ve üretim merkezlerindeki OT sistemleri artık daha sofistike saldırıların hedefi oluyor.
-            Bu sistemleri korumak için yeni standartlar geliştirilmekte.
-        </p>
+            3: {
+                title: "Yurt Dışı Proje Deneyimlerim",
+                date: "24 Ocak 2025",
+                content: `
+                    <p>
+                        ABD, Singapur ve İngiltere’de görev aldığım dönemlerde farklı çalışma kültürleri ve
+                        teknoloji yaklaşımlarını yakından gözlemleme fırsatı buldum.
+                    </p>
+                    <p>
+                        Projelerde ağırlıklı olarak sistem testleri, güvenlik analizleri ve entegrasyon süreçlerinde
+                        aktif rol aldım.
+                    </p>
+                    <p>
+                        Bu çalışmalar hem teknik hem de vizyon olarak beni güçlendirdi.
+                    </p>
+                `
+            },
 
-        <h2>Sonuç</h2>
-        <p>
-            2025, siber güvenlik açısından kritik bir yıl. Her işletme, ister büyük ister küçük olsun,
-            güvenlik yatırımlarını artırmak zorunda. Siber tehditler artık daha hızlı, daha akıllı ve daha yıkıcı.
-        </p>
-    </article>
+            4: {
+                title: "Yazılımı Hobi Olarak Yapmak",
+                date: "07 Şubat 2025",
+                content: `
+                    <p>
+                        Yazılımı hiçbir zaman sadece bir meslek olarak görmedim. Benim için bu, bir tutku ve
+                        yaşam biçimi oldu.
+                    </p>
+                    <p>
+                        Yeri geliyor bir proje geliştiriyorum, yeri geliyor sistem açıklarını araştırıyor ve
+                        raporluyorum.
+                    </p>
+                    <p>
+                        Bu özgürlük, yazılımı diğer tüm disiplinlerden ayıran en büyük güçtür.
+                    </p>
+                `
+            },
 
-    <a href="blog.html" class="back">← Bloga Dön</a>
+            5: {
+                title: "Kurumsal Web Projeleri Nasıl Planlanır?",
+                date: "19 Şubat 2025",
+                content: `
+                    <p>
+                        Kurumsal projelerde ilk adım analizdir. Projenin hedefleri, kullanıcı kitlesi, ihtiyaç duyulan
+                        özellikler ve güvenlik gereksinimleri net olarak belirlenmelidir.
+                    </p>
+                    <ul>
+                        <li>İhtiyaç analizi</li>
+                        <li>Wireframe & UI/UX tasarımı</li>
+                        <li>Backend mimarisi</li>
+                        <li>API bağlantıları</li>
+                        <li>Test & optimizasyon</li>
+                    </ul>
+                    <p>
+                        Başarılı bir kurumsal projenin sırrı: Planlama + İletişim + Uygulama uyumudur.
+                    </p>
+                `
+            }
+        };
 
-</div>
-
-<footer>
-    © 2025 Yusuf Avşar – Tüm Hakları Saklıdır.
-</footer>
+        // Eğer yazı bulunamazsa
+        if (!posts[postId]) {
+            document.getElementById("post-title").innerText = "Yazı Bulunamadı";
+            document.getElementById("post-content").innerHTML = `
+                <p>Aradığınız blog yazısı mevcut değil veya kaldırılmış olabilir.</p>
+            `;
+        } else {
+            const post = posts[postId];
+            document.getElementById("post-title").innerText = post.title;
+            document.getElementById("post-date").innerText = post.date;
+            document.getElementById("post-content").innerHTML = post.content;
+        }
+    </script>
 
 </body>
+
 </html>

@@ -12,26 +12,20 @@
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 50%, #dc2626 100%);
+            background: linear-gradient(135deg, #1e40af, #7c3aed, #dc2626);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
         }
         
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .smooth-scroll {
-            scroll-behavior: smooth;
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: all 0.8s ease;
         }
         
         .fade-in.visible {
@@ -39,33 +33,61 @@
             transform: translateY(0);
         }
         
-        .navbar-blur {
+        .card-hover {
+            transition: transform 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .page-content {
-            opacity: 0;
-            animation: pageSlideIn 0.5s ease-out forwards;
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .page-content.hidden {
-            display: none !important;
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
         
-        @keyframes pageSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
         
-        .cyber-glow {
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulseGlow {
+            from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+            to { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            border-right: 3px solid #3b82f6;
+            white-space: nowrap;
+            animation: typing 4s steps(40, end), blink-caret 1s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #3b82f6; }
         }
         
         .skill-bar {
@@ -77,251 +99,682 @@
             from { width: 0; }
             to { width: var(--skill-width); }
         }
+        
+        .interactive-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .interactive-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .interactive-card:hover::before {
+            left: 100%;
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.4s ease;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .loading-dots {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .loading-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+            margin: 0 2px;
+            animation: loadingDots 1.4s infinite ease-in-out;
+        }
+        
+        .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes loadingDots {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+        
+        .progress-bar {
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .modal-overlay {
+            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .bounce-in {
+            animation: bounceIn 0.6s ease;
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloat 8s infinite linear;
+        }
+        
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        .morphing-bg {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+            background-size: 400% 400%;
+            animation: morphingGradient 15s ease infinite;
+        }
+        
+        @keyframes morphingGradient {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .neon-glow {
+            text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor, 0 0 20px currentColor;
+            animation: neonPulse 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes neonPulse {
+            from { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor, 0 0 20px currentColor; }
+            to { text-shadow: 0 0 2px currentColor, 0 0 5px currentColor, 0 0 8px currentColor, 0 0 12px currentColor; }
+        }
+        
+        .holographic {
+            background: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000);
+            background-size: 400% 400%;
+            animation: holographicShift 3s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @keyframes holographicShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.1;
+        }
+        
+        .matrix-char {
+            position: absolute;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            animation: matrixFall 3s linear infinite;
+        }
+        
+        @keyframes matrixFall {
+            0% { transform: translateY(-100px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        
+        .cyber-border {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cyber-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, #00ffff, transparent);
+            animation: cyberScan 3s linear infinite;
+            opacity: 0.3;
+        }
+        
+        @keyframes cyberScan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .data-stream {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .data-stream::after {
+            content: '01001001 01101110 01101110 01101111 01110110 01100001 01110100 01101001 01101111 01101110';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            color: rgba(0, 255, 255, 0.2);
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            white-space: nowrap;
+            animation: dataFlow 20s linear infinite;
+        }
+        
+        @keyframes dataFlow {
+            0% { transform: translateX(-100%) translateY(-50%); }
+            100% { transform: translateX(100vw) translateY(-50%); }
+        }
+        
+        .quantum-effect {
+            position: relative;
+        }
+        
+        .quantum-effect::before,
+        .quantum-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            opacity: 0.7;
+            animation: quantumShift 4s ease-in-out infinite;
+        }
+        
+        .quantum-effect::before {
+            animation-delay: -1s;
+            transform: translateX(2px) translateY(2px);
+        }
+        
+        .quantum-effect::after {
+            animation-delay: -2s;
+            transform: translateX(-2px) translateY(-2px);
+        }
+        
+        @keyframes quantumShift {
+            0%, 100% { opacity: 0.7; transform: translateX(0) translateY(0); }
+            25% { opacity: 0.3; transform: translateX(3px) translateY(3px); }
+            50% { opacity: 0.5; transform: translateX(-3px) translateY(3px); }
+            75% { opacity: 0.4; transform: translateX(3px) translateY(-3px); }
+        }
+        
+        .neural-network {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+        
+        .neural-node {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #00ffff;
+            border-radius: 50%;
+            animation: neuralPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes neuralPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+        
+        .glitch-text {
+            position: relative;
+            animation: glitchText 2s infinite;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text::before {
+            animation: glitchBefore 2s infinite;
+            color: #ff0000;
+            z-index: -1;
+        }
+        
+        .glitch-text::after {
+            animation: glitchAfter 2s infinite;
+            color: #00ffff;
+            z-index: -2;
+        }
+        
+        @keyframes glitchText {
+            0%, 90%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+        
+        @keyframes glitchBefore {
+            0%, 90%, 100% { transform: translate(0); }
+            20% { transform: translate(2px, -2px); }
+            40% { transform: translate(-2px, 2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+        }
+        
+        @keyframes glitchAfter {
+            0%, 90%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, -2px); }
+            40% { transform: translate(2px, 2px); }
+            60% { transform: translate(2px, -2px); }
+            80% { transform: translate(-2px, 2px); }
+        }
+        
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform-origin: 50% 50%;
+        }
+        
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .floating-icon {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.3;
+            animation: floatIcon 15s linear infinite;
+        }
+        
+        @keyframes floatIcon {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        
+        .terminal-window {
+            background: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .terminal-header {
+            background: #333;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .terminal-content {
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            line-height: 1.6;
+        }
+        
+        .typing-cursor {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
     </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
- <body class="h-full smooth-scroll"><!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 navbar-blur border-b border-gray-200">
+ <body class="h-full"><!-- Navigation -->
+  <nav class="fixed top-0 w-full z-40 bg-white shadow-lg">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
-     <div class="flex-shrink-0"><button onclick="showPage('home')" id="nav-title" class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors cursor-pointer">Yusuf Avşar</button>
+     <div class="flex-shrink-0"><button onclick="showPage('home')" id="nav-title" class="text-2xl font-bold text-blue-600 hover:text-blue-800">Yusuf Avşar</button>
      </div>
      <div class="hidden md:block">
-      <div class="ml-10 flex items-baseline space-x-4"><button onclick="showPage('home')" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="home">Ana Sayfa</button> <button onclick="showPage('about')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="about">Hakkımda</button> <button onclick="showPage('services')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="services">Hizmetler</button> <button onclick="showPage('portfolio')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="portfolio">Portfolio</button> <button onclick="showPage('blog')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="blog">Blog</button> <button onclick="showPage('contact')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-page="contact">İletişim</button>
+      <div class="ml-10 flex items-baseline space-x-4"><button onclick="showPage('home')" class="nav-link text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Ana Sayfa</button> <button onclick="showPage('about')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Hakkımda</button> <button onclick="showPage('services')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Hizmetler</button> <button onclick="showPage('portfolio')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Portfolio</button> <button onclick="showPage('contact')" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">İletişim</button>
       </div>
      </div>
-     <div class="md:hidden"><button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
-       <svg class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-       </svg></button>
-     </div>
-    </div>
-   </div><!-- Mobile menu -->
-   <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><button onclick="showPage('home')" class="nav-link text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="home">Ana Sayfa</button> <button onclick="showPage('about')" class="nav-link text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="about">Hakkımda</button> <button onclick="showPage('services')" class="nav-link text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="services">Hizmetler</button> <button onclick="showPage('portfolio')" class="nav-link text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="portfolio">Portfolio</button> <button onclick="showPage('blog')" class="nav-link text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="blog">Blog</button> <button onclick="showPage('contact')" class="nav-link text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left" data-page="contact">İletişim</button>
     </div>
    </div>
-  </nav><!-- Main Content Container -->
+  </nav><!-- Main Content -->
   <div id="main-content" class="pt-16"><!-- Home Page -->
    <div id="page-home" class="page-content"><!-- Hero Section -->
-    <section class="gradient-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden">
-     <div class="absolute inset-0 bg-black opacity-20"></div>
-     <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="mb-6"><span class="inline-block px-4 py-2 bg-white bg-opacity-20 rounded-full text-sm font-semibold mb-4">🔒 Siber Güvenlik &amp; Teknoloji Uzmanı</span>
-      </div>
-      <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 fade-in">Teknolojinin Her Alanında Uzman Çözümler</h1>
-      <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 opacity-90 fade-in">Siber güvenlikten web geliştirmeye, 14 yıllık deneyimle kurumsal projelerinizi hayata geçiriyorum</p>
-      <div class="space-x-4 fade-in"><button onclick="openWhatsApp()" class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors cyber-glow">WhatsApp'tan İletişim</button> <button onclick="showPage('portfolio')" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-colors">400+ Projeyi İncele</button>
-      </div>
+    <section class="morphing-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden data-stream"><!-- Matrix Rain Effect -->
+     <div class="matrix-rain" id="matrix-rain"></div><!-- Neural Network Background -->
+     <div class="neural-network" id="neural-network"></div><!-- Floating Tech Icons -->
+     <div class="floating-icons" id="floating-icons"></div><!-- Particle System -->
+     <div class="absolute inset-0 pointer-events-none" id="particle-system"></div><!-- Floating Elements -->
+     <div class="absolute inset-0 pointer-events-none">
+      <div class="floating absolute top-20 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full cyber-border"></div>
+      <div class="floating absolute top-40 right-20 w-16 h-16 bg-blue-300 bg-opacity-20 rounded-full quantum-effect" style="animation-delay: -2s;"></div>
+      <div class="floating absolute bottom-40 left-20 w-12 h-12 bg-purple-300 bg-opacity-20 rounded-full cyber-border" style="animation-delay: -4s;"></div>
+      <div class="floating absolute bottom-20 right-10 w-24 h-24 bg-pink-300 bg-opacity-10 rounded-full quantum-effect" style="animation-delay: -1s;"></div>
      </div>
-    </section><!-- Quick Stats Section -->
-    <section class="py-20 bg-gray-900 text-white">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-       <div class="fade-in">
-        <div class="text-4xl font-bold text-blue-400 mb-2">
-         14+
+     <div class="max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10"><!-- Badge -->
+      <div class="mb-8 fade-in"><span class="inline-block glass-effect px-6 py-3 rounded-full text-lg font-bold pulse-glow"> 🔒 Siber Güvenlik &amp; Teknoloji Uzmanı </span>
+      </div>
+      <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 fade-in holographic neon-glow glitch-text" data-text="Teknolojinin Her Alanında Uzman Çözümler">Teknolojinin Her Alanında Uzman Çözümler</h1>
+      <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 opacity-90 fade-in max-w-4xl mx-auto leading-relaxed">Siber güvenlikten web geliştirmeye, 14 yıllık deneyimle kurumsal projelerinizi hayata geçiriyorum</p><!-- Enhanced Buttons -->
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center fade-in mb-12"><button onclick="openWhatsApp()" id="whatsapp-button" class="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all transform hover:scale-105 shadow-2xl pulse-glow"> 💬 WhatsApp'tan İletişim </button> <button onclick="showPage('portfolio')" id="portfolio-button" class="glass-effect border-2 border-white text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105 shadow-2xl"> 🚀 400+ Projeyi İncele </button>
+      </div><!-- Enhanced Stats -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 fade-in">
+       <div class="glass-effect rounded-2xl p-8 interactive-card hover:scale-105 transition-all">
+        <div class="text-4xl font-bold mb-2 text-gradient counter" data-target="14">
+         0
         </div>
-        <div class="text-gray-300">
+        <div class="text-lg opacity-90 font-semibold">
          Yıl Deneyim
         </div>
        </div>
-       <div class="fade-in">
-        <div class="text-4xl font-bold text-green-400 mb-2">
-         400+
+       <div class="glass-effect rounded-2xl p-8 interactive-card hover:scale-105 transition-all">
+        <div class="text-4xl font-bold mb-2 text-gradient counter" data-target="400">
+         0
         </div>
-        <div class="text-gray-300">
-         Tamamlanan Proje
+        <div class="text-lg opacity-90 font-semibold">
+         Başarılı Proje
         </div>
        </div>
-       <div class="fade-in">
-        <div class="text-4xl font-bold text-purple-400 mb-2">
+       <div class="glass-effect rounded-2xl p-8 interactive-card hover:scale-105 transition-all">
+        <div class="text-4xl font-bold mb-2 text-gradient">
          24/7
         </div>
-        <div class="text-gray-300">
-         Acil Destek
+        <div class="text-lg opacity-90 font-semibold">
+         Destek
         </div>
        </div>
-       <div class="fade-in">
-        <div class="text-4xl font-bold text-red-400 mb-2">
-         🌍
+       <div class="glass-effect rounded-2xl p-8 interactive-card hover:scale-105 transition-all">
+        <div class="text-4xl font-bold mb-2 text-gradient counter" data-target="100">
+         0
         </div>
-        <div class="text-gray-300">
-         Uluslararası Hizmet
+        <div class="text-lg opacity-90 font-semibold">
+         % Başarı
         </div>
        </div>
-      </div>
-     </div>
-    </section><!-- Quick Overview Section -->
-    <section class="py-20 bg-white">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl font-bold text-gray-900 mb-8">Uzmanlık Alanlarım</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-       <div class="p-6 card-hover">
-        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-         <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-         </svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-2">Siber Güvenlik</h3>
-        <p class="text-gray-600">Penetration testing, güvenlik denetimi ve koruma sistemleri</p>
+      </div><!-- Technology Icons -->
+      <div class="mt-16 flex justify-center space-x-8 fade-in">
+       <div class="tech-icon text-4xl opacity-70 hover:opacity-100">
+        🔒
        </div>
-       <div class="p-6 card-hover">
-        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-         </svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-2">Full Stack Geliştirme</h3>
-        <p class="text-gray-600">Web uygulamaları, mobil uygulamalar ve sistem entegrasyonları</p>
+       <div class="tech-icon text-4xl opacity-70 hover:opacity-100">
+        ⚛️
        </div>
-       <div class="p-6 card-hover">
-        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-         <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-         </svg>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-2">Altyapı &amp; DevOps</h3>
-        <p class="text-gray-600">Sunucu yönetimi, cloud çözümleri ve sistem optimizasyonu</p>
+       <div class="tech-icon text-4xl opacity-70 hover:opacity-100">
+        🐍
+       </div>
+       <div class="tech-icon text-4xl opacity-70 hover:opacity-100">
+        ☁️
+       </div>
+       <div class="tech-icon text-4xl opacity-70 hover:opacity-100">
+        📱
+       </div>
+       <div class="tech-icon text-4xl opacity-70 hover:opacity-100">
+        🤖
        </div>
       </div>
      </div>
     </section>
    </div><!-- About Page -->
    <div id="page-about" class="page-content hidden">
-    <section class="py-20 bg-gray-50 min-h-screen">
+    <section class="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 min-h-screen">
      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-       <h1 id="about-title" class="text-5xl font-bold text-gray-900 mb-6 fade-in">Hakkımda</h1>
-       <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">2010 yılında merakla başladığım teknoloji yolculuğum, bugün 400+ başarılı projeyle devam ediyor.</p>
+       <h1 id="about-title" class="text-6xl font-bold text-gradient mb-8 scroll-reveal">Hakkımda</h1>
+       <p class="text-2xl text-gray-600 max-w-5xl mx-auto leading-relaxed scroll-reveal">2010 yılında merakla başladığım teknoloji yolculuğum, bugün 400+ başarılı projeyle devam ediyor. Teknoloji benim için sadece bir meslek değil, aynı zamanda tutkum ve yaşam felsefem.</p>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-       <div class="fade-in">
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-         <h3 class="text-2xl font-bold mb-6">Profesyonel Yolculuğum</h3>
-         <div class="space-y-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+       <div class="scroll-reveal">
+        <div class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-10 text-white relative overflow-hidden interactive-card">
+         <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-16 -mt-16"></div>
+         <h3 class="text-4xl font-bold mb-8">Profesyonel Yolculuğum</h3>
+         <div class="space-y-6">
           <div class="flex items-center">
-           <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>2010: Teknolojiye merak ile başlangıç</span>
+           <div class="w-6 h-6 bg-white rounded-full mr-6 pulse-glow"></div><span class="text-xl font-semibold">2010: Teknolojiye merak ile başlangıç</span>
           </div>
           <div class="flex items-center">
-           <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>2014: İlk profesyonel projeler</span>
+           <div class="w-6 h-6 bg-white rounded-full mr-6 pulse-glow"></div><span class="text-xl font-semibold">2014: İlk profesyonel projeler</span>
           </div>
           <div class="flex items-center">
-           <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>2024: 400+ başarılı proje</span>
+           <div class="w-6 h-6 bg-white rounded-full mr-6 pulse-glow"></div><span class="text-xl font-semibold">2018: Siber güvenlik uzmanlığı</span>
           </div>
           <div class="flex items-center">
-           <div class="w-3 h-3 bg-white rounded-full mr-3"></div><span>MIT &amp; Harvard sertifikaları</span>
+           <div class="w-6 h-6 bg-white rounded-full mr-6 pulse-glow"></div><span class="text-xl font-semibold">2024: 400+ başarılı proje</span>
+          </div>
+          <div class="flex items-center">
+           <div class="w-6 h-6 bg-white rounded-full mr-6 pulse-glow"></div><span class="text-xl font-semibold">MIT &amp; Harvard sertifikaları</span>
           </div>
          </div>
         </div>
        </div>
-       <div class="fade-in">
-        <h3 class="text-2xl font-bold text-gray-900 mb-6">Çalışma Felsefem</h3>
-        <div class="space-y-4">
+       <div class="scroll-reveal">
+        <h3 class="text-4xl font-bold text-gray-900 mb-8">Çalışma Felsefem</h3>
+        <div class="space-y-8">
          <div class="flex items-start">
-          <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1"><span class="text-white text-sm">✓</span>
+          <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mr-6 mt-2"><span class="text-white text-lg font-bold">✓</span>
           </div>
           <div>
-           <h4 class="font-semibold text-gray-900">Hobi Tutkusu</h4>
-           <p class="text-gray-600">Teknoloji benim için bir hobi. Bu tutku, her projede mükemmellik arayışımı besliyor.</p>
+           <h4 class="font-bold text-gray-900 text-2xl mb-3">🎯 Hobi Tutkusu</h4>
+           <p class="text-gray-600 text-xl leading-relaxed">Teknoloji benim için bir hobi. Bu tutku, her projede mükemmellik arayışımı besliyor ve sürekli öğrenme motivasyonumu yüksek tutuyor.</p>
           </div>
          </div>
          <div class="flex items-start">
-          <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1"><span class="text-white text-sm">✓</span>
+          <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mr-6 mt-2"><span class="text-white text-lg font-bold">✓</span>
           </div>
           <div>
-           <h4 class="font-semibold text-gray-900">Sınırsız Uzmanlık</h4>
-           <p class="text-gray-600">Kendimi hiçbir alanda kısıtlamam. Her teknolojide uzmanlaşmaya odaklanırım.</p>
+           <h4 class="font-bold text-gray-900 text-2xl mb-3">🚀 Sınırsız Uzmanlık</h4>
+           <p class="text-gray-600 text-xl leading-relaxed">Kendimi hiçbir alanda kısıtlamam. Frontend'den backend'e, mobil'den siber güvenliğe kadar her teknolojide uzmanlaşmaya odaklanırım.</p>
           </div>
          </div>
          <div class="flex items-start">
-          <div class="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1"><span class="text-white text-sm">✓</span>
+          <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-6 mt-2"><span class="text-white text-lg font-bold">✓</span>
           </div>
           <div>
-           <h4 class="font-semibold text-gray-900">Kurumsal Odak</h4>
-           <p class="text-gray-600">Sadece kurumsal projelerle çalışır, uzaktan ekip yönetimi yaparım.</p>
+           <h4 class="font-bold text-gray-900 text-2xl mb-3">🏢 Kurumsal Odak</h4>
+           <p class="text-gray-600 text-xl leading-relaxed">Sadece kurumsal projelerle çalışır, uzaktan ekip yönetimi yaparım. Bu sayede büyük ölçekli projelerde derinlemesine uzmanlaşabiliyorum.</p>
           </div>
          </div>
         </div>
        </div>
-      </div><!-- Work Schedule -->
-      <div class="bg-white rounded-2xl p-8 shadow-lg mb-8 fade-in">
-       <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Çalışma Programım</h3>
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-         <h4 class="text-lg font-semibold text-gray-900 mb-4">🕒 Aktif Destek Saatleri</h4>
-         <div class="space-y-2 text-gray-600">
-          <p><strong>Pazartesi, Çarşamba, Cuma</strong></p>
-          <p>10:00 - 16:00 arası</p>
-          <p class="text-sm text-blue-600">Bu saatlerde doğrudan benimle iletişim kurabilirsiniz</p>
-         </div>
+      </div><!-- Enhanced Skills Section -->
+      <div class="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 rounded-3xl p-12 shadow-2xl scroll-reveal interactive-card relative overflow-hidden"><!-- Terminal Window -->
+       <div class="terminal-window mb-12">
+        <div class="terminal-header">
+         <div class="terminal-button bg-red-500"></div>
+         <div class="terminal-button bg-yellow-500"></div>
+         <div class="terminal-button bg-green-500"></div><span class="text-white text-sm ml-4">yusuf@cybersec:~$</span>
         </div>
-        <div>
-         <h4 class="text-lg font-semibold text-gray-900 mb-4">🤖 AI Destek Sistemi</h4>
-         <div class="space-y-2 text-gray-600">
-          <p><strong>Diğer günler</strong></p>
-          <p>AI sistemim sizinle ilgilenir</p>
-          <p class="text-sm text-red-600">Acil durumlar için 7/24 ulaşabilirsiniz</p>
+        <div class="terminal-content">
+         <div class="mb-2">
+          $ whoami
+         </div>
+         <div class="mb-2 text-cyan-400">
+          Yusuf Avşar - Cyber Security Expert
+         </div>
+         <div class="mb-2">
+          $ cat skills.json
+         </div>
+         <div class="text-green-400">
+          {<br>
+           &nbsp;&nbsp;"expertise": "14+ years",<br>
+           &nbsp;&nbsp;"projects": "400+",<br>
+           &nbsp;&nbsp;"specialization": ["cybersecurity", "fullstack", "devops"]<br>
+           }<br>
+         </div>
+         <div class="mt-4">
+          $ <span class="typing-cursor">|</span>
          </div>
         </div>
        </div>
-      </div><!-- Skills Section -->
-      <div class="bg-white rounded-2xl p-8 shadow-lg fade-in">
-       <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">Teknik Yetkinliklerim</h3>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-         <h4 class="text-xl font-semibold text-gray-900 mb-4">🔒 Siber Güvenlik</h4>
-         <div class="space-y-3">
-          <div class="flex justify-between items-center"><span class="text-gray-700">Penetration Testing</span>
-           <div class="w-24 bg-gray-200 rounded-full h-2">
-            <div class="skill-bar h-2 rounded-full" style="--skill-width: 95%; width: 95%"></div>
+       <h3 class="text-5xl font-bold text-white mb-12 text-center holographic">🎯 Teknik Yetkinliklerim</h3>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="skill-card rounded-2xl p-8 cyber-border">
+         <h4 class="text-3xl font-bold text-white mb-8 flex items-center neon-glow">🔒 Siber Güvenlik</h4>
+         <div class="space-y-8">
+          <div class="skill-item">
+           <div class="flex justify-between items-center mb-4"><span class="text-gray-300 font-bold">Penetration Testing</span>
+            <div class="flex items-center">
+             <svg class="progress-ring w-16 h-16" viewbox="0 0 120 120"><circle class="progress-ring-circle" stroke="#1f2937" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" /> <circle class="progress-ring-circle" stroke="#00ffff" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="327" stroke-dashoffset="16" style="filter: drop-shadow(0 0 10px #00ffff);" />
+             </svg><span class="text-cyan-400 font-bold text-xl ml-2">95%</span>
+            </div>
            </div>
           </div>
-          <div class="flex justify-between items-center"><span class="text-gray-700">Network Security</span>
-           <div class="w-24 bg-gray-200 rounded-full h-2">
-            <div class="skill-bar h-2 rounded-full" style="--skill-width: 92%; width: 92%"></div>
+          <div class="skill-item">
+           <div class="flex justify-between items-center mb-4"><span class="text-gray-300 font-bold">Network Security</span>
+            <div class="flex items-center">
+             <svg class="progress-ring w-16 h-16" viewbox="0 0 120 120"><circle class="progress-ring-circle" stroke="#1f2937" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" /> <circle class="progress-ring-circle" stroke="#ff0080" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="327" stroke-dashoffset="26" style="filter: drop-shadow(0 0 10px #ff0080);" />
+             </svg><span class="text-pink-400 font-bold text-xl ml-2">92%</span>
+            </div>
            </div>
           </div>
-          <div class="flex justify-between items-center"><span class="text-gray-700">Malware Analysis</span>
-           <div class="w-24 bg-gray-200 rounded-full h-2">
-            <div class="skill-bar h-2 rounded-full" style="--skill-width: 88%; width: 88%"></div>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div>
-         <h4 class="text-xl font-semibold text-gray-900 mb-4">💻 Geliştirme</h4>
-         <div class="space-y-3">
-          <div class="flex justify-between items-center"><span class="text-gray-700">Full Stack Development</span>
-           <div class="w-24 bg-gray-200 rounded-full h-2">
-            <div class="skill-bar h-2 rounded-full" style="--skill-width: 96%; width: 96%"></div>
-           </div>
-          </div>
-          <div class="flex justify-between items-center"><span class="text-gray-700">Mobile Development</span>
-           <div class="w-24 bg-gray-200 rounded-full h-2">
-            <div class="skill-bar h-2 rounded-full" style="--skill-width: 90%; width: 90%"></div>
-           </div>
-          </div>
-          <div class="flex justify-between items-center"><span class="text-gray-700">API Development</span>
-           <div class="w-24 bg-gray-200 rounded-full h-2">
-            <div class="skill-bar h-2 rounded-full" style="--skill-width: 94%; width: 94%"></div>
+          <div class="skill-item">
+           <div class="flex justify-between items-center mb-4"><span class="text-gray-300 font-bold">Malware Analysis</span>
+            <div class="flex items-center">
+             <svg class="progress-ring w-16 h-16" viewbox="0 0 120 120"><circle class="progress-ring-circle" stroke="#1f2937" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" /> <circle class="progress-ring-circle" stroke="#8000ff" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="327" stroke-dashoffset="39" style="filter: drop-shadow(0 0 10px #8000ff);" />
+             </svg><span class="text-purple-400 font-bold text-xl ml-2">88%</span>
+            </div>
            </div>
           </div>
          </div>
         </div>
-        <div>
-         <h4 class="text-xl font-semibold text-gray-900 mb-4">🏗️ Altyapı</h4>
-         <div class="space-y-3">
-          <div class="flex justify-between items-center"><span class="text-gray-700">Cloud Architecture</span>
-           <div class="w-24 bg-gray-200 rounded-full h-2">
-            <div class="skill-bar h-2 rounded-full" style="--skill-width: 91%; width: 91%"></div>
+        <div class="skill-card rounded-2xl p-8 quantum-effect">
+         <h4 class="text-3xl font-bold text-white mb-8 flex items-center neon-glow">💻 Geliştirme</h4>
+         <div class="space-y-8">
+          <div class="skill-item">
+           <div class="flex justify-between items-center mb-4"><span class="text-gray-300 font-bold">Full Stack Development</span>
+            <div class="flex items-center">
+             <svg class="progress-ring w-16 h-16" viewbox="0 0 120 120"><circle class="progress-ring-circle" stroke="#1f2937" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" /> <circle class="progress-ring-circle" stroke="#00ff80" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="327" stroke-dashoffset="13" style="filter: drop-shadow(0 0 10px #00ff80);" />
+             </svg><span class="text-green-400 font-bold text-xl ml-2">96%</span>
+            </div>
            </div>
           </div>
-          <div class="flex justify-between items-center"><span class="text-gray-700">DevOps</span>
-           <div class="w-24 bg-gray-200 rounded-full h-2">
-            <div class="skill-bar h-2 rounded-full" style="--skill-width: 87%; width: 87%"></div>
+          <div class="skill-item">
+           <div class="flex justify-between items-center mb-4"><span class="text-gray-300 font-bold">Mobile Development</span>
+            <div class="flex items-center">
+             <svg class="progress-ring w-16 h-16" viewbox="0 0 120 120"><circle class="progress-ring-circle" stroke="#1f2937" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" /> <circle class="progress-ring-circle" stroke="#ff8000" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="327" stroke-dashoffset="33" style="filter: drop-shadow(0 0 10px #ff8000);" />
+             </svg><span class="text-orange-400 font-bold text-xl ml-2">90%</span>
+            </div>
            </div>
           </div>
-          <div class="flex justify-between items-center"><span class="text-gray-700">System Administration</span>
-           <div class="w-24 bg-gray-200 rounded-full h-2">
-            <div class="skill-bar h-2 rounded-full" style="--skill-width: 93%; width: 93%"></div>
+          <div class="skill-item">
+           <div class="flex justify-between items-center mb-4"><span class="text-gray-300 font-bold">API Development</span>
+            <div class="flex items-center">
+             <svg class="progress-ring w-16 h-16" viewbox="0 0 120 120"><circle class="progress-ring-circle" stroke="#1f2937" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" /> <circle class="progress-ring-circle" stroke="#0080ff" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="327" stroke-dashoffset="20" style="filter: drop-shadow(0 0 10px #0080ff);" />
+             </svg><span class="text-blue-400 font-bold text-xl ml-2">94%</span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="skill-card rounded-2xl p-8 cyber-border">
+         <h4 class="text-3xl font-bold text-white mb-8 flex items-center neon-glow">🏗️ Altyapı</h4>
+         <div class="space-y-8">
+          <div class="skill-item">
+           <div class="flex justify-between items-center mb-4"><span class="text-gray-300 font-bold">Cloud Architecture</span>
+            <div class="flex items-center">
+             <svg class="progress-ring w-16 h-16" viewbox="0 0 120 120"><circle class="progress-ring-circle" stroke="#1f2937" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" /> <circle class="progress-ring-circle" stroke="#ffff00" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="327" stroke-dashoffset="29" style="filter: drop-shadow(0 0 10px #ffff00);" />
+             </svg><span class="text-yellow-400 font-bold text-xl ml-2">91%</span>
+            </div>
+           </div>
+          </div>
+          <div class="skill-item">
+           <div class="flex justify-between items-center mb-4"><span class="text-gray-300 font-bold">DevOps</span>
+            <div class="flex items-center">
+             <svg class="progress-ring w-16 h-16" viewbox="0 0 120 120"><circle class="progress-ring-circle" stroke="#1f2937" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" /> <circle class="progress-ring-circle" stroke="#ff4080" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="327" stroke-dashoffset="42" style="filter: drop-shadow(0 0 10px #ff4080);" />
+             </svg><span class="text-rose-400 font-bold text-xl ml-2">87%</span>
+            </div>
+           </div>
+          </div>
+          <div class="skill-item">
+           <div class="flex justify-between items-center mb-4"><span class="text-gray-300 font-bold">System Administration</span>
+            <div class="flex items-center">
+             <svg class="progress-ring w-16 h-16" viewbox="0 0 120 120"><circle class="progress-ring-circle" stroke="#1f2937" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" /> <circle class="progress-ring-circle" stroke="#80ff00" stroke-width="8" fill="transparent" r="52" cx="60" cy="60" stroke-dasharray="327" stroke-dashoffset="23" style="filter: drop-shadow(0 0 10px #80ff00);" />
+             </svg><span class="text-lime-400 font-bold text-xl ml-2">93%</span>
+            </div>
            </div>
           </div>
          </div>
@@ -335,125 +788,62 @@
     <section class="py-20 bg-white min-h-screen">
      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-       <h1 id="services-title" class="text-5xl font-bold text-gray-900 mb-6 fade-in">Hizmetlerim</h1>
-       <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">Kurumsal müşterilerime teknolojinin her alanında profesyonel çözümler sunuyorum.</p>
-      </div><!-- Payment Info -->
-      <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-12 fade-in">
-       <div class="flex items-center mb-4">
-        <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <h3 class="text-lg font-semibold text-blue-900">Ödeme Koşulları</h3>
-       </div>
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-blue-800">
-        <div class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span> <span>%25 Peşin ödeme</span>
-        </div>
-        <div class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span> <span>%25 Proje yarısında</span>
-        </div>
-        <div class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span> <span>%50 Proje tesliminde</span>
-        </div>
-       </div>
+       <h1 id="services-title" class="text-5xl font-bold text-gray-900 mb-6">Hizmetlerim</h1>
+       <p class="text-xl text-gray-600 max-w-4xl mx-auto">Kurumsal müşterilerime teknolojinin her alanında modern çözümler sunuyorum.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-red-500">
-        <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-6">
-         <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-         </svg>
+       <div class="bg-white rounded-lg shadow-lg p-8 card-hover border-l-4 border-red-500">
+        <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-6"><span class="text-2xl">🔒</span>
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Siber Güvenlik Denetimi</h3>
-        <p class="text-gray-600 mb-6">Kurumsal altyapınızın güvenlik açıklarını tespit eder ve çözüm önerileri sunarım.</p>
-        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-         <li>• Penetration Testing</li>
-         <li>• Güvenlik Açığı Taraması</li>
-         <li>• Risk Analizi ve Raporlama</li>
-         <li>• Güvenlik Politikaları</li>
-        </ul>
-        <div class="text-sm text-blue-600 font-semibold">
-         ⏱️ Süre: 2-4 hafta
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Siber Güvenlik Denetimi</h3>
+        <p class="text-gray-600 mb-6">Kurumsal altyapınızın güvenlik açıklarını tespit eder ve kapsamlı çözüm önerileri sunarım.</p>
+        <div class="text-2xl font-bold text-red-600">
+         50K-150K₺
         </div>
        </div>
-       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-blue-500">
-        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-         </svg>
+       <div class="bg-white rounded-lg shadow-lg p-8 card-hover border-l-4 border-blue-500">
+        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6"><span class="text-2xl">💻</span>
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Web Uygulama Geliştirme</h3>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Web Uygulama Geliştirme</h3>
         <p class="text-gray-600 mb-6">Modern teknolojilerle kurumsal web uygulamaları ve portallar geliştiriyorum.</p>
-        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-         <li>• React, Vue.js, Angular</li>
-         <li>• Node.js, Python, PHP</li>
-         <li>• Responsive Tasarım</li>
-         <li>• API Entegrasyonları</li>
-        </ul>
-        <div class="text-sm text-blue-600 font-semibold">
-         ⏱️ Süre: 4-12 hafta
+        <div class="text-2xl font-bold text-blue-600">
+         75K-300K₺
         </div>
        </div>
-       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-green-500">
-        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-         </svg>
+       <div class="bg-white rounded-lg shadow-lg p-8 card-hover border-l-4 border-green-500">
+        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6"><span class="text-2xl">📱</span>
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Mobil Uygulama</h3>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Mobil Uygulama</h3>
         <p class="text-gray-600 mb-6">iOS ve Android platformları için native ve cross-platform uygulamalar.</p>
-        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-         <li>• React Native</li>
-         <li>• Flutter</li>
-         <li>• Native iOS/Android</li>
-         <li>• Progressive Web Apps</li>
-        </ul>
-        <div class="text-sm text-blue-600 font-semibold">
-         ⏱️ Süre: 6-16 hafta
+        <div class="text-2xl font-bold text-green-600">
+         100K-400K₺
         </div>
        </div>
-       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-purple-500">
-        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-         <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-         </svg>
+       <div class="bg-white rounded-lg shadow-lg p-8 card-hover border-l-4 border-purple-500">
+        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6"><span class="text-2xl">🏗️</span>
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Altyapı &amp; DevOps</h3>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Altyapı &amp; DevOps</h3>
         <p class="text-gray-600 mb-6">Sunucu kurulumu, cloud migrasyonu ve sistem optimizasyonu hizmetleri.</p>
-        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-         <li>• AWS, Azure, Google Cloud</li>
-         <li>• Docker &amp; Kubernetes</li>
-         <li>• CI/CD Pipeline</li>
-         <li>• Monitoring &amp; Logging</li>
-        </ul>
-        <div class="text-sm text-blue-600 font-semibold">
-         ⏱️ Süre: 2-8 hafta
+        <div class="text-2xl font-bold text-purple-600">
+         60K-200K₺
         </div>
        </div>
-       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-yellow-500">
-        <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
-         <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-         </svg>
+       <div class="bg-white rounded-lg shadow-lg p-8 card-hover border-l-4 border-yellow-500">
+        <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-6"><span class="text-2xl">🏢</span>
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-4">ERP &amp; Kurumsal Sistemler</h3>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">ERP &amp; Kurumsal Sistemler</h3>
         <p class="text-gray-600 mb-6">Büyük ölçekli kurumsal yazılımlar ve iş süreçleri yönetim sistemleri.</p>
-        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-         <li>• Özel ERP Çözümleri</li>
-         <li>• CRM Sistemleri</li>
-         <li>• İş Süreçleri Otomasyonu</li>
-         <li>• Veri Entegrasyonu</li>
-        </ul>
-        <div class="text-sm text-blue-600 font-semibold">
-         ⏱️ Süre: 12-24 hafta
+        <div class="text-2xl font-bold text-yellow-600">
+         200K-800K₺
         </div>
        </div>
-       <div class="bg-white rounded-xl shadow-lg p-8 card-hover fade-in border-l-4 border-indigo-500">
-        <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
-         <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
-         </svg>
+       <div class="bg-white rounded-lg shadow-lg p-8 card-hover border-l-4 border-indigo-500">
+        <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6"><span class="text-2xl">🎓</span>
         </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Danışmanlık &amp; Eğitim</h3>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Danışmanlık &amp; Eğitim</h3>
         <p class="text-gray-600 mb-6">Teknoloji stratejisi danışmanlığı ve ekip eğitimleri veriyorum.</p>
-        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-         <li>• Teknoloji Stratejisi</li>
-         <li>• Kod İnceleme</li>
-         <li>• Ekip Eğitimleri</li>
-         <li>• Best Practices</li>
-        </ul>
-        <div class="text-sm text-blue-600 font-semibold">
-         ⏱️ Süre: 1-4 hafta
+        <div class="text-2xl font-bold text-indigo-600">
+         25K-100K₺
         </div>
        </div>
       </div>
@@ -464,1078 +854,700 @@
     <section class="py-20 bg-gray-50 min-h-screen">
      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-       <h1 class="text-5xl font-bold text-gray-900 mb-6 fade-in">Portfolio</h1>
-       <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">400+ başarılı projeden seçilmiş örnekler ve kurumsal çözümlerim.</p>
+       <h1 class="text-5xl font-bold text-gray-900 mb-6">Portfolio</h1>
+       <p class="text-xl text-gray-600 max-w-4xl mx-auto">400+ başarılı projeden seçilmiş örnekler ve kurumsal çözümlerim.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-        <div class="h-48 bg-gradient-to-r from-red-500 to-red-700 flex items-center justify-center">
-         <div class="text-center text-white">
-          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg><span class="text-lg font-semibold">Siber Güvenlik Projesi</span>
-         </div>
+       <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+        <div class="h-48 bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center"><span class="text-white text-4xl">🔒</span>
         </div>
         <div class="p-6">
-         <h3 class="text-xl font-bold text-gray-900 mb-2">Kurumsal Güvenlik Denetimi</h3>
+         <h3 class="text-xl font-bold text-gray-900 mb-3">Kurumsal Güvenlik Denetimi</h3>
          <p class="text-gray-600 mb-4">Büyük ölçekli finans kurumu için kapsamlı siber güvenlik denetimi ve penetration testing projesi.</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Penetration Testing</span> <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">Risk Analysis</span> <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Security Audit</span>
-         </div>
-         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Tamamlandı: 2024</span> <span class="text-sm font-semibold text-green-600">✓ Başarılı</span>
+         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">2024</span> <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">✓ Başarılı</span>
          </div>
         </div>
        </div>
-       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-        <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
-         <div class="text-center text-white">
-          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg><span class="text-lg font-semibold">ERP Sistemi</span>
-         </div>
+       <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+        <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center"><span class="text-white text-4xl">🏢</span>
         </div>
         <div class="p-6">
-         <h3 class="text-xl font-bold text-gray-900 mb-2">Kurumsal ERP Çözümü</h3>
+         <h3 class="text-xl font-bold text-gray-900 mb-3">Kurumsal ERP Çözümü</h3>
          <p class="text-gray-600 mb-4">500+ çalışanlı üretim şirketi için özel geliştirilmiş ERP sistemi ve süreç otomasyonu.</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span> <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Node.js</span> <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">PostgreSQL</span>
-         </div>
-         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Süre: 6 ay</span> <span class="text-sm font-semibold text-green-600">✓ Aktif Kullanımda</span>
+         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">6 ay</span> <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">✓ Aktif</span>
          </div>
         </div>
        </div>
-       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-        <div class="h-48 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
-         <div class="text-center text-white">
-          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg><span class="text-lg font-semibold">Mobil Uygulama</span>
-         </div>
+       <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+        <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center"><span class="text-white text-4xl">📱</span>
         </div>
         <div class="p-6">
-         <h3 class="text-xl font-bold text-gray-900 mb-2">Kurumsal Mobil Platform</h3>
+         <h3 class="text-xl font-bold text-gray-900 mb-3">Kurumsal Mobil Platform</h3>
          <p class="text-gray-600 mb-4">Lojistik şirketi için saha ekipleri ve müşteri takip sistemi mobil uygulaması.</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React Native</span> <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Firebase</span> <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">GPS Tracking</span>
-         </div>
-         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Platform: iOS/Android</span> <span class="text-sm font-semibold text-green-600">✓ 10K+ Kullanıcı</span>
-         </div>
-        </div>
-       </div>
-       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-        <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center">
-         <div class="text-center text-white">
-          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-          </svg><span class="text-lg font-semibold">Cloud Migrasyonu</span>
-         </div>
-        </div>
-        <div class="p-6">
-         <h3 class="text-xl font-bold text-gray-900 mb-2">AWS Cloud Migration</h3>
-         <p class="text-gray-600 mb-4">Geleneksel altyapıdan AWS bulut sistemine tam migrasyon ve DevOps süreçleri kurulumu.</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">AWS</span> <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Docker</span> <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Kubernetes</span>
-         </div>
-         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Maliyet: %40 azalma</span> <span class="text-sm font-semibold text-green-600">✓ Performans: %300 artış</span>
-         </div>
-        </div>
-       </div>
-       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-        <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center">
-         <div class="text-center text-white">
-          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-          </svg><span class="text-lg font-semibold">Veri Analizi</span>
-         </div>
-        </div>
-        <div class="p-6">
-         <h3 class="text-xl font-bold text-gray-900 mb-2">Big Data Analytics Platform</h3>
-         <p class="text-gray-600 mb-4">E-ticaret şirketi için gerçek zamanlı veri analizi ve raporlama dashboard sistemi.</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">Python</span> <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Apache Spark</span> <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Elasticsearch</span>
-         </div>
-         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Veri: 1TB+/gün</span> <span class="text-sm font-semibold text-green-600">✓ Real-time Processing</span>
-         </div>
-        </div>
-       </div>
-       <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover fade-in">
-        <div class="h-48 bg-gradient-to-r from-indigo-500 to-indigo-700 flex items-center justify-center">
-         <div class="text-center text-white">
-          <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
-          </svg><span class="text-lg font-semibold">API Gateway</span>
-         </div>
-        </div>
-        <div class="p-6">
-         <h3 class="text-xl font-bold text-gray-900 mb-2">Mikroservis Mimarisi</h3>
-         <p class="text-gray-600 mb-4">Bankacılık sektörü için yüksek güvenlikli mikroservis mimarisi ve API gateway sistemi.</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Node.js</span> <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Kong Gateway</span> <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full">Redis</span>
-         </div>
-         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">Throughput: 100K req/s</span> <span class="text-sm font-semibold text-green-600">✓ 99.9% Uptime</span>
+         <div class="flex justify-between items-center"><span class="text-sm text-gray-500">iOS/Android</span> <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">✓ 10K+ Kullanıcı</span>
          </div>
         </div>
        </div>
       </div>
      </div>
     </section>
-   </div><!-- Blog Page -->
-   <div id="page-blog" class="page-content hidden">
-    <section class="py-20 bg-white min-h-screen">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-       <h1 class="text-5xl font-bold text-gray-900 mb-6 fade-in">Blog</h1>
-       <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">Siber güvenlik ve teknoloji dünyasından güncel yazılar, deneyimler ve ipuçları.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in blog-article" data-article="cyber-security-2024">
-        <div class="h-48 bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">🔒 Siber Güvenlik</span>
-        </div>
-        <div class="p-6">
-         <div class="flex items-center text-sm text-gray-500 mb-3"><span>15 Aralık 2024</span> <span class="mx-2">•</span> <span>8 dk okuma</span>
-         </div>
-         <h3 class="text-xl font-bold text-gray-900 mb-3">2024'te Siber Güvenlik Trendleri</h3>
-         <p class="text-gray-600 mb-4">Bu yıl siber güvenlik dünyasında öne çıkan tehditler, savunma stratejileri ve gelecek öngörüleri. AI destekli saldırılar, Zero Trust mimarisi ve quantum güvenlik...</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">Penetration Testing</span> <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded">Zero Trust</span>
-         </div><button class="read-more text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
-        </div>
-       </article>
-       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in blog-article" data-article="cloud-comparison-2024">
-        <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">☁️ Cloud Computing</span>
-        </div>
-        <div class="p-6">
-         <div class="flex items-center text-sm text-gray-500 mb-3"><span>12 Aralık 2024</span> <span class="mx-2">•</span> <span>6 dk okuma</span>
-         </div>
-         <h3 class="text-xl font-bold text-gray-900 mb-3">AWS vs Azure vs Google Cloud</h3>
-         <p class="text-gray-600 mb-4">Büyük cloud sağlayıcılarının detaylı karşılaştırması. Maliyet analizi, performans testleri ve hangi durumda hangisini seçmeniz gerektiği konusunda pratik öneriler...</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded">AWS</span> <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Azure</span>
-         </div><button class="read-more text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
-        </div>
-       </article>
-       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in blog-article" data-article="react-native-flutter-2024">
-        <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">📱 Mobil Geliştirme</span>
-        </div>
-        <div class="p-6">
-         <div class="flex items-center text-sm text-gray-500 mb-3"><span>10 Aralık 2024</span> <span class="mx-2">•</span> <span>5 dk okuma</span>
-         </div>
-         <h3 class="text-xl font-bold text-gray-900 mb-3">React Native vs Flutter 2024</h3>
-         <p class="text-gray-600 mb-4">Cross-platform mobil geliştirme framework'lerinin güncel karşılaştırması. Performans testleri, geliştirici deneyimi ve proje seçim kriterleri...</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">React Native</span> <span class="px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded">Flutter</span>
-         </div><button class="read-more text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
-        </div>
-       </article>
-       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in blog-article" data-article="ai-cyber-security">
-        <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">🤖 AI &amp; Machine Learning</span>
-        </div>
-        <div class="p-6">
-         <div class="flex items-center text-sm text-gray-500 mb-3"><span>8 Aralık 2024</span> <span class="mx-2">•</span> <span>10 dk okuma</span>
-         </div>
-         <h3 class="text-xl font-bold text-gray-900 mb-3">AI Destekli Siber Güvenlik</h3>
-         <p class="text-gray-600 mb-4">Yapay zeka teknolojilerinin siber güvenlik alanındaki devrimsel uygulamaları. Anomali tespiti, otomatik tehdit analizi ve gelecek öngörüleri...</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">Machine Learning</span> <span class="px-2 py-1 bg-pink-100 text-pink-800 text-xs rounded">AI Security</span>
-         </div><button class="read-more text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
-        </div>
-       </article>
-       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in blog-article" data-article="web-performance-optimization">
-        <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center"><span class="text-white text-lg font-semibold">⚡ Performance</span>
-        </div>
-        <div class="p-6">
-         <div class="flex items-center text-sm text-gray-500 mb-3"><span>5 Aralık 2024</span> <span class="mx-2">•</span> <span>7 dk okuma</span>
-         </div>
-         <h3 class="text-xl font-bold text-gray-900 mb-3">Web Uygulaması Optimizasyonu</h3>
-         <p class="text-gray-600 mb-4">Yüksek trafikli web uygulamalarında performans optimizasyonu. Caching stratejileri, database optimizasyonu ve CDN kullanımı ile hız artırma teknikleri...</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded">Performance</span> <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Optimization</span>
-         </div><button class="read-more text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
-        </div>
-       </article>
-       <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover fade-in blog-article" data-article="modern-devops-pipeline">
-        <div class="h-48 bg-gradient-to-r from-indigo-500 to-indigo-600 flex items-center justify-center"><span class="text-white text-lg font-semibold">🏗️ DevOps</span>
-        </div>
-        <div class="p-6">
-         <div class="flex items-center text-sm text-gray-500 mb-3"><span>2 Aralık 2024</span> <span class="mx-2">•</span> <span>9 dk okuma</span>
-         </div>
-         <h3 class="text-xl font-bold text-gray-900 mb-3">Modern DevOps Pipeline Kurulumu</h3>
-         <p class="text-gray-600 mb-4">CI/CD pipeline'ları, containerization ve infrastructure as code ile modern DevOps süreçleri. GitLab CI, Jenkins ve GitHub Actions karşılaştırması...</p>
-         <div class="flex flex-wrap gap-2 mb-4"><span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Docker</span> <span class="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded">Kubernetes</span>
-         </div><button class="read-more text-blue-600 hover:text-blue-800 font-semibold">Devamını Oku →</button>
-        </div>
-       </article>
-      </div>
-     </div>
-    </section>
-   </div><!-- Blog Detail Modal -->
-   <div id="blog-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-     <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-center">
-      <h2 id="modal-title" class="text-2xl font-bold text-gray-900"></h2><button id="close-modal" class="text-gray-500 hover:text-gray-700">
-       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-       </svg></button>
-     </div>
-     <div id="modal-content" class="p-6"><!-- Content will be loaded here -->
-     </div>
-    </div>
    </div><!-- Contact Page -->
    <div id="page-contact" class="page-content hidden">
     <section class="py-20 bg-gray-900 text-white min-h-screen">
      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-       <h1 id="contact-title" class="text-5xl font-bold mb-6 fade-in">İletişim</h1>
-       <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in">Kurumsal projeleriniz için benimle iletişime geçin. Sadece kurumsal müşterilerle çalışıyorum.</p>
+       <h1 id="contact-title" class="text-5xl font-bold mb-6">İletişim</h1>
+       <p class="text-xl text-gray-300 max-w-4xl mx-auto">Kurumsal projeleriniz için benimle iletişime geçin. Sadece kurumsal müşterilerle çalışıyorum.</p>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-       <div class="fade-in">
-        <h3 class="text-2xl font-bold mb-6">İletişim Bilgileri</h3>
+       <div>
+        <h3 class="text-3xl font-bold mb-8">İletişim Bilgileri</h3>
         <div class="space-y-6">
          <div class="flex items-center">
-          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-           </svg>
+          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4"><span class="text-xl">📧</span>
           </div>
           <div>
-           <h4 class="font-semibold">E-posta</h4>
+           <h4 class="font-bold text-lg">E-posta</h4>
            <p class="text-gray-300">yusufavsarofficial@proton.me</p>
           </div>
          </div>
          <div class="flex items-center">
-          <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
-           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-           </svg>
+          <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4"><span class="text-xl">💬</span>
           </div>
           <div>
-           <h4 class="font-semibold">WhatsApp</h4>
-           <p class="text-gray-300">+90 541 819 40 09</p><button onclick="openWhatsApp()" class="text-green-400 hover:text-green-300 text-sm">Hemen Mesaj Gönder →</button>
+           <h4 class="font-bold text-lg">WhatsApp</h4>
+           <p class="text-gray-300">+90 541 819 40 09</p><button onclick="openWhatsApp()" class="text-green-400 hover:text-green-300 font-bold">Hemen Mesaj Gönder →</button>
           </div>
          </div>
          <div class="flex items-center">
-          <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
-           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-           </svg>
+          <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4"><span class="text-xl">📍</span>
           </div>
           <div>
-           <h4 class="font-semibold">Konum</h4>
+           <h4 class="font-bold text-lg">Konum</h4>
            <p class="text-gray-300">İstanbul, Türkiye</p>
-           <p class="text-sm text-gray-400">Uzaktan çalışma - Uluslararası hizmet</p>
-          </div>
-         </div>
-        </div><!-- Work Schedule -->
-        <div class="mt-8 bg-gray-800 rounded-lg p-6">
-         <h4 class="font-semibold mb-4 flex items-center">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg> Çalışma Saatleri</h4>
-         <div class="space-y-2 text-sm">
-          <div class="flex justify-between"><span class="text-green-400">Pazartesi, Çarşamba, Cuma</span> <span>10:00 - 16:00</span>
-          </div>
-          <div class="flex justify-between text-gray-400"><span>Diğer günler</span> <span>AI Destek Sistemi</span>
-          </div>
-          <div class="text-xs text-red-400 mt-2">
-           ⚡ Acil durumlar için 7/24 ulaşabilirsiniz
+           <p class="text-purple-400">Uzaktan çalışma</p>
           </div>
          </div>
         </div>
-        <div class="mt-8">
-         <h4 class="font-semibold mb-4">Sosyal Medya</h4>
-         <div class="flex space-x-4"><a href="https://instagram.com/avyusuf95" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors"> <span class="text-sm font-bold">IG</span> </a> <button class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-600 transition-colors"> <span class="text-sm font-bold">Li</span> </button> <button class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-600 transition-colors"> <span class="text-sm font-bold">Gh</span> </button>
+        <div class="mt-12 bg-gray-800 rounded-lg p-6">
+         <h4 class="font-bold text-xl mb-4">⏰ Çalışma Saatleri</h4>
+         <div class="space-y-2">
+          <div class="flex justify-between"><span class="text-green-400">Pazartesi, Çarşamba, Cuma</span> <span class="font-bold">10:00 - 16:00</span>
+          </div>
+          <div class="flex justify-between"><span class="text-purple-400">Diğer günler</span> <span class="font-bold">AI Destek</span>
+          </div>
          </div>
         </div>
        </div>
-       <div class="fade-in">
-        <div class="bg-blue-900 bg-opacity-50 rounded-lg p-6 mb-6">
-         <h4 class="font-semibold mb-2 flex items-center">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg> Önemli Bilgiler</h4>
-         <ul class="text-sm text-blue-200 space-y-1">
-          <li>• Sadece kurumsal müşterilerle çalışıyorum</li>
-          <li>• Aynı anda maksimum 6 proje alıyorum</li>
-          <li>• Tüm projeler sözleşme ile güvence altında</li>
-          <li>• Minimum proje süresi: 4 hafta</li>
-         </ul>
-        </div>
+       <div>
         <form id="contact-form" class="space-y-6">
-         <div><label for="company" class="block text-sm font-medium mb-2">Şirket Adı *</label> <input type="text" id="company" name="company" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+         <div><label for="company" class="block text-sm font-bold mb-2">Şirket Adı *</label> <input type="text" id="company" name="company" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 text-white">
          </div>
          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div><label for="name" class="block text-sm font-medium mb-2">Adınız *</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+          <div><label for="name" class="block text-sm font-bold mb-2">Adınız *</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 text-white">
           </div>
-          <div><label for="position" class="block text-sm font-medium mb-2">Pozisyonunuz</label> <input type="text" id="position" name="position" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
+          <div><label for="email" class="block text-sm font-bold mb-2">E-posta *</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 text-white">
           </div>
          </div>
-         <div><label for="email" class="block text-sm font-medium mb-2">E-posta *</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
-         </div>
-         <div><label for="project-type" class="block text-sm font-medium mb-2">Proje Türü *</label> <select id="project-type" name="project-type" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"> <option value="">Seçiniz</option> <option value="cyber-security">Siber Güvenlik Denetimi</option> <option value="web-development">Web Uygulama Geliştirme</option> <option value="mobile-app">Mobil Uygulama</option> <option value="erp-system">ERP &amp; Kurumsal Sistem</option> <option value="infrastructure">Altyapı &amp; DevOps</option> <option value="consulting">Danışmanlık &amp; Eğitim</option> <option value="other">Diğer</option> </select>
-         </div>
-         <div><label for="budget" class="block text-sm font-medium mb-2">Tahmini Bütçe</label> <select id="budget" name="budget" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"> <option value="">Seçiniz</option> <option value="50k-100k">50.000₺ - 100.000₺</option> <option value="100k-250k">100.000₺ - 250.000₺</option> <option value="250k-500k">250.000₺ - 500.000₺</option> <option value="500k+">500.000₺+</option> </select>
-         </div>
-         <div><label for="timeline" class="block text-sm font-medium mb-2">Hedef Teslim Tarihi</label> <input type="date" id="timeline" name="timeline" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white">
-         </div>
-         <div><label for="message" class="block text-sm font-medium mb-2">Proje Detayları *</label> <textarea id="message" name="message" rows="5" required placeholder="Projenizin detaylarını, gereksinimlerinizi ve beklentilerinizi açıklayın..." class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white resize-none"></textarea>
-         </div><button type="submit" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors cyber-glow"> Proje Teklifini Gönder </button>
-         <div class="text-center">
-          <p class="text-gray-400 text-sm mb-2">veya</p><button type="button" onclick="openWhatsApp()" class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors"> WhatsApp'tan Hızlı İletişim </button>
-         </div>
+         <div><label for="project" class="block text-sm font-bold mb-2">Proje Detayları *</label> <textarea id="project" name="project" rows="5" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 text-white"></textarea>
+         </div><button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold transition-colors"> Mesaj Gönder </button>
         </form>
-        <div id="form-message" class="mt-4 p-4 rounded-lg hidden"></div>
        </div>
       </div>
      </div>
     </section>
    </div>
-  </div><!-- Footer -->
-  <footer class="bg-black text-white py-12">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-     <div>
-      <h3 class="text-xl font-bold mb-4">Yusuf Avşar</h3>
-      <p class="text-gray-400">Teknolojinin her alanında uzman çözümler. 14 yıllık deneyim, 400+ başarılı proje.</p>
-      <div class="mt-4"><span class="inline-block px-3 py-1 bg-blue-600 text-white text-xs rounded-full">Siber Güvenlik Uzmanı</span>
-      </div>
-     </div>
-     <div>
-      <h4 class="font-semibold mb-4">Hizmetler</h4>
-      <ul class="space-y-2 text-gray-400">
-       <li><button onclick="showPage('services')" class="hover:text-white transition-colors">Siber Güvenlik</button></li>
-       <li><button onclick="showPage('services')" class="hover:text-white transition-colors">Web Geliştirme</button></li>
-       <li><button onclick="showPage('services')" class="hover:text-white transition-colors">Mobil Uygulama</button></li>
-       <li><button onclick="showPage('services')" class="hover:text-white transition-colors">ERP Sistemleri</button></li>
-      </ul>
-     </div>
-     <div>
-      <h4 class="font-semibold mb-4">Şirket</h4>
-      <ul class="space-y-2 text-gray-400">
-       <li><button onclick="showPage('about')" class="hover:text-white transition-colors">Hakkımda</button></li>
-       <li><button onclick="showPage('portfolio')" class="hover:text-white transition-colors">Portfolio</button></li>
-       <li><button onclick="showPage('blog')" class="hover:text-white transition-colors">Blog</button></li>
-       <li><button onclick="showPage('contact')" class="hover:text-white transition-colors">İletişim</button></li>
-      </ul>
-     </div>
-     <div>
-      <h4 class="font-semibold mb-4">İletişim</h4>
-      <ul class="space-y-2 text-gray-400">
-       <li>yusufavsarofficial@proton.me</li>
-       <li>+90 541 819 40 09</li>
-       <li>İstanbul, Türkiye</li>
-       <li class="pt-2"><a href="https://instagram.com/avyusuf95" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300">@avyusuf95</a></li>
-      </ul>
-     </div>
-    </div>
-    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-     <p>© 2024 Yusuf Avşar. Tüm hakları saklıdır. | Kurumsal Teknoloji Çözümleri</p>
-    </div>
-   </div>
-  </footer><!-- AI Support Chat Widget -->
-  <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50">
-   <div id="chat-bubble" class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse">
-    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-    </svg>
-   </div>
-   <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 h-96 bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col">
-    <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-lg">
-     <div class="flex items-center justify-between">
-      <div class="flex items-center">
-       <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3"><span class="text-sm font-bold">AI</span>
-       </div>
-       <div>
-        <h4 class="font-semibold">Yusuf AI Asistan</h4>
-        <p class="text-xs opacity-90">🟢 Aktif - Anında yanıt</p>
-       </div>
-      </div><button id="close-chat" class="text-white hover:text-gray-200">
-       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-       </svg></button>
-     </div>
-    </div>
-    <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3">
-     <div class="flex items-start">
-      <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2 flex-shrink-0"><span class="text-xs font-bold text-blue-600">AI</span>
-      </div>
-      <div class="bg-gray-100 rounded-lg p-3 max-w-xs">
-       <p class="text-sm text-gray-800">Merhaba! Ben Yusuf'un AI asistanıyım. Size nasıl yardımcı olabilirim? 🤖</p>
-      </div>
-     </div>
-    </div>
-    <div class="p-4 border-t border-gray-200">
-     <div class="flex space-x-2"><input type="text" id="chat-input" placeholder="Mesajınızı yazın..." class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"> <button id="send-message" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-       </svg></button>
-     </div>
-     <div class="mt-2 flex flex-wrap gap-1"><button class="quick-reply text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200" data-message="Hizmetleriniz neler?">Hizmetler</button> <button class="quick-reply text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200" data-message="Fiyat bilgisi alabilir miyim?">Fiyatlar</button> <button class="quick-reply text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded hover:bg-gray-200" data-message="Proje süresi ne kadar?">Süre</button>
-     </div>
-    </div>
-   </div>
   </div>
   <script>
-        // AI Chat System
-        const aiResponses = {
-            "hizmet": "🔧 Sunduğum ana hizmetler:\n\n• Siber Güvenlik Denetimi\n• Web Uygulama Geliştirme\n• Mobil Uygulama\n• ERP & Kurumsal Sistemler\n• Altyapı & DevOps\n• Danışmanlık & Eğitim\n\nHangi alanda yardıma ihtiyacınız var?",
-            "fiyat": "💰 Proje fiyatları değişkenlik gösterir:\n\n• Siber Güvenlik: 50K-150K₺\n• Web Uygulaması: 75K-300K₺\n• Mobil Uygulama: 100K-400K₺\n• ERP Sistemi: 200K-800K₺\n\nÖdeme: %25-%25-%50 şeklinde\nDetaylı teklif için WhatsApp'tan ulaşın!",
-            "süre": "⏰ Proje süreleri:\n\n• Siber Güvenlik: 2-4 hafta\n• Web Uygulaması: 4-12 hafta\n• Mobil Uygulama: 6-16 hafta\n• ERP Sistemi: 12-24 hafta\n\nMinimum proje süresi 4 haftadır.",
-            "iletişim": "📞 İletişim bilgileri:\n\n• WhatsApp: +90 541 819 40 09\n• E-posta: yusufavsarofficial@proton.me\n• Aktif saatler: Pzt/Çar/Cum 10:00-16:00\n• Acil durumlar: 7/24 WhatsApp\n\nHemen WhatsApp'tan yazabilirsiniz!",
-            "deneyim": "🎯 14 yıllık deneyim:\n\n• 2010'da hobi olarak başladım\n• 400+ başarılı proje\n• MIT & Harvard sertifikaları\n• Sadece kurumsal müşteriler\n• Uluslararası hizmet\n\nTeknoloji benim tutkum!",
-            "default": "🤖 Size yardımcı olmaya çalışıyorum!\n\nSorabileceğiniz konular:\n• Hizmetler ve fiyatlar\n• Proje süreleri\n• İletişim bilgileri\n• Deneyim ve referanslar\n\nYa da direkt WhatsApp'tan Yusuf'a ulaşın: +90 541 819 40 09"
-        };
-
-        function getAIResponse(message) {
-            const lowerMessage = message.toLowerCase();
-            
-            if (lowerMessage.includes('hizmet') || lowerMessage.includes('servis') || lowerMessage.includes('neler yapıyorsun')) {
-                return aiResponses.hizmet;
-            } else if (lowerMessage.includes('fiyat') || lowerMessage.includes('ücret') || lowerMessage.includes('maliyet') || lowerMessage.includes('bütçe')) {
-                return aiResponses.fiyat;
-            } else if (lowerMessage.includes('süre') || lowerMessage.includes('zaman') || lowerMessage.includes('ne kadar') || lowerMessage.includes('teslim')) {
-                return aiResponses.süre;
-            } else if (lowerMessage.includes('iletişim') || lowerMessage.includes('ulaş') || lowerMessage.includes('telefon') || lowerMessage.includes('whatsapp')) {
-                return aiResponses.iletişim;
-            } else if (lowerMessage.includes('deneyim') || lowerMessage.includes('tecrübe') || lowerMessage.includes('hakkında') || lowerMessage.includes('kimsin')) {
-                return aiResponses.deneyim;
-            } else {
-                return aiResponses.default;
-            }
-        }
-
-        function addMessage(message, isUser = false) {
-            const messagesContainer = document.getElementById('chat-messages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'flex items-start';
-            
-            if (isUser) {
-                messageDiv.innerHTML = `
-                    <div class="flex items-start justify-end w-full">
-                        <div class="bg-blue-600 text-white rounded-lg p-3 max-w-xs mr-2">
-                            <p class="text-sm">${message}</p>
-                        </div>
-                        <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                            <span class="text-xs font-bold text-white">SİZ</span>
-                        </div>
-                    </div>
-                `;
-            } else {
-                messageDiv.innerHTML = `
-                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
-                        <span class="text-xs font-bold text-blue-600">AI</span>
-                    </div>
-                    <div class="bg-gray-100 rounded-lg p-3 max-w-xs">
-                        <p class="text-sm text-gray-800 whitespace-pre-line">${message}</p>
-                    </div>
-                `;
-            }
-            
-            messagesContainer.appendChild(messageDiv);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-
-        // Chat widget functionality
-        document.getElementById('chat-bubble').addEventListener('click', function() {
-            document.getElementById('chat-window').classList.toggle('hidden');
-            this.classList.remove('animate-pulse');
-        });
-
-        document.getElementById('close-chat').addEventListener('click', function() {
-            document.getElementById('chat-window').classList.add('hidden');
-        });
-
-        document.getElementById('send-message').addEventListener('click', function() {
-            const input = document.getElementById('chat-input');
-            const message = input.value.trim();
-            
-            if (message) {
-                addMessage(message, true);
-                input.value = '';
-                
-                setTimeout(() => {
-                    const response = getAIResponse(message);
-                    addMessage(response, false);
-                }, 1000);
-            }
-        });
-
-        document.getElementById('chat-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('send-message').click();
-            }
-        });
-
-        document.querySelectorAll('.quick-reply').forEach(button => {
-            button.addEventListener('click', function() {
-                const message = this.getAttribute('data-message');
-                document.getElementById('chat-input').value = message;
-                document.getElementById('send-message').click();
-            });
-        });
-
-        // Default configuration
+        // Element SDK Configuration
         const defaultConfig = {
-            site_title: "Yusuf Avşar",
             hero_title: "Teknolojinin Her Alanında Uzman Çözümler",
             hero_subtitle: "Siber güvenlikten web geliştirmeye, 14 yıllık deneyimle kurumsal projelerinizi hayata geçiriyorum",
+            nav_title: "Yusuf Avşar",
+            whatsapp_button_text: "WhatsApp'tan İletişim",
+            portfolio_button_text: "400+ Projeyi İncele",
             about_title: "Hakkımda",
             services_title: "Hizmetlerim",
-            contact_title: "İletişim",
-            background_color: "#f8fafc",
-            surface_color: "#ffffff",
-            text_color: "#1f2937",
-            primary_action_color: "#3b82f6",
-            secondary_action_color: "#6b7280",
-            font_family: "Inter",
-            font_size: 16
+            contact_title: "İletişim"
         };
 
-        // Current page tracking
-        let currentPage = 'home';
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            // Show selected page
+            document.getElementById(`page-${pageId}`).classList.remove('hidden');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('text-gray-900');
+                link.classList.add('text-gray-700');
+            });
+            
+            const activeLink = document.querySelector(`[data-page="${pageId}"]`);
+            if (activeLink) {
+                activeLink.classList.remove('text-gray-700');
+                activeLink.classList.add('text-gray-900');
+            }
+            
+            // Trigger animations
+            setTimeout(() => {
+                const elements = document.querySelectorAll('.fade-in');
+                elements.forEach(el => el.classList.add('visible'));
+            }, 100);
+        }
 
         // WhatsApp function
         function openWhatsApp() {
-            const phoneNumber = "905418194009";
-            const message = "Merhaba Yusuf Bey, web sitenizden geliyorum. Kurumsal projemiz hakkında görüşmek istiyorum.";
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            const message = "Merhaba! Web sitenizden ulaşıyorum. Kurumsal projelerim için bilgi almak istiyorum.";
+            const url = `https://wa.me/905418194009?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
         }
 
-        // Page navigation system
-        function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page-content').forEach(page => {
-                page.classList.add('hidden');
-            });
-            
-            // Show selected page
-            const targetPage = document.getElementById(`page-${pageId}`);
-            if (targetPage) {
-                targetPage.classList.remove('hidden');
-                currentPage = pageId;
-                
-                // Update navigation active states
-                updateNavigation(pageId);
-                
-                // Close mobile menu if open
-                document.getElementById('mobile-menu').classList.add('hidden');
-                
-                // Scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                
-                // Trigger animations
-                setTimeout(() => {
-                    handleScrollAnimations();
-                }, 100);
-            }
-        }
-
-        // Update navigation active states
-        function updateNavigation(activePageId) {
-            document.querySelectorAll('.nav-link').forEach(link => {
-                const pageId = link.getAttribute('data-page');
-                if (pageId === activePageId) {
-                    link.classList.remove('text-gray-700');
-                    link.classList.add('text-gray-900');
-                } else {
-                    link.classList.remove('text-gray-900');
-                    link.classList.add('text-gray-700');
-                }
-            });
-        }
-
-        // Mobile menu functionality
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Fade in animation on scroll
-        function handleScrollAnimations() {
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        }
-
-        // Contact form handling
+        // Contact form
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const formData = new FormData(this);
-            const messageDiv = document.getElementById('form-message');
+            const company = formData.get('company');
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const project = formData.get('project');
             
-            // Simulate form submission
-            messageDiv.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
-            messageDiv.textContent = 'Proje teklifiniz başarıyla gönderildi! En kısa sürede size dönüş yapacağım. Acil durumlar için WhatsApp\'tan ulaşabilirsiniz.';
-            messageDiv.classList.remove('hidden');
+            const message = `Merhaba! Web sitenizden iletişim kuruyorum.
+
+Şirket: ${company}
+İsim: ${name}
+E-posta: ${email}
+
+Proje Detayları:
+${project}`;
             
-            // Reset form
-            this.reset();
-            
-            // Hide message after 8 seconds
-            setTimeout(() => {
-                messageDiv.classList.add('hidden');
-            }, 8000);
+            const url = `https://wa.me/905418194009?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
         });
 
-        // Initialize animations on page load
-        window.addEventListener('load', function() {
-            handleScrollAnimations();
-        });
-
-        // Handle scroll animations
-        window.addEventListener('scroll', handleScrollAnimations);
-
-        // Blog system
-        const blogArticles = {
-            'cyber-security-2024': {
-                title: '2024\'te Siber Güvenlik Trendleri',
-                date: '15 Aralık 2024',
-                readTime: '8 dk okuma',
-                content: `
-                    <div class="prose max-w-none">
-                        <p class="text-lg text-gray-600 mb-6">2024 yılı siber güvenlik dünyasında devrim niteliğinde değişikliklere sahne oldu. AI destekli saldırılardan quantum güvenliğe kadar birçok yeni trend ortaya çıktı.</p>
-                        
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">🤖 AI Destekli Siber Saldırılar</h3>
-                        <p class="mb-4">Yapay zeka teknolojilerinin yaygınlaşmasıyla birlikte, siber suçlular da bu teknolojileri kötü amaçlı kullanmaya başladı:</p>
-                        <ul class="list-disc pl-6 mb-6 space-y-2">
-                            <li><strong>Deepfake Saldırıları:</strong> Ses ve görüntü manipülasyonu ile sosyal mühendislik</li>
-                            <li><strong>AI-Powered Phishing:</strong> Kişiselleştirilmiş ve son derece ikna edici sahte e-postalar</li>
-                            <li><strong>Otomatik Exploit Geliştirme:</strong> AI ile güvenlik açıklarının otomatik keşfi ve istismarı</li>
-                        </ul>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">🔒 Zero Trust Mimarisinin Yükselişi</h3>
-                        <p class="mb-4">Geleneksel güvenlik yaklaşımları artık yeterli değil. Zero Trust modeli şu prensiplere dayanıyor:</p>
-                        <ul class="list-disc pl-6 mb-6 space-y-2">
-                            <li>"Hiçbir şeye güvenme, her şeyi doğrula" prensibi</li>
-                            <li>Mikro-segmentasyon ile ağ trafiğinin sıkı kontrolü</li>
-                            <li>Sürekli kimlik doğrulama ve yetkilendirme</li>
-                            <li>Davranış analizi ile anomali tespiti</li>
-                        </ul>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">⚡ Quantum Güvenlik Hazırlıkları</h3>
-                        <p class="mb-4">Quantum bilgisayarların gelişimi mevcut şifreleme yöntemlerini tehdit ediyor:</p>
-                        <ul class="list-disc pl-6 mb-6 space-y-2">
-                            <li>Post-quantum kriptografi algoritmalarının geliştirilmesi</li>
-                            <li>Mevcut sistemlerin quantum-safe hale getirilmesi</li>
-                            <li>Quantum key distribution (QKD) teknolojilerinin yaygınlaşması</li>
-                        </ul>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">📊 2024 Siber Güvenlik İstatistikleri</h3>
-                        <div class="bg-gray-50 p-4 rounded-lg mb-6">
-                            <ul class="space-y-2">
-                                <li>• Ransomware saldırıları %41 arttı</li>
-                                <li>• Ortalama veri ihlali maliyeti $4.88 milyon</li>
-                                <li>• AI destekli saldırılar %300 artış gösterdi</li>
-                                <li>• Zero Trust benimseyen şirketlerde %50 daha az güvenlik ihlali</li>
-                            </ul>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">🛡️ Savunma Stratejileri</h3>
-                        <p class="mb-4">Bu tehditlere karşı etkili savunma için:</p>
-                        <ol class="list-decimal pl-6 mb-6 space-y-2">
-                            <li><strong>Proaktif Güvenlik:</strong> Sürekli penetration testing ve güvenlik denetimleri</li>
-                            <li><strong>Çalışan Eğitimi:</strong> Sosyal mühendislik saldırılarına karşı farkındalık</li>
-                            <li><strong>AI Destekli Savunma:</strong> Anomali tespiti ve otomatik tehdit yanıtı</li>
-                            <li><strong>Incident Response:</strong> Hızlı müdahale ve kurtarma planları</li>
-                        </ol>
-
-                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
-                            <p class="text-blue-800"><strong>Uzman Tavsiyesi:</strong> Siber güvenlik artık sadece IT departmanının sorumluluğu değil. Tüm organizasyonun katılımı gereken stratejik bir konudur.</p>
-                        </div>
-
-                        <p class="text-gray-600">Siber güvenlik alanında güncel kalmak ve proaktif yaklaşım sergilemek, günümüzde işletmeler için hayati önem taşıyor. Uzman desteği almak, bu karmaşık süreçte doğru adımları atmanızı sağlar.</p>
-                    </div>
-                `
-            },
-            'cloud-comparison-2024': {
-                title: 'AWS vs Azure vs Google Cloud',
-                date: '12 Aralık 2024',
-                readTime: '6 dk okuma',
-                content: `
-                    <div class="prose max-w-none">
-                        <p class="text-lg text-gray-600 mb-6">2024 yılında cloud sağlayıcıları arasındaki rekabet daha da kızıştı. Her platformun kendine özgü avantajları var. İşte detaylı karşılaştırma:</p>
-                        
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">☁️ Amazon Web Services (AWS)</h3>
-                        <div class="bg-orange-50 p-4 rounded-lg mb-4">
-                            <h4 class="font-semibold text-orange-800 mb-2">Avantajları:</h4>
-                            <ul class="list-disc pl-6 space-y-1 text-orange-700">
-                                <li>En geniş hizmet yelpazesi (200+ servis)</li>
-                                <li>En büyük pazar payı ve olgun ekosistem</li>
-                                <li>Güçlü enterprise desteği</li>
-                                <li>En fazla availability zone</li>
-                            </ul>
-                        </div>
-                        <div class="bg-red-50 p-4 rounded-lg mb-6">
-                            <h4 class="font-semibold text-red-800 mb-2">Dezavantajları:</h4>
-                            <ul class="list-disc pl-6 space-y-1 text-red-700">
-                                <li>Karmaşık fiyatlandırma modeli</li>
-                                <li>Öğrenme eğrisi yüksek</li>
-                                <li>Vendor lock-in riski</li>
-                            </ul>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">🔷 Microsoft Azure</h3>
-                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                            <h4 class="font-semibold text-blue-800 mb-2">Avantajları:</h4>
-                            <ul class="list-disc pl-6 space-y-1 text-blue-700">
-                                <li>Microsoft ekosistemi ile mükemmel entegrasyon</li>
-                                <li>Hybrid cloud çözümlerinde lider</li>
-                                <li>Enterprise lisanslama avantajları</li>
-                                <li>Güçlü AI ve ML servisleri</li>
-                            </ul>
-                        </div>
-                        <div class="bg-red-50 p-4 rounded-lg mb-6">
-                            <h4 class="font-semibold text-red-800 mb-2">Dezavantajları:</h4>
-                            <ul class="list-disc pl-6 space-y-1 text-red-700">
-                                <li>AWS'ye göre daha az hizmet çeşitliliği</li>
-                                <li>Bazı bölgelerde sınırlı availability</li>
-                                <li>Öğrenme kaynakları daha az</li>
-                            </ul>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">🌈 Google Cloud Platform</h3>
-                        <div class="bg-green-50 p-4 rounded-lg mb-4">
-                            <h4 class="font-semibold text-green-800 mb-2">Avantajları:</h4>
-                            <ul class="list-disc pl-6 space-y-1 text-green-700">
-                                <li>AI/ML ve data analytics'te lider</li>
-                                <li>Kubernetes ve container teknolojilerinde güçlü</li>
-                                <li>Temiz ve kullanıcı dostu arayüz</li>
-                                <li>Rekabetçi fiyatlandırma</li>
-                            </ul>
-                        </div>
-                        <div class="bg-red-50 p-4 rounded-lg mb-6">
-                            <h4 class="font-semibold text-red-800 mb-2">Dezavantajları:</h4>
-                            <ul class="list-disc pl-6 space-y-1 text-red-700">
-                                <li>En küçük pazar payı</li>
-                                <li>Enterprise desteği sınırlı</li>
-                                <li>Daha az third-party entegrasyon</li>
-                            </ul>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">💰 Maliyet Karşılaştırması</h3>
-                        <div class="overflow-x-auto mb-6">
-                            <table class="min-w-full bg-white border border-gray-200">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th class="px-4 py-2 text-left">Hizmet Türü</th>
-                                        <th class="px-4 py-2 text-left">AWS</th>
-                                        <th class="px-4 py-2 text-left">Azure</th>
-                                        <th class="px-4 py-2 text-left">GCP</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="border-t">
-                                        <td class="px-4 py-2">Compute (VM)</td>
-                                        <td class="px-4 py-2">$$</td>
-                                        <td class="px-4 py-2">$$$</td>
-                                        <td class="px-4 py-2">$</td>
-                                    </tr>
-                                    <tr class="border-t">
-                                        <td class="px-4 py-2">Storage</td>
-                                        <td class="px-4 py-2">$$</td>
-                                        <td class="px-4 py-2">$$</td>
-                                        <td class="px-4 py-2">$</td>
-                                    </tr>
-                                    <tr class="border-t">
-                                        <td class="px-4 py-2">Network</td>
-                                        <td class="px-4 py-2">$$$</td>
-                                        <td class="px-4 py-2">$$</td>
-                                        <td class="px-4 py-2">$</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Hangi Durumda Hangisini Seçmeli?</h3>
-                        
-                        <div class="space-y-4 mb-6">
-                            <div class="border-l-4 border-orange-500 pl-4">
-                                <h4 class="font-semibold text-gray-900">AWS Seçin Eğer:</h4>
-                                <ul class="list-disc pl-6 text-gray-600">
-                                    <li>Geniş hizmet yelpazesine ihtiyacınız var</li>
-                                    <li>Enterprise-grade güvenilirlik arıyorsunuz</li>
-                                    <li>Büyük ölçekli, karmaşık projeler geliştiriyorsunuz</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="border-l-4 border-blue-500 pl-4">
-                                <h4 class="font-semibold text-gray-900">Azure Seçin Eğer:</h4>
-                                <ul class="list-disc pl-6 text-gray-600">
-                                    <li>Microsoft teknolojileri kullanıyorsunuz</li>
-                                    <li>Hybrid cloud çözümü arıyorsunuz</li>
-                                    <li>Enterprise lisanslama avantajlarından yararlanmak istiyorsunuz</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="border-l-4 border-green-500 pl-4">
-                                <h4 class="font-semibold text-gray-900">GCP Seçin Eğer:</h4>
-                                <ul class="list-disc pl-6 text-gray-600">
-                                    <li>AI/ML projeleriniz var</li>
-                                    <li>Kubernetes ve containerization odaklısınız</li>
-                                    <li>Maliyet optimizasyonu önceliğiniz</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
-                            <p class="text-blue-800"><strong>Uzman Tavsiyesi:</strong> Multi-cloud stratejisi benimseyin. Her platform için en güçlü olduğu alanları kullanarak vendor lock-in riskini minimize edin.</p>
-                        </div>
-                    </div>
-                `
-            },
-            'react-native-flutter-2024': {
-                title: 'React Native vs Flutter 2024',
-                date: '10 Aralık 2024',
-                readTime: '5 dk okuma',
-                content: `
-                    <div class="prose max-w-none">
-                        <p class="text-lg text-gray-600 mb-6">Cross-platform mobil geliştirme alanında iki büyük oyuncu: React Native ve Flutter. 2024'te hangisi daha avantajlı?</p>
-                        
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">⚛️ React Native</h3>
-                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                            <h4 class="font-semibold text-blue-800 mb-2">Avantajları:</h4>
-                            <ul class="list-disc pl-6 space-y-1 text-blue-700">
-                                <li>JavaScript bilgisi yeterli</li>
-                                <li>Büyük topluluk desteği</li>
-                                <li>Facebook/Meta desteği</li>
-                                <li>Hot reload özelliği</li>
-                                <li>Native modüllere kolay erişim</li>
-                            </ul>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Flutter</h3>
-                        <div class="bg-cyan-50 p-4 rounded-lg mb-4">
-                            <h4 class="font-semibold text-cyan-800 mb-2">Avantajları:</h4>
-                            <ul class="list-disc pl-6 space-y-1 text-cyan-700">
-                                <li>Dart dili ile güçlü performans</li>
-                                <li>Google desteği</li>
-                                <li>Tek codebase, çoklu platform</li>
-                                <li>Zengin widget kütüphanesi</li>
-                                <li>Hızlı geliştirme süreci</li>
-                            </ul>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">📊 Performans Karşılaştırması</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                            <div class="bg-gray-50 p-4 rounded-lg">
-                                <h4 class="font-semibold mb-2">React Native</h4>
-                                <ul class="space-y-1 text-sm">
-                                    <li>• Startup Time: ~2.5s</li>
-                                    <li>• Memory Usage: Orta</li>
-                                    <li>• Animation: 60 FPS</li>
-                                    <li>• Bundle Size: ~7MB</li>
-                                </ul>
-                            </div>
-                            <div class="bg-gray-50 p-4 rounded-lg">
-                                <h4 class="font-semibold mb-2">Flutter</h4>
-                                <ul class="space-y-1 text-sm">
-                                    <li>• Startup Time: ~1.8s</li>
-                                    <li>• Memory Usage: Düşük</li>
-                                    <li>• Animation: 120 FPS</li>
-                                    <li>• Bundle Size: ~4MB</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">🏢 Popüler Uygulamalar</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                            <div>
-                                <h4 class="font-semibold text-blue-600 mb-2">React Native</h4>
-                                <ul class="list-disc pl-6 space-y-1">
-                                    <li>Facebook, Instagram</li>
-                                    <li>WhatsApp Business</li>
-                                    <li>Uber Eats</li>
-                                    <li>Discord</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-cyan-600 mb-2">Flutter</h4>
-                                <ul class="list-disc pl-6 space-y-1">
-                                    <li>Google Pay</li>
-                                    <li>Alibaba</li>
-                                    <li>BMW</li>
-                                    <li>eBay Motors</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 Hangi Durumda Hangisini Seçmeli?</h3>
-                        
-                        <div class="space-y-4 mb-6">
-                            <div class="border-l-4 border-blue-500 pl-4">
-                                <h4 class="font-semibold text-gray-900">React Native Seçin Eğer:</h4>
-                                <ul class="list-disc pl-6 text-gray-600">
-                                    <li>JavaScript/React deneyiminiz var</li>
-                                    <li>Hızlı prototipleme istiyorsunuz</li>
-                                    <li>Büyük topluluk desteği önemli</li>
-                                    <li>Mevcut web uygulamanızı mobile taşıyorsunuz</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="border-l-4 border-cyan-500 pl-4">
-                                <h4 class="font-semibold text-gray-900">Flutter Seçin Eğer:</h4>
-                                <ul class="list-disc pl-6 text-gray-600">
-                                    <li>Yüksek performans kritik</li>
-                                    <li>Karmaşık UI/UX tasarımları var</li>
-                                    <li>Tek codebase ile çoklu platform hedefliyorsunuz</li>
-                                    <li>Google ekosistemi kullanıyorsunuz</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="bg-green-50 border-l-4 border-green-500 p-4">
-                            <p class="text-green-800"><strong>2024 Önerisi:</strong> Flutter momentum kazanıyor ve performans açısından öne çıkıyor. Yeni projeler için Flutter, mevcut React ekibi varsa React Native tercih edilebilir.</p>
-                        </div>
-                    </div>
-                `
-            }
-        };
-
-        // Blog modal functionality
-        document.querySelectorAll('.read-more').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const article = this.closest('.blog-article');
-                const articleId = article.getAttribute('data-article');
-                const articleData = blogArticles[articleId];
-                
-                if (articleData) {
-                    document.getElementById('modal-title').textContent = articleData.title;
-                    document.getElementById('modal-content').innerHTML = `
-                        <div class="mb-4 text-sm text-gray-500">
-                            ${articleData.date} • ${articleData.readTime}
-                        </div>
-                        ${articleData.content}
-                    `;
-                    document.getElementById('blog-modal').classList.remove('hidden');
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-
-        document.getElementById('close-modal').addEventListener('click', function() {
-            document.getElementById('blog-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-
-        document.getElementById('blog-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Element SDK configuration
+        // Element SDK Implementation
         async function onConfigChange(config) {
-            // Update text content
-            const navTitle = document.getElementById('nav-title');
+            // Update text content based on config
             const heroTitle = document.getElementById('hero-title');
-            const heroSubtitle = document.getElementById('hero-subtitle');
-            const aboutTitle = document.getElementById('about-title');
-            const servicesTitle = document.getElementById('services-title');
-            const contactTitle = document.getElementById('contact-title');
-
-            if (navTitle) navTitle.textContent = config.site_title || defaultConfig.site_title;
             if (heroTitle) heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
-            if (heroSubtitle) heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
-            if (aboutTitle) aboutTitle.textContent = config.about_title || defaultConfig.about_title;
-            if (servicesTitle) servicesTitle.textContent = config.services_title || defaultConfig.services_title;
-            if (contactTitle) contactTitle.textContent = config.contact_title || defaultConfig.contact_title;
-
-            // Update colors
-            const backgroundColor = config.background_color || defaultConfig.background_color;
-            const surfaceColor = config.surface_color || defaultConfig.surface_color;
-            const textColor = config.text_color || defaultConfig.text_color;
-            const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
-            const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
-
-            document.body.style.backgroundColor = backgroundColor;
             
-            // Update surface colors (cards, sections)
-            document.querySelectorAll('.bg-white, .bg-gray-50').forEach(el => {
-                el.style.backgroundColor = surfaceColor;
-            });
+            const heroSubtitle = document.getElementById('hero-subtitle');
+            if (heroSubtitle) heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+            
+            const navTitle = document.getElementById('nav-title');
+            if (navTitle) navTitle.textContent = config.nav_title || defaultConfig.nav_title;
+            
+            const whatsappButton = document.getElementById('whatsapp-button');
+            if (whatsappButton) whatsappButton.textContent = `💬 ${config.whatsapp_button_text || defaultConfig.whatsapp_button_text}`;
+            
+            const portfolioButton = document.getElementById('portfolio-button');
+            if (portfolioButton) portfolioButton.textContent = `🚀 ${config.portfolio_button_text || defaultConfig.portfolio_button_text}`;
+            
+            const aboutTitle = document.getElementById('about-title');
+            if (aboutTitle) aboutTitle.textContent = config.about_title || defaultConfig.about_title;
+            
+            const servicesTitle = document.getElementById('services-title');
+            if (servicesTitle) servicesTitle.textContent = config.services_title || defaultConfig.services_title;
+            
+            const contactTitle = document.getElementById('contact-title');
+            if (contactTitle) contactTitle.textContent = config.contact_title || defaultConfig.contact_title;
+        }
 
-            // Update text colors
-            document.querySelectorAll('.text-gray-900, .text-black').forEach(el => {
-                el.style.color = textColor;
-            });
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
 
-            // Update primary action colors (buttons, links)
-            document.querySelectorAll('.bg-blue-600, .text-blue-600').forEach(el => {
-                if (el.classList.contains('bg-blue-600')) {
-                    el.style.backgroundColor = primaryActionColor;
-                } else {
-                    el.style.color = primaryActionColor;
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["hero_title", config.hero_title || defaultConfig.hero_title],
+                ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+                ["nav_title", config.nav_title || defaultConfig.nav_title],
+                ["whatsapp_button_text", config.whatsapp_button_text || defaultConfig.whatsapp_button_text],
+                ["portfolio_button_text", config.portfolio_button_text || defaultConfig.portfolio_button_text],
+                ["about_title", config.about_title || defaultConfig.about_title],
+                ["services_title", config.services_title || defaultConfig.services_title],
+                ["contact_title", config.contact_title || defaultConfig.contact_title]
+            ]);
+        }
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Scroll Reveal Animation
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.scroll-reveal');
+            
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('revealed');
                 }
             });
-
-            // Update secondary action colors
-            document.querySelectorAll('.text-gray-700, .text-gray-600').forEach(el => {
-                el.style.color = secondaryActionColor;
-            });
-
-            // Update fonts
-            const customFont = config.font_family || defaultConfig.font_family;
-            const baseFontStack = 'system-ui, -apple-system, sans-serif';
-            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
-
-            // Update font sizes
-            const baseSize = config.font_size || defaultConfig.font_size;
-            document.documentElement.style.fontSize = `${baseSize}px`;
         }
 
-        // Initialize Element SDK
-        if (window.elementSdk) {
-            window.elementSdk.init({
-                defaultConfig: defaultConfig,
-                onConfigChange: onConfigChange,
-                mapToCapabilities: (config) => ({
-                    recolorables: [
-                        {
-                            get: () => config.background_color || defaultConfig.background_color,
-                            set: (value) => {
-                                config.background_color = value;
-                                window.elementSdk.setConfig({ background_color: value });
-                            }
-                        },
-                        {
-                            get: () => config.surface_color || defaultConfig.surface_color,
-                            set: (value) => {
-                                config.surface_color = value;
-                                window.elementSdk.setConfig({ surface_color: value });
-                            }
-                        },
-                        {
-                            get: () => config.text_color || defaultConfig.text_color,
-                            set: (value) => {
-                                config.text_color = value;
-                                window.elementSdk.setConfig({ text_color: value });
-                            }
-                        },
-                        {
-                            get: () => config.primary_action_color || defaultConfig.primary_action_color,
-                            set: (value) => {
-                                config.primary_action_color = value;
-                                window.elementSdk.setConfig({ primary_action_color: value });
-                            }
-                        },
-                        {
-                            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
-                            set: (value) => {
-                                config.secondary_action_color = value;
-                                window.elementSdk.setConfig({ secondary_action_color: value });
-                            }
-                        }
-                    ],
-                    borderables: [],
-                    fontEditable: {
-                        get: () => config.font_family || defaultConfig.font_family,
-                        set: (value) => {
-                            config.font_family = value;
-                            window.elementSdk.setConfig({ font_family: value });
-                        }
-                    },
-                    fontSizeable: {
-                        get: () => config.font_size || defaultConfig.font_size,
-                        set: (value) => {
-                            config.font_size = value;
-                            window.elementSdk.setConfig({ font_size: value });
-                        }
+        // Show Notification
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification bg-gradient-to-r ${type === 'success' ? 'from-green-500 to-blue-500' : 'from-red-500 to-pink-500'} text-white px-6 py-4 rounded-2xl shadow-2xl bounce-in`;
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${type === 'success' ? 'M5 13l4 4L19 7' : 'M6 18L18 6M6 6l12 12'}"></path>
+                    </svg>
+                    <span class="font-semibold">${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 400);
+            }, 3000);
+        }
+
+        // Enhanced Page Navigation
+        function showPage(pageId) {
+            // Hide all pages with fade out
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => {
+                page.style.opacity = '0';
+                setTimeout(() => {
+                    page.classList.add('hidden');
+                }, 300);
+            });
+            
+            // Show selected page with fade in
+            setTimeout(() => {
+                const targetPage = document.getElementById(`page-${pageId}`);
+                targetPage.classList.remove('hidden');
+                setTimeout(() => {
+                    targetPage.style.opacity = '1';
+                }, 50);
+                
+                // Update navigation
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.classList.remove('text-gray-900');
+                    link.classList.add('text-gray-700');
+                });
+                
+                const activeLink = document.querySelector(`[data-page="${pageId}"]`);
+                if (activeLink) {
+                    activeLink.classList.remove('text-gray-700');
+                    activeLink.classList.add('text-gray-900');
+                }
+                
+                // Trigger animations
+                setTimeout(() => {
+                    const elements = targetPage.querySelectorAll('.fade-in, .scroll-reveal');
+                    elements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add('visible', 'revealed');
+                        }, index * 100);
+                    });
+                    
+                    // Animate counters if on home page
+                    if (pageId === 'home') {
+                        setTimeout(animateCounters, 1000);
                     }
-                }),
-                mapToEditPanelValues: (config) => new Map([
-                    ["site_title", config.site_title || defaultConfig.site_title],
-                    ["hero_title", config.hero_title || defaultConfig.hero_title],
-                    ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
-                    ["about_title", config.about_title || defaultConfig.about_title],
-                    ["services_title", config.services_title || defaultConfig.services_title],
-                    ["contact_title", config.contact_title || defaultConfig.contact_title]
-                ])
+                }, 100);
+            }, 300);
+        }
+
+        // Enhanced WhatsApp function
+        function openWhatsApp() {
+            const message = "Merhaba! Web sitenizden ulaşıyorum. Kurumsal projelerim için bilgi almak istiyorum.";
+            const url = `https://wa.me/905418194009?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+            showNotification('WhatsApp\'a yönlendiriliyorsunuz...', 'success');
+        }
+
+        // Enhanced Contact form
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.innerHTML = `
+                        <div class="loading-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        Gönderiliyor...
+                    `;
+                    submitBtn.disabled = true;
+                    
+                    setTimeout(() => {
+                        const formData = new FormData(this);
+                        const company = formData.get('company');
+                        const name = formData.get('name');
+                        const email = formData.get('email');
+                        const project = formData.get('project');
+                        
+                        const message = `Merhaba! Web sitenizden iletişim kuruyorum.
+
+Şirket: ${company}
+İsim: ${name}
+E-posta: ${email}
+
+Proje Detayları:
+${project}`;
+                        
+                        const url = `https://wa.me/905418194009?text=${encodeURIComponent(message)}`;
+                        window.open(url, '_blank', 'noopener,noreferrer');
+                        
+                        // Reset form
+                        this.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        
+                        showNotification('Mesajınız WhatsApp\'a yönlendirildi!', 'success');
+                    }, 2000);
+                });
+            }
+        });
+
+        // Matrix Rain Effect
+        function createMatrixRain() {
+            const matrixContainer = document.getElementById('matrix-rain');
+            if (!matrixContainer) return;
+            
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            
+            function createMatrixChar() {
+                const char = document.createElement('div');
+                char.className = 'matrix-char';
+                char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                char.style.animationDelay = Math.random() * 2 + 's';
+                
+                matrixContainer.appendChild(char);
+                
+                setTimeout(() => {
+                    if (char.parentNode) {
+                        char.parentNode.removeChild(char);
+                    }
+                }, 5000);
+            }
+            
+            setInterval(createMatrixChar, 200);
+        }
+        
+        // Neural Network Background
+        function createNeuralNetwork() {
+            const neuralContainer = document.getElementById('neural-network');
+            if (!neuralContainer) return;
+            
+            for (let i = 0; i < 20; i++) {
+                const node = document.createElement('div');
+                node.className = 'neural-node';
+                node.style.left = Math.random() * 100 + '%';
+                node.style.top = Math.random() * 100 + '%';
+                node.style.animationDelay = Math.random() * 3 + 's';
+                neuralContainer.appendChild(node);
+            }
+        }
+        
+        // Floating Tech Icons
+        function createFloatingIcons() {
+            const iconsContainer = document.getElementById('floating-icons');
+            if (!iconsContainer) return;
+            
+            const techIcons = ['🔒', '⚛️', '🐍', '☁️', '📱', '🤖', '💻', '🌐', '⚡', '🛡️'];
+            
+            function createFloatingIcon() {
+                const icon = document.createElement('div');
+                icon.className = 'floating-icon';
+                icon.textContent = techIcons[Math.floor(Math.random() * techIcons.length)];
+                icon.style.left = Math.random() * 100 + '%';
+                icon.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                icon.style.animationDelay = Math.random() * 5 + 's';
+                
+                iconsContainer.appendChild(icon);
+                
+                setTimeout(() => {
+                    if (icon.parentNode) {
+                        icon.parentNode.removeChild(icon);
+                    }
+                }, 20000);
+            }
+            
+            setInterval(createFloatingIcon, 3000);
+        }
+        
+        // Particle System
+        function createParticleSystem() {
+            const particleContainer = document.getElementById('particle-system');
+            if (!particleContainer) return;
+            
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                
+                particleContainer.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 10000);
+            }
+            
+            setInterval(createParticle, 500);
+        }
+        
+        // Advanced Cursor Trail Effect
+        function createCursorTrail() {
+            const trail = [];
+            const trailLength = 20;
+            
+            document.addEventListener('mousemove', (e) => {
+                trail.push({ x: e.clientX, y: e.clientY, time: Date.now() });
+                
+                if (trail.length > trailLength) {
+                    trail.shift();
+                }
+                
+                // Remove old trail elements
+                document.querySelectorAll('.cursor-trail').forEach(el => {
+                    if (Date.now() - parseInt(el.dataset.time) > 1000) {
+                        el.remove();
+                    }
+                });
+                
+                // Create new trail element
+                const trailElement = document.createElement('div');
+                trailElement.className = 'cursor-trail';
+                trailElement.dataset.time = Date.now();
+                trailElement.style.cssText = `
+                    position: fixed;
+                    width: 6px;
+                    height: 6px;
+                    background: radial-gradient(circle, #00ffff, transparent);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 9999;
+                    left: ${e.clientX - 3}px;
+                    top: ${e.clientY - 3}px;
+                    animation: trailFade 1s ease-out forwards;
+                `;
+                
+                document.body.appendChild(trailElement);
+            });
+            
+            // Add trail fade animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes trailFade {
+                    0% { opacity: 1; transform: scale(1); }
+                    100% { opacity: 0; transform: scale(0); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Interactive Background Distortion
+        function createBackgroundDistortion() {
+            let mouseX = 0, mouseY = 0;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth) * 100;
+                mouseY = (e.clientY / window.innerHeight) * 100;
+                
+                const heroSection = document.querySelector('.morphing-bg');
+                if (heroSection) {
+                    heroSection.style.backgroundPosition = `${mouseX}% ${mouseY}%`;
+                }
             });
         }
+        
+        // Advanced Typing Effect for Terminal
+        function createTerminalTyping() {
+            const terminalContent = document.querySelector('.terminal-content');
+            if (!terminalContent) return;
+            
+            const commands = [
+                '$ nmap -sS -O target.com',
+                '$ sqlmap -u "http://target.com/page?id=1" --dbs',
+                '$ metasploit > use exploit/multi/handler',
+                '$ burpsuite --professional-mode',
+                '$ wireshark -i eth0 -f "tcp port 80"'
+            ];
+            
+            let commandIndex = 0;
+            
+            function typeCommand() {
+                if (commandIndex >= commands.length) {
+                    commandIndex = 0;
+                }
+                
+                const command = commands[commandIndex];
+                const commandElement = document.createElement('div');
+                commandElement.className = 'text-cyan-400 mb-2';
+                
+                let charIndex = 0;
+                const typeInterval = setInterval(() => {
+                    commandElement.textContent = command.substring(0, charIndex + 1);
+                    charIndex++;
+                    
+                    if (charIndex >= command.length) {
+                        clearInterval(typeInterval);
+                        setTimeout(() => {
+                            commandElement.style.opacity = '0.5';
+                            commandIndex++;
+                            setTimeout(typeCommand, 2000);
+                        }, 1000);
+                    }
+                }, 50);
+                
+                const cursor = terminalContent.querySelector('.typing-cursor');
+                if (cursor && cursor.parentNode) {
+                    cursor.parentNode.insertBefore(commandElement, cursor.parentNode.lastChild);
+                }
+            }
+            
+            setTimeout(typeCommand, 3000);
+        }
+        
+        // 3D Card Tilt Effect
+        function create3DTiltEffect() {
+            const cards = document.querySelectorAll('.skill-card, .interactive-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                });
+            });
+        }
+        
+        // Dynamic Progress Ring Animation
+        function animateProgressRings() {
+            const rings = document.querySelectorAll('.progress-ring-circle[stroke-dasharray]');
+            
+            rings.forEach(ring => {
+                const circumference = 2 * Math.PI * 52; // r = 52
+                const offset = ring.getAttribute('stroke-dashoffset');
+                const percentage = ((circumference - offset) / circumference) * 100;
+                
+                // Reset animation
+                ring.style.strokeDashoffset = circumference;
+                
+                // Animate to target
+                setTimeout(() => {
+                    ring.style.strokeDashoffset = offset;
+                }, 500);
+            });
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Element SDK
+            if (window.elementSdk) {
+                window.elementSdk.init({
+                    defaultConfig,
+                    onConfigChange,
+                    mapToCapabilities,
+                    mapToEditPanelValues
+                });
+            }
+            
+            // Show home page by default
+            showPage('home');
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScrollReveal);
+            
+            // Initial scroll reveal check
+            handleScrollReveal();
+            
+            // Initialize all advanced effects
+            createMatrixRain();
+            createNeuralNetwork();
+            createFloatingIcons();
+            createParticleSystem();
+            createCursorTrail();
+            createBackgroundDistortion();
+            createTerminalTyping();
+            create3DTiltEffect();
+            
+            // Trigger initial animations
+            setTimeout(() => {
+                const elements = document.querySelectorAll('.fade-in');
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                });
+                
+                // Start counter animation
+                setTimeout(animateCounters, 1500);
+                
+                // Animate progress rings
+                setTimeout(animateProgressRings, 2000);
+            }, 500);
+        });
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99f02b31444c23a1',t:'MTc2MzIyNDU5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99f0624726cede7a',t:'MTc2MzIyNjg1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>

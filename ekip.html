@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ekip | Yusuf Avşar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg: #0d1117;
+            --text: #ffffff;
+            --primary: #00aaff;
+            --secondary: #1f6feb;
+            --card-bg: #151b23;
+            --line: #222;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--line);
+        }
+
+        nav a {
+            color: var(--primary);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 34px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #b8b8b8;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid var(--line);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .photo {
+            width: 120px;
+            height: 120px;
+            background: #0f1620;
+            border-radius: 50%;
+            margin: auto;
+            border: 2px solid var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .role {
+            color: var(--primary);
+            margin: 8px 0 15px;
+        }
+
+        .bio {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 1px solid var(--line);
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Anasayfa</a>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="projeler.html">Projeler</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Ekip</h1>
+    <p class="subtitle">Birlikte çalıştığım ve projelere katkı sağlayan değerli ekip arkadaşlarım.</p>
+
+    <div class="team-grid">
+
+        <div class="card">
+            <div class="photo"></div>
+            <h3>Negin Alya Turanoğlu</h3>
+            <p class="role">Proje Yöneticisi</p>
+            <p class="bio">
+                Planlama, organizasyon ve proje süreçlerinin yönetiminde uzman.  
+                Uluslararası proje koordinasyonunda aktif rol aldı.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="photo"></div>
+            <h3>Ferya Özyılmaz</h3>
+            <p class="role">Frontend & UI/UX Designer</p>
+            <p class="bio">
+                Modern kullanıcı arayüzleri, minimalist tasarım trendleri ve kullanıcı deneyimi üzerine çalışıyor.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="photo"></div>
+            <h3>Aslı Durmuş</h3>
+            <p class="role">İçerik & Teknik Dokümantasyon Uzmanı</p>
+            <p class="bio">
+                Teknik makaleler, proje raporları ve kullanıcı kılavuzları oluşturma konusunda uzman bir yazar.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="photo"></div>
+            <h3>Ferdi Özyegen</h3>
+            <p class="role">Full Stack Developer</p>
+            <p class="bio">
+                Hem backend hem frontend tarafında güçlü altyapı geliştiren tecrübeli bir yazılım uzmanı.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="photo"></div>
+            <h3>Ahmet Dokunmaz</h3>
+            <p class="role">Siber Güvenlik & Penetrasyon Test Uzmanı</p>
+            <p class="bio">
+                Siber tehdit analizi, sistem açıkları tespiti ve güvenlik testlerinde derin bilgi sahibidir.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    © 2025 Yusuf Avşar – Tüm Hakları Saklıdır.
+</footer>
+
+</body>
+</html>

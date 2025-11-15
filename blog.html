@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog | Yusuf Avşar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yusuf Avşar'ın yazıları, teknik makaleleri, siber güvenlik analizleri, yazılım ve savunma sanayii içerikleri.">
+
+    <style>
+        :root {
+            --bg: #0d1117;
+            --text: #ffffff;
+            --primary: #00aaff;
+            --secondary: #1f6feb;
+            --card-bg: #161b22;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        nav a {
+            color: var(--primary);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #222;
+            transition: 0.2s;
+        }
+
+        .blog-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .blog-card h3 {
+            margin: 0 0 15px 0;
+            color: var(--secondary);
+        }
+
+        .blog-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .blog-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Anasayfa</a>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="hizmetler.html">Hizmetler</a>
+        <a href="projeler.html">Projeler</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>Blog Yazıları</h1>
+
+    <div class="blog-grid">
+
+        <div class="blog-card">
+            <h3>Siber Güvenlikte Yeni Nesil Tehditler</h3>
+            <p>Son dönemlerde gelişen saldırı yöntemleri, yapay zeka destekli tehditler ve savunma mekanizmaları...</p>
+            <a href="yazi1.html">Devamını Oku →</a>
+        </div>
+
+        <div class="blog-card">
+            <h3>Askeri Sistemlerde Güvenli Yazılım Geliştirme</h3>
+            <p>Savunma projelerinde yazılım mimarisinin kritik önemi ve uygulanması gereken güvenlik katmanları...</p>
+            <a href="yazi2.html">Devamını Oku →</a>
+        </div>
+
+        <div class="blog-card">
+            <h3>ABD'deki Görevimden Edindiğim Deneyimler</h3>
+            <p>6 aylık ABD yazılım görevimde öğrendiklerim, global çalışma kültürü ve karşılaştığım teknolojiler...</p>
+            <a href="yazi3.html">Devamını Oku →</a>
+        </div>
+
+        <div class="blog-card">
+            <h3>Singapur – Teknoloji & Yapay Zeka Ekosistemi</h3>
+            <p>Asya’da yapay zeka gelişimi, şirketlerin kullandığı altyapılar ve karşılaştığınız fırsatlar...</p>
+            <a href="yazi4.html">Devamını Oku →</a>
+        </div>
+
+        <div class="blog-card">
+            <h3>Ekip Kurma & Kurumsal Projeler Yönetimi</h3>
+            <p>Kurduğum ekip ile 2019–2025 arasında yaptığımız kurumsal projelerden önemli başarı örnekleri...</p>
+            <a href="yazi5.html">Devamını Oku →</a>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    © 2025 Yusuf Avşar – Tüm Hakları Saklıdır.
+</footer>
+
+</body>
+</html>

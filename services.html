@@ -1,92 +1,90 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hizmetler | Yusuf Avşar</title>
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- SEO -->
+  <meta name="description" content="Full Stack Yazılım, Siber Güvenlik, IT, E-Ticaret Hizmetleri - Yusuf Avşar">
+
+  <style>
+    .primary{color:#22d3ee}
+    .bg-primary{background-color:#22d3ee}
+    .border-primary{border-color:#22d3ee}
+  </style>
 </head>
-<body class="bg-black text-gray-200">
 
-  <!-- Navbar -->
-  <header class="border-b border-primary/40 sticky top-0 bg-black/80 backdrop-blur">
-    <nav class="max-w-6xl mx-auto p-4 flex justify-between items-center">
-      <h1 class="text-primary font-bold text-xl">Yusuf Avşar</h1>
+<body class="bg-black text-gray-200 dark:bg-black dark:text-gray-200 transition-colors duration-300">
 
-      <ul class="hidden md:flex gap-6 text-gray-300">
-        <li><a href="index.html" class="hover:text-primary">Ana Sayfa</a></li>
-        <li><a href="about.html" class="hover:text-primary">Hakkımda</a></li>
-        <li><a href="services.html" class="hover:text-primary">Hizmetler</a></li>
-        <li><a href="projects.html" class="hover:text-primary">Projeler</a></li>
-        <li><a href="blog.html" class="hover:text-primary">Blog</a></li>
-        <li><a href="contact.html" class="hover:text-primary">İletişim</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- ============ NAVBAR ============ -->
+<header class="border-b border-primary/40 sticky top-0 bg-black/80 backdrop-blur z-50">
+  <nav class="max-w-6xl mx-auto p-4 flex justify-between items-center">
+    <h1 class="text-primary font-bold text-xl">Yusuf Avşar</h1>
 
-  <!-- Hizmetler İçerik -->
-  <section class="max-w-6xl mx-auto p-6 py-16">
-    <h2 class="text-3xl md:text-5xl font-bold text-primary text-center mb-12">Hizmetler</h2>
+    <button id="menuToggle" class="md:hidden text-primary text-3xl">&#9776;</button>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <ul id="mobileMenu" class="hidden md:flex flex-col md:flex-row gap-6 text-gray-300">
+      <li><a data-key="nav_home" href="index.html"></a></li>
+      <li><a data-key="nav_about" href="about.html"></a></li>
+      <li><a data-key="nav_services" href="services.html"></a></li>
+      <li><a data-key="nav_projects" href="projects.html"></a></li>
+      <li><a data-key="nav_blog" href="blog.html"></a></li>
+      <li><a data-key="nav_contact" href="contact.html"></a></li>
+    </ul>
 
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary mb-2">Full Stack Yazılım</h3>
-        <p class="text-gray-300 text-sm leading-relaxed">
-          Web, masaüstü, API, otomasyon, entegrasyon ve daha fazlası.
-          Sıfırdan proje geliştirme veya mevcut sisteme güç katma.
-        </p>
-      </div>
-
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary mb-2">Siber Güvenlik</h3>
-        <p class="text-gray-300 text-sm leading-relaxed">
-          Güvenlik testleri, zafiyet analizi, veri koruma, ağ güvenliği,
-          sistem sertleştirme, sızma testleri ve danışmanlık.
-        </p>
-      </div>
-
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary mb-2">IT / BT Sistem Yönetimi</h3>
-        <p class="text-gray-300 text-sm leading-relaxed">
-          Sunucular, ağlar, bulut sistemleri, cihaz ve kullanıcı yönetimi.
-          Kurulum, optimizasyon ve bakım süreçleri.
-        </p>
-      </div>
-
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary mb-2">E-Ticaret Yönetimi</h3>
-        <p class="text-gray-300 text-sm leading-relaxed">
-          Ürün yönetimi, entegrasyonlar, ödeme sistemleri, kampanyalar,
-          satış artırma stratejileri ve operasyon.
-        </p>
-      </div>
-
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary mb-2">Oyun / Uygulama Geliştirme</h3>
-        <p class="text-gray-300 text-sm leading-relaxed">
-          Unity, Unreal Engine veya WebGL ile oyun ve uygulama deneyimleri.
-          Eğlence, eğitim ve simülasyon çözümleri.
-        </p>
-      </div>
-
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary mb-2">Danışmanlık & Mentorluk</h3>
-        <p class="text-gray-300 text-sm leading-relaxed">
-          Dijital dönüşüm, teknoloji yol haritaları, proje planlama,
-          yazılıma yönelmek isteyenler için rehberlik.
-        </p>
-      </div>
-
+    <div class="flex items-center gap-3">
+      <button id="themeToggle" class="text-xl">🌗</button>
+      <button id="langToggle" class="text-sm border px-2 py-1 rounded">TR/EN</button>
     </div>
-  </section>
+  </nav>
+</header>
 
-  <!-- Footer -->
-  <footer class="border-t border-primary/40 p-4 text-center text-gray-400 text-sm">
-    © 2025 Yusuf Avşar. Tüm hakları saklıdır.
-  </footer>
+<!-- ============ SERVICES CONTENT ============ -->
+<section class="max-w-6xl mx-auto px-6 py-24">
+  <h2 class="text-4xl font-bold text-primary mb-12">Hizmetler</h2>
 
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="p-6 border border-primary/30 rounded-lg">
+      <h3 class="text-xl font-bold text-primary mb-2">Full Stack Yazılım</h3>
+      <p class="text-gray-300 text-sm">API, web, otomasyon, oyun, masaüstü, mobil, server sistemleri.</p>
+    </div>
+
+    <div class="p-6 border border-primary/30 rounded-lg">
+      <h3 class="text-xl font-bold text-primary mb-2">Siber Güvenlik</h3>
+      <p class="text-gray-300 text-sm">Pentest, Red Team, Mavi Takım, güvenlik testleri, veri koruma.</p>
+    </div>
+
+    <div class="p-6 border border-primary/30 rounded-lg">
+      <h3 class="text-xl font-bold text-primary mb-2">IT & BT Altyapı</h3>
+      <p class="text-gray-300 text-sm">Sunucu, network, Active Directory, mail sistemleri, firewall.</p>
+    </div>
+
+    <div class="p-6 border border-primary/30 rounded-lg">
+      <h3 class="text-xl font-bold text-primary mb-2">E-Ticaret Yönetimi</h3>
+      <p class="text-gray-300 text-sm">Ürün yönetimi, pazarlama, entegrasyon, otomasyon, satış artırma.</p>
+    </div>
+
+    <div class="p-6 border border-primary/30 rounded-lg">
+      <h3 class="text-xl font-bold text-primary mb-2">Danışmanlık</h3>
+      <p class="text-gray-300 text-sm">Proje danışmanlığı, dijital dönüşüm, yazılım geliştirme süreçleri.</p>
+    </div>
+
+    <div class="p-6 border border-primary/30 rounded-lg">
+      <h3 class="text-xl font-bold text-primary mb-2">Özel Projeler</h3>
+      <p class="text-gray-300 text-sm">İhtiyaca özel tasarım yazılım sistemleri ve çözüm üretimi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-primary/40 p-4 text-center text-gray-400 text-sm mt-12">
+  © 2025 Yusuf Avşar. Tüm hakları saklıdır.
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

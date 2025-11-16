@@ -1,92 +1,80 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projeler | Yusuf Avşar</title>
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- SEO -->
+  <meta name="description" content="Yusuf Avşar tarafından geliştirilen yazılım, güvenlik, IT ve e-ticaret projeleri.">
+
+  <style>
+    .primary{color:#22d3ee}
+    .bg-primary{background-color:#22d3ee}
+    .border-primary{border-color:#22d3ee}
+  </style>
 </head>
-<body class="bg-black text-gray-200">
 
-  <!-- Navbar -->
-  <header class="border-b border-primary/40 sticky top-0 bg-black/80 backdrop-blur">
-    <nav class="max-w-6xl mx-auto p-4 flex justify-between items-center">
-      <h1 class="text-primary font-bold text-xl">Yusuf Avşar</h1>
+<body class="bg-black text-gray-200 dark:bg-black dark:text-gray-200 transition-colors duration-300">
 
-      <ul class="hidden md:flex gap-6 text-gray-300">
-        <li><a href="index.html" class="hover:text-primary">Ana Sayfa</a></li>
-        <li><a href="about.html" class="hover:text-primary">Hakkımda</a></li>
-        <li><a href="services.html" class="hover:text-primary">Hizmetler</a></li>
-        <li><a href="projects.html" class="hover:text-primary">Projeler</a></li>
-        <li><a href="blog.html" class="hover:text-primary">Blog</a></li>
-        <li><a href="contact.html" class="hover:text-primary">İletişim</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- ============ NAVBAR ============ -->
+<header class="border-b border-primary/40 sticky top-0 bg-black/80 backdrop-blur z-50">
+  <nav class="max-w-6xl mx-auto p-4 flex justify-between items-center">
+    <h1 class="text-primary font-bold text-xl">Yusuf Avşar</h1>
 
-  <!-- Projeler İçerik -->
-  <section class="max-w-6xl mx-auto p-6 py-16">
-    <h2 class="text-3xl md:text-5xl font-bold text-primary text-center mb-12">Projeler</h2>
+    <button id="menuToggle" class="md:hidden text-primary text-3xl">&#9776;</button>
 
-    <p class="text-gray-300 text-center max-w-3xl mx-auto mb-10">
-      Aşağıda yazılım, siber güvenlik, IT ve e-ticaret alanlarında gerçekleştirdiğim bazı proje ve çalışmalar yer alıyor.
-      Detay veya demo bağlantıları talep üzerine paylaşılabilir.
-    </p>
+    <ul id="mobileMenu" class="hidden md:flex flex-col md:flex-row gap-6 text-gray-300">
+      <li><a data-key="nav_home" href="index.html"></a></li>
+      <li><a data-key="nav_about" href="about.html"></a></li>
+      <li><a data-key="nav_services" href="services.html"></a></li>
+      <li><a data-key="nav_projects" href="projects.html"></a></li>
+      <li><a data-key="nav_blog" href="blog.html"></a></li>
+      <li><a data-key="nav_contact" href="contact.html"></a></li>
+    </ul>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Proje örneği kartı -->
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary">E-Ticaret Stok & Sipariş Otomasyonu</h3>
-        <p class="text-gray-300 text-sm mt-2">
-          Çoklu mağaza yönetimi, otomatik stok senkronizasyonu, fatura ve kargo entegrasyonları.
-        </p>
-      </div>
-
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary">Siber Güvenlik Zafiyet Tarama Paneli</h3>
-        <p class="text-gray-300 text-sm mt-2">
-          Ağ taramaları, port analizleri, zafiyet raporları ve güvenlik önerileri sunan özel araç.
-        </p>
-      </div>
-
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary">Full Stack CRM / Müşteri Yönetimi</h3>
-        <p class="text-gray-300 text-sm mt-2">
-          Satış takip, müşteri ilişkileri, teklif - fatura süreçlerinde özelleştirilebilir iş akışları.
-        </p>
-      </div>
-
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary">Unity ile Eğitim & Simülasyon Oyunu</h3>
-        <p class="text-gray-300 text-sm mt-2">
-          Kullanıcıların pratik yapabileceği simülasyon bazlı oyunlaştırılmış eğitim projesi.
-        </p>
-      </div>
-
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary">Kurumsal Web Site & Yönetim Paneli</h3>
-        <p class="text-gray-300 text-sm mt-2">
-          Admin paneli, içerik yönetimi, SEO altyapısı, hızlı ve modern tasarım.
-        </p>
-      </div>
-
-      <div class="border border-primary/30 p-6 rounded-lg hover:border-primary transition">
-        <h3 class="text-xl font-semibold text-primary">Mobil Data Toplama / IoT Entegrasyonu</h3>
-        <p class="text-gray-300 text-sm mt-2">
-          Sensör verilerinin mobil uygulama ve web panel üzerinden izlenmesi.
-        </p>
-      </div>
-
+    <div class="flex items-center gap-3">
+      <button id="themeToggle" class="text-xl">🌗</button>
+      <button id="langToggle" class="text-sm border px-2 py-1 rounded">TR/EN</button>
     </div>
-  </section>
+  </nav>
+</header>
 
-  <!-- Footer -->
-  <footer class="border-t border-primary/40 p-4 text-center text-gray-400 text-sm">
-    © 2025 Yusuf Avşar. Tüm hakları saklıdır.
-  </footer>
+<!-- ============ PROJECTS CONTENT ============ -->
+<section class="max-w-6xl mx-auto px-6 py-24">
+  <h2 class="text-4xl font-bold text-primary mb-12">Projeler</h2>
 
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="p-6 border border-primary/30 rounded-lg">
+      <h3 class="text-xl font-bold text-primary mb-2">Siber Güvenlik Otomasyon Sistemi</h3>
+      <p class="text-gray-300 text-sm">Zafiyet tespiti, log analizi ve saldırı simülasyonu sağlayan özel güvenlik framework.</p>
+      <a href="#" class="text-primary text-sm underline mt-2 inline-block">Demo / Kaynak Kod</a>
+    </div>
+
+    <div class="p-6 border border-primary/30 rounded-lg">
+      <h3 class="text-xl font-bold text-primary mb-2">E-Ticaret Entegrasyon Modülü</h3>
+      <p class="text-gray-300 text-sm">Pazaryeri API entegrasyonları, stok fiyat yönetimi ve otomatik sipariş işleme.</p>
+      <a href="#" class="text-primary text-sm underline mt-2 inline-block">Demo / Kaynak Kod</a>
+    </div>
+
+    <div class="p-6 border border-primary/30 rounded-lg">
+      <h3 class="text-xl font-bold text-primary mb-2">Full Stack CRM Yazılımı</h3>
+      <p class="text-gray-300 text-sm">Müşteri, satış ve proje yönetimi için gelişmiş CRM sistemi.</p>
+      <a href="#" class="text-primary text-sm underline mt-2 inline-block">Demo / Kaynak Kod</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-primary/40 p-4 text-center text-gray-400 text-sm mt-12">
+  © 2025 Yusuf Avşar. Tüm hakları saklıdır.
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

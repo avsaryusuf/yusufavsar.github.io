@@ -3,21 +3,18 @@
     "title_tr": "Siber Güvenlikte 5 Kritik Tavsiye",
     "title_en": "5 Critical Tips in Cybersecurity",
     "desc_tr": "Dijital dünyada güvende kalmak için ipuçları.",
-    "desc_en": "Key tips for staying safe in the digital world.",
-    "link": "#"
+    "desc_en": "Key tips for staying safe in the digital world."
   },
   {
     "title_tr": "E-Ticarette Satış Artırma Teknikleri",
     "title_en": "Techniques to Boost E-Commerce Sales",
     "desc_tr": "Operasyon, otomasyon ve pazarlama stratejileri.",
-    "desc_en": "Operations, automation and marketing strategies.",
-    "link": "#"
+    "desc_en": "Operations, automation and marketing strategies."
   },
   {
     "title_tr": "Sunucu & Altyapı Optimizasyon Rehberi",
     "title_en": "Server & Infrastructure Optimization Guide",
     "desc_tr": "Performans, ölçeklendirme ve güvenlik yapılandırmaları.",
-    "desc_en": "Performance, scaling and security configuration.",
-    "link": "#"
+    "desc_en": "Performance, scaling and security configuration."
   }
 ]

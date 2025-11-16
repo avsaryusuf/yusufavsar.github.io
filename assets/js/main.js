@@ -1,6 +1,6 @@
-// =====================================
+// =========================
 // MOBILE MENU
-// =====================================
+// =========================
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 
@@ -10,9 +10,10 @@ if (menuToggle && mobileMenu) {
   });
 }
 
-// =====================================
-// THEME SWITCH (DARK / LIGHT)
-// =====================================
+
+// =========================
+// THEME SWITCH
+// =========================
 const themeToggle = document.getElementById("themeToggle");
 
 function applyTheme(theme) {
@@ -26,46 +27,42 @@ function applyTheme(theme) {
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
-    const newTheme = localStorage.getItem("theme") === "light" ? "dark" : "light";
-    applyTheme(newTheme);
+    applyTheme(localStorage.getItem("theme") === "light" ? "dark" : "light");
   });
 }
 
 applyTheme(localStorage.getItem("theme") || "dark");
 
-// =====================================
-// LANGUAGE SYSTEM (TR/EN)
-// =====================================
+
+// =========================
+// LANGUAGE SYSTEM
+// =========================
 const langToggle = document.getElementById("langToggle");
 
 async function setLang(lang) {
-  try {
-    const res = await fetch(`assets/lang/${lang}.json`);
-    const langData = await res.json();
+  const res = await fetch(`assets/lang/${lang}.json`);
+  const t = await res.json();
 
-    document.querySelectorAll("[data-key]").forEach(el => {
-      const key = el.getAttribute("data-key");
-      if (langData[key]) el.innerHTML = langData[key];
-    });
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const key = el.getAttribute("data-key");
+    if (t[key]) el.innerHTML = t[key];
+  });
 
-    localStorage.setItem("lang", lang);
-  } catch (err) {
-    console.error("Dil yüklenemedi:", err);
-  }
+  localStorage.setItem("lang", lang);
 }
 
 if (langToggle) {
   langToggle.addEventListener("click", () => {
-    const newLang = localStorage.getItem("lang") === "en" ? "tr" : "en";
-    setLang(newLang);
+    setLang(localStorage.getItem("lang") === "en" ? "tr" : "en");
   });
 }
 
 setLang(localStorage.getItem("lang") || "tr");
 
-// =====================================
-// DYNAMIC BLOG
-// =====================================
+
+// =========================
+// DYNAMIC BLOG LISTING (UPDATED)
+// =========================
 const blogContainer = document.getElementById("blogContainer");
 
 if (blogContainer) {
@@ -73,9 +70,10 @@ if (blogContainer) {
     .then(res => res.json())
     .then(data => {
       const lang = localStorage.getItem("lang") || "tr";
-
-      blogContainer.innerHTML = data.map(post => `
-        <a href="${post.link}"
+      blogContainer.innerHTML = data
+        .map(
+          (post, i) => `
+        <a href="blog-post.html?id=${i}"
            class="border border-primary/30 p-6 rounded-lg hover:border-primary transition block">
           <h3 class="text-xl font-semibold text-primary">${
             lang === "en" ? post.title_en : post.title_tr
@@ -84,6 +82,8 @@ if (blogContainer) {
             lang === "en" ? post.desc_en : post.desc_tr
           }</p>
         </a>
-      `).join("");
+      `
+        )
+        .join("");
     });
 }

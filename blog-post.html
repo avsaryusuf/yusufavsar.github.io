@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Yazısı | Yusuf Avşar</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .primary{color:#22d3ee}
+    .bg-primary{background-color:#22d3ee}
+    .border-primary{border-color:#22d3ee}
+  </style>
+</head>
+<body class="bg-black text-gray-200 dark:bg-black dark:text-gray-200">
+
+<header class="border-b border-primary/40 p-4 text-center text-primary font-bold text-xl">
+  <a href="blog.html">← Blog'a Dön</a>
+</header>
+
+<section id="postContent" class="max-w-4xl mx-auto px-6 py-16"></section>
+
+<script>
+async function loadPost(){
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id");
+  if(!id) return;
+
+  const res = await fetch("assets/js/blog.json");
+  const posts = await res.json();
+  const lang = localStorage.getItem("lang") || "tr";
+  const post = posts[id];
+
+  document.title = (lang === "en" ? post.title_en : post.title_tr) + " | Yusuf Avşar";
+
+  document.getElementById("postContent").innerHTML = `
+    <h1 class="text-4xl font-bold text-primary mb-4">${
+      lang === "en" ? post.title_en : post.title_tr
+    }</h1>
+    <p class="text-gray-300 leading-7 text-lg">${
+      lang === "en" ? post.desc_en : post.desc_tr
+    }</p>
+  `;
+}
+
+loadPost();
+</script>
+
+</body>
+</html>
